@@ -1,7 +1,7 @@
 # uminaibi-resin.jp（うみないび）— Claude Code 用の決まりごと
 
 沖縄県名護市のレジンアート専門店「うみないび」の公式サイト。体験教室・ギャラリー・アクセス・お問い合わせ。
-★R-ENTRY（/opt/r-entry, r-entry.xvps.jp）とは**まったく別のプロジェクト**。コード・設定・DB・メモを混ぜないこと。
+★R-ENTRY（/opt/r-entry, r-entry.xvps.jp）とは**まったく別のプロジェクト**。コード・設定・DB・メモを混ぜないこと（サイトの切り替え表は /root/CLAUDE.md）。
 
 ## 場所
 - サイトのファイル: `site/`（いまは静的 HTML 6ページ + css/js。Tailwind は CDN 読み込み）
