@@ -7,7 +7,7 @@
 - サイトのファイル: `site/`（いまは静的 HTML 6ページ + css/js。Tailwind は CDN 読み込み）
 - 公開: `bin/deploy.sh --go` で、uminaibi-resin.jp の今のサーバー（157.7.189.64）へ FTP で送る。接続情報は `deploy.env`（git に入れない）
 - 手順書: `README.md` / 課題: `docs/課題.md` / 決めたこと: `docs/決定ログ.md`
-- GitHub: github.com/casthub/uminaibi-resin.jp（SSH の別名 `github-uminaibi-resin`、鍵 /root/.ssh/uminaibi-resin-deploy）
+- GitHub: github.com/casthub/uminaibi-resin.jp（★公開リポジトリ）。https で送る。アクセストークンは /root/.ssh/uminaibi-github-token、git の core.askPass（/root/.ssh/uminaibi-askpass.sh）が渡す。`git push` だけで送れる。トークンを git の設定・ファイルに書かない。
 
 ## 決まり
 - オーナーはプログラマーではない。説明・手順書はやさしい日本語で。
