@@ -58,20 +58,6 @@ body {
 }
 main:focus { outline: none; }
 
-/* 本文へ移動（Tab を押すと左上に出る） */
-.skip-link {
-  position: absolute;
-  left: 1rem;
-  top: -100px;
-  z-index: 200;
-  padding: 0.75rem 1.25rem;
-  background: #0a3d52;
-  color: #ffffff;
-  font-weight: 700;
-  border-radius: 9999px;
-}
-.skip-link:focus { top: 1rem; }
-
 /* 「動きを減らす」設定の人には、ふわっと表示・なめらかスクロール・拡大の動きを止める */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
