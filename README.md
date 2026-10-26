@@ -1,0 +1,1 @@
+# uminaibi-resin.jp
