@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   onScroll(); // 初期読み込み時にも適用
 
   // 2. モバイルメニューのトグル
+  //   ★閉じているときは inert（キーボードでも読み上げでも入れない）。Esc で閉じ、閉じたらボタンへ戻る（WCAG 2.1.2 / 2.4.3）
   const menuBtn = document.getElementById('menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   const bar1 = document.getElementById('bar1');
@@ -38,41 +39,91 @@ document.addEventListener('DOMContentLoaded', () => {
   const bar3 = document.getElementById('bar3');
 
   let menuOpen = false;
-  const toggleMenu = () => {
-    menuOpen = !menuOpen;
+  const setMenu = (open) => {
     if (!mobileMenu || !menuBtn) return;
-    
-    mobileMenu.classList.toggle('translate-x-full', !menuOpen);
-    menuBtn.setAttribute('aria-expanded', String(menuOpen));
-    
+    menuOpen = open;
+    mobileMenu.classList.toggle('translate-x-full', !open);
+    mobileMenu.toggleAttribute('inert', !open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
     if (bar1 && bar2 && bar3) {
-      if (menuOpen) {
-        bar1.style.transform = 'translateY(6px) rotate(45deg)';
-        bar2.style.opacity = '0';
-        bar3.style.transform = 'translateY(-6px) rotate(-45deg)';
-      } else {
-        bar1.style.transform = 'none';
-        bar2.style.opacity = '1';
-        bar3.style.transform = 'none';
-      }
+      bar1.style.transform = open ? 'translateY(6px) rotate(45deg)' : 'none';
+      bar2.style.opacity = open ? '0' : '1';
+      bar3.style.transform = open ? 'translateY(-6px) rotate(-45deg)' : 'none';
     }
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) mobileMenu.querySelector('a')?.focus();
   };
 
-  menuBtn?.addEventListener('click', toggleMenu);
+  menuBtn?.addEventListener('click', () => setMenu(!menuOpen));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menuOpen) { setMenu(false); menuBtn?.focus(); }
+  });
+  // 画面が広くなってメニューが要らなくなったら閉じる
+  window.matchMedia('(min-width: 1024px)').addEventListener('change', (e) => { if (e.matches && menuOpen) setMenu(false); });
 
   // 3. スクロールによる要素のふわっと表示アニメーション
+  //   ★「動きを減らす」設定の人には動かさない（CSS 側でも止めている）
   const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          io.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
-  revealEls.forEach((el) => io.observe(el));
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+    revealEls.forEach((el) => el.classList.add('is-visible'));
+  } else {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    revealEls.forEach((el) => io.observe(el));
+    // キーボードで隠れている部分に移動したときは、すぐ見えるようにする
+    document.addEventListener('focusin', (e) => {
+      const r = e.target.closest?.('.reveal');
+      if (r) r.classList.add('is-visible');
+    });
+  }
 });
+
+// ダイアログ（送信完了・ギャラリーの拡大表示）を開く／閉じる共通処理
+//   開いたら中の最初のボタンへ、閉じたら元の場所へフォーカスを戻す。Tab は中で回り、Esc で閉じる（WCAG 2.1.2 / 2.4.3）
+window.uminaibiDialog = (() => {
+  let current = null;
+  let returnTo = null;
+  const focusables = (el) => [...el.querySelectorAll('a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])')];
+  const onKey = (e) => {
+    if (!current) return;
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      const btn = current.querySelector('[data-dialog-close]');
+      btn ? btn.click() : close(current);
+    } else if (e.key === 'Tab') {
+      const f = focusables(current);
+      if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  };
+  const open = (el, from) => {
+    current = el;
+    returnTo = from || document.activeElement;
+    el.classList.remove('hidden');
+    el.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', onKey);
+    (focusables(el)[0] || el).focus();
+  };
+  const close = (el) => {
+    el.classList.add('hidden');
+    el.classList.remove('flex');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    current = null;
+    returnTo?.focus?.();
+  };
+  return { open, close };
+})();

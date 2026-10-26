@@ -3,6 +3,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* 上に固定したヘッダー（高さ 80px）の下に、移動先やフォーカスが隠れないように（WCAG 2.4.11） */
+  scroll-padding-top: 6rem;
 }
 
 body {
@@ -16,13 +18,14 @@ body {
 }
 
 /* ふわっと浮かび上がるスクロールアニメーション */
-.reveal {
+/* ★JS が動くときだけ隠す（JS が止まっていても文章が読めるように） */
+.js .reveal {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.reveal.is-visible {
+.js .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -43,3 +46,38 @@ body {
   opacity: 0.35;
   pointer-events: none;
 }
+
+/* ===== アクセシビリティ（WCAG 2.2 AA）2026-10-26 ===== */
+
+/* キーボード操作の位置を、明るい背景でも暗い背景でも見えるように（白と濃紺の二重の枠） */
+:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px #0a3d52;
+  border-radius: 4px;
+}
+main:focus { outline: none; }
+
+/* 本文へ移動（Tab を押すと左上に出る） */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 200;
+  padding: 0.75rem 1.25rem;
+  background: #0a3d52;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 9999px;
+}
+.skip-link:focus { top: 1rem; }
+
+/* 「動きを減らす」設定の人には、ふわっと表示・なめらかスクロール・拡大の動きを止める */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+/* 点滅・波紋の飾りは、ずっと動かさない（3回で止める。WCAG 2.2.2） */
+.animate-ping, .animate-pulse { animation-iteration-count: 3; }

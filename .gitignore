@@ -2,3 +2,4 @@
 *.log
 .DS_Store
 deploy.env
+site/mail-config.php

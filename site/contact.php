@@ -37,6 +37,65 @@ function multi_line(string $s, int $max): string {
     return mb_substr(trim($s), 0, $max);
 }
 
+/**
+ * メールを送る。★heteml の送信サーバー（smtp.hetemail.jp）に info@ でログインして送る（2026-10-26 オーナー指示）。
+ *   ログイン情報は mail-config.php（git に入れない・.htaccess で外から読めない）。無いときは PHP の mb_send_mail で送る。
+ */
+function send_mail(string $to, string $subject, string $body, string $fromName, ?string $replyTo = null): bool {
+    $cfgFile = __DIR__ . '/mail-config.php';
+    $cfg = is_file($cfgFile) ? (require $cfgFile) : null;
+    if (!is_array($cfg) || empty($cfg['password'])) {
+        $headers = 'From: ' . mb_encode_mimeheader($fromName) . ' <' . SHOP_FROM . '>' . ($replyTo ? "\r\nReply-To: " . $replyTo : '');
+        return mb_send_mail($to, $subject, $body, $headers, '-f' . SHOP_FROM);
+    }
+    return smtp_send($cfg, $to, $subject, $body, $fromName, $replyTo);
+}
+
+function smtp_send(array $cfg, string $to, string $subject, string $body, string $fromName, ?string $replyTo): bool {
+    $host = $cfg['host'] ?? 'smtp.hetemail.jp';
+    $port = (int) ($cfg['port'] ?? 465);
+    $user = $cfg['user'] ?? SHOP_FROM;
+    $remote = ($port === 465 ? 'ssl://' : 'tcp://') . $host . ':' . $port;
+    $ctx = stream_context_create(['ssl' => ['verify_peer' => true, 'verify_peer_name' => true, 'peer_name' => $host]]);
+    $fp = @stream_socket_client($remote, $errno, $errstr, 15, STREAM_CLIENT_CONNECT, $ctx);
+    if (!$fp) { error_log("smtp connect failed: $errstr"); return false; }
+    stream_set_timeout($fp, 15);
+    $read = function () use ($fp): string {
+        $data = '';
+        while (($line = fgets($fp, 515)) !== false) { $data .= $line; if (isset($line[3]) && $line[3] === ' ') break; }
+        return $data;
+    };
+    $cmd = function (string $c, array $ok) use ($fp, $read): bool {
+        if ($c !== '') fwrite($fp, $c . "\r\n");
+        $r = $read();
+        if (!in_array((int) substr($r, 0, 3), $ok, true)) { error_log('smtp: ' . preg_replace('/AUTH.*/', 'AUTH ***', $c) . ' -> ' . trim($r)); return false; }
+        return true;
+    };
+    $ok = $cmd('', [220]) && $cmd('EHLO uminaibi-resin.jp', [250]);
+    if ($ok && $port !== 465) {
+        $ok = $cmd('STARTTLS', [220]) && stream_socket_enable_crypto($fp, true, STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT | STREAM_CRYPTO_METHOD_TLSv1_3_CLIENT)
+            && $cmd('EHLO uminaibi-resin.jp', [250]);
+    }
+    $ok = $ok && $cmd('AUTH LOGIN', [334]) && $cmd(base64_encode($user), [334]) && $cmd(base64_encode((string) $cfg['password']), [235])
+        && $cmd('MAIL FROM:<' . SHOP_FROM . '>', [250]) && $cmd('RCPT TO:<' . $to . '>', [250, 251]) && $cmd('DATA', [354]);
+    if ($ok) {
+        $date = (new DateTime('now', new DateTimeZone('Asia/Tokyo')))->format('r');
+        $msgId = '<' . bin2hex(random_bytes(12)) . '@uminaibi-resin.jp>';
+        $h  = 'Date: ' . $date . "\r\n";
+        $h .= 'From: ' . mb_encode_mimeheader($fromName, 'UTF-8', 'B') . ' <' . SHOP_FROM . ">\r\n";
+        $h .= 'To: <' . $to . ">\r\n";
+        if ($replyTo) $h .= 'Reply-To: <' . $replyTo . ">\r\n";
+        $h .= 'Subject: ' . mb_encode_mimeheader($subject, 'UTF-8', 'B') . "\r\n";
+        $h .= 'Message-ID: ' . $msgId . "\r\n";
+        $h .= "MIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n";
+        $data = $h . "\r\n" . chunk_split(base64_encode(str_replace("\n", "\r\n", $body)), 76, "\r\n") . '.';
+        $ok = $cmd($data, [250]);
+    }
+    fwrite($fp, "QUIT\r\n");
+    fclose($fp);
+    return $ok;
+}
+
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
     reply(405, ['ok' => false, 'message' => '送信方法が正しくありません。']);
 }
@@ -65,7 +124,7 @@ if (is_file($limitFile)) {
     );
 }
 if (count($hits) >= LIMIT_COUNT) {
-    reply(429, ['ok' => false, 'message' => '短い時間に何度も送信されています。しばらくしてからお試しいただくか、お電話・LINE でご連絡ください。']);
+    reply(429, ['ok' => false, 'message' => '短い時間に何度も送信されています。しばらくしてからお試しいただくか、お電話（050-7116-0133）でご連絡ください。']);
 }
 
 $subjects = [
@@ -116,13 +175,11 @@ if ($subjKey === 'workshop') {
 $body .= "\n■ お問い合わせ内容\n{$message}\n\n";
 $body .= "――――――――――\n送信日時：{$sentAt}\n";
 
-$fromHeader = 'From: ' . mb_encode_mimeheader(SHOP_NAME . ' ホームページ') . ' <' . SHOP_FROM . '>';
-$headers = $fromHeader . "\r\nReply-To: " . $email;
 $shopSubject = "【HPお問い合わせ】{$subjectLabel}（{$name} 様）";
-$sentShop = mb_send_mail(SHOP_TO, $shopSubject, $body, $headers, '-f' . SHOP_FROM);
+$sentShop = send_mail(SHOP_TO, $shopSubject, $body, SHOP_NAME . ' ホームページ', $email);
 
 if (!$sentShop) {
-    reply(500, ['ok' => false, 'message' => '送信できませんでした。お手数ですが、お電話・LINE・メール（' . SHOP_TO . '）でご連絡ください。']);
+    reply(500, ['ok' => false, 'message' => '送信できませんでした。お手数ですが、お電話（050-7116-0133）・メール（' . SHOP_TO . '）でご連絡ください。']);
 }
 
 // --- お客様への自動返信（★入力内容は載せない） ---
@@ -135,7 +192,6 @@ if ($subjKey === 'workshop') {
 $auto .= "\nこのメールは自動でお送りしています。ご質問は、このメールにそのまま返信してお送りいただけます。\n";
 $auto .= "お心当たりのない場合は、お手数ですがこのメールを破棄してください。\n\n";
 $auto .= "――――――――――\nうみないび（沖縄県名護市のレジンアート専門店）\nhttps://uminaibi-resin.jp/\n";
-$autoHeaders = 'From: ' . mb_encode_mimeheader(SHOP_NAME) . ' <' . SHOP_FROM . '>';
-@mb_send_mail($email, '【うみないび】お問い合わせを受け付けました', $auto, $autoHeaders, '-f' . SHOP_FROM);
+send_mail($email, '【うみないび】お問い合わせを受け付けました', $auto, SHOP_NAME);
 
 reply(200, ['ok' => true]);
