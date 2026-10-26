@@ -14,6 +14,6 @@ TLS="set ftp:ssl-force true; set ftp:ssl-protect-data true;"
 [ "${FTP_TLS:-yes}" = "no" ] && TLS="set ftp:ssl-allow false;"
 lftp -u "$FTP_USER","$FTP_PASS" "$FTP_HOST" -e "
   set net:max-retries 2; set net:timeout 20; $TLS
-  mirror --reverse --only-newer --no-perms --verbose $DRY --exclude-glob .* site/ $FTP_DIR/;
+  mirror --reverse --only-newer --no-perms --verbose $DRY --exclude-glob .git* --exclude-glob .DS_Store site/ $FTP_DIR/;
   bye" 2>&1 | sed "s#//[^@/]*@#//***@#g"   # ★画面・記録にパスワードを出さない
 [ -z "$DRY" ] && echo "OK: 送りました" || echo "（確認のみ。実際に送るには bin/deploy.sh --go）"

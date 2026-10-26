@@ -1,0 +1,8 @@
+# http:// で来たら https:// へ転送する（2026-10-26）
+#   ★サーバー（heteml）の前で暗号化が外される場合にも転送が繰り返されないよう、X-Forwarded-Proto も見る
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>
