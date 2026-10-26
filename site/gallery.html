@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ギャラリー | うみないび | 沖縄県名護市のレジンアート専門店</title>
-  <meta name="description" content="沖縄県名護市のレジンアート「うみないび」の作品ギャラリー。海時計やアートプレート、波のコースター、アクセサリーなど、一つひとつ手作業で制作した世界にひとつだけの海の作品をご覧ください。">
+  <meta name="description" content="沖縄県名護市のレジンアート専門店「うみないび」のギャラリー。海の波のアートパネル、貝やヒトデの小物、押し花のペンダントなど、レジンアートで表現できるもののイメージをご覧ください（写真はフリー素材のイメージです）。">
   <meta name="keywords" content="レジンアート,ギャラリー,作品,沖縄,名護市,海時計,アートパネル">
 
   <!-- Tailwind CSS CDN -->
@@ -93,8 +93,8 @@
       <div class="blob h-64 w-64 -top-10 -right-10 bg-emerald/20"></div>
       <div class="relative z-10 mx-auto max-w-4xl px-6 text-center">
         <p class="text-xs tracking-[0.35em] text-white/70 uppercase">Gallery</p>
-        <h1 class="font-serif-jp mt-4 text-3xl sm:text-4xl md:text-5xl tracking-widest">作品ギャラリー</h1>
-        <p class="mt-4 text-xs sm:text-sm text-white/80">名護の波と泡をかたどった、私たちの作品集</p>
+        <h1 class="font-serif-jp mt-4 text-3xl sm:text-4xl md:text-5xl tracking-widest">ギャラリー</h1>
+        <p class="mt-4 text-xs sm:text-sm text-white/80">レジンアートで表現できる、海と光のイメージ</p>
       </div>
       <!-- 波形デバイダー -->
       <div class="wave-divider absolute bottom-0 left-0 right-0 text-sand">
@@ -108,73 +108,82 @@
     <section class="py-20">
       <div class="mx-auto max-w-6xl px-6">
         <div class="reveal text-center mb-16">
-          <span class="text-xs tracking-widest font-bold text-emerald uppercase">Portfolio</span>
-          <h2 class="font-serif-jp text-2xl sm:text-3xl text-ocean-deep mt-2">作品紹介</h2>
-          <p class="mt-4 text-sm text-ink/70">作品を押すと、拡大して説明をご覧いただけます。</p>
+          <span class="text-xs tracking-widest font-bold text-emerald uppercase">Image</span>
+          <h2 class="font-serif-jp text-2xl sm:text-3xl text-ocean-deep mt-2">レジンアートのイメージ</h2>
+          <p class="mt-4 text-sm text-ink/70">写真はフリー素材のイメージで、当店の作品ではありません。<br class="hidden sm:inline">写真を押すと、拡大して説明をご覧いただけます。</p>
         </div>
 
-        <!-- NOTE: 実際の作品写真を配置した場合は、下記の <div style="background: gradient"> の部分を
-             <img src="images/gallery/xxx.jpg" class="w-full h-full object-cover"> に差し替えてください。 -->
+        <!-- ★2026-10-27 オーナー指示：フリー素材（Unsplash License・商用可）のレジンアート写真を「イメージ」として掲載。
+             当店の作品ではないので、作品名・「私たちの作品」とは書かない（景品表示法）。本物の作品写真ができたら差し替える。
+             写真は images/gallery/（600px・1200px の WebP）。出どころは下の「写真について」と docs/決定ログ.md。 -->
         <div class="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-3">
-          <!-- 作品1 -->
-          <button type="button" aria-label="珊瑚礁のさざなみ時計（拡大して見る）" class="gallery-item reveal group relative aspect-square overflow-hidden rounded-2xl shadow-soft focus:outline-none col-span-2 row-span-2 md:aspect-auto" data-title="珊瑚礁のさざなみ時計" data-gradient="linear-gradient(135deg,#0a3d52,#0f6c8a 50%,#2ea3b8 80%,#6fd8c7)">
-            <div class="absolute inset-0 transition-transform duration-700 group-hover:scale-110" style="background: linear-gradient(135deg,#0a3d52,#0f6c8a 50%,#2ea3b8 80%,#6fd8c7)"></div>
+          <!-- イメージ1 -->
+          <button type="button" aria-label="海の波のアートパネル（拡大して見る）" class="gallery-item reveal group relative aspect-square overflow-hidden rounded-2xl shadow-soft focus:outline-none col-span-2 row-span-2 md:aspect-auto" data-title="海の波のアートパネル" data-src="images/gallery/ocean-wave-panel-1200.webp" data-alt="青緑の海に白い波が何本も重なる、レジンアートのパネルの写真">
+            <img src="images/gallery/ocean-wave-panel-600.webp" srcset="images/gallery/ocean-wave-panel-600.webp 600w, images/gallery/ocean-wave-panel-1200.webp 1200w" sizes="(min-width: 768px) 66vw, 100vw" alt="青緑の海に白い波が何本も重なる、レジンアートのパネルの写真" loading="eager" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
             <div class="absolute inset-x-0 bottom-0 translate-y-3 p-6 text-left text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-              <p class="font-serif-jp text-lg tracking-wider font-bold">珊瑚礁のさざなみ時計</p>
-              <p class="text-xs text-white/80 mt-1">何層もの浅瀬の波を描き、天然の珊瑚砂を配置した海時計です。</p>
+              <p class="font-serif-jp text-lg tracking-wider font-bold">海の波のアートパネル</p>
+              <p class="text-xs text-white/80 mt-1">何層にも重ねた青と白で、打ち寄せる波を描いたアートパネルのイメージです。</p>
             </div>
           </button>
-
-          <!-- 作品2 -->
-          <button type="button" aria-label="サンセット・オーシャンパネル（拡大して見る）" class="gallery-item reveal group relative aspect-square overflow-hidden rounded-2xl shadow-soft focus:outline-none" data-title="サンセット・オーシャンパネル" data-gradient="linear-gradient(135deg,#ff8a65,#f9ce34 40%,#0f6c8a 85%)">
-            <div class="absolute inset-0 transition-transform duration-700 group-hover:scale-110" style="background: linear-gradient(135deg,#ff8a65,#f9ce34 40%,#0f6c8a 85%)"></div>
+          <!-- イメージ2 -->
+          <button type="button" aria-label="木と海のレジンテーブル（拡大して見る）" class="gallery-item reveal group relative aspect-square overflow-hidden rounded-2xl shadow-soft focus:outline-none" data-title="木と海のレジンテーブル" data-src="images/gallery/wood-ocean-table-1200.webp" data-alt="木目の板に青い海と白い波を流し込み、巻き貝を置いたレジンアートの写真">
+            <img src="images/gallery/wood-ocean-table-600.webp" srcset="images/gallery/wood-ocean-table-600.webp 600w, images/gallery/wood-ocean-table-1200.webp 1200w" sizes="(min-width: 768px) 33vw, 50vw" alt="木目の板に青い海と白い波を流し込み、巻き貝を置いたレジンアートの写真" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
             <div class="absolute inset-x-0 bottom-0 translate-y-3 p-4 text-left text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-              <p class="font-serif-jp text-base tracking-wider font-bold">サンセット・オーシャンパネル</p>
-              <p class="text-xs text-white/80 mt-1">名護の水平線に沈む夕陽を閉じ込めた、グラデーションの美しいアートパネル。</p>
+              <p class="font-serif-jp text-base tracking-wider font-bold">木と海のレジンテーブル</p>
+              <p class="text-xs text-white/80 mt-1">木の板と組み合わせ、浜辺に寄せる波と貝を表したレジンアートのイメージです。</p>
             </div>
           </button>
-
-          <!-- 作品3 -->
-          <button type="button" aria-label="ティアドロップ・ペンダント（拡大して見る）" class="gallery-item reveal group relative aspect-square overflow-hidden rounded-2xl shadow-soft focus:outline-none" data-title="ティアドロップ・ペンダント" data-gradient="linear-gradient(135deg,#1fb7a3,#6fd8c7 60%,#f7efdd)">
-            <div class="absolute inset-0 transition-transform duration-700 group-hover:scale-110" style="background: linear-gradient(135deg,#1fb7a3,#6fd8c7 60%,#f7efdd)"></div>
+          <!-- イメージ3 -->
+          <button type="button" aria-label="貝とヒトデのレジン小物（拡大して見る）" class="gallery-item reveal group relative aspect-square overflow-hidden rounded-2xl shadow-soft focus:outline-none" data-title="貝とヒトデのレジン小物" data-src="images/gallery/seashell-resin-1200.webp" data-alt="青く透き通った貝殻やヒトデの形のレジン小物が並ぶ写真">
+            <img src="images/gallery/seashell-resin-600.webp" srcset="images/gallery/seashell-resin-600.webp 600w, images/gallery/seashell-resin-1200.webp 1200w" sizes="(min-width: 768px) 33vw, 50vw" alt="青く透き通った貝殻やヒトデの形のレジン小物が並ぶ写真" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
             <div class="absolute inset-x-0 bottom-0 translate-y-3 p-4 text-left text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-              <p class="font-serif-jp text-base tracking-wider font-bold">ティアドロップ・ペンダント</p>
-              <p class="text-xs text-white/80 mt-1">小さな一滴の中に、エメラルドグリーンの浅瀬を閉じ込めたネックレス。</p>
+              <p class="font-serif-jp text-base tracking-wider font-bold">貝とヒトデのレジン小物</p>
+              <p class="text-xs text-white/80 mt-1">透明なレジンで、貝殻やヒトデの形をかたどった小物のイメージです。</p>
             </div>
           </button>
-
-          <!-- 作品4 -->
-          <button type="button" aria-label="波間のコースター（2枚セット）（拡大して見る）" class="gallery-item reveal group relative aspect-square overflow-hidden rounded-2xl shadow-soft focus:outline-none" data-title="波間のコースター（2枚セット）" data-gradient="linear-gradient(135deg,#0f6c8a,#2ea3b8 50%,#f7efdd)">
-            <div class="absolute inset-0 transition-transform duration-700 group-hover:scale-110" style="background: linear-gradient(135deg,#0f6c8a,#2ea3b8 50%,#f7efdd)"></div>
+          <!-- イメージ4 -->
+          <button type="button" aria-label="木とレジンのプレート（拡大して見る）" class="gallery-item reveal group relative aspect-square overflow-hidden rounded-2xl shadow-soft focus:outline-none" data-title="木とレジンのプレート" data-src="images/gallery/wood-resin-piece-1200.webp" data-alt="木と青いレジンを組み合わせた小さな板の写真">
+            <img src="images/gallery/wood-resin-piece-600.webp" srcset="images/gallery/wood-resin-piece-600.webp 600w, images/gallery/wood-resin-piece-1200.webp 1200w" sizes="(min-width: 768px) 33vw, 50vw" alt="木と青いレジンを組み合わせた小さな板の写真" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
             <div class="absolute inset-x-0 bottom-0 translate-y-3 p-4 text-left text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-              <p class="font-serif-jp text-base tracking-wider font-bold">波間のコースター（2枚セット）</p>
-              <p class="text-xs text-white/80 mt-1">普段使いしやすいアカシアウッドを使用した、穏やかな白波が浮かぶコースター。</p>
+              <p class="font-serif-jp text-base tracking-wider font-bold">木とレジンのプレート</p>
+              <p class="text-xs text-white/80 mt-1">木の模様とレジンの青を組み合わせた、小さなプレートのイメージです。</p>
             </div>
           </button>
-
-          <!-- 作品5 -->
-          <button type="button" aria-label="コバルトディープ・パネル（拡大して見る）" class="gallery-item reveal group relative aspect-square overflow-hidden rounded-2xl shadow-soft focus:outline-none" data-title="コバルトディープ・パネル" data-gradient="linear-gradient(135deg,#06283a,#0a3d52 60%,#0f6c8a)">
-            <div class="absolute inset-0 transition-transform duration-700 group-hover:scale-110" style="background: linear-gradient(135deg,#06283a,#0a3d52 60%,#0f6c8a)"></div>
+          <!-- イメージ5 -->
+          <button type="button" aria-label="小さな水の世界（拡大して見る）" class="gallery-item reveal group relative aspect-square overflow-hidden rounded-2xl shadow-soft focus:outline-none" data-title="小さな水の世界" data-src="images/gallery/koi-resin-cube-1200.webp" data-alt="水色のレジンの中に小さな魚と泡を閉じ込めた、四角い作品の写真">
+            <img src="images/gallery/koi-resin-cube-600.webp" srcset="images/gallery/koi-resin-cube-600.webp 600w, images/gallery/koi-resin-cube-1200.webp 1200w" sizes="(min-width: 768px) 33vw, 50vw" alt="水色のレジンの中に小さな魚と泡を閉じ込めた、四角い作品の写真" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
             <div class="absolute inset-x-0 bottom-0 translate-y-3 p-4 text-left text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-              <p class="font-serif-jp text-base tracking-wider font-bold">コバルトディープ・パネル</p>
-              <p class="text-xs text-white/80 mt-1">深い海（アウトリーフ）の底に差し込む太陽の光をグラデーションで表現しました。</p>
+              <p class="font-serif-jp text-base tracking-wider font-bold">小さな水の世界</p>
+              <p class="text-xs text-white/80 mt-1">透明なレジンの中に、水と泳ぐ魚を閉じ込めた小さな作品のイメージです。</p>
             </div>
           </button>
-
-          <!-- 作品6 -->
-          <button type="button" aria-label="ホワイトビーチ・ジュエリーボックス（拡大して見る）" class="gallery-item reveal group relative aspect-square overflow-hidden rounded-2xl shadow-soft focus:outline-none" data-title="ホワイトビーチ・ジュエリーボックス" data-gradient="linear-gradient(135deg,#ecdfbd,#f7efdd 30%,#2ea3b8)">
-            <div class="absolute inset-0 transition-transform duration-700 group-hover:scale-110" style="background: linear-gradient(135deg,#ecdfbd,#f7efdd 30%,#2ea3b8)"></div>
+          <!-- イメージ6 -->
+          <button type="button" aria-label="押し花のレジンペンダント（拡大して見る）" class="gallery-item reveal group relative aspect-square overflow-hidden rounded-2xl shadow-soft focus:outline-none" data-title="押し花のレジンペンダント" data-src="images/gallery/flower-pendants-1200.webp" data-alt="押し花や絵をレジンで閉じ込めたペンダントがたくさん並ぶ写真">
+            <img src="images/gallery/flower-pendants-600.webp" srcset="images/gallery/flower-pendants-600.webp 600w, images/gallery/flower-pendants-1200.webp 1200w" sizes="(min-width: 768px) 33vw, 50vw" alt="押し花や絵をレジンで閉じ込めたペンダントがたくさん並ぶ写真" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
             <div class="absolute inset-x-0 bottom-0 translate-y-3 p-4 text-left text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-              <p class="font-serif-jp text-base tracking-wider font-bold">ホワイトビーチ・ジュエリーボックス</p>
-              <p class="text-xs text-white/80 mt-1">ふた部分全体に打ち寄せる波を描いた、木の温もりがある収納ボックス。</p>
+              <p class="font-serif-jp text-base tracking-wider font-bold">押し花のレジンペンダント</p>
+              <p class="text-xs text-white/80 mt-1">押し花や絵をレジンで閉じ込めた、ペンダントのイメージです。</p>
             </div>
           </button>
+        </div>
+
+        <div class="mt-10 rounded-2xl bg-white/70 p-6 text-xs leading-relaxed text-ink/80">
+          <p class="font-bold text-ink">写真について</p>
+          <p class="mt-1">このページの写真は、レジンアートの雰囲気をお伝えするためのフリー素材（Unsplash）のイメージです。当店の作品ではありません。</p>
+          <ul class="mt-2 space-y-1">
+            <li><a href="https://unsplash.com/photos/bT2XiJtcQ1M" class="underline hover:text-ocean" target="_blank" rel="noopener">海の波のアートパネル</a>：Maryna Yazbeck（Unsplash）</li>
+            <li><a href="https://unsplash.com/photos/NY9_irZB7Nw" class="underline hover:text-ocean" target="_blank" rel="noopener">木と海のレジンテーブル</a>：gretta vosper（Unsplash）</li>
+            <li><a href="https://unsplash.com/photos/RCQRGEB4esk" class="underline hover:text-ocean" target="_blank" rel="noopener">貝とヒトデのレジン小物</a>：sooji min（Unsplash）</li>
+            <li><a href="https://unsplash.com/photos/Iuqa-9j8pSU" class="underline hover:text-ocean" target="_blank" rel="noopener">木とレジンのプレート</a>：Adrian Swancar（Unsplash）</li>
+            <li><a href="https://unsplash.com/photos/IYflkEc_lkw" class="underline hover:text-ocean" target="_blank" rel="noopener">小さな水の世界</a>：Hiros Lee（Unsplash）</li>
+            <li><a href="https://unsplash.com/photos/Cgp-CkpTJ_o" class="underline hover:text-ocean" target="_blank" rel="noopener">押し花のレジンペンダント</a>：Tolga deniz Aran（Unsplash）</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -183,7 +192,7 @@
     <div id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" aria-describedby="lightbox-desc" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/85 p-6 backdrop-blur-sm transition-opacity duration-300">
       <button id="lightbox-close" data-dialog-close type="button" aria-label="拡大表示を閉じる" class="absolute right-6 top-6 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 focus:outline-none text-xl">✕</button>
       <div class="w-full max-w-lg transition-transform duration-300 scale-95" id="lightbox-content">
-        <div id="lightbox-image" class="aspect-square w-full rounded-2xl shadow-2xl overflow-hidden"></div>
+        <div id="lightbox-image" class="w-full rounded-2xl shadow-2xl overflow-hidden bg-black/30"></div>
         <h3 id="lightbox-title" class="mt-6 text-center font-serif-jp text-xl text-white tracking-widest font-bold"></h3>
         <p id="lightbox-desc" class="mt-2 text-center text-sm text-white/70 leading-relaxed max-w-sm mx-auto"></p>
       </div>
@@ -277,10 +286,17 @@
     items.forEach((item) => {
       item.addEventListener('click', () => {
         const title = item.getAttribute('data-title') || '';
-        const gradient = item.getAttribute('data-gradient') || '';
+        const src = item.getAttribute('data-src') || '';
         const desc = item.querySelector('p:last-child')?.textContent || '';
 
-        if (lightboxImage) lightboxImage.style.background = gradient;
+        if (lightboxImage) {
+          // 写真を大きく表示（画面の高さに収める）
+          const img = document.createElement('img');
+          img.src = src;
+          img.alt = item.getAttribute('data-alt') || '';
+          img.className = 'mx-auto block max-h-[65vh] w-auto max-w-full object-contain';
+          lightboxImage.replaceChildren(img);
+        }
         if (lightboxTitle) lightboxTitle.textContent = title;
         if (lightboxDesc) lightboxDesc.textContent = desc;
 
