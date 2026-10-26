@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作成者紹介 | うみないび | 沖縄県名護市のレジンアート専門店2</title>
+  <meta name="description" content="沖縄県名護市の幻 of ビーチ「うむいの浜」を拠点にするレジンアート作家の紹介。満ちては消える美しい海の一瞬と、海を愛する「想い（うむい）」をエポキシレジンに込めて紡ぎ出すクリエイターのストーリー。">
+  <meta name="keywords" content="レジンアート,うみないび,沖縄,名護市,うむいの浜,クリエイター,アーティスト,ハンドメイド">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ocean: {
+              deep: '#0a3d52',
+              DEFAULT: '#0f6c8a',
+              light: '#2ea3b8',
+            },
+            emerald: {
+              DEFAULT: '#1fb7a3',
+              light: '#6fd8c7',
+            },
+            sand: {
+              DEFAULT: '#f7efdd',
+              dark: '#ecdfbd',
+            },
+            coral: '#ff8a65',
+            ink: '#16323f',
+          },
+          fontFamily: {
+            serifJp: ['"Zen Old Mincho"', '"Noto Serif JP"', 'serif'],
+            sansJp: ['"Zen Kaku Gothic New"', '"Noto Sans JP"', 'sans-serif'],
+          },
+          boxShadow: {
+            soft: '0 10px 40px -10px rgba(10, 61, 82, 0.15)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- 共通カスタムスタイルシート -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-sand text-ink antialiased">
+
+  <!-- ヘッダー -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent text-white">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-2 group">
+          <span id="header-logo" class="font-serif-jp text-2xl sm:text-3xl tracking-widest text-white transition-colors duration-500 group-hover:opacity-80">うみないび</span>
+        </a>
+
+        <!-- デスクトップナビゲーション -->
+        <nav class="hidden lg:flex items-center gap-8 font-sansJp">
+          <a href="concept.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">コンセプト</a>
+          <a href="creator.html" class="nav-link relative text-sm tracking-widest text-white transition-all duration-500 border-b border-white hover:text-white">作成者</a>
+          <a href="workshop.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">体験教室</a>
+          <a href="gallery.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">ギャラリー</a>
+          <a href="access.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">アクセス</a>
+          <a href="contact.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">お問い合わせ</a>
+          <a href="contact.html" class="ml-2 inline-flex items-center rounded-full bg-emerald px-6 py-2.5 text-sm font-medium tracking-wider text-white shadow-soft transition-transform duration-300 hover:scale-105 hover:bg-emerald/90">ご予約はこちら</a>
+        </nav>
+
+        <!-- モバイルメニューボタン -->
+        <button id="menu-btn" aria-label="メニューを開く" aria-expanded="false" class="lg:hidden relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 focus:outline-none">
+          <span id="bar1" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
+          <span id="bar2" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
+          <span id="bar3" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- モバイルドロワーメニュー -->
+    <div id="mobile-menu" class="lg:hidden fixed inset-0 z-40 flex translate-x-full flex-col items-center justify-center gap-8 bg-ocean-deep/98 backdrop-blur-sm transition-transform duration-500 text-white">
+      <a href="concept.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">コンセプト</a>
+      <a href="creator.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors border-b border-white/30 pb-1">作成者</a>
+      <a href="workshop.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">体験教室</a>
+      <a href="gallery.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">ギャラリー</a>
+      <a href="access.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">アクセス</a>
+      <a href="contact.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">お問い合わせ</a>
+      <a href="contact.html" class="mt-4 inline-flex items-center rounded-full bg-emerald px-8 py-3 text-base font-medium tracking-wider text-white shadow-soft transition-transform duration-300 hover:scale-105">ご予約・お問い合わせ</a>
+    </div>
+  </header>
+
+  <main class="pt-0">
+    <!-- ヒーローセクション -->
+    <section class="relative h-[75vh] flex items-center justify-center overflow-hidden bg-ocean-deep text-white">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-b from-ocean-deep/40 via-ocean/50 to-sand/20 z-10"></div>
+        <div class="w-full h-full opacity-60 scale-105" style="background: radial-gradient(circle at 70% 30%, #2ea3b8 0%, #0f6c8a 40%, #0a3d52 100%);"></div>
+      </div>
+      <div class="blob h-96 w-96 -top-20 -right-20 bg-emerald/20"></div>
+      <div class="blob h-[500px] w-[500px] -bottom-32 -left-32 bg-white/15"></div>
+      <div class="relative z-10 max-w-4xl px-6 text-center">
+        <span class="reveal text-emerald-light font-sansJp text-xs sm:text-sm tracking-[0.3em] font-bold uppercase inline-block mb-3">ART CREATOR PROFILE</span>
+        <h1 class="reveal font-serif-jp text-4xl sm:text-5xl md:text-6xl tracking-widest leading-tight">
+          真実はいつも、ひとつ。<br class="sm:hidden">
+          この海の青さを永遠に。
+        </h1>
+        <p class="reveal mt-6 font-sansJp text-sm sm:text-base text-white/80 tracking-widest leading-relaxed max-w-xl mx-auto">
+          沖縄県名護市「うむいの浜」に隠された、息をのむような美しい一瞬。<br>
+          名探偵が解き明かした究極のブルーと、少年探偵の熱き「想い（うむい）」をのせて。
+        </p>
+        <div class="reveal mt-8 flex justify-center">
+          <div class="h-10 w-[1px] bg-white/40 animate-pulse"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- クリエイター＆協力者紹介 -->
+    <section class="relative py-24 overflow-hidden">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+        <div class="grid gap-12 lg:grid-cols-12 items-start">
+          
+          <!-- 左側：二人のプロフィールビジュアル（ダミー） -->
+          <div class="reveal lg:col-span-5 space-y-8">
+            <div class="relative">
+              <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-emerald/40 pointer-events-none"></div>
+              <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-emerald/40 pointer-events-none"></div>
+              
+              <!-- クリエイターイメージ -->
+              <div class="aspect-[4/5] w-full rounded-2xl overflow-hidden shadow-soft bg-gradient-to-br from-ocean-deep via-ocean-light to-emerald-light flex items-center justify-center p-8 relative group">
+                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#16323f_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                <div class="text-center relative z-10 text-white">
+                  <!-- 探偵風のアイコン -->
+                  <span class="text-6xl block mb-4">🕵️‍♂️🔍✨</span>
+                  <p class="font-serif-jp text-lg tracking-widest font-bold">名探偵のレジンアトリエ</p>
+                  <p class="text-xs text-white/80 font-sansJp mt-1">Conan & Kindaichi</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- サブキャプション：二人の紹介 -->
+            <div class="bg-white/40 backdrop-blur-sm rounded-2xl p-6 border border-ocean/10 space-y-4 shadow-soft">
+              <div>
+                <p class="font-serif-jp text-lg tracking-wider text-ocean-deep font-bold">作成者：名探偵コナン</p>
+                <p class="text-xs text-ink/70 font-sansJp tracking-widest mt-1">「真実はいつもひとつ！そして、海が見せる真実のブルーもまた、唯一無二のものです。」</p>
+              </div>
+              <div class="border-t border-ocean/10 pt-4">
+                <p class="font-serif-jp text-lg tracking-wider text-emerald-deep font-bold">協力者：金田一一 (きんだいち はじめ)</p>
+                <p class="text-xs text-ink/70 font-sansJp tracking-widest mt-1">「じっちゃんの名にかけて！この浜辺のサンゴ砂を最高にきれいにクリーンアップして、コナンのアートを支えるぜ！」</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 右側：ストーリーテキスト -->
+          <div class="reveal lg:col-span-7 space-y-6">
+            <div class="inline-block rounded-full bg-emerald/10 px-4 py-1 text-xs font-semibold tracking-widest text-emerald-deep">
+              THE DETECTIVES' CREATION
+            </div>
+            <h2 class="font-serif-jp text-2xl sm:text-3xl tracking-widest text-ocean-deep leading-snug">
+              数々の難事件を解決した二人が挑む、<br class="hidden sm:inline">
+              形なき「海の美しさ」という究極の真実。
+            </h2>
+            
+            <p class="text-sm sm:text-base leading-relaxed tracking-wider text-ink/80">
+              事件の解決に駆け回る日々の合間、ひょんなことから沖縄県名護市稲嶺にある「うむいの浜」にたどり着いた名探偵コナンと、協力者の金田一一。
+            </p>
+            <p class="text-sm sm:text-base leading-relaxed tracking-wider text-ink/80">
+              干潮のほんの数時間だけ、コバルトブルーの羽地内海（はねじないかい）からスッと真っ白な砂の道が現れる奇跡の「幻のビーチ」。「うむい」とは沖縄の言葉で「想い」を意味します。かつてはゴミで溢れていた浜を、地元の人々の温かい『想い』とクリーンアップ活動が奇跡のように蘇らせたのだと知った時、二人の探偵の心に、推理では導き出せない感動が走りました。
+            </p>
+            <p class="text-sm sm:text-base leading-relaxed tracking-wider text-ink/80">
+              「満ち潮とともに消えてしまう、この一瞬の真実。それを永遠の美しさに昇華できないか？」<br>
+              作成者・名探偵コナンが、物理学と光学、そして波のうねりをミリ単位で計算してレジンを流し込み、協力者・金田一一が、浜の景観を守るクリーンアップを行いながら丁寧に極上のサンゴ砂を集める。二人の奇跡的なコラボレーションがここに誕生しました。
+            </p>
+
+            <!-- プロフィール/特徴 -->
+            <div class="pt-6 border-t border-ocean/10">
+              <h3 class="font-serif-jp text-sm tracking-widest text-ocean-deep font-bold mb-3">ARTIST PROFILE & PHILOSOPHY</h3>
+              <ul class="space-y-3 text-xs sm:text-sm font-sansJp text-ink/70">
+                <li class="flex gap-4">
+                  <span class="font-bold text-ocean min-w-[50px]">コナン</span>
+                  <span><strong>ロジカル・レジンウェーブ：</strong>流体力学とレジンの硬化時間を精密に計算。顕微鏡レベルでリアルな白波のセル（泡）を表現。</span>
+                </li>
+                <li class="flex gap-4">
+                  <span class="font-bold text-emerald min-w-[50px]">金田一</span>
+                  <span><strong>情熱のフィールドワーク：</strong>「じっちゃんの名にかけて！」の精神で、うむいの浜の清掃と、不純物を完全に除いたきめ細かな天然サンゴ砂の採取を担当。</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
