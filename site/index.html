@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Vanilla HTML">
+  <title>うみないび2 | 沖縄県名護市のレジンアート専門店</title>
+  <meta name="description" content="沖縄県名護市のレジンアートショップ「うみないび」。名護の海の透明感をそのまま閉じ込めたレジンアート作品の販売と、体験ワークショップを行っています。世界にひとつだけの'海'をあなたの手で。">
+  <meta name="keywords" content="レジンアート,うみないび,沖縄,名護市,レジン,ハンドメイド,体験教室,ワークショップ,アクセサリー">
+  
+  <!-- OGP / SNS Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://uminaibi-resin.jp/">
+  <meta property="og:title" content="うみないび | 沖縄県名護市のレジンアート専門店">
+  <meta property="og:description" content="沖縄県名護市のレジンアートショップ「うみないび」。名護の海の透明感をそのまま閉じ込めたレジンアート作品の販売と、体験ワークショップを行っています。">
+  <meta property="og:image" content="https://uminaibi-resin.jp/ogp.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="うみないび">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ocean: {
+              deep: '#0a3d52',
+              DEFAULT: '#0f6c8a',
+              light: '#2ea3b8',
+            },
+            emerald: {
+              DEFAULT: '#1fb7a3',
+              light: '#6fd8c7',
+            },
+            sand: {
+              DEFAULT: '#f7efdd',
+              dark: '#ecdfbd',
+            },
+            coral: '#ff8a65',
+            ink: '#16323f',
+          },
+          fontFamily: {
+            serifJp: ['"Zen Old Mincho"', '"Noto Serif JP"', 'serif'],
+            sansJp: ['"Zen Kaku Gothic New"', '"Noto Sans JP"', 'sans-serif'],
+          },
+          boxShadow: {
+            soft: '0 10px 40px -10px rgba(10, 61, 82, 0.15)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- 共通カスタムスタイルシート -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-sand text-ink antialiased">
+
+  <!-- ヘッダー -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent text-white">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-2 group">
+          <span id="header-logo" class="font-serif-jp text-2xl sm:text-3xl tracking-widest text-white transition-colors duration-500 group-hover:opacity-80">うみないび</span>
+        </a>
+
+        <!-- デスクトップナビゲーション -->
+        <nav class="hidden lg:flex items-center gap-8 font-sansJp">
+          <a href="concept.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">コンセプト</a>
+          <a href="workshop.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">体験教室</a>
+          <a href="gallery.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">ギャラリー</a>
+          <a href="access.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">アクセス</a>
+          <a href="contact.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">お問い合わせ</a>
+          <a href="contact.html" class="ml-2 inline-flex items-center rounded-full bg-emerald px-6 py-2.5 text-sm font-medium tracking-wider text-white shadow-soft transition-transform duration-300 hover:scale-105 hover:bg-emerald/90">ご予約はこちら</a>
+        </nav>
+
+        <!-- モバイルメニューボタン -->
+        <button id="menu-btn" aria-label="メニューを開く" aria-expanded="false" class="lg:hidden relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 focus:outline-none">
+          <span id="bar1" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
+          <span id="bar2" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
+          <span id="bar3" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- モバイルドロワーメニュー -->
+    <div id="mobile-menu" class="lg:hidden fixed inset-0 z-40 flex translate-x-full flex-col items-center justify-center gap-8 bg-ocean-deep/98 backdrop-blur-sm transition-transform duration-500 text-white">
+      <a href="concept.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">コンセプト</a>
+      <a href="workshop.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">体験教室</a>
+      <a href="gallery.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">ギャラリー</a>
+      <a href="access.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">アクセス</a>
+      <a href="contact.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">お問い合わせ</a>
+      <a href="contact.html" class="mt-4 inline-flex items-center rounded-full bg-emerald px-8 py-3 text-base font-medium tracking-wider text-white hover:bg-emerald/90 transition-transform duration-300 hover:scale-105">ご予約はこちら</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ヒーローセクション -->
+    <section class="relative flex min-h-screen items-center justify-center overflow-hidden" style="background: linear-gradient(160deg, #06283a 0%, #0a3d52 28%, #0f6c8a 55%, #2ea3b8 75%, #6fd8c7 100%);">
+      <div class="blob h-72 w-72 sm:h-96 sm:w-96 top-[-4rem] left-[-4rem] bg-emerald-light"></div>
+      <div class="blob h-64 w-64 sm:h-80 sm:w-80 bottom-10 right-[-3rem] bg-emerald"></div>
+
+      <div class="relative z-10 mx-auto max-w-5xl px-6 text-center text-white">
+        <p class="text-xs sm:text-sm tracking-[0.35em] text-white/80 uppercase">Okinawa Nago Resin Art</p>
+        <h1 class="font-serif-jp mt-6 text-4xl leading-relaxed sm:text-5xl md:text-6xl tracking-wider">
+          名護の海の美しさを、<br>
+          そのまま閉じ込めて。
+        </h1>
+        <p class="mx-auto mt-8 max-w-xl text-sm leading-loose text-white/85 sm:text-base">
+          沖縄県名護市のレジンアート専門店「うみないび」。<br>
+          透き通るコバルトブルーの海と、白い砂浜のきらめきを、<br>
+          世界にひとつだけの作品としてお届けします。
+        </p>
+
+        <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <a href="workshop.html" class="inline-flex w-full items-center justify-center rounded-full bg-emerald px-8 py-4 text-sm font-medium tracking-widest text-white shadow-soft transition-transform duration-300 hover:scale-105 hover:bg-emerald/90 sm:w-auto">体験教室を見る</a>
+          <a href="gallery.html" class="inline-flex w-full items-center justify-center rounded-full border border-white/60 px-8 py-4 text-sm font-medium tracking-widest text-white transition-colors duration-300 hover:bg-white/10 sm:w-auto">作品ギャラリー</a>
+        </div>
+      </div>
+
+      <!-- スクロールダウン誘導 -->
+      <div class="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-white/70">
+        <div class="flex flex-col items-center gap-2">
+          <span class="text-[10px] tracking-[0.3em]">SCROLL</span>
+          <span class="h-10 w-[1px] bg-white/70 animate-pulse"></span>
+        </div>
+      </div>
+
+      <!-- 波形デバイダー -->
+      <div class="wave-divider absolute bottom-0 left-0 right-0 text-sand">
+        <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="h-16 w-full sm:h-24">
+          <path fill="currentColor" d="M0,64 C240,120 480,0 720,32 C960,64 1200,112 1440,64 L1440,120 L0,120 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- コンセプトダイジェスト -->
+    <section class="relative overflow-hidden py-24 sm:py-32">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="reveal grid gap-12 lg:grid-cols-2 items-center">
+          <div>
+            <p class="text-xs tracking-[0.35em] text-emerald uppercase font-bold">Concept</p>
+            <h2 class="font-serif-jp mt-4 text-3xl sm:text-4xl text-ocean-deep leading-snug">海の記憶を、閉じ込める。</h2>
+            <p class="mt-6 text-sm sm:text-base leading-loose text-ink/80">
+              沖縄の穏やかな波、まばゆい砂浜、そしてエメラルドグリーンのグラデーション。<br class="hidden sm:block">
+              「うみないび」では、名護の大自然からインスピレーションを受け、レジンというキャンバスに沖縄の海の瞬間を封じ込めます。<br class="hidden sm:block">
+              毎日の暮らしに、ふっと海の風を感じられるような作品をお届けします。
+            </p>
+            <div class="mt-8">
+              <a href="concept.html" class="inline-flex items-center gap-2 text-sm font-bold tracking-widest text-ocean hover:text-ocean-deep transition-colors">
+                うみないびの想いをもっと知る
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4">
+                  <path fill-rule="evenodd" d="M12.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414-1.414L15.586 11H4a1 1 0 110-2h11.586l-3.293-3.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <!-- グラフィカルなビジュアル要素 -->
+          <div class="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-soft" style="background: linear-gradient(135deg, #0f6c8a, #1fb7a3, #f7efdd);">
+            <div class="absolute inset-0 bg-black/10"></div>
+            <div class="absolute inset-0 flex items-center justify-center text-white p-8 text-center">
+              <div>
+                <p class="font-serif-jp text-2xl tracking-widest">OKINAWA BLUE</p>
+                <p class="text-xs mt-2 text-white/80">手仕事から生まれる、本物の海のグラデーション</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 体験教室ダイジェスト -->
+    <section class="relative overflow-hidden py-24 sm:py-32 bg-sand-dark">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="reveal text-center">
+          <p class="text-xs tracking-[0.35em] text-emerald uppercase font-bold">Workshop</p>
+          <h2 class="font-serif-jp mt-4 text-3xl sm:text-4xl text-ocean-deep">世界にひとつだけの、海をつくる。</h2>
+          <p class="mx-auto mt-6 max-w-2xl text-sm leading-loose text-ink/80 sm:text-base">
+            名護の体験教室では、初心者から上級者まで楽しめる本格的なレジンアートワークショップを開催しています。<br>
+            思い出作りに、お一人で、またはご家族やご友人と一緒に、世界にひとつの海を作りませんか？
+          </p>
+        </div>
+
+        <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <!-- 簡易カード 1 -->
+          <div class="reveal rounded-3xl bg-white p-8 shadow-soft flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif-jp text-xl text-ocean-deep font-bold">オーシャンコースター体験</h3>
+              <p class="mt-3 text-xs text-ink/60">所要時間: 60分 / 対象年齢: 6歳〜</p>
+              <p class="mt-4 text-sm text-ink/75 leading-relaxed">まずは波づくりの基本テクニックを学び、お気に入りのコースターを制作します。</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-ink/10 flex justify-between items-center">
+              <span class="font-serif-jp text-xl text-ocean-deep font-bold">¥3,500</span>
+              <span class="text-xs text-emerald font-bold">当日お持ち帰り可</span>
+            </div>
+          </div>
+
+          <!-- 簡易カード 2 -->
+          <div class="reveal rounded-3xl bg-white p-8 shadow-soft flex flex-col justify-between md:scale-105 ring-2 ring-coral ring-offset-2">
+            <div>
+              <span class="inline-block bg-coral text-white text-[10px] font-bold tracking-widest px-2.5 py-0.5 rounded-full mb-3">人気No.1</span>
+              <h3 class="font-serif-jp text-xl text-ocean-deep font-bold">サンセットプレートコース</h3>
+              <p class="mt-3 text-xs text-ink/60">所要時間: 90分 / 対象年齢: 10歳〜</p>
+              <p class="mt-4 text-sm text-ink/75 leading-relaxed">名護の夕陽のような朱色から紺碧への美しい夕暮れの海のグラデーションを表現します。</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-ink/10 flex justify-between items-center">
+              <span class="font-serif-jp text-xl text-ocean-deep font-bold">¥5,500</span>
+              <span class="text-xs text-ocean font-bold">後日お渡し(1週間)</span>
+            </div>
+          </div>
+
+          <!-- 簡易カード 3 -->
+          <div class="reveal rounded-3xl bg-white p-8 shadow-soft flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif-jp text-xl text-ocean-deep font-bold">マイジュエリー制作</h3>
+              <p class="mt-3 text-xs text-ink/60">所要時間: 75分 / 対象年齢: 12歳〜</p>
+              <p class="mt-4 text-sm text-ink/75 leading-relaxed">沖縄の貝殻や砂を閉じ込めたオリジナルのイヤリングやペンダントヘッドなどを手作りします。</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-ink/10 flex justify-between items-center">
+              <span class="font-serif-jp text-xl text-ocean-deep font-bold">¥4,500</span>
+              <span class="text-xs text-ocean font-bold">後日お渡し(1週間)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <a href="workshop.html" class="inline-flex items-center justify-center rounded-full bg-ocean px-8 py-3.5 text-sm font-medium tracking-widest text-white shadow-soft transition-transform duration-300 hover:scale-105 hover:bg-ocean/90">
+            体験教室の詳細と予約の流れ
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ギャラリーダイジェスト -->
+    <section class="relative overflow-hidden py-24 sm:py-32">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="reveal text-center">
+          <p class="text-xs tracking-[0.35em] text-emerald uppercase font-bold">Gallery</p>
+          <h2 class="font-serif-jp mt-4 text-3xl sm:text-4xl text-ocean-deep">海の煌めき、それぞれの表情。</h2>
+          <p class="mx-auto mt-6 max-w-2xl text-sm leading-loose text-ink/80 sm:text-base">
+            手作業だからこそ生まれる、世界でたった一つの波と泡。<br>
+            作品たちが見せる、沖縄の海の表情の一部をご覧ください。
+          </p>
+        </div>
+
+        <div class="mt-16 grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4">
+          <!-- 代表的な作品のダミービジュアル -->
+          <div class="reveal aspect-square rounded-2xl overflow-hidden shadow-soft" style="background: linear-gradient(135deg, #0a3d52, #2ea3b8);"></div>
+          <div class="reveal aspect-square rounded-2xl overflow-hidden shadow-soft" style="background: linear-gradient(135deg, #ff8a65, #0f6c8a);"></div>
+          <div class="reveal aspect-square rounded-2xl overflow-hidden shadow-soft" style="background: linear-gradient(135deg, #1fb7a3, #6fd8c7);"></div>
+          <div class="reveal aspect-square rounded-2xl overflow-hidden shadow-soft" style="background: linear-gradient(135deg, #ecdfbd, #2ea3b8);"></div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <a href="gallery.html" class="inline-flex items-center gap-2 text-sm font-bold tracking-widest text-ocean hover:text-ocean-deep transition-colors">
+            ギャラリーで作品をすべて見る
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4">
+              <path fill-rule="evenodd" d="M12.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414-1.414L15.586 11H4a1 1 0 110-2h11.586l-3.293-3.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- お問い合わせへの導線（CTA） -->
+    <section class="relative overflow-hidden py-20 bg-ocean-deep text-white">
+      <div class="blob h-80 w-80 -bottom-10 -left-10 bg-emerald/20"></div>
+      <div class="mx-auto max-w-4xl px-6 text-center relative z-10">
+        <h2 class="font-serif-jp text-3xl sm:text-4xl tracking-wider">世界にひとつだけの海を、あなたの手に。</h2>
+        <p class="mt-6 text-sm sm:text-base text-white/80 leading-relaxed max-w-xl mx-auto">
+          沖縄の想い出づくりとしての体験レッスンのご予約、<br>
+          お部屋に飾るオーダーメイドアートパネルに関するお問い合わせをお待ちしております。
+        </p>
+        <div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+          <a href="contact.html" class="inline-flex items-center justify-center rounded-full bg-emerald px-8 py-4 text-sm font-bold tracking-widest text-white shadow-soft hover:bg-emerald/90 transition-transform duration-300 hover:scale-105">
+            ご予約・お問い合わせ
+          </a>
+          <a href="access.html" class="inline-flex items-center justify-center rounded-full border border-white/55 px-8 py-4 text-sm font-bold tracking-widest text-white hover:bg-white/10 transition-colors">
+            店舗へのアクセス
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- フッター -->
+  <footer class="bg-ocean-deep text-white border-t border-white/10 relative overflow-hidden">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12 py-14">
+      <div class="grid gap-10 md:grid-cols-3 relative z-10">
+        <div>
+          <p class="font-serif-jp text-2xl tracking-widest text-white">うみないび</p>
+          <p class="mt-3 text-sm leading-relaxed text-white/70">
+            沖縄県名護市、海のきらめきをレジンアートに閉じ込めて。<br>
+            あなただけの大切な海をお届けする専門店。
+          </p>
+          <div class="mt-5 flex gap-4">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5a4.25 4.25 0 0 0 4.25 4.25h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5a4.25 4.25 0 0 0-4.25-4.25h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.1-2.6a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-sm font-semibold tracking-widest text-white/90">SITEMAP</p>
+          <ul class="mt-4 space-y-2 text-sm text-white/70 font-sansJp">
+            <li><a href="index.html" class="hover:text-white transition-colors">トップページ</a></li>
+            <li><a href="concept.html" class="hover:text-white transition-colors">コンセプト</a></li>
+            <li><a href="workshop.html" class="hover:text-white transition-colors">体験教室</a></li>
+            <li><a href="gallery.html" class="hover:text-white transition-colors">ギャラリー</a></li>
+            <li><a href="access.html" class="hover:text-white transition-colors">アクセス</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">お問い合わせ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-sm font-semibold tracking-widest text-white/90">SHOP INFO</p>
+          <address class="mt-4 space-y-1 text-sm not-italic leading-relaxed text-white/70 font-sansJp">
+            〒905-1143<br>
+            沖縄県名護市字真喜屋763番地1<br>
+            羽地の駅２階<br>
+            営業時間 10:00 - 18:00（不定休・完全予約制）<br>
+            TEL: 050-7116-9999
+          </address>
+        </div>
+      </div>
+
+      <div class="mt-12 border-t border-white/15 pt-6 text-center text-xs tracking-wider text-white/50 relative z-10 font-sansJp">
+        &copy; <span id="current-year"></span> うみないび / uminaibi-resin.jp All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- 共通JavaScriptのインポート -->
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

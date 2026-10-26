@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ギャラリー | うみないび | 沖縄県名護市のレジンアート専門店</title>
+  <meta name="description" content="沖縄県名護市のレジンアート「うみないび」の作品ギャラリー。海時計やアートプレート、波のコースター、アクセサリーなど、一つひとつ手作業で制作した世界にひとつだけの海の作品をご覧ください。">
+  <meta name="keywords" content="レジンアート,ギャラリー,作品,沖縄,名護市,海時計,アートパネル">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ocean: {
+              deep: '#0a3d52',
+              DEFAULT: '#0f6c8a',
+              light: '#2ea3b8',
+            },
+            emerald: {
+              DEFAULT: '#1fb7a3',
+              light: '#6fd8c7',
+            },
+            sand: {
+              DEFAULT: '#f7efdd',
+              dark: '#ecdfbd',
+            },
+            coral: '#ff8a65',
+            ink: '#16323f',
+          },
+          fontFamily: {
+            serifJp: ['"Zen Old Mincho"', '"Noto Serif JP"', 'serif'],
+            sansJp: ['"Zen Kaku Gothic New"', '"Noto Sans JP"', 'sans-serif'],
+          },
+          boxShadow: {
+            soft: '0 10px 40px -10px rgba(10, 61, 82, 0.15)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- 共通カスタムスタイルシート -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-sand text-ink antialiased">
+
+  <!-- ヘッダー -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent text-white">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-2 group">
+          <span id="header-logo" class="font-serif-jp text-2xl sm:text-3xl tracking-widest text-white transition-colors duration-500 group-hover:opacity-80">うみないび</span>
+        </a>
+
+        <!-- デスクトップナビゲーション -->
+        <nav class="hidden lg:flex items-center gap-8 font-sansJp">
+          <a href="concept.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">コンセプト</a>
+          <a href="workshop.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">体験教室</a>
+          <a href="gallery.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">ギャラリー</a>
+          <a href="access.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">アクセス</a>
+          <a href="contact.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">お問い合わせ</a>
+          <a href="contact.html" class="ml-2 inline-flex items-center rounded-full bg-emerald px-6 py-2.5 text-sm font-medium tracking-wider text-white shadow-soft transition-transform duration-300 hover:scale-105 hover:bg-emerald/90">ご予約はこちら</a>
+        </nav>
+
+        <!-- モバイルメニューボタン -->
+        <button id="menu-btn" aria-label="メニューを開く" aria-expanded="false" class="lg:hidden relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 focus:outline-none">
+          <span id="bar1" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
+          <span id="bar2" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
+          <span id="bar3" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- モバイルドロワーメニュー -->
+    <div id="mobile-menu" class="lg:hidden fixed inset-0 z-40 flex translate-x-full flex-col items-center justify-center gap-8 bg-ocean-deep/98 backdrop-blur-sm transition-transform duration-500 text-white">
+      <a href="concept.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">コンセプト</a>
+      <a href="workshop.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">体験教室</a>
+      <a href="gallery.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">ギャラリー</a>
+      <a href="access.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">アクセス</a>
+      <a href="contact.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">お問い合わせ</a>
+      <a href="contact.html" class="mt-4 inline-flex items-center rounded-full bg-emerald px-8 py-3 text-base font-medium tracking-wider text-white hover:bg-emerald/90 transition-transform duration-300 hover:scale-105">ご予約はこちら</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ページヘッダー -->
+    <section class="relative pt-40 pb-20 overflow-hidden text-white" style="background: linear-gradient(135deg, #0a3d52 0%, #0f6c8a 50%, #2ea3b8 100%);">
+      <div class="blob h-64 w-64 -top-10 -right-10 bg-emerald/20"></div>
+      <div class="relative z-10 mx-auto max-w-4xl px-6 text-center">
+        <p class="text-xs tracking-[0.35em] text-white/70 uppercase">Gallery</p>
+        <h1 class="font-serif-jp mt-4 text-3xl sm:text-4xl md:text-5xl tracking-widest">作品ギャラリー</h1>
+        <p class="mt-4 text-xs sm:text-sm text-white/80">名護の波と泡をかたどった、私たちの作品集</p>
+      </div>
+      <!-- 波形デバイダー -->
+      <div class="wave-divider absolute bottom-0 left-0 right-0 text-sand">
+        <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="h-8 w-full sm:h-12">
+          <path fill="currentColor" d="M0,64 C240,120 480,0 720,32 C960,64 1200,112 1440,64 L1440,120 L0,120 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ギャラリーグリッドセクション -->
+    <section class="py-20">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="reveal text-center mb-16">
+          <span class="text-xs tracking-widest font-bold text-emerald uppercase">Portfolio</span>
+          <h2 class="font-serif-jp text-2xl sm:text-3xl text-ocean-deep mt-2">作品紹介</h2>
+          <p class="mt-4 text-sm text-ink/70">クリックすると拡大して詳細情報（グラデーション配色等）をご覧いただけます。</p>
+        </div>
+
+        <!-- NOTE: 実際の作品写真を配置した場合は、下記の <div style="background: gradient"> の部分を
+             <img src="images/gallery/xxx.jpg" class="w-full h-full object-cover"> に差し替えてください。 -->
+        <div class="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-3">
+          <!-- 作品1 -->
+          <button type="button" class="gallery-item reveal group relative aspect-square overflow-hidden rounded-2xl shadow-soft focus:outline-none col-span-2 row-span-2 md:aspect-auto" data-title="珊瑚礁のさざなみ時計" data-gradient="linear-gradient(135deg,#0a3d52,#0f6c8a 50%,#2ea3b8 80%,#6fd8c7)">
+            <div class="absolute inset-0 transition-transform duration-700 group-hover:scale-110" style="background: linear-gradient(135deg,#0a3d52,#0f6c8a 50%,#2ea3b8 80%,#6fd8c7)"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+            <div class="absolute inset-x-0 bottom-0 translate-y-3 p-6 text-left text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+              <p class="font-serif-jp text-lg tracking-wider font-bold">珊瑚礁のさざなみ時計</p>
+              <p class="text-xs text-white/80 mt-1">何層もの浅瀬の波を描き、天然の珊瑚砂を配置した海時計です。</p>
+            </div>
+          </button>
+
+          <!-- 作品2 -->
+          <button type="button" class="gallery-item reveal group relative aspect-square overflow-hidden rounded-2xl shadow-soft focus:outline-none" data-title="サンセット・オーシャンパネル" data-gradient="linear-gradient(135deg,#ff8a65,#f9ce34 40%,#0f6c8a 85%)">
+            <div class="absolute inset-0 transition-transform duration-700 group-hover:scale-110" style="background: linear-gradient(135deg,#ff8a65,#f9ce34 40%,#0f6c8a 85%)"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+            <div class="absolute inset-x-0 bottom-0 translate-y-3 p-4 text-left text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+              <p class="font-serif-jp text-base tracking-wider font-bold">サンセット・オーシャンパネル</p>
+              <p class="text-xs text-white/80 mt-1">名護の水平線に沈む夕陽を閉じ込めた、グラデーションの美しいアートパネル。</p>
+            </div>
+          </button>
+
+          <!-- 作品3 -->
+          <button type="button" class="gallery-item reveal group relative aspect-square overflow-hidden rounded-2xl shadow-soft focus:outline-none" data-title="ティアドロップ・ペンダント" data-gradient="linear-gradient(135deg,#1fb7a3,#6fd8c7 60%,#f7efdd)">
+            <div class="absolute inset-0 transition-transform duration-700 group-hover:scale-110" style="background: linear-gradient(135deg,#1fb7a3,#6fd8c7 60%,#f7efdd)"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+            <div class="absolute inset-x-0 bottom-0 translate-y-3 p-4 text-left text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+              <p class="font-serif-jp text-base tracking-wider font-bold">ティアドロップ・ペンダント</p>
+              <p class="text-xs text-white/80 mt-1">小さな一滴の中に、エメラルドグリーンの浅瀬を閉じ込めたネックレス。</p>
+            </div>
+          </button>
+
+          <!-- 作品4 -->
+          <button type="button" class="gallery-item reveal group relative aspect-square overflow-hidden rounded-2xl shadow-soft focus:outline-none" data-title="波間のコースター(2枚セット)" data-gradient="linear-gradient(135deg,#0f6c8a,#2ea3b8 50%,#f7efdd)">
+            <div class="absolute inset-0 transition-transform duration-700 group-hover:scale-110" style="background: linear-gradient(135deg,#0f6c8a,#2ea3b8 50%,#f7efdd)"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+            <div class="absolute inset-x-0 bottom-0 translate-y-3 p-4 text-left text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+              <p class="font-serif-jp text-base tracking-wider font-bold">波間のコースター(2枚セット)</p>
+              <p class="text-xs text-white/80 mt-1">普段使いしやすいアカシアウッドを使用した、穏やかな白波が浮かぶコースター。</p>
+            </div>
+          </button>
+
+          <!-- 作品5 -->
+          <button type="button" class="gallery-item reveal group relative aspect-square overflow-hidden rounded-2xl shadow-soft focus:outline-none" data-title="コバルトディープ・パネル" data-gradient="linear-gradient(135deg,#06283a,#0a3d52 60%,#0f6c8a)">
+            <div class="absolute inset-0 transition-transform duration-700 group-hover:scale-110" style="background: linear-gradient(135deg,#06283a,#0a3d52 60%,#0f6c8a)"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+            <div class="absolute inset-x-0 bottom-0 translate-y-3 p-4 text-left text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+              <p class="font-serif-jp text-base tracking-wider font-bold">コバルトディープ・パネル</p>
+              <p class="text-xs text-white/80 mt-1">深い海（アウトリーフ）の底に差し込む太陽の光をグラデーションで表現しました。</p>
+            </div>
+          </button>
+
+          <!-- 作品6 -->
+          <button type="button" class="gallery-item reveal group relative aspect-square overflow-hidden rounded-2xl shadow-soft focus:outline-none" data-title="ホワイトビーチ・ジュエリーボックス" data-gradient="linear-gradient(135deg,#ecdfbd,#f7efdd 30%,#2ea3b8)">
+            <div class="absolute inset-0 transition-transform duration-700 group-hover:scale-110" style="background: linear-gradient(135deg,#ecdfbd,#f7efdd 30%,#2ea3b8)"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+            <div class="absolute inset-x-0 bottom-0 translate-y-3 p-4 text-left text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+              <p class="font-serif-jp text-base tracking-wider font-bold">ホワイトビーチ・ボックス</p>
+              <p class="text-xs text-white/80 mt-1">ふた部分全体に打ち寄せる波を描いた、木の温もりがある収納ボックス。</p>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ライトボックスモーダル -->
+    <div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/85 p-6 backdrop-blur-sm transition-opacity duration-300">
+      <button id="lightbox-close" aria-label="閉じる" class="absolute right-6 top-6 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 focus:outline-none text-xl">✕</button>
+      <div class="w-full max-w-lg transition-transform duration-300 scale-95" id="lightbox-content">
+        <div id="lightbox-image" class="aspect-square w-full rounded-2xl shadow-2xl overflow-hidden"></div>
+        <h3 id="lightbox-title" class="mt-6 text-center font-serif-jp text-xl text-white tracking-widest font-bold"></h3>
+        <p id="lightbox-desc" class="mt-2 text-center text-sm text-white/70 leading-relaxed max-w-sm mx-auto"></p>
+      </div>
+    </div>
+
+    <!-- お問い合わせへの導線（CTA） -->
+    <section class="relative overflow-hidden py-20 bg-ocean-deep text-white">
+      <div class="blob h-80 w-80 -bottom-10 -left-10 bg-emerald/20"></div>
+      <div class="mx-auto max-w-4xl px-6 text-center relative z-10">
+        <h2 class="font-serif-jp text-3xl sm:text-4xl tracking-wider">オーダーメイドのご相談も承っております。</h2>
+        <p class="mt-6 text-sm sm:text-base text-white/80 leading-relaxed max-w-xl mx-auto">
+          「新築のお祝いに大きめのアートパネルが欲しい」「自分の結婚式用に海の小物が欲しい」など、<br>
+          お客様の細かなご要望に合わせたオーダーメイド制作の依頼もお気軽にメッセージください。
+        </p>
+        <div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+          <a href="contact.html" class="inline-flex items-center justify-center rounded-full bg-emerald px-8 py-4 text-sm font-bold tracking-widest text-white shadow-soft hover:bg-emerald/90 transition-transform duration-300 hover:scale-105">
+            制作の相談・お問い合わせ
+          </a>
+          <a href="workshop.html" class="inline-flex items-center justify-center rounded-full border border-white/55 px-8 py-4 text-sm font-bold tracking-widest text-white hover:bg-white/10 transition-colors">
+            体験教室を見る
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- フッター -->
+  <footer class="bg-ocean-deep text-white border-t border-white/10 relative overflow-hidden">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12 py-14">
+      <div class="grid gap-10 md:grid-cols-3 relative z-10">
+        <div>
+          <p class="font-serif-jp text-2xl tracking-widest text-white">うみないび</p>
+          <p class="mt-3 text-sm leading-relaxed text-white/70">
+            沖縄県名護市、海のきらめきをレジンアートに閉じ込めて。<br>
+            あなただけの大切な海をお届けする専門店。
+          </p>
+          <div class="mt-5 flex gap-4">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5a4.25 4.25 0 0 0 4.25 4.25h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5a4.25 4.25 0 0 0-4.25-4.25h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.1-2.6a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3z"/></svg>
+            </a>
+            <a href="https://line.me/" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 2C6.48 2 2 5.69 2 10.24c0 4.09 3.61 7.51 8.48 8.14.33.07.78.22.89.5.1.26.07.66.03.92l-.15.9c-.04.26-.2 1.03.9.56 1.1-.47 5.94-3.5 8.1-6 1.51-1.65 2.24-3.34 2.24-5.02C22.5 5.69 17.52 2 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-sm font-semibold tracking-widest text-white/90">SITEMAP</p>
+          <ul class="mt-4 space-y-2 text-sm text-white/70 font-sansJp">
+            <li><a href="index.html" class="hover:text-white transition-colors">トップページ</a></li>
+            <li><a href="concept.html" class="hover:text-white transition-colors">コンセプト</a></li>
+            <li><a href="workshop.html" class="hover:text-white transition-colors">体験教室</a></li>
+            <li><a href="gallery.html" class="hover:text-white transition-colors">ギャラリー</a></li>
+            <li><a href="access.html" class="hover:text-white transition-colors">アクセス</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">お問い合わせ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-sm font-semibold tracking-widest text-white/90">SHOP INFO</p>
+          <address class="mt-4 space-y-1 text-sm not-italic leading-relaxed text-white/70 font-sansJp">
+            〒905-0000<br>
+            沖縄県名護市字XXXX<br>
+            営業時間 10:00 - 18:00（不定休・完全予約制）<br>
+            TEL: 0980-00-0000
+          </address>
+        </div>
+      </div>
+
+      <div class="mt-12 border-t border-white/15 pt-6 text-center text-xs tracking-wider text-white/50 relative z-10 font-sansJp">
+        &copy; <span id="current-year"></span> うみないび / uminaibi-resin.jp All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- 共通JavaScriptのインポート -->
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // ギャラリーのライトボックス拡大処理
+    const items = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxContent = document.getElementById('lightbox-content');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxDesc = document.getElementById('lightbox-desc');
+    const closeBtn = document.getElementById('lightbox-close');
+
+    items.forEach((item) => {
+      item.addEventListener('click', () => {
+        const title = item.getAttribute('data-title') || '';
+        const gradient = item.getAttribute('data-gradient') || '';
+        const desc = item.querySelector('p:last-child')?.textContent || '';
+
+        if (lightboxImage) lightboxImage.style.background = gradient;
+        if (lightboxTitle) lightboxTitle.textContent = title;
+        if (lightboxDesc) lightboxDesc.textContent = desc;
+
+        lightbox?.classList.remove('hidden');
+        lightbox?.classList.add('flex');
+        setTimeout(() => {
+          lightboxContent?.classList.remove('scale-95');
+          lightboxContent?.classList.add('scale-100');
+        }, 50);
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    const closeLightbox = () => {
+      lightboxContent?.classList.remove('scale-100');
+      lightboxContent?.classList.add('scale-95');
+      setTimeout(() => {
+        lightbox?.classList.add('hidden');
+        lightbox?.classList.remove('flex');
+        document.body.style.overflow = '';
+      }, 200);
+    };
+
+    closeBtn?.addEventListener('click', closeLightbox);
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+  </script>
+</body>
+</html>
