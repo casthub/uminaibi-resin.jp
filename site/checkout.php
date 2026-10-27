@@ -69,6 +69,8 @@ $params = [
     // 作品を送るので、お届け先（日本国内）を入れてもらう。送料（ゆうパック）は stripe-config.php の shipping_rates
     'shipping_address_collection' => ['allowed_countries' => ['JP']],
     'metadata' => ['item' => $item],
+    // コンビニ払いの支払い期限：ご注文から3日（特定商取引法の表記と同じ）。コンビニ払いは Stripe の管理画面で有効にしたときだけ出る
+    'payment_method_options' => ['konbini' => ['expires_after_days' => 3]],
 ];
 $rates = array_values(array_filter((array) ($cfg['shipping_rates'] ?? []), function ($r) {
     return is_string($r) && strpos($r, 'shr_') === 0 && $r !== 'shr_...';
