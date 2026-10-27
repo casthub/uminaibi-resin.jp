@@ -4,3 +4,4 @@
 deploy.env
 site/mail-config.php
 stripe.env
+site/stripe-config.php

@@ -138,10 +138,10 @@
 
         <!--
           ★商品の足し方（1つの商品 = <article> から </article> まで）
-            1. Stripe の管理画面で「商品」と「支払いリンク」を作る（手順は README.md の「オンラインショップ」）
+            1. Stripe の管理画面で「商品」と「価格」を作り、Price ID（price_...）を site/stripe-config.php の items に足す（手順は README.md の「オンラインショップ」）
             2. 下の <article> を1つ丸ごとコピーして、名前・説明・大きさ・価格・写真を書き換える
-            3. 「購入手続きへ」の href="..." に、Stripe の支払いリンク（https://buy.stripe.com/...）を貼る
-            4. 売り切れたら、ボタンを「売り切れ」の形（<span ... aria-disabled="true">売り切れ</span>）に替える
+            3. 「購入手続きへ」のボタン（<form action="checkout.php">）の value に、items に書いた名前を入れる
+            4. 売り切れたら、ボタンを「売り切れ」の形（<span ... aria-disabled="true">売り切れ</span>）に替え、items からも消す
           ★写真は、店が権利を持つ「実物の写真」だけを使う（フリー素材の写真で売らない）。site/images/shop/ に置く
         -->
         <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -164,8 +164,8 @@
                 <p class="text-sm text-ink/75">価格は販売開始時にお知らせします</p>
                 <span class="rounded-full bg-ink/10 text-ink/80 px-6 py-3 text-sm tracking-widest font-bold whitespace-nowrap" aria-disabled="true">準備中</span>
                 <!-- 販売を始めたら、価格を <p class="font-serif-jp text-2xl text-ocean-deep font-bold whitespace-nowrap">¥0,000 <span class="text-sm font-sans text-ink/70 whitespace-nowrap">（税込・送料別）</span></p> の形にし、
-                     上の「準備中」をこの形に替える：
-                <a href="https://buy.stripe.com/ここに支払いリンク" class="rounded-full bg-coral hover:bg-coral/90 text-white px-6 py-3 text-sm tracking-widest font-bold whitespace-nowrap transition-transform duration-300 hover:scale-105">購入手続きへ<span class="sr-only">（Stripe の決済ページへ移動します）</span></a>
+                     上の「準備中」をこの形に替える（value="..." は stripe-config.php の items の名前と同じにする）：
+                <form action="checkout.php" method="post"><input type="hidden" name="item" value="ここに商品の名前"><button type="submit" class="rounded-full bg-coral hover:bg-coral/90 text-white px-6 py-3 text-sm tracking-widest font-bold whitespace-nowrap transition-transform duration-300 hover:scale-105">購入手続きへ<span class="sr-only">（Stripe の決済ページへ移動します）</span></button></form>
                 -->
               </div>
             </div>

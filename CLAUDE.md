@@ -6,7 +6,8 @@
 ## 場所
 - サイトのファイル: `site/`（いまは静的 HTML 6ページ + css/js。Tailwind は CDN 読み込み）
 - 公開: `bin/deploy.sh --go` で、uminaibi-resin.jp の今のサーバー（157.7.189.64）へ FTP で送る。接続情報は `deploy.env`（git に入れない）
-- 手順書: `README.md` / 課題: `docs/課題.md` / 決めたこと: `docs/決定ログ.md`
+- 手順書: `README.md` / 課題: `docs/課題.md` / 決めたこと: `docs/決定ログ.md` / Stripe の残り作業: `STRIPE_INTEGRATION_TODO.md`
+- Stripe：`site/checkout.php` が Checkout Session を作る。キー・商品は `site/stripe-config.php`（git に入れない）、作業用キーは `stripe.env`（git に入れない・送らない）。キーを会話・記録・画面に出さない
 - GitHub: github.com/casthub/uminaibi-resin.jp（★公開リポジトリ）。https で送る。アクセストークンは /root/.ssh/uminaibi-github-token、git の core.askPass（/root/.ssh/uminaibi-askpass.sh）が渡す。`git push` だけで送れる。トークンを git の設定・ファイルに書かない。
 
 ## 決まり
