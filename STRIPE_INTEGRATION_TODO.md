@@ -16,10 +16,10 @@ The following values are placeholders and must be updated before going live.
 | mode | payment | 一回払いの販売なので `payment` のまま（定期購入はしない）。 |
 | success_url | https://uminaibi-resin.jp/shop-thanks.html?session_id={CHECKOUT_SESSION_ID} | 設定済み（本物のページ）。変えるときも {CHECKOUT_SESSION_ID} は残す。 |
 | cancel_url | https://uminaibi-resin.jp/shop.html | 設定済み（ショップに戻る）。 |
-| line_items[].price | `stripe-config.php` の `items`（今はテスト用 `sample` → price_1UUznAKxCvDyFibolpwd3Ur9・1,000円） | 本物の作品ごとに Stripe で価格（税込・`tax_behavior=inclusive`）を作り、その Price ID を `items` に足す。テスト用 `sample` は本番前に消す。 |
+| line_items[].price | `stripe-config.php` の `items`（今はテスト用 `sample` → price_1UUznAKxCvDyFibolpwd3Ur9・1,000円・60サイズ） | 本物の作品ごとに Stripe で価格（税込・`tax_behavior=inclusive`）を作り、その Price ID を `items` に足す。テスト用 `sample` は本番前に消す。 |
 | secret_key | テスト用 sk_test_…（サンドボックス） | 本番を始めるときに sk_live_… に替える。★会話・メールに貼らず、サーバーで直接書く。 |
 | payment_method_options.konbini.expires_after_days | 3 | 設定済み（コンビニ払いの期限＝ご注文から3日。特定商取引法の表記と同じ）。 |
-| shipping_rates | （空） | ゆうパック（沖縄県から発送）の配送料を Stripe で作り、shr_… を最大5つ。空のままだと送料0円になるので、**販売開始前に必ず入れる**。 |
+| shipping_rates | テスト用 25個（5地域 × 60/80/100/120/140サイズ）を作成済み | 本番キーに替えたら `bin/stripe-shipping-rates.py --go` で本番用を作り、表示された行を貼り替える。料金は `data/yupack-okinawa.json`。サイズの設定が無い商品は売らずに止まる（送料0円にならない）。 |
 
 ## Configured Parameters（Checkout Studio で決めた値・設定済み）
 
@@ -71,7 +71,7 @@ These parameters were configured in Checkout Studio and are already set correctl
 1. ✅ 2026-10-27 heteml に送った（オーナー了承）。テスト用 `sample` で本番サイトから決済ページへ移れることを確認。
 2. Stripe の管理画面：コンビニ払いを申し込んで有効にし、支払い期限を3日に（特定商取引法の表記と同じ）。
 3. Stripe の管理画面：会社の情報・本人確認・振込先口座の登録（本番の決済を受けられるように）。「公開情報」に特定商取引法の表記の URL（https://uminaibi-resin.jp/tokushoho.html）。
-4. ゆうパックの送料（地域のまとめ方は5つまで）を決めて配送料を作り、`shipping_rates` に入れる。
+4. ✅ 2026-10-27 ゆうパックの送料：5地域 × 5サイズの金額表をショップ・特定商取引法の表記に掲載、テスト用の配送料を作成。商品ごとに `items` の `size` を決める。
 5. 作品ができたら：Stripe に商品・価格（税込）→ `items` に追加 → shop.html のカードを本物に（写真は実物だけ）。
 6. 体験教室の事前払い：Stripe の請求書（Invoicing）で送る。
 7. 注文の管理：最初は Stripe の管理画面とメール通知で行う。件数が増えたら Webhook（支払い完了の知らせ）で自動化を考える。
@@ -114,3 +114,8 @@ These parameters were configured in Checkout Studio and are already set correctl
 | 公開されていて、リンク切れ・404 が無い | ✅ |
 | 郵便番号 | ✅ |
 - 支払いは 120円〜300,000円。返金は可能（Stripe がお客様に口座を聞くメールを送る）。
+
+## 送料のしくみ（2026-10-27）
+- 5地域：沖縄県内／九州／中国／四国・近畿・東海・関東／北陸・信越・東北・北海道（同じ地域で料金が違う所は高いほうにそろえた＝信越・北陸は北海道・東北の料金）。
+- 決済ページでは、その商品のサイズの5地域分の送料が出て、お客様がお届け先の地域を選ぶ（Stripe の決済ページは住所から自動では選べない）。違う地域が選ばれていたら、発送前にお店から連絡する（ショップ・特定商取引法の表記・決済ページに記載）。
+- 注文が入ったら、Stripe の管理画面で「お届け先の都道府県」と「選ばれた送料」が合っているかを見る。

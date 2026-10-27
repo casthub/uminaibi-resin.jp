@@ -47,9 +47,20 @@ if (!is_array($cfg) || empty($cfg['secret_key'])) {
 }
 
 $item = preg_replace('/[^a-z0-9_-]/', '', strtolower((string) ($_POST['item'] ?? '')));
-$price = $cfg['items'][$item] ?? '';
-if ($item === '' || !is_string($price) || strpos($price, 'price_') !== 0 || $price === 'price_...') {
+// items の1行：'名前' => ['price' => 'price_...', 'size' => '60']（size はゆうパックの大きさ：60・80・100・120・140）
+$entry = $cfg['items'][$item] ?? null;
+$price = is_array($entry) ? (string) ($entry['price'] ?? '') : '';
+$size = is_array($entry) ? (string) ($entry['size'] ?? '') : '';
+if ($item === '' || strpos($price, 'price_') !== 0 || $price === 'price_...') {
     fail(404, 'この商品は、ただいまお求めいただけません（売り切れ・準備中）。');
+}
+// 送料：その大きさの5地域分（shipping_rates の size の行）。★無いと送料0円になるので、売らずに止める
+$rates = array_values(array_filter((array) ($cfg['shipping_rates'][$size] ?? []), function ($r) {
+    return is_string($r) && strpos($r, 'shr_') === 0 && $r !== 'shr_...';
+}));
+if (!$rates) {
+    error_log("checkout: 送料の設定が無い（item=$item size=$size）");
+    fail(503, 'ただいまこの商品の送料を準備中です。お手数ですが、お問い合わせからご連絡ください。');
 }
 
 // Checkout Session の設定（★Checkout Studio で決めた値。変えるときは STRIPE_INTEGRATION_TODO.md も直す）
@@ -66,19 +77,14 @@ $params = [
     'success_url' => SITE_URL . '/shop-thanks.html?session_id={CHECKOUT_SESSION_ID}',
     'cancel_url' => SITE_URL . '/shop.html',
     'line_items' => [['price' => $price, 'quantity' => 1]],
-    // 作品を送るので、お届け先（日本国内）を入れてもらう。送料（ゆうパック）は stripe-config.php の shipping_rates
+    // 作品を送るので、お届け先（日本国内）を入れてもらう。送料（ゆうパック・沖縄県から・5地域）はお客様がお届け先の地域を選ぶ
     'shipping_address_collection' => ['allowed_countries' => ['JP']],
-    'metadata' => ['item' => $item],
+    'shipping_options' => array_map(function ($r) { return ['shipping_rate' => $r]; }, array_slice($rates, 0, 5)),
+    'custom_text' => ['shipping_address' => ['message' => '送料はゆうパック（沖縄県から発送）です。お届け先の地域の送料をお選びください。地域と違う送料が選ばれていたときは、発送の前に当店からご連絡します。']],
+    'metadata' => ['item' => $item, 'size' => $size],
     // コンビニ払いの支払い期限：ご注文から3日（特定商取引法の表記と同じ）。コンビニ払いは Stripe の管理画面で有効にしたときだけ出る
     'payment_method_options' => ['konbini' => ['expires_after_days' => 3]],
 ];
-$rates = array_values(array_filter((array) ($cfg['shipping_rates'] ?? []), function ($r) {
-    return is_string($r) && strpos($r, 'shr_') === 0 && $r !== 'shr_...';
-}));
-if ($rates) {
-    $params['shipping_options'] = array_map(function ($r) { return ['shipping_rate' => $r]; }, array_slice($rates, 0, 5));
-}
-
 $ctx = stream_context_create(['http' => [
     'method' => 'POST',
     'header' => "Authorization: Bearer " . $cfg['secret_key'] . "\r\nContent-Type: application/x-www-form-urlencoded\r\n",
