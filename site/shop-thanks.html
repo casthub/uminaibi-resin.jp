@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <script>document.documentElement.classList.add('js')</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ご注文ありがとうございました | うみないび | 沖縄県名護市のレジンアート専門店</title>
+  <meta name="description" content="うみないびのオンラインショップでのご注文、ありがとうございました。">
+  <meta name="robots" content="noindex">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ocean: {
+              deep: '#0a3d52',
+              DEFAULT: '#0f6c8a',
+              light: '#2ea3b8',
+            },
+            emerald: {
+              DEFAULT: '#0a6e62', // ★文字・ボタン用に濃くした（白との差 6.1:1）。元の明るい色は bright
+              bright: '#1fb7a3',
+              light: '#6fd8c7',
+            },
+            sand: {
+              DEFAULT: '#f7efdd',
+              dark: '#ecdfbd',
+            },
+            coral: '#b8431f', // ★白文字との差 5.4:1（元 #ff8a65 は 2.3:1）
+            ink: '#16323f',
+          },
+          fontFamily: {
+            serifJp: ['"Zen Old Mincho"', '"Noto Serif JP"', 'serif'],
+            sansJp: ['"Zen Kaku Gothic New"', '"Noto Sans JP"', 'sans-serif'],
+          },
+          // ★2026-10-27 読みやすさ：小さい文字を 12→13px、本文を 14→15px に。行間は日本語向けに広めに（WCAG 1.4.12 にも余裕）
+          fontSize: {
+            xs: ['0.8125rem', { lineHeight: '1.7' }],
+            sm: ['0.9375rem', { lineHeight: '1.9' }],
+            base: ['1rem', { lineHeight: '1.9' }],
+          },
+          boxShadow: {
+            soft: '0 10px 40px -10px rgba(10, 61, 82, 0.15)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- 共通カスタムスタイルシート -->
+  <link rel="stylesheet" href="css/style.css?v=20261027-2">
+</head>
+<body class="bg-sand text-ink antialiased">
+
+  <!-- ヘッダー -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent text-white">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-2 group">
+          <span id="header-logo" class="font-serif-jp text-2xl sm:text-3xl tracking-widest text-white transition-colors duration-500 group-hover:opacity-80">うみないび</span>
+        </a>
+
+        <!-- デスクトップナビゲーション -->
+        <nav class="hidden lg:flex items-center gap-5 xl:gap-8 font-sansJp">
+          <a href="concept.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">コンセプト</a>
+          <a href="workshop.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">体験教室</a>
+          <a href="gallery.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">ギャラリー</a>
+          <a href="shop.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">ショップ</a>
+          <a href="access.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">アクセス</a>
+          <a href="contact.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">お問い合わせ</a>
+          <a href="contact.html" class="ml-2 inline-flex items-center whitespace-nowrap rounded-full bg-emerald px-5 xl:px-6 py-2.5 text-sm font-medium tracking-wider text-white shadow-soft transition-transform duration-300 hover:scale-105 hover:bg-emerald/90">ご予約はこちら</a>
+        </nav>
+
+        <!-- モバイルメニューボタン -->
+        <button id="menu-btn" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 focus:outline-none">
+          <span id="bar1" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
+          <span id="bar2" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
+          <span id="bar3" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- モバイルドロワーメニュー -->
+    <div id="mobile-menu" inert aria-label="メニュー" class="lg:hidden fixed inset-0 z-40 flex translate-x-full flex-col items-center justify-center gap-8 bg-ocean-deep/98 backdrop-blur-sm transition-transform duration-500 text-white">
+      <a href="concept.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">コンセプト</a>
+      <a href="workshop.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">体験教室</a>
+      <a href="gallery.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">ギャラリー</a>
+      <a href="shop.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">オンラインショップ</a>
+      <a href="access.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">アクセス</a>
+      <a href="contact.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">お問い合わせ</a>
+      <a href="contact.html" class="mt-4 inline-flex items-center rounded-full bg-emerald px-8 py-3 text-base font-medium tracking-wider text-white hover:bg-emerald/90 transition-transform duration-300 hover:scale-105">ご予約はこちら</a>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- ページヘッダー -->
+    <section class="relative pt-40 pb-20 overflow-hidden text-white" style="background: linear-gradient(135deg, #0a3d52 0%, #0f6c8a 50%, #17788f 100%);">
+      <div class="blob h-64 w-64 -top-10 -right-10 bg-emerald/20"></div>
+      <div class="relative z-10 mx-auto max-w-4xl px-6 text-center">
+        <p class="text-xs tracking-[0.35em] text-white/70 uppercase">Thank You</p>
+        <h1 class="font-serif-jp mt-4 text-3xl sm:text-4xl md:text-5xl tracking-widest">ご注文ありがとうございました</h1>
+      </div>
+      <!-- 波形デバイダー -->
+      <div class="wave-divider absolute bottom-0 left-0 right-0 text-sand">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="h-8 w-full sm:h-12">
+          <path fill="currentColor" d="M0,64 C240,120 480,0 720,32 C960,64 1200,112 1440,64 L1440,120 L0,120 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ★Stripe の支払いリンクの「支払い後」の移動先に、このページ（https://uminaibi-resin.jp/shop-thanks.html）を設定する -->
+    <section class="py-20">
+      <div class="mx-auto max-w-3xl px-6">
+        <div class="reveal bg-white rounded-3xl p-8 sm:p-10 shadow-soft text-sm leading-relaxed text-ink/80 space-y-5">
+          <p>お支払いの手続きが完了しました。うみないびの作品をお選びいただき、ありがとうございます。</p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>ご入力のメールアドレスに、Stripe（ストライプ）から領収書のメールが届きます。</li>
+            <li>発送の準備ができましたら、当店からメールでお知らせします。</li>
+            <li>しばらくたってもメールが届かないときは、迷惑メールのフォルダもご確認のうえ、<a href="contact.html" class="text-ocean underline">お問い合わせ</a>またはお電話（050-7116-0133）でご連絡ください。</li>
+          </ul>
+          <div class="pt-4 flex flex-wrap gap-4">
+            <a href="shop.html" class="rounded-full bg-ocean hover:bg-ocean-deep text-white px-6 py-3 text-sm tracking-widest font-bold transition-transform duration-300 hover:scale-105">ショップに戻る</a>
+            <a href="index.html" class="rounded-full border border-ocean text-ocean px-6 py-3 text-sm tracking-widest font-bold hover:bg-ocean/5">トップページへ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="bg-ocean-deep text-white border-t border-white/10 relative overflow-hidden">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12 py-14">
+      <div class="grid gap-10 md:grid-cols-3 relative z-10">
+        <div>
+          <p class="font-serif-jp text-2xl tracking-widest text-white">うみないび</p>
+          <p class="mt-3 text-sm leading-relaxed text-white/70">
+            沖縄県名護市、海のきらめきをレジンアートに閉じ込めて。<br>
+            あなただけの大切な海をお届けする専門店。
+          </p>
+          <div class="mt-5 flex gap-4">
+            <a href="https://www.instagram.com/uminaibi2026/" aria-label="うみないびの Instagram（@uminaibi2026・新しいタブで開きます）" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20">
+              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5a4.25 4.25 0 0 0 4.25 4.25h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5a4.25 4.25 0 0 0-4.25-4.25h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.1-2.6a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3z"/></svg>
+            </a>
+            <a href="https://line.me/R/ti/p/@726qtybt" aria-label="うみないびの LINE（@726qtybt・新しいタブで開きます）" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20">
+              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 2C6.48 2 2 5.69 2 10.24c0 4.09 3.61 7.51 8.48 8.14.33.07.78.22.89.5.1.26.07.66.03.92l-.15.9c-.04.26-.2 1.03.9.56 1.1-.47 5.94-3.5 8.1-6 1.51-1.65 2.24-3.34 2.24-5.02C22.5 5.69 17.52 2 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-sm font-semibold tracking-widest text-white/90">SITEMAP</p>
+          <ul class="mt-4 space-y-2 text-sm text-white/70 font-sansJp">
+            <li><a href="index.html" class="hover:text-white transition-colors">トップページ</a></li>
+            <li><a href="concept.html" class="hover:text-white transition-colors">コンセプト</a></li>
+            <li><a href="workshop.html" class="hover:text-white transition-colors">体験教室</a></li>
+            <li><a href="gallery.html" class="hover:text-white transition-colors">ギャラリー</a></li>
+            <li><a href="shop.html" class="hover:text-white transition-colors">オンラインショップ</a></li>
+            <li><a href="access.html" class="hover:text-white transition-colors">アクセス</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">お問い合わせ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-sm font-semibold tracking-widest text-white/90">SHOP INFO</p>
+          <address class="mt-4 space-y-1 text-sm not-italic leading-relaxed text-white/70 font-sansJp">
+            〒905-1143<br>
+            沖縄県名護市字真喜屋763番地1<br>
+            羽地の駅 2階<br>
+            営業時間 10:00 - 18:00<br>（体験は事前予約が必要です）<br>
+            TEL: 050-7116-0133
+          </address>
+        </div>
+      </div>
+
+      <div class="mt-12 border-t border-white/15 pt-6 text-center text-xs leading-relaxed tracking-wider text-white/75 relative z-10 font-sansJp">
+        &copy; <span id="current-year"></span> うみないび / uminaibi-resin.jp All Rights Reserved.<br class="sm:hidden"><span class="hidden sm:inline">　|　</span><a href="privacy.html" class="underline hover:text-white">プライバシーポリシー</a><br class="sm:hidden"><span class="hidden sm:inline">　|　</span><a href="tokushoho.html" class="underline hover:text-white">特定商取引法に基づく表記</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 共通JavaScriptのインポート -->
+  <script src="js/main.js?v=20261026"></script>
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

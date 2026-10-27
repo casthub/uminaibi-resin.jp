@@ -96,3 +96,19 @@ h1, h2, h3, h4, h5, h6 {
 .text-center p, p.text-center, a, button, td, th, dt {
   word-break: auto-phrase;
 }
+
+/* ===== 特定商取引法の表・ショップ 2026-10-27 ===== */
+/* 項目名と内容の表。スマホは縦に積み、PC は左に項目名 */
+.legal-table > div {
+  padding: 1rem 0;
+  border-top: 1px solid rgba(22, 50, 63, 0.12);
+}
+.legal-table > div:first-child { border-top: none; padding-top: 0; }
+.legal-table dt { font-weight: 700; color: #0a3d52; }
+.legal-table dd { margin-top: 0.25rem; }
+@media (min-width: 640px) {
+  .legal-table > div { display: grid; grid-template-columns: 11rem 1fr; gap: 1.5rem; }
+  .legal-table dd { margin-top: 0; }
+}
+/* 【要確認】の印（オーナーが決めるまでの仮の所）。残っていると bin/deploy.sh --go は送らない */
+.todo { background: #fff3c4; color: #7a2e12; font-weight: 700; padding: 0 0.2em; border-radius: 3px; }

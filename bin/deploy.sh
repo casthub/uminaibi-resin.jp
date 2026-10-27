@@ -10,6 +10,13 @@ cd "$(dirname "$0")/.."
 . ./deploy.env
 : "${FTP_HOST:?}" "${FTP_USER:?}" "${FTP_PASS:?}" "${FTP_DIR:?}"
 DRY="--dry-run"; [ "${1:-}" = "--go" ] && DRY=""
+# ★【要確認】（オーナーが決めていない仮の所）が残っているページは、公開しない（2026-10-27）
+TODO=$(grep -rl --include='*.html' '【要確認' site/ || true)
+if [ -n "$TODO" ]; then
+  echo "注意: 次のページに【要確認】が残っています。書き換えるまで公開できません:" >&2
+  echo "$TODO" | sed 's/^/  /' >&2
+  [ -z "$DRY" ] && { echo "NG: 送るのをやめました" >&2; exit 1; }
+fi
 TLS="set ftp:ssl-force true; set ftp:ssl-protect-data true;"
 [ "${FTP_TLS:-yes}" = "no" ] && TLS="set ftp:ssl-allow false;"
 lftp -u "$FTP_USER","$FTP_PASS" "$FTP_HOST" -e "
