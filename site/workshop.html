@@ -36,6 +36,12 @@
             serifJp: ['"Zen Old Mincho"', '"Noto Serif JP"', 'serif'],
             sansJp: ['"Zen Kaku Gothic New"', '"Noto Sans JP"', 'sans-serif'],
           },
+          // ★2026-10-27 読みやすさ：小さい文字を 12→13px、本文を 14→15px に。行間は日本語向けに広めに（WCAG 1.4.12 にも余裕）
+          fontSize: {
+            xs: ['0.8125rem', { lineHeight: '1.7' }],
+            sm: ['0.9375rem', { lineHeight: '1.9' }],
+            base: ['1rem', { lineHeight: '1.9' }],
+          },
           boxShadow: {
             soft: '0 10px 40px -10px rgba(10, 61, 82, 0.15)',
           }
@@ -45,7 +51,7 @@
   </script>
 
   <!-- 共通カスタムスタイルシート -->
-  <link rel="stylesheet" href="css/style.css?v=20261026">
+  <link rel="stylesheet" href="css/style.css?v=20261027">
 </head>
 <body class="bg-sand text-ink antialiased">
 
@@ -94,7 +100,7 @@
       <div class="relative z-10 mx-auto max-w-4xl px-6 text-center">
         <p class="text-xs tracking-[0.35em] text-white/70 uppercase">Workshop</p>
         <h1 class="font-serif-jp mt-4 text-3xl sm:text-4xl md:text-5xl tracking-widest">体験ワークショップ</h1>
-        <p class="mt-4 text-xs sm:text-sm text-white/80">沖縄の思い出を、自分の手でカタチにする特別な体験</p>
+        <p class="mt-4 text-sm sm:text-base text-white/80">沖縄の思い出を、自分の手でカタチにする特別な体験</p>
       </div>
       <!-- 波形デバイダー -->
       <div class="wave-divider absolute bottom-0 left-0 right-0 text-sand">
@@ -127,19 +133,19 @@
                 <p class="mt-4 text-sm text-ink/75 leading-relaxed">
                   最も手軽に参加できる人気の入門コースです。直径約10cmの丸型または六角形のウッドベースに、エポキシレジンで美しいグラデーションの青い海を表現し、さらに白波づくりの基本テクニック（ヒートガンを用いた方法）に挑戦していただきます。
                 </p>
-                <ul class="mt-6 grid grid-cols-2 gap-y-2 gap-x-4 text-xs text-ink/70">
+                <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4 text-sm text-ink/70">
                   <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald"></span> 対象年齢: 6歳以上</li>
                   <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald"></span> 当日お持ち帰り可</li>
                   <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald"></span> 手ぶらで参加OK</li>
                   <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald"></span> 同時参加: 4名まで</li>
                 </ul>
               </div>
-              <div class="mt-8 pt-6 border-t border-ink/10 flex items-center justify-between">
+              <div class="mt-8 pt-6 border-t border-ink/10 flex flex-wrap items-center justify-between gap-4">
                 <div>
                   <span class="text-xs text-ink/75">基本料金（材料費込み）</span>
-                  <p class="font-serif-jp text-2xl sm:text-3xl text-ocean-deep font-bold">¥3,500 <span class="text-sm font-sans text-ink/70">（税込）</span></p>
+                  <p class="font-serif-jp text-2xl sm:text-3xl text-ocean-deep font-bold whitespace-nowrap">¥3,500 <span class="text-sm font-sans text-ink/70 whitespace-nowrap">（税込）</span></p>
                 </div>
-                <a href="contact.html" class="rounded-full bg-ocean hover:bg-ocean-deep text-white px-6 py-3 text-xs tracking-widest font-bold transition-transform duration-300 hover:scale-105">このコースを予約する</a>
+                <a href="contact.html" class="rounded-full bg-ocean hover:bg-ocean-deep text-white px-6 py-3 text-sm tracking-widest font-bold whitespace-nowrap transition-transform duration-300 hover:scale-105">このコースを予約する</a>
               </div>
             </div>
           </div>
@@ -153,24 +159,24 @@
             </div>
             <div class="md:col-span-7 p-8 sm:p-10 flex flex-col justify-between">
               <div>
-                <span class="inline-block bg-coral text-white text-[10px] font-bold tracking-widest px-2.5 py-0.5 rounded-full mb-3">人気</span>
+                <span class="inline-block bg-coral text-white text-xs font-bold tracking-widest px-2.5 py-0.5 rounded-full mb-3">人気</span>
                 <h3 class="font-serif-jp text-xl sm:text-2xl text-ocean-deep font-bold">サンセットプレート体験</h3>
                 <p class="mt-4 text-sm text-ink/75 leading-relaxed">
                   名護の美しい夕暮れの海（サンセットオーシャン）をテーマにした本格的なプランです。木製のアートプレート（約15cm×20cm）に、夕焼けの暖色から、静かな夜に向かう深い海のコバルトブルーへのグラデーションを何層かに分けて表現します。存在感のあるインテリア作品が作れます。
                 </p>
-                <ul class="mt-6 grid grid-cols-2 gap-y-2 gap-x-4 text-xs text-ink/70">
+                <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4 text-sm text-ink/70">
                   <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald"></span> 対象年齢: 10歳以上</li>
                   <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald"></span> 後日郵送（または店頭受取）</li>
                   <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald"></span> 汚れてもいい服装を推奨</li>
                   <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald"></span> お一人での参加歓迎</li>
                 </ul>
               </div>
-              <div class="mt-8 pt-6 border-t border-ink/10 flex items-center justify-between">
+              <div class="mt-8 pt-6 border-t border-ink/10 flex flex-wrap items-center justify-between gap-4">
                 <div>
                   <span class="text-xs text-ink/75">基本料金（材料費込み・送料別途）</span>
-                  <p class="font-serif-jp text-2xl sm:text-3xl text-ocean-deep font-bold">¥5,500 <span class="text-sm font-sans text-ink/70">（税込）</span></p>
+                  <p class="font-serif-jp text-2xl sm:text-3xl text-ocean-deep font-bold whitespace-nowrap">¥5,500 <span class="text-sm font-sans text-ink/70 whitespace-nowrap">（税込）</span></p>
                 </div>
-                <a href="contact.html" class="rounded-full bg-coral hover:bg-coral/90 text-white px-6 py-3 text-xs tracking-widest font-bold transition-transform duration-300 hover:scale-105">このコースを予約する</a>
+                <a href="contact.html" class="rounded-full bg-coral hover:bg-coral/90 text-white px-6 py-3 text-sm tracking-widest font-bold whitespace-nowrap transition-transform duration-300 hover:scale-105">このコースを予約する</a>
               </div>
             </div>
           </div>
@@ -188,19 +194,19 @@
                 <p class="mt-4 text-sm text-ink/75 leading-relaxed">
                   天然の珊瑚、ビーチで集めた小さな貝殻、カラフルなシーグラスをUVレジン（またはエポキシレジン）の中に配置し、オリジナルのピアス、イヤリング、またはペンダントヘッドを制作するコースです。沖縄旅行の記念として身につけられると好評です。
                 </p>
-                <ul class="mt-6 grid grid-cols-2 gap-y-2 gap-x-4 text-xs text-ink/70">
+                <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4 text-sm text-ink/70">
                   <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald"></span> 対象年齢: 12歳以上</li>
                   <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald"></span> 当日お持ち帰り可（UVレジンの場合）</li>
                   <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald"></span> 金具パーツの選定可能</li>
                   <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald"></span> パーツ持込相談可能</li>
                 </ul>
               </div>
-              <div class="mt-8 pt-6 border-t border-ink/10 flex items-center justify-between">
+              <div class="mt-8 pt-6 border-t border-ink/10 flex flex-wrap items-center justify-between gap-4">
                 <div>
                   <span class="text-xs text-ink/75">基本料金（パーツ代・材料費込み）</span>
-                  <p class="font-serif-jp text-2xl sm:text-3xl text-ocean-deep font-bold">¥4,500 <span class="text-sm font-sans text-ink/70">（税込）</span></p>
+                  <p class="font-serif-jp text-2xl sm:text-3xl text-ocean-deep font-bold whitespace-nowrap">¥4,500 <span class="text-sm font-sans text-ink/70 whitespace-nowrap">（税込）</span></p>
                 </div>
-                <a href="contact.html" class="rounded-full bg-ocean hover:bg-ocean-deep text-white px-6 py-3 text-xs tracking-widest font-bold transition-transform duration-300 hover:scale-105">このコースを予約する</a>
+                <a href="contact.html" class="rounded-full bg-ocean hover:bg-ocean-deep text-white px-6 py-3 text-sm tracking-widest font-bold whitespace-nowrap transition-transform duration-300 hover:scale-105">このコースを予約する</a>
               </div>
             </div>
           </div>
@@ -219,7 +225,7 @@
         <div class="reveal space-y-6">
           <!-- 質問1 -->
           <div class="rounded-2xl bg-white p-6 sm:p-8 shadow-soft">
-            <h3 class="font-serif-jp font-bold text-ocean-deep text-lg flex gap-3"><span class="text-coral">Q.</span> 全くの初心者ですが、綺麗に作れますか？</h3>
+            <h3 class="font-serif-jp font-bold text-ocean-deep text-lg flex gap-3"><span class="text-coral shrink-0">Q.</span> 全くの初心者ですが、綺麗に作れますか？</h3>
             <p class="mt-3 text-sm text-ink/80 leading-relaxed pl-7">
               はい、もちろん大丈夫です！ご参加いただく方のほとんどがレジンを初めて触る方ばかりです。調色（色の混ぜ方）や、波の描き方などのコツを、少人数制（最大4名）のクラスでスタッフがマンツーマンのように丁寧に説明しながら進めますので、どなたでも満足のいく海を作ることができます。
             </p>
@@ -227,7 +233,7 @@
 
           <!-- 質問2 -->
           <div class="rounded-2xl bg-white p-6 sm:p-8 shadow-soft">
-            <h3 class="font-serif-jp font-bold text-ocean-deep text-lg flex gap-3"><span class="text-coral">Q.</span> 服装や持ち物は何か必要ですか？</h3>
+            <h3 class="font-serif-jp font-bold text-ocean-deep text-lg flex gap-3"><span class="text-coral shrink-0">Q.</span> 服装や持ち物は何か必要ですか？</h3>
             <p class="mt-3 text-sm text-ink/80 leading-relaxed pl-7">
               特別な持ち物は必要ありません。必要な道具類やエプロンはこちらで貸出いたします。ただし、液体のレジンが万が一お洋服に付着すると洗濯では落とすことが難しいため、当日は汚れても差し支えのない、動きやすい服装でお越しいただくことをおすすめしております。
             </p>
@@ -235,7 +241,7 @@
 
           <!-- 質問3 -->
           <div class="rounded-2xl bg-white p-6 sm:p-8 shadow-soft">
-            <h3 class="font-serif-jp font-bold text-ocean-deep text-lg flex gap-3"><span class="text-coral">Q.</span> 作った作品は当日に持って帰ることはできますか？</h3>
+            <h3 class="font-serif-jp font-bold text-ocean-deep text-lg flex gap-3"><span class="text-coral shrink-0">Q.</span> 作った作品は当日に持って帰ることはできますか？</h3>
             <p class="mt-3 text-sm text-ink/80 leading-relaxed pl-7">
               使用するエポキシレジンは完全に固まる（硬化する）までに約24時間必要となります。そのため、「サンセットプレート体験」などの大きめのアートパネルは、当日お持ち帰りができません。作品が完全に硬化した後、後日配送（送料が別途かかります）か、または1週間以内に店舗へ再度引き取りにきていただく形になります。<br>
               ※「コースター体験」は特殊なライトで固める仕様のため、当日そのままお持ち帰りいただけます。
@@ -304,13 +310,13 @@
             〒905-1143<br>
             沖縄県名護市字真喜屋763番地1<br>
             羽地の駅 2階<br>
-            営業時間 10:00 - 18:00（体験は事前予約が必要です）<br>
+            営業時間 10:00 - 18:00<br>（体験は事前予約が必要です）<br>
             TEL: 050-7116-0133
           </address>
         </div>
       </div>
 
-      <div class="mt-12 border-t border-white/15 pt-6 text-center text-xs tracking-wider text-white/75 relative z-10 font-sansJp">
+      <div class="mt-12 border-t border-white/15 pt-6 text-center text-xs leading-relaxed tracking-wider text-white/75 relative z-10 font-sansJp">
         &copy; <span id="current-year"></span> うみないび / uminaibi-resin.jp All Rights Reserved.<br class="sm:hidden"><span class="hidden sm:inline">　|　</span><a href="privacy.html" class="underline hover:text-white">プライバシーポリシー</a>
       </div>
     </div>

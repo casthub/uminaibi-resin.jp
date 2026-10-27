@@ -36,6 +36,12 @@
             serifJp: ['"Zen Old Mincho"', '"Noto Serif JP"', 'serif'],
             sansJp: ['"Zen Kaku Gothic New"', '"Noto Sans JP"', 'sans-serif'],
           },
+          // ★2026-10-27 読みやすさ：小さい文字を 12→13px、本文を 14→15px に。行間は日本語向けに広めに（WCAG 1.4.12 にも余裕）
+          fontSize: {
+            xs: ['0.8125rem', { lineHeight: '1.7' }],
+            sm: ['0.9375rem', { lineHeight: '1.9' }],
+            base: ['1rem', { lineHeight: '1.9' }],
+          },
           boxShadow: {
             soft: '0 10px 40px -10px rgba(10, 61, 82, 0.15)',
           }
@@ -45,7 +51,7 @@
   </script>
 
   <!-- 共通カスタムスタイルシート -->
-  <link rel="stylesheet" href="css/style.css?v=20261026">
+  <link rel="stylesheet" href="css/style.css?v=20261027">
 </head>
 <body class="bg-sand text-ink antialiased">
 
@@ -94,7 +100,7 @@
       <div class="relative z-10 mx-auto max-w-4xl px-6 text-center">
         <p class="text-xs tracking-[0.35em] text-white/70 uppercase">Gallery</p>
         <h1 class="font-serif-jp mt-4 text-3xl sm:text-4xl md:text-5xl tracking-widest">ギャラリー</h1>
-        <p class="mt-4 text-xs sm:text-sm text-white/80">レジンアートで表現できる、海と光のイメージ</p>
+        <p class="mt-4 text-sm sm:text-base text-white/80">レジンアートで表現できる、海と光のイメージ</p>
       </div>
       <!-- 波形デバイダー -->
       <div class="wave-divider absolute bottom-0 left-0 right-0 text-sand">
@@ -123,7 +129,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
             <div class="absolute inset-x-0 bottom-0 translate-y-3 p-6 text-left text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
               <p class="font-serif-jp text-lg tracking-wider font-bold">海の波のアートパネル</p>
-              <p class="text-xs text-white/80 mt-1">何層にも重ねた青と白で、打ち寄せる波を描いたアートパネルのイメージです。</p>
+              <p class="hidden md:block text-xs text-white/80 mt-1">何層にも重ねた青と白で、打ち寄せる波を描いたアートパネルのイメージです。</p>
             </div>
           </button>
           <!-- イメージ2 -->
@@ -132,7 +138,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
             <div class="absolute inset-x-0 bottom-0 translate-y-3 p-4 text-left text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
               <p class="font-serif-jp text-base tracking-wider font-bold">木と海のレジンテーブル</p>
-              <p class="text-xs text-white/80 mt-1">木の板と組み合わせ、浜辺に寄せる波と貝を表したレジンアートのイメージです。</p>
+              <p class="hidden md:block text-xs text-white/80 mt-1">木の板と組み合わせ、浜辺に寄せる波と貝を表したレジンアートのイメージです。</p>
             </div>
           </button>
           <!-- イメージ3 -->
@@ -141,7 +147,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
             <div class="absolute inset-x-0 bottom-0 translate-y-3 p-4 text-left text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
               <p class="font-serif-jp text-base tracking-wider font-bold">貝とヒトデのレジン小物</p>
-              <p class="text-xs text-white/80 mt-1">透明なレジンで、貝殻やヒトデの形をかたどった小物のイメージです。</p>
+              <p class="hidden md:block text-xs text-white/80 mt-1">透明なレジンで、貝殻やヒトデの形をかたどった小物のイメージです。</p>
             </div>
           </button>
           <!-- イメージ4 -->
@@ -150,7 +156,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
             <div class="absolute inset-x-0 bottom-0 translate-y-3 p-4 text-left text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
               <p class="font-serif-jp text-base tracking-wider font-bold">木とレジンのプレート</p>
-              <p class="text-xs text-white/80 mt-1">木の模様とレジンの青を組み合わせた、小さなプレートのイメージです。</p>
+              <p class="hidden md:block text-xs text-white/80 mt-1">木の模様とレジンの青を組み合わせた、小さなプレートのイメージです。</p>
             </div>
           </button>
           <!-- イメージ5 -->
@@ -159,7 +165,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
             <div class="absolute inset-x-0 bottom-0 translate-y-3 p-4 text-left text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
               <p class="font-serif-jp text-base tracking-wider font-bold">小さな水の世界</p>
-              <p class="text-xs text-white/80 mt-1">透明なレジンの中に、水と泳ぐ魚を閉じ込めた小さな作品のイメージです。</p>
+              <p class="hidden md:block text-xs text-white/80 mt-1">透明なレジンの中に、水と泳ぐ魚を閉じ込めた小さな作品のイメージです。</p>
             </div>
           </button>
           <!-- イメージ6 -->
@@ -168,12 +174,12 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
             <div class="absolute inset-x-0 bottom-0 translate-y-3 p-4 text-left text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
               <p class="font-serif-jp text-base tracking-wider font-bold">押し花のレジンペンダント</p>
-              <p class="text-xs text-white/80 mt-1">押し花や絵をレジンで閉じ込めた、ペンダントのイメージです。</p>
+              <p class="hidden md:block text-xs text-white/80 mt-1">押し花や絵をレジンで閉じ込めた、ペンダントのイメージです。</p>
             </div>
           </button>
         </div>
 
-        <div class="mt-10 rounded-2xl bg-white/70 p-6 text-xs leading-relaxed text-ink/80">
+        <div class="mt-10 rounded-2xl bg-white/70 p-6 text-sm leading-relaxed text-ink/80">
           <p class="font-bold text-ink">写真について</p>
           <p class="mt-1">このページの写真は、レジンアートの雰囲気をお伝えするためのフリー素材（Unsplash）のイメージです。当店の作品ではありません。</p>
           <ul class="mt-2 space-y-1">
@@ -257,13 +263,13 @@
             〒905-1143<br>
             沖縄県名護市字真喜屋763番地1<br>
             羽地の駅 2階<br>
-            営業時間 10:00 - 18:00（体験は事前予約が必要です）<br>
+            営業時間 10:00 - 18:00<br>（体験は事前予約が必要です）<br>
             TEL: 050-7116-0133
           </address>
         </div>
       </div>
 
-      <div class="mt-12 border-t border-white/15 pt-6 text-center text-xs tracking-wider text-white/75 relative z-10 font-sansJp">
+      <div class="mt-12 border-t border-white/15 pt-6 text-center text-xs leading-relaxed tracking-wider text-white/75 relative z-10 font-sansJp">
         &copy; <span id="current-year"></span> うみないび / uminaibi-resin.jp All Rights Reserved.<br class="sm:hidden"><span class="hidden sm:inline">　|　</span><a href="privacy.html" class="underline hover:text-white">プライバシーポリシー</a>
       </div>
     </div>

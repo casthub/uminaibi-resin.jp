@@ -67,3 +67,32 @@ main:focus { outline: none; }
 
 /* 点滅・波紋の飾りは、ずっと動かさない（3回で止める。WCAG 2.2.2） */
 .animate-ping, .animate-pulse { animation-iteration-count: 3; }
+
+/* ===== 読みやすさ（文字の大きさ・折り返し）2026-10-27 ===== */
+/* 本文の行間を日本語向けに広めに、字間を少しだけ空ける */
+body {
+  line-height: 1.9;
+  letter-spacing: 0.03em;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+/* 折り返し：
+   ・本文（左寄せ）… 行末までしっかり使う通常の折り返し。line-break: strict で小さい「ゃ」「ー」や「。」を行の頭に来させない。
+     text-wrap: pretty で、最後の行が1〜2文字だけになるのを防ぐ（対応していないブラウザは今までどおり）
+   ・見出し・中央寄せの短い文 … word-break: auto-phrase で「文節」の切れ目で折り返す（「閉じ込め｜て。」を防ぐ）。
+     見出しは text-wrap: balance で行の長さをそろえる
+   ・overflow-wrap: anywhere … 長い英数字（URL・メール）で画面からはみ出さない */
+p, li, dd, dt, label, td, th, blockquote, figcaption {
+  line-break: strict;
+  text-wrap: pretty;
+  overflow-wrap: anywhere;
+}
+h1, h2, h3, h4, h5, h6 {
+  word-break: auto-phrase;
+  line-break: strict;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+.text-center p, p.text-center, a, button, td, th, dt {
+  word-break: auto-phrase;
+}

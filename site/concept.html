@@ -36,6 +36,12 @@
             serifJp: ['"Zen Old Mincho"', '"Noto Serif JP"', 'serif'],
             sansJp: ['"Zen Kaku Gothic New"', '"Noto Sans JP"', 'sans-serif'],
           },
+          // ★2026-10-27 読みやすさ：小さい文字を 12→13px、本文を 14→15px に。行間は日本語向けに広めに（WCAG 1.4.12 にも余裕）
+          fontSize: {
+            xs: ['0.8125rem', { lineHeight: '1.7' }],
+            sm: ['0.9375rem', { lineHeight: '1.9' }],
+            base: ['1rem', { lineHeight: '1.9' }],
+          },
           boxShadow: {
             soft: '0 10px 40px -10px rgba(10, 61, 82, 0.15)',
           }
@@ -45,7 +51,7 @@
   </script>
 
   <!-- 共通カスタムスタイルシート -->
-  <link rel="stylesheet" href="css/style.css?v=20261026">
+  <link rel="stylesheet" href="css/style.css?v=20261027">
 </head>
 <body class="bg-sand text-ink antialiased">
 
@@ -94,7 +100,7 @@
       <div class="relative z-10 mx-auto max-w-4xl px-6 text-center">
         <p class="text-xs tracking-[0.35em] text-white/70 uppercase">Concept</p>
         <h1 class="font-serif-jp mt-4 text-3xl sm:text-4xl md:text-5xl tracking-widest">うみないびの想い</h1>
-        <p class="mt-4 text-xs sm:text-sm text-white/80">名護の海への感謝と、レジンアートに込めた想い</p>
+        <p class="mt-4 text-sm sm:text-base text-white/80">名護の海への感謝と、レジンアートに込めた想い</p>
       </div>
       <!-- 波形デバイダー -->
       <div class="wave-divider absolute bottom-0 left-0 right-0 text-sand">
@@ -113,7 +119,7 @@
             <span class="font-serif-jp text-lg text-emerald tracking-widest">1. 店名の由来</span>
             <h2 class="font-serif-jp text-2xl sm:text-3xl text-ocean-deep mt-2 tracking-wide font-bold">「海の恵み、そしてお守り」</h2>
           </div>
-          <p class="text-sm sm:text-base">
+          <p class="text-sm sm:text-base max-w-[40em] mx-auto">
             「うみないび」とは、沖縄の古い言葉を基にした私たちの造語です。沖縄の海は、古くから人々に豊かな「恵み」を与え、また旅の安全を願う「お守り」としての意味も強く持ってきました。<br>
             私たちは、この美しい海の力をアートの形にし、あなたのご自宅や日常に飾れる「海の恵みとお守り」としてお届けしたいと考え、この名をつけました。名護の海に漂うあの穏やかで温かい空気感を、作品を通して感じていただけますように。
           </p>
@@ -132,7 +138,7 @@
             <span class="font-serif-jp text-lg text-emerald tracking-widest">2. 名護の海へのこだわり</span>
             <h2 class="font-serif-jp text-2xl sm:text-3xl text-ocean-deep mt-2 tracking-wide font-bold">「その日、その時だけの美しさを閉じ込める」</h2>
           </div>
-          <p class="text-sm sm:text-base">
+          <p class="text-sm sm:text-base max-w-[40em] mx-auto">
             名護の海は、時間帯、天候、潮の満ち引きによって、驚くほど表情が変わります。私たちは、単に「青い絵の具」を塗るのではなく、実際に海を観察し、光が差し込む砂浜の浅瀬のきらめきから、沖合の深い深い藍色、そして日が沈む直前の黄金色のグラデーションまでを正確に表現することにこだわっています。<br>
             使用する砂や貝殻も、沖縄のビーチで認可された安全な天然素材を使用しており、触れるたびに本物の沖縄を思い出していただけるクオリティを追求しています。
           </p>
@@ -151,7 +157,7 @@
             <span class="font-serif-jp text-lg text-emerald tracking-widest">3. 何層も重ねる丁寧な手仕事</span>
             <h2 class="font-serif-jp text-2xl sm:text-3xl text-ocean-deep mt-2 tracking-wide font-bold">「奥行きと、本物の立体的な白波」</h2>
           </div>
-          <p class="text-sm sm:text-base">
+          <p class="text-sm sm:text-base max-w-[40em] mx-auto">
             レジンアートは一発勝負のように見えますが、実は非常に繊細で、多くの時間を必要とするアートです。<br>
             「うみないび」の作品は、透明なエポキシレジンを、何層にも、日数をかけて重ねて作られています。1層目の青、2層目の白波、3層目のきらめき、そして深み。層を重ねることで、海特有の「底まで透き通るような奥行き感」が生まれます。特に、打ち寄せる白波（セル模様・レース波）は、温度や風圧をミリ単位で調整しながら職人技で描いており、どれ一つとして同じ波は存在しません。
           </p>
@@ -218,13 +224,13 @@
             〒905-1143<br>
             沖縄県名護市字真喜屋763番地1<br>
             羽地の駅 2階<br>
-            営業時間 10:00 - 18:00（体験は事前予約が必要です）<br>
+            営業時間 10:00 - 18:00<br>（体験は事前予約が必要です）<br>
             TEL: 050-7116-0133
           </address>
         </div>
       </div>
 
-      <div class="mt-12 border-t border-white/15 pt-6 text-center text-xs tracking-wider text-white/75 relative z-10 font-sansJp">
+      <div class="mt-12 border-t border-white/15 pt-6 text-center text-xs leading-relaxed tracking-wider text-white/75 relative z-10 font-sansJp">
         &copy; <span id="current-year"></span> うみないび / uminaibi-resin.jp All Rights Reserved.<br class="sm:hidden"><span class="hidden sm:inline">　|　</span><a href="privacy.html" class="underline hover:text-white">プライバシーポリシー</a>
       </div>
     </div>

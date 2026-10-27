@@ -36,6 +36,12 @@
             serifJp: ['"Zen Old Mincho"', '"Noto Serif JP"', 'serif'],
             sansJp: ['"Zen Kaku Gothic New"', '"Noto Sans JP"', 'sans-serif'],
           },
+          // ★2026-10-27 読みやすさ：小さい文字を 12→13px、本文を 14→15px に。行間は日本語向けに広めに（WCAG 1.4.12 にも余裕）
+          fontSize: {
+            xs: ['0.8125rem', { lineHeight: '1.7' }],
+            sm: ['0.9375rem', { lineHeight: '1.9' }],
+            base: ['1rem', { lineHeight: '1.9' }],
+          },
           boxShadow: {
             soft: '0 10px 40px -10px rgba(10, 61, 82, 0.15)',
           }
@@ -45,7 +51,7 @@
   </script>
 
   <!-- 共通カスタムスタイルシート -->
-  <link rel="stylesheet" href="css/style.css?v=20261026">
+  <link rel="stylesheet" href="css/style.css?v=20261027">
 </head>
 <body class="bg-sand text-ink antialiased">
 
@@ -94,7 +100,7 @@
       <div class="relative z-10 mx-auto max-w-4xl px-6 text-center">
         <p class="text-xs tracking-[0.35em] text-white/70 uppercase">Reservation & Contact</p>
         <h1 class="font-serif-jp mt-4 text-3xl sm:text-4xl md:text-5xl tracking-widest">ご予約・お問い合わせ</h1>
-        <p class="mt-4 text-xs sm:text-sm text-white/80">メールフォーム、Instagram の DM、または LINE からご連絡いただけます</p>
+        <p class="mt-4 text-sm sm:text-base text-white/80">メールフォーム、Instagram の DM、または LINE からご連絡いただけます</p>
       </div>
       <!-- 波形デバイダー -->
       <div class="wave-divider absolute bottom-0 left-0 right-0 text-sand">
@@ -125,7 +131,7 @@
             </div>
             <div>
               <h3 class="font-bold text-lg leading-snug">Instagram の DM で問い合わせる</h3>
-              <p class="text-xs text-white/90 mt-1 leading-relaxed">@uminaibi2026 へのメッセージ画面が開きます。ギャラリーのお気に入り作品の画像を添えてご相談いただけます。</p>
+              <p class="text-sm text-white/90 mt-1 leading-relaxed">@uminaibi2026 へのメッセージ画面が開きます。ギャラリーのお気に入り作品の画像を添えてご相談いただけます。</p>
             </div>
           </a>
 
@@ -136,7 +142,7 @@
             </div>
             <div>
               <h3 class="font-bold text-lg leading-snug">LINE で問い合わせる</h3>
-              <p class="text-xs text-white/90 mt-1 leading-relaxed">友だち追加（@726qtybt）のあと、トークでご予約・ご相談いただけます。パソコンでは QR コードをスマホで読み取ってください。</p>
+              <p class="text-sm text-white/90 mt-1 leading-relaxed">友だち追加（@726qtybt）のあと、トークでご予約・ご相談いただけます。パソコンでは QR コードをスマホで読み取ってください。</p>
             </div>
           </a>
         </div>
@@ -148,7 +154,7 @@
           <h2 class="font-serif-jp text-lg text-center font-bold mb-8 text-ocean-deep">メールフォームからのお問い合わせ</h2>
           
           <!-- フォーム -->
-          <p class="text-xs text-ink/75 mb-4"><span class="text-red-700" aria-hidden="true">*</span> の付いた項目は入力が必要です。</p>
+          <p class="text-sm text-ink/75 mb-4"><span class="text-red-700" aria-hidden="true">*</span> の付いた項目は入力が必要です。</p>
           <form id="contact-form" class="space-y-6" action="contact.php" method="post" novalidate>
             <!-- おとり欄（人には見えない。機械の送信よけ） -->
             <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
@@ -157,23 +163,23 @@
             </div>
             <div class="grid gap-6 sm:grid-cols-2">
               <div>
-                <label for="name" class="block text-xs font-bold text-ink/70 mb-2">お名前 <span class="text-red-700" aria-hidden="true">*</span><span class="sr-only">（必須）</span></label>
-                <input id="name" name="name" type="text" required maxlength="60" autocomplete="name" class="w-full rounded-xl border border-ink/10 bg-sand/10 px-4 py-3 text-sm focus:border-ocean focus:outline-none focus:ring-1 focus:ring-ocean">
+                <label for="name" class="block text-sm font-bold text-ink/70 mb-2">お名前 <span class="text-red-700" aria-hidden="true">*</span><span class="sr-only">（必須）</span></label>
+                <input id="name" name="name" type="text" required maxlength="60" autocomplete="name" class="w-full rounded-xl border border-ink/10 bg-sand/10 px-4 py-3 text-base focus:border-ocean focus:outline-none focus:ring-1 focus:ring-ocean">
               </div>
               <div>
-                <label for="email" class="block text-xs font-bold text-ink/70 mb-2">メールアドレス <span class="text-red-700" aria-hidden="true">*</span><span class="sr-only">（必須）</span></label>
-                <input id="email" name="email" type="email" required maxlength="200" autocomplete="email" class="w-full rounded-xl border border-ink/10 bg-sand/10 px-4 py-3 text-sm focus:border-ocean focus:outline-none focus:ring-1 focus:ring-ocean">
+                <label for="email" class="block text-sm font-bold text-ink/70 mb-2">メールアドレス <span class="text-red-700" aria-hidden="true">*</span><span class="sr-only">（必須）</span></label>
+                <input id="email" name="email" type="email" required maxlength="200" autocomplete="email" class="w-full rounded-xl border border-ink/10 bg-sand/10 px-4 py-3 text-base focus:border-ocean focus:outline-none focus:ring-1 focus:ring-ocean">
               </div>
             </div>
 
             <div class="grid gap-6 sm:grid-cols-2">
               <div>
-                <label for="tel" class="block text-xs font-bold text-ink/70 mb-2">電話番号</label>
-                <input id="tel" name="tel" type="tel" maxlength="30" autocomplete="tel" class="w-full rounded-xl border border-ink/10 bg-sand/10 px-4 py-3 text-sm focus:border-ocean focus:outline-none focus:ring-1 focus:ring-ocean" placeholder="例: 090-0000-0000">
+                <label for="tel" class="block text-sm font-bold text-ink/70 mb-2">電話番号</label>
+                <input id="tel" name="tel" type="tel" maxlength="30" autocomplete="tel" class="w-full rounded-xl border border-ink/10 bg-sand/10 px-4 py-3 text-base focus:border-ocean focus:outline-none focus:ring-1 focus:ring-ocean" placeholder="例: 090-0000-0000">
               </div>
               <div>
-                <label id="subject-label" for="subject" class="block text-xs font-bold text-ink/70 mb-2">ご用件 <span class="text-red-700" aria-hidden="true">*</span><span class="sr-only">（必須）</span></label>
-                <select id="subject" name="subject" required class="w-full rounded-xl border border-ink/10 bg-sand/10 px-4 py-3 text-sm focus:border-ocean focus:outline-none focus:ring-1 focus:ring-ocean">
+                <label id="subject-label" for="subject" class="block text-sm font-bold text-ink/70 mb-2">ご用件 <span class="text-red-700" aria-hidden="true">*</span><span class="sr-only">（必須）</span></label>
+                <select id="subject" name="subject" required class="w-full rounded-xl border border-ink/10 bg-sand/10 px-4 py-3 text-base focus:border-ocean focus:outline-none focus:ring-1 focus:ring-ocean">
                   <option value="">選択してください</option>
                   <option value="workshop">体験教室のご予約について</option>
                   <option value="order">オーダーメイドのご相談</option>
@@ -184,25 +190,25 @@
 
             <!-- 体験予約の場合の日時指定（初期は非表示、または任意） -->
             <div id="reservation-details" class="hidden rounded-2xl bg-sand/10 p-5 border border-ink/5 space-y-4">
-              <p class="text-xs font-bold text-ocean">【体験教室ご希望の方へ】</p>
+              <p class="text-sm font-bold text-ocean">【体験教室ご希望の方へ】</p>
               <div class="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <label for="reserve-date" class="block text-[11px] font-bold text-ink/75 mb-1">第一希望日時 <span class="text-red-700" aria-hidden="true">*</span><span class="sr-only">（必須）</span></label>
-                  <input id="reserve-date" name="reserve_date" type="text" maxlength="100" class="w-full rounded-lg border border-ink/10 bg-white px-3 py-2 text-xs focus:outline-none focus:border-ocean" placeholder="例: 8月20日 13:00頃">
+                  <label for="reserve-date" class="block text-sm font-bold text-ink/75 mb-1">第一希望日時 <span class="text-red-700" aria-hidden="true">*</span><span class="sr-only">（必須）</span></label>
+                  <input id="reserve-date" name="reserve_date" type="text" maxlength="100" class="w-full rounded-lg border border-ink/10 bg-white px-3 py-2 text-base focus:outline-none focus:border-ocean" placeholder="例: 8月20日 13:00頃">
                 </div>
                 <div>
-                  <label for="reserve-count" class="block text-[11px] font-bold text-ink/75 mb-1">参加人数 <span class="text-red-700" aria-hidden="true">*</span><span class="sr-only">（必須）</span></label>
-                  <input id="reserve-count" name="reserve_count" type="number" min="1" max="10" class="w-full rounded-lg border border-ink/10 bg-white px-3 py-2 text-xs focus:outline-none focus:border-ocean" placeholder="人数を入力してください">
+                  <label for="reserve-count" class="block text-sm font-bold text-ink/75 mb-1">参加人数 <span class="text-red-700" aria-hidden="true">*</span><span class="sr-only">（必須）</span></label>
+                  <input id="reserve-count" name="reserve_count" type="number" min="1" max="10" class="w-full rounded-lg border border-ink/10 bg-white px-3 py-2 text-base focus:outline-none focus:border-ocean" placeholder="人数を入力してください">
                 </div>
               </div>
             </div>
 
             <div>
-              <label for="message" class="block text-xs font-bold text-ink/70 mb-2">お問い合わせ内容 <span class="text-red-700" aria-hidden="true">*</span><span class="sr-only">（必須）</span></label>
-              <textarea id="message" name="message" required maxlength="4000" rows="6" class="w-full rounded-xl border border-ink/10 bg-sand/10 px-4 py-3 text-sm focus:border-ocean focus:outline-none focus:ring-1 focus:ring-ocean" placeholder="ご質問や、希望するプラン・イメージなどをご記入ください。"></textarea>
+              <label for="message" class="block text-sm font-bold text-ink/70 mb-2">お問い合わせ内容 <span class="text-red-700" aria-hidden="true">*</span><span class="sr-only">（必須）</span></label>
+              <textarea id="message" name="message" required maxlength="4000" rows="6" class="w-full rounded-xl border border-ink/10 bg-sand/10 px-4 py-3 text-base focus:border-ocean focus:outline-none focus:ring-1 focus:ring-ocean" placeholder="ご質問や、希望するプラン・イメージなどをご記入ください。"></textarea>
             </div>
 
-            <p class="text-[11px] text-ink/75 text-center leading-relaxed">
+            <p class="text-sm text-ink/75 text-center leading-relaxed">
               ※ 送信前に<a href="privacy.html" class="underline hover:text-ocean" target="_blank" rel="noopener">プライバシーポリシー</a>および入力内容に誤りがないかご確認ください。<br>
               通常、2営業日以内に担当者よりご返信いたします。
             </p>
@@ -227,10 +233,10 @@
         </svg>
       </div>
       <h3 id="success-title" class="font-serif-jp text-lg text-ocean-deep font-bold">メッセージが送信されました</h3>
-      <p class="text-xs text-ink/80 leading-relaxed">
+      <p class="text-sm text-ink/80 leading-relaxed">
         お問い合わせありがとうございます。入力いただいたメールアドレス宛に自動返信メールを送信しました。内容を確認後、2営業日以内に折り返しご連絡いたします。
       </p>
-      <button id="success-modal-close" data-dialog-close type="button" class="inline-block w-full py-3 rounded-xl bg-ocean-deep text-white font-bold text-xs tracking-wider hover:bg-ocean transition-colors cursor-pointer">閉じる</button>
+      <button id="success-modal-close" data-dialog-close type="button" class="inline-block w-full py-3 rounded-xl bg-ocean-deep text-white font-bold text-sm tracking-wider hover:bg-ocean transition-colors cursor-pointer">閉じる</button>
     </div>
   </div>
 
@@ -272,13 +278,13 @@
             〒905-1143<br>
             沖縄県名護市字真喜屋763番地1<br>
             羽地の駅 2階<br>
-            営業時間 10:00 - 18:00（体験は事前予約が必要です）<br>
+            営業時間 10:00 - 18:00<br>（体験は事前予約が必要です）<br>
             TEL: 050-7116-0133
           </address>
         </div>
       </div>
 
-      <div class="mt-12 border-t border-white/15 pt-6 text-center text-xs tracking-wider text-white/75 relative z-10 font-sansJp">
+      <div class="mt-12 border-t border-white/15 pt-6 text-center text-xs leading-relaxed tracking-wider text-white/75 relative z-10 font-sansJp">
         &copy; <span id="current-year"></span> うみないび / uminaibi-resin.jp All Rights Reserved.<br class="sm:hidden"><span class="hidden sm:inline">　|　</span><a href="privacy.html" class="underline hover:text-white">プライバシーポリシー</a>
       </div>
     </div>

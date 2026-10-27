@@ -46,6 +46,12 @@
             serifJp: ['"Zen Old Mincho"', '"Noto Serif JP"', 'serif'],
             sansJp: ['"Zen Kaku Gothic New"', '"Noto Sans JP"', 'sans-serif'],
           },
+          // ★2026-10-27 読みやすさ：小さい文字を 12→13px、本文を 14→15px に。行間は日本語向けに広めに（WCAG 1.4.12 にも余裕）
+          fontSize: {
+            xs: ['0.8125rem', { lineHeight: '1.7' }],
+            sm: ['0.9375rem', { lineHeight: '1.9' }],
+            base: ['1rem', { lineHeight: '1.9' }],
+          },
           boxShadow: {
             soft: '0 10px 40px -10px rgba(10, 61, 82, 0.15)',
           }
@@ -55,7 +61,7 @@
   </script>
 
   <!-- 共通カスタムスタイルシート -->
-  <link rel="stylesheet" href="css/style.css?v=20261026">
+  <link rel="stylesheet" href="css/style.css?v=20261027">
 </head>
 <body class="bg-sand text-ink antialiased">
 
@@ -105,14 +111,12 @@
 
       <div class="relative z-10 mx-auto max-w-5xl px-6 text-center text-white">
         <p class="text-xs sm:text-sm tracking-[0.35em] text-white/80 uppercase">Okinawa Nago Resin Art</p>
-        <h1 class="font-serif-jp mt-6 text-4xl leading-relaxed sm:text-5xl md:text-6xl tracking-wider">
+        <h1 class="font-serif-jp mt-6 text-3xl leading-relaxed sm:text-5xl md:text-6xl tracking-wider">
           名護の海の美しさを、<br>
           そのまま閉じ込めて。
         </h1>
         <p class="mx-auto mt-8 max-w-xl text-sm leading-loose text-white/85 sm:text-base">
-          沖縄県名護市のレジンアート専門店「うみないび」。<br>
-          透き通るコバルトブルーの海と、白い砂浜のきらめきを、<br>
-          世界にひとつだけの作品としてお届けします。
+          沖縄県名護市のレジンアート専門店「うみないび」。<br class="hidden sm:inline">透き通るコバルトブルーの海と、白い砂浜のきらめきを、<br class="hidden sm:inline">世界にひとつだけの作品としてお届けします。
         </p>
 
         <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -124,7 +128,7 @@
       <!-- スクロールダウン誘導 -->
       <div class="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-white/70">
         <div class="flex flex-col items-center gap-2">
-          <span class="text-[10px] tracking-[0.3em]">SCROLL</span>
+          <span class="text-xs tracking-[0.3em]">SCROLL</span>
           <span class="h-10 w-[1px] bg-white/70 animate-pulse"></span>
         </div>
       </div>
@@ -164,7 +168,7 @@
             <div class="absolute inset-0 flex items-center justify-center text-white p-8 text-center">
               <div>
                 <p class="font-serif-jp text-2xl tracking-widest">OKINAWA BLUE</p>
-                <p class="text-xs mt-2 text-white/80">手仕事から生まれる、本物の海のグラデーション</p>
+                <p class="text-sm mt-2 text-white/80">手仕事から生まれる、本物の海のグラデーション</p>
               </div>
             </div>
           </div>
@@ -189,26 +193,26 @@
           <div class="reveal rounded-3xl bg-white p-8 shadow-soft flex flex-col justify-between">
             <div>
               <h3 class="font-serif-jp text-xl text-ocean-deep font-bold">オーシャンコースター体験</h3>
-              <p class="mt-3 text-xs text-ink/75">所要時間: 60分 / 対象年齢: 6歳〜</p>
+              <p class="mt-3 text-sm text-ink/75">所要時間: 60分 / 対象年齢: 6歳〜</p>
               <p class="mt-4 text-sm text-ink/75 leading-relaxed">まずは波づくりの基本テクニックを学び、お気に入りのコースターを制作します。</p>
             </div>
             <div class="mt-6 pt-4 border-t border-ink/10 flex justify-between items-center">
               <span class="font-serif-jp text-xl text-ocean-deep font-bold">¥3,500</span>
-              <span class="text-xs text-emerald font-bold">当日お持ち帰り可</span>
+              <span class="text-sm text-emerald font-bold">当日お持ち帰り可</span>
             </div>
           </div>
 
           <!-- 簡易カード 2 -->
           <div class="reveal rounded-3xl bg-white p-8 shadow-soft flex flex-col justify-between md:scale-105 ring-2 ring-coral ring-offset-2">
             <div>
-              <span class="inline-block bg-coral text-white text-[10px] font-bold tracking-widest px-2.5 py-0.5 rounded-full mb-3">人気</span>
+              <span class="inline-block bg-coral text-white text-xs font-bold tracking-widest px-2.5 py-0.5 rounded-full mb-3">人気</span>
               <h3 class="font-serif-jp text-xl text-ocean-deep font-bold">サンセットプレート体験</h3>
-              <p class="mt-3 text-xs text-ink/75">所要時間: 90分 / 対象年齢: 10歳〜</p>
+              <p class="mt-3 text-sm text-ink/75">所要時間: 90分 / 対象年齢: 10歳〜</p>
               <p class="mt-4 text-sm text-ink/75 leading-relaxed">名護の夕陽のような朱色から紺碧への美しい夕暮れの海のグラデーションを表現します。</p>
             </div>
             <div class="mt-6 pt-4 border-t border-ink/10 flex justify-between items-center">
               <span class="font-serif-jp text-xl text-ocean-deep font-bold">¥5,500</span>
-              <span class="text-xs text-ocean font-bold">後日お渡し（郵送または店頭受取）</span>
+              <span class="text-sm text-ocean font-bold">後日お渡し（郵送または店頭受取）</span>
             </div>
           </div>
 
@@ -216,12 +220,12 @@
           <div class="reveal rounded-3xl bg-white p-8 shadow-soft flex flex-col justify-between">
             <div>
               <h3 class="font-serif-jp text-xl text-ocean-deep font-bold">マイジュエリー制作</h3>
-              <p class="mt-3 text-xs text-ink/75">所要時間: 75分 / 対象年齢: 12歳〜</p>
+              <p class="mt-3 text-sm text-ink/75">所要時間: 75分 / 対象年齢: 12歳〜</p>
               <p class="mt-4 text-sm text-ink/75 leading-relaxed">沖縄の貝殻や砂を閉じ込めたオリジナルのイヤリングやペンダントヘッドなどを手作りします。</p>
             </div>
             <div class="mt-6 pt-4 border-t border-ink/10 flex justify-between items-center">
               <span class="font-serif-jp text-xl text-ocean-deep font-bold">¥4,500</span>
-              <span class="text-xs text-ocean font-bold">当日お持ち帰り可（UVレジンの場合）</span>
+              <span class="text-sm text-ocean font-bold">当日お持ち帰り可（UVレジンの場合）</span>
             </div>
           </div>
         </div>
@@ -325,13 +329,13 @@
             〒905-1143<br>
             沖縄県名護市字真喜屋763番地1<br>
             羽地の駅 2階<br>
-            営業時間 10:00 - 18:00（体験は事前予約が必要です）<br>
+            営業時間 10:00 - 18:00<br>（体験は事前予約が必要です）<br>
             TEL: 050-7116-0133
           </address>
         </div>
       </div>
 
-      <div class="mt-12 border-t border-white/15 pt-6 text-center text-xs tracking-wider text-white/75 relative z-10 font-sansJp">
+      <div class="mt-12 border-t border-white/15 pt-6 text-center text-xs leading-relaxed tracking-wider text-white/75 relative z-10 font-sansJp">
         &copy; <span id="current-year"></span> うみないび / uminaibi-resin.jp All Rights Reserved.<br class="sm:hidden"><span class="hidden sm:inline">　|　</span><a href="privacy.html" class="underline hover:text-white">プライバシーポリシー</a>
       </div>
     </div>
