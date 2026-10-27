@@ -68,7 +68,7 @@ These parameters were configured in Checkout Studio and are already set correctl
 - 実際のお金は動かない。結果は Stripe の管理画面（テストモード）の「支払い」で見られる。
 
 ## 次にやること
-1. ★オーナーの了承を得て、`checkout.php`・`stripe-config.php`・`.htaccess`・`shop.html` を heteml に送る（`bin/deploy.sh` → `--go`）。送ったあと、テスト用 `sample` で決済ページへ移れるか確かめる。
+1. ✅ 2026-10-27 heteml に送った（オーナー了承）。テスト用 `sample` で本番サイトから決済ページへ移れることを確認。
 2. Stripe の管理画面：コンビニ払いを申し込んで有効にし、支払い期限を3日に（特定商取引法の表記と同じ）。
 3. Stripe の管理画面：会社の情報・本人確認・振込先口座の登録（本番の決済を受けられるように）。「公開情報」に特定商取引法の表記の URL（https://uminaibi-resin.jp/tokushoho.html）。
 4. ゆうパックの送料（地域のまとめ方は5つまで）を決めて配送料を作り、`shipping_rates` に入れる。
