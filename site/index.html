@@ -61,9 +61,9 @@
   </script>
 
   <!-- 共通カスタムスタイルシート -->
-  <link rel="stylesheet" href="css/style.css?v=20261028-2">
+  <link rel="stylesheet" href="css/style.css?v=20261028-3">
 </head>
-<body class="bg-sand text-ink antialiased" data-hero="light">
+<body class="bg-sand text-ink antialiased">
 
   <!-- ヘッダー -->
   <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent text-white">
@@ -106,70 +106,32 @@
   </header>
 
   <main id="main" tabindex="-1">
-    <!-- ヒーローセクション（2026-10-28 屋我地島のビーチと古宇利大橋の海をイメージ：青い空・コバルトからエメラルドの海・白い砂浜） -->
-    <section class="hero-okinawa relative flex min-h-screen flex-col overflow-hidden">
-      <div class="relative z-10 mx-auto w-full max-w-5xl px-6 pt-32 pb-8 text-center text-ocean-deep sm:pt-40 sm:pb-10">
-        <p class="text-xs sm:text-sm tracking-[0.35em] text-ocean-deep uppercase font-bold">Okinawa Nago Resin Art</p>
-        <h1 class="font-serif-jp mt-6 text-3xl leading-relaxed sm:text-5xl md:text-6xl tracking-wider">
-          名護の海の美しさを、<br>
-          そのまま閉じ込めて。
-        </h1>
-        <p class="mx-auto mt-6 max-w-xl text-sm leading-loose text-ink sm:text-base">
-          沖縄県名護市のレジンアート専門店「うみないび」。<br class="hidden sm:inline">屋我地島の白い砂浜と、古宇利大橋から見わたす透き通った海を、<br class="hidden sm:inline">世界にひとつだけの作品としてお届けします。
-        </p>
-
-        <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:mt-10 sm:flex-row">
-          <a href="workshop.html" class="inline-flex w-full items-center justify-center rounded-full bg-ocean px-8 py-4 text-sm font-medium tracking-widest text-white shadow-soft transition-transform duration-300 hover:scale-105 hover:bg-ocean-deep sm:w-auto">体験教室を見る</a>
-          <a href="gallery.html" class="inline-flex w-full items-center justify-center rounded-full border border-ocean/40 bg-white/80 px-8 py-4 text-sm font-medium tracking-widest text-ocean-deep transition-colors duration-300 hover:bg-white sm:w-auto">ギャラリー</a>
+    <!-- ヒーローセクション（2026-10-28 古宇利大橋から古宇利島を望む海を、絵画調の絵で。絵は images/paint-kouri-bridge.svg・作り方は tools/paint-kouri-bridge.py） -->
+    <section class="hero-paint relative overflow-hidden">
+      <div class="relative z-10 mx-auto max-w-6xl px-5 pt-28 pb-6 sm:px-8 sm:pt-36">
+        <div class="hero-card max-w-xl p-7 text-ocean-deep sm:p-10">
+          <p class="text-xs sm:text-sm tracking-[0.35em] text-ocean-deep uppercase font-bold">Okinawa Nago Resin Art</p>
+          <h1 class="font-serif-jp mt-4 text-3xl leading-relaxed sm:text-5xl tracking-wider">
+            名護の海の美しさを、<br>
+            そのまま閉じ込めて。
+          </h1>
+          <p class="mt-5 text-sm leading-loose text-ink sm:text-base">
+            沖縄県名護市のレジンアート専門店「うみないび」。屋我地島の白い砂浜と、古宇利大橋から見わたす透き通った海を、世界にひとつだけの作品としてお届けします。
+          </p>
+          <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:gap-4">
+            <a href="workshop.html" class="inline-flex items-center justify-center rounded-full bg-ocean px-8 py-4 text-sm font-medium tracking-widest text-white shadow-soft transition-transform duration-300 hover:scale-105 hover:bg-ocean-deep">体験教室を見る</a>
+            <a href="gallery.html" class="inline-flex items-center justify-center rounded-full border border-ocean/40 bg-white px-8 py-4 text-sm font-medium tracking-widest text-ocean-deep transition-colors duration-300 hover:bg-sand">ギャラリー</a>
+          </div>
         </div>
       </div>
-
-      <!-- 海の景色（飾り。読み上げない） -->
-      <div class="relative mt-auto" aria-hidden="true">
-        <svg class="hero-horizon" aria-hidden="true" focusable="false" viewBox="0 0 1440 140" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="farSea" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#2a78b4"/>
-              <stop offset="1" stop-color="#1a5f9e"/>
-            </linearGradient>
-          </defs>
-          <!-- 遠くの島（古宇利島） -->
-          <path fill="#9cc9b6" d="M1010 104 C1090 84 1170 62 1260 58 C1340 55 1410 66 1480 80 L1480 104 Z"/>
-          <path fill="#5f9f84" d="M930 104 C1010 92 1080 76 1150 74 C1230 72 1300 86 1380 104 Z"/>
-          <!-- 手前の岸（屋我地島） -->
-          <path fill="#6aa98c" d="M-40 104 L-40 82 C30 78 110 90 190 104 Z"/>
-          <!-- 海（水平線から） -->
-          <rect x="-40" y="100" width="1520" height="40" fill="url(#farSea)"/>
-          <!-- 橋（古宇利大橋をイメージ） -->
-          <g stroke="#d9e8ee" stroke-width="2"><line x1="10" y1="113.8" x2="10" y2="121"/><line x1="44" y1="112.6" x2="44" y2="121"/><line x1="78" y1="111.5" x2="78" y2="121"/><line x1="112" y1="110.4" x2="112" y2="121"/><line x1="146" y1="109.5" x2="146" y2="121"/><line x1="180" y1="108.6" x2="180" y2="121"/><line x1="214" y1="107.8" x2="214" y2="121"/><line x1="248" y1="107.2" x2="248" y2="121"/><line x1="282" y1="106.6" x2="282" y2="121"/><line x1="316" y1="106.1" x2="316" y2="121"/><line x1="350" y1="105.7" x2="350" y2="121"/><line x1="384" y1="105.4" x2="384" y2="121"/><line x1="418" y1="105.2" x2="418" y2="121"/><line x1="452" y1="105.0" x2="452" y2="121"/><line x1="486" y1="105.0" x2="486" y2="121"/><line x1="520" y1="105.1" x2="520" y2="121"/><line x1="554" y1="105.2" x2="554" y2="121"/><line x1="588" y1="105.5" x2="588" y2="121"/><line x1="622" y1="105.8" x2="622" y2="121"/><line x1="656" y1="106.2" x2="656" y2="121"/><line x1="690" y1="106.8" x2="690" y2="121"/><line x1="724" y1="107.4" x2="724" y2="121"/><line x1="758" y1="108.1" x2="758" y2="121"/><line x1="792" y1="108.9" x2="792" y2="121"/><line x1="826" y1="109.8" x2="826" y2="121"/><line x1="860" y1="110.8" x2="860" y2="121"/><line x1="894" y1="111.9" x2="894" y2="121"/><line x1="928" y1="113.0" x2="928" y2="121"/></g>
-          <polyline points="-20,112.0 0,111.2 20,110.5 40,109.7 60,109.1 80,108.4 100,107.8 120,107.2 140,106.6 160,106.1 180,105.6 200,105.1 220,104.7 240,104.3 260,103.9 280,103.6 300,103.3 320,103.0 340,102.8 360,102.6 380,102.4 400,102.3 420,102.1 440,102.1 460,102.0 480,102.0 500,102.0 520,102.1 540,102.1 560,102.3 580,102.4 600,102.6 620,102.8 640,103.0 660,103.3 680,103.6 700,103.9 720,104.3 740,104.7 760,105.1 780,105.6 800,106.1 820,106.6 840,107.2 860,107.8 880,108.4 900,109.1 920,109.7 940,110.5 960,111.2 980,112.0" fill="none" stroke="#9fb9c4" stroke-width="3" transform="translate(0 3)"/>
-          <polyline points="-20,112.0 0,111.2 20,110.5 40,109.7 60,109.1 80,108.4 100,107.8 120,107.2 140,106.6 160,106.1 180,105.6 200,105.1 220,104.7 240,104.3 260,103.9 280,103.6 300,103.3 320,103.0 340,102.8 360,102.6 380,102.4 400,102.3 420,102.1 440,102.1 460,102.0 480,102.0 500,102.0 520,102.1 540,102.1 560,102.3 580,102.4 600,102.6 620,102.8 640,103.0 660,103.3 680,103.6 700,103.9 720,104.3 740,104.7 760,105.1 780,105.6 800,106.1 820,106.6 840,107.2 860,107.8 880,108.4 900,109.1 920,109.7 940,110.5 960,111.2 980,112.0" fill="none" stroke="#ffffff" stroke-width="4"/>
-          <!-- 海面のきらめき -->
-          <g fill="#ffffff" opacity="0.5"><rect x="240" y="128" width="90" height="1.5"/><rect x="620" y="132" width="140" height="1.5"/><rect x="1080" y="126" width="110" height="1.5"/></g>
+      <!-- 絵の海と橋が見える所（飾り） -->
+      <div class="h-[24rem] sm:h-[28rem]" aria-hidden="true"></div>
+      <!-- 白い波（飾り） -->
+      <div class="wave-divider absolute bottom-0 left-0 right-0" aria-hidden="true">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="h-10 w-full sm:h-14">
+          <path fill="#ffffff" opacity="0.7" d="M0,58 C240,40 480,76 720,56 C960,38 1200,72 1440,52 L1440,120 L0,120 Z"></path>
+          <path fill="#eef8fa" d="M0,78 C240,62 480,96 720,78 C960,60 1200,92 1440,74 L1440,120 L0,120 Z"></path>
         </svg>
-        <div class="hero-sea"></div>
-        <div class="hero-shore-wrap">
-          <svg class="hero-shore" aria-hidden="true" focusable="false" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="sandGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#fffdf6"/>
-              <stop offset="1" stop-color="#eef8fa"/>
-            </linearGradient>
-          </defs>
-          <!-- 波打ちぎわの白い泡と、白い砂浜 -->
-          <path fill="#ffffff" opacity="0.55" d="M0 34 C200 18 380 48 600 30 S980 14 1180 34 S1360 40 1440 28 L1440 120 L0 120 Z"/>
-          <path fill="url(#sandGrad)" d="M0 52 C180 38 400 66 620 50 S1000 36 1200 54 S1380 60 1440 48 L1440 120 L0 120 Z"/>
-          <path fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" d="M0 52 C180 38 400 66 620 50 S1000 36 1200 54 S1380 60 1440 48"/>
-        </svg>
-        </div>
-      </div>
-
-      <!-- スクロールダウン誘導 -->
-      <div class="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-ocean-deep/80">
-        <div class="flex flex-col items-center gap-2">
-          <span class="text-xs tracking-[0.3em]">SCROLL</span>
-          <span class="h-8 w-[1px] bg-ocean-deep/60 animate-pulse"></span>
-        </div>
       </div>
     </section>
 
@@ -374,7 +336,7 @@
   </footer>
 
   <!-- 共通JavaScriptのインポート -->
-  <script src="js/main.js?v=20261028-2"></script>
+  <script src="js/main.js?v=20261028-3"></script>
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
   </script>
