@@ -112,3 +112,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* 【要確認】の印（オーナーが決めるまでの仮の所）。残っていると bin/deploy.sh --go は送らない */
 .todo { background: #fff3c4; color: #7a2e12; font-weight: 700; padding: 0 0.2em; border-radius: 3px; }
+
+/* ===== トップの最初の画面（2026-10-28）屋我地島のビーチと古宇利大橋の海をイメージ ===== */
+/* 空：上ほど濃い青、水平線の近くは白っぽく。右上に日ざし */
+.hero-okinawa {
+  background:
+    radial-gradient(circle at 82% 8%, rgba(255, 255, 255, 0.85) 0, rgba(255, 255, 255, 0) 32%),
+    linear-gradient(180deg, #9fd6f0 0%, #c4e9f8 40%, #e6f6fb 100%);
+}
+/* 水平線・島・橋。幅に合わせて左右を切る */
+.hero-horizon { display: block; width: 100%; height: 6rem; }
+@media (min-width: 640px) { .hero-horizon { height: 8rem; } }
+@media (min-width: 1280px) { .hero-horizon { height: 10rem; } }
+/* 海：沖のコバルトブルーから、浅瀬のエメラルド・水色へ。光の反射を少し */
+.hero-sea {
+  height: 9rem;
+  background:
+    radial-gradient(ellipse 40% 18% at 28% 35%, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0) 70%),
+    radial-gradient(ellipse 30% 14% at 74% 62%, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 70%),
+    linear-gradient(180deg, #1a5f9e 0%, #1b84bf 22%, #1fb0cc 48%, #3fcfd0 68%, #8ae6dc 86%, #c6f4ec 100%);
+}
+@media (min-width: 640px) { .hero-sea { height: 11rem; } }
+/* 波打ちぎわと白い砂浜。下の色は次の帯（sand）と同じ */
+.hero-shore-wrap { background: #c6f4ec; line-height: 0; }
+.hero-shore { display: block; width: 100%; height: 4.5rem; }
+@media (min-width: 640px) { .hero-shore { height: 6rem; } }

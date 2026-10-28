@@ -4,6 +4,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const logo = document.getElementById('header-logo');
   const navLinks = document.querySelectorAll('.nav-link');
 
+  // ★明るい背景で始まるページ（body に data-hero="light"）は、いちばん上でも濃い色の文字にする（白い文字だと読めないため）
+  const lightHero = document.body.dataset.hero === 'light';
+  if (lightHero && header && logo) {
+    header.classList.remove('text-white');
+    header.classList.add('text-[#0a3d52]');
+    logo.classList.remove('text-white');
+    logo.classList.add('text-[#0a3d52]');
+    navLinks.forEach((link) => {
+      link.classList.remove('text-white/90', 'hover:text-white');
+      link.classList.add('text-[#16323f]/90', 'hover:text-[#0f6c8a]');
+    });
+  }
+
   const onScroll = () => {
     if (!header || !logo) return;
     if (window.scrollY > 40) {
@@ -15,6 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
         link.classList.remove('text-white/90', 'hover:text-white');
         link.classList.add('text-[#16323f]/90', 'hover:text-[#0f6c8a]');
       });
+    } else if (lightHero) {
+      header.classList.add('bg-transparent', 'text-[#0a3d52]');
+      header.classList.remove('bg-[#f7efdd]/90', 'backdrop-blur-md', 'shadow-md', 'text-[#16323f]');
     } else {
       header.classList.add('bg-transparent', 'text-white');
       header.classList.remove('bg-[#f7efdd]/90', 'backdrop-blur-md', 'shadow-md', 'text-[#16323f]');
