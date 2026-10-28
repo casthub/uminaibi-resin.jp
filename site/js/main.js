@@ -8,12 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightHero = document.body.dataset.hero === 'light';
   if (lightHero && header && logo) {
     header.classList.remove('text-white');
-    header.classList.add('text-[#0a3d52]');
+    header.classList.add('text-[#0b3a5e]');
     logo.classList.remove('text-white');
-    logo.classList.add('text-[#0a3d52]');
+    logo.classList.add('text-[#0b3a5e]');
     navLinks.forEach((link) => {
       link.classList.remove('text-white/90', 'hover:text-white');
-      link.classList.add('text-[#16323f]/90', 'hover:text-[#0f6c8a]');
+      link.classList.add('text-[#122f45]/90', 'hover:text-[#0f64a0]');
     });
   }
 
@@ -21,24 +21,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!header || !logo) return;
     if (window.scrollY > 40) {
       header.classList.remove('bg-transparent', 'text-white');
-      header.classList.add('bg-[#f7efdd]/90', 'backdrop-blur-md', 'shadow-md', 'text-[#16323f]');
+      header.classList.add('bg-[#eef8fa]/90', 'backdrop-blur-md', 'shadow-md', 'text-[#122f45]');
       logo.classList.remove('text-white');
-      logo.classList.add('text-[#0a3d52]');
+      logo.classList.add('text-[#0b3a5e]');
       navLinks.forEach((link) => {
         link.classList.remove('text-white/90', 'hover:text-white');
-        link.classList.add('text-[#16323f]/90', 'hover:text-[#0f6c8a]');
+        link.classList.add('text-[#122f45]/90', 'hover:text-[#0f64a0]');
       });
     } else if (lightHero) {
-      header.classList.add('bg-transparent', 'text-[#0a3d52]');
-      header.classList.remove('bg-[#f7efdd]/90', 'backdrop-blur-md', 'shadow-md', 'text-[#16323f]');
+      header.classList.add('bg-transparent', 'text-[#0b3a5e]');
+      header.classList.remove('bg-[#eef8fa]/90', 'backdrop-blur-md', 'shadow-md', 'text-[#122f45]');
     } else {
       header.classList.add('bg-transparent', 'text-white');
-      header.classList.remove('bg-[#f7efdd]/90', 'backdrop-blur-md', 'shadow-md', 'text-[#16323f]');
+      header.classList.remove('bg-[#eef8fa]/90', 'backdrop-blur-md', 'shadow-md', 'text-[#122f45]');
       logo.classList.add('text-white');
-      logo.classList.remove('text-[#0a3d52]');
+      logo.classList.remove('text-[#0b3a5e]');
       navLinks.forEach((link) => {
         link.classList.add('text-white/90', 'hover:text-white');
-        link.classList.remove('text-[#16323f]/90', 'hover:text-[#0f6c8a]');
+        link.classList.remove('text-[#122f45]/90', 'hover:text-[#0f64a0]');
       });
     }
   };

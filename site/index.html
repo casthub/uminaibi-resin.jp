@@ -26,9 +26,9 @@
         extend: {
           colors: {
             ocean: {
-              deep: '#0a3d52',
-              DEFAULT: '#0f6c8a',
-              light: '#2ea3b8',
+              deep: '#0b3a5e',
+              DEFAULT: '#0f64a0',
+              light: '#1fb0cc',
             },
             emerald: {
               DEFAULT: '#0a6e62', // ★文字・ボタン用に濃くした（白との差 6.1:1）。元の明るい色は bright
@@ -36,11 +36,11 @@
               light: '#6fd8c7',
             },
             sand: {
-              DEFAULT: '#f7efdd',
-              dark: '#ecdfbd',
+              DEFAULT: '#eef8fa',
+              dark: '#dcf0f4',
             },
             coral: '#b8431f', // ★白文字との差 5.4:1（元 #ff8a65 は 2.3:1）
-            ink: '#16323f',
+            ink: '#122f45',
           },
           fontFamily: {
             serifJp: ['"Zen Old Mincho"', '"Noto Serif JP"', 'serif'],
@@ -61,7 +61,7 @@
   </script>
 
   <!-- 共通カスタムスタイルシート -->
-  <link rel="stylesheet" href="css/style.css?v=20261028">
+  <link rel="stylesheet" href="css/style.css?v=20261028-2">
 </head>
 <body class="bg-sand text-ink antialiased" data-hero="light">
 
@@ -152,8 +152,8 @@
           <svg class="hero-shore" aria-hidden="true" focusable="false" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="sandGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#fffcf4"/>
-              <stop offset="1" stop-color="#f7efdd"/>
+              <stop offset="0" stop-color="#fffdf6"/>
+              <stop offset="1" stop-color="#eef8fa"/>
             </linearGradient>
           </defs>
           <!-- 波打ちぎわの白い泡と、白い砂浜 -->
@@ -301,7 +301,7 @@
     </section>
 
     <!-- お問い合わせへの導線（CTA） -->
-    <section class="relative overflow-hidden py-20 text-white" style="background: linear-gradient(180deg, #145f96 0%, #0a3d52 100%);">
+    <section class="relative overflow-hidden py-20 text-white" style="background: linear-gradient(180deg, #145f96 0%, #0b3a5e 100%);">
       <div class="blob h-80 w-80 -bottom-10 -left-10 bg-emerald/20"></div>
       <div class="mx-auto max-w-4xl px-6 text-center relative z-10">
         <h2 class="font-serif-jp text-3xl sm:text-4xl tracking-wider">世界にひとつだけの海を、あなたの手に。</h2>
@@ -374,7 +374,7 @@
   </footer>
 
   <!-- 共通JavaScriptのインポート -->
-  <script src="js/main.js?v=20261028"></script>
+  <script src="js/main.js?v=20261028-2"></script>
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
   </script>
