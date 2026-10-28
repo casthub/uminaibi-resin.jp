@@ -77,6 +77,11 @@ These parameters were configured in Checkout Studio and are already set correctl
 7. 注文の管理：最初は Stripe の管理画面とメール通知で行う。件数が増えたら Webhook（支払い完了の知らせ）で自動化を考える。
 8. 本番開始の前に：テスト用キーを作り直す（会話に貼ったため）→ 本番キー（sk_live_）に替える → テスト用 `sample` を消す。
 
+## 決済手段のドメイン（payment method domain）
+- 2026-10-28 オーナーから ID `pmd_1UVKePKKHiHiKe6OJQNUw06c` を受け取った。テスト用サンドボックス（acct_1UU4qgKxCvDyFibo）には無い ID なので、本番のアカウント側で登録したものとみられる（テスト用キーでは中身を見られない）。
+- 今の形（Stripe Checkout・Stripe の決済ページへ移る）では、Apple Pay・Google Pay は checkout.stripe.com の上で動くので、uminaibi-resin.jp の登録は無くても支払える。登録が要るのは、将来サイトの中に支払い欄を埋め込む（Payment Element・Express Checkout Element）とき。
+- 本番キーに替えたら、このドメインが「有効」になっているかを確かめる。
+
 ## Resources
 - https://support.stripe.com
 - https://docs.stripe.com/mcp
