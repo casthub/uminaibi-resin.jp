@@ -81,6 +81,7 @@ These parameters were configured in Checkout Studio and are already set correctl
 - 2026-10-28 オーナーから ID `pmd_1UVKePKKHiHiKe6OJQNUw06c` を受け取った。テスト用サンドボックス（acct_1UU4qgKxCvDyFibo）には無い ID なので、本番のアカウント側で登録したものとみられる（テスト用キーでは中身を見られない）。
 - 今の形（Stripe Checkout・Stripe の決済ページへ移る）では、Apple Pay・Google Pay は checkout.stripe.com の上で動くので、uminaibi-resin.jp の登録は無くても支払える。登録が要るのは、将来サイトの中に支払い欄を埋め込む（Payment Element・Express Checkout Element）とき。
 - 本番キーに替えたら、このドメインが「有効」になっているかを確かめる。
+- 2026-10-28 オーナー指示で、Stripe の管理画面のドメイン登録（Apple Pay の確認）を通すため、Stripe 配布の確認用ファイルを `site/.well-known/apple-developer-merchantid-domain-association` に置いた（https://stripe.com/files/apple-pay/apple-developer-merchantid-domain-association からそのまま。SHA-256 2de7b483…c526c6）。公開後、管理画面の「設定 → 決済手段のドメイン」で uminaibi-resin.jp の「確認」を押す。
 
 ## Resources
 - https://support.stripe.com
