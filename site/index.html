@@ -18,50 +18,11 @@
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="うみないび">
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ocean: {
-              deep: '#0b3a5e',
-              DEFAULT: '#0f64a0',
-              light: '#1fb0cc',
-            },
-            emerald: {
-              DEFAULT: '#0a6e62', // ★文字・ボタン用に濃くした（白との差 6.1:1）。元の明るい色は bright
-              bright: '#1fb7a3',
-              light: '#6fd8c7',
-            },
-            sand: {
-              DEFAULT: '#eef8fa',
-              dark: '#dcf0f4',
-            },
-            coral: '#b8431f', // ★白文字との差 5.4:1（元 #ff8a65 は 2.3:1）
-            ink: '#122f45',
-          },
-          fontFamily: {
-            serifJp: ['"Zen Old Mincho"', '"Noto Serif JP"', 'serif'],
-            sansJp: ['"Zen Kaku Gothic New"', '"Noto Sans JP"', 'sans-serif'],
-          },
-          // ★2026-10-27 読みやすさ：小さい文字を 12→13px、本文を 14→15px に。行間は日本語向けに広めに（WCAG 1.4.12 にも余裕）
-          fontSize: {
-            xs: ['0.8125rem', { lineHeight: '1.7' }],
-            sm: ['0.9375rem', { lineHeight: '1.9' }],
-            base: ['1rem', { lineHeight: '1.9' }],
-          },
-          boxShadow: {
-            soft: '0 10px 40px -10px rgba(10, 61, 82, 0.15)',
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Tailwind（CSS ファイル。作り直しは bin/build-css.sh） -->
+  <link rel="stylesheet" href="css/tailwind.css?v=20261028-4">
 
   <!-- 共通カスタムスタイルシート -->
-  <link rel="stylesheet" href="css/style.css?v=20261028-3">
+  <link rel="stylesheet" href="css/style.css?v=20261028-4">
 </head>
 <body class="bg-sand text-ink antialiased">
 
@@ -108,7 +69,7 @@
   <main id="main" tabindex="-1">
     <!-- ヒーローセクション（2026-10-28 古宇利大橋から古宇利島を望む海を、絵画調の絵で。絵は images/paint-kouri-bridge.svg・作り方は tools/paint-kouri-bridge.py） -->
     <section class="hero-paint relative overflow-hidden">
-      <div class="relative z-10 mx-auto max-w-6xl px-5 pt-28 pb-6 sm:px-8 sm:pt-36">
+      <div class="relative z-10 mx-auto max-w-6xl px-5 pt-24 pb-6 sm:px-8 sm:pt-36">
         <div class="hero-card max-w-xl p-7 text-ocean-deep sm:p-10">
           <p class="text-xs sm:text-sm tracking-[0.35em] text-ocean-deep uppercase font-bold">Okinawa Nago Resin Art</p>
           <h1 class="font-serif-jp mt-4 text-3xl leading-relaxed sm:text-5xl tracking-wider">
@@ -125,7 +86,7 @@
         </div>
       </div>
       <!-- 絵の海と橋が見える所（飾り） -->
-      <div class="h-[24rem] sm:h-[28rem]" aria-hidden="true"></div>
+      <div class="h-60 sm:h-[28rem]" aria-hidden="true"></div>
       <!-- 白い波（飾り） -->
       <div class="wave-divider absolute bottom-0 left-0 right-0" aria-hidden="true">
         <svg aria-hidden="true" focusable="false" viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="h-10 w-full sm:h-14">
@@ -136,8 +97,8 @@
     </section>
 
     <!-- コンセプトダイジェスト -->
-    <section class="relative overflow-hidden py-24 sm:py-32">
-      <div class="mx-auto max-w-6xl px-6">
+    <section class="relative overflow-hidden py-16 sm:py-32">
+      <div class="mx-auto max-w-6xl px-5 sm:px-6">
         <div class="reveal grid gap-12 lg:grid-cols-2 items-center">
           <div>
             <p class="text-xs tracking-[0.35em] text-emerald uppercase font-bold">Concept</p>
@@ -158,7 +119,7 @@
           </div>
           <!-- グラフィカルなビジュアル要素 -->
           <div class="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-soft" style="background: linear-gradient(180deg, #145f96 0%, #1b84bf 30%, #1fb0cc 52%, #5fd9d1 72%, #c6f4ec 88%, #fbf6ea 100%);">
-            <div class="absolute inset-x-0 top-0 flex justify-center text-white p-8 pt-10 text-center">
+            <div class="absolute inset-x-0 top-0 flex justify-center text-white p-6 sm:p-8 pt-10 text-center">
               <div>
                 <p class="font-serif-jp text-2xl tracking-widest">OKINAWA BLUE</p>
                 <p class="text-sm mt-2 text-white">手仕事から生まれる、本物の海のグラデーション</p>
@@ -170,20 +131,20 @@
     </section>
 
     <!-- 体験教室ダイジェスト -->
-    <section class="relative overflow-hidden py-24 sm:py-32 bg-[#e8f6f7]">
-      <div class="mx-auto max-w-6xl px-6">
+    <section class="relative overflow-hidden py-16 sm:py-32 bg-[#e8f6f7]">
+      <div class="mx-auto max-w-6xl px-5 sm:px-6">
         <div class="reveal text-center">
           <p class="text-xs tracking-[0.35em] text-emerald uppercase font-bold">Workshop</p>
           <h2 class="font-serif-jp mt-4 text-3xl sm:text-4xl text-ocean-deep">世界にひとつだけの、海をつくる。</h2>
           <p class="mx-auto mt-6 max-w-2xl text-sm leading-loose text-ink/80 sm:text-base">
-            名護の体験教室では、初心者から上級者まで楽しめる本格的なレジンアートワークショップを開催しています。<br>
+            名護の体験教室では、初心者から上級者まで楽しめる本格的なレジンアートワークショップを開催しています。<br class="hidden sm:block">
             思い出作りに、お一人で、またはご家族やご友人と一緒に、世界にひとつの海を作りませんか？
           </p>
         </div>
 
-        <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div class="mt-10 sm:mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <!-- 簡易カード 1 -->
-          <div class="reveal rounded-3xl bg-white p-8 shadow-soft flex flex-col justify-between">
+          <div class="reveal rounded-3xl bg-white p-6 sm:p-8 shadow-soft flex flex-col justify-between">
             <div>
               <h3 class="font-serif-jp text-xl text-ocean-deep font-bold">オーシャンコースター体験</h3>
               <p class="mt-3 text-sm text-ink/75">所要時間: 60分 / 対象年齢: 6歳〜</p>
@@ -196,7 +157,7 @@
           </div>
 
           <!-- 簡易カード 2 -->
-          <div class="reveal rounded-3xl bg-white p-8 shadow-soft flex flex-col justify-between md:scale-105 ring-2 ring-coral ring-offset-2">
+          <div class="reveal rounded-3xl bg-white p-6 sm:p-8 shadow-soft flex flex-col justify-between md:scale-105 ring-2 ring-coral ring-offset-2">
             <div>
               <span class="inline-block bg-coral text-white text-xs font-bold tracking-widest px-2.5 py-0.5 rounded-full mb-3">人気</span>
               <h3 class="font-serif-jp text-xl text-ocean-deep font-bold">サンセットプレート体験</h3>
@@ -210,7 +171,7 @@
           </div>
 
           <!-- 簡易カード 3 -->
-          <div class="reveal rounded-3xl bg-white p-8 shadow-soft flex flex-col justify-between">
+          <div class="reveal rounded-3xl bg-white p-6 sm:p-8 shadow-soft flex flex-col justify-between">
             <div>
               <h3 class="font-serif-jp text-xl text-ocean-deep font-bold">マイジュエリー制作</h3>
               <p class="mt-3 text-sm text-ink/75">所要時間: 75分 / 対象年齢: 12歳〜</p>
@@ -232,18 +193,18 @@
     </section>
 
     <!-- ギャラリーダイジェスト -->
-    <section class="relative overflow-hidden py-24 sm:py-32">
-      <div class="mx-auto max-w-6xl px-6">
+    <section class="relative overflow-hidden py-16 sm:py-32">
+      <div class="mx-auto max-w-6xl px-5 sm:px-6">
         <div class="reveal text-center">
           <p class="text-xs tracking-[0.35em] text-emerald uppercase font-bold">Gallery</p>
           <h2 class="font-serif-jp mt-4 text-3xl sm:text-4xl text-ocean-deep">海の煌めき、それぞれの表情。</h2>
           <p class="mx-auto mt-6 max-w-2xl text-sm leading-loose text-ink/80 sm:text-base">
-            手作業だからこそ生まれる、世界でたった一つの波と泡。<br>
+            手作業だからこそ生まれる、世界でたった一つの波と泡。<br class="hidden sm:block">
             作品たちが見せる、沖縄の海の表情の一部をご覧ください。
           </p>
         </div>
 
-        <div class="mt-16 grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4">
+        <div class="mt-10 sm:mt-16 grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4">
           <!-- 代表的な作品のダミービジュアル（屋我地・古宇利の海の色） -->
           <div class="reveal aspect-square rounded-2xl overflow-hidden shadow-soft" style="background: linear-gradient(160deg, #145f96, #1fb0cc);"></div>
           <div class="reveal aspect-square rounded-2xl overflow-hidden shadow-soft" style="background: linear-gradient(160deg, #1b84bf, #5fd9d1);"></div>
@@ -263,12 +224,12 @@
     </section>
 
     <!-- お問い合わせへの導線（CTA） -->
-    <section class="relative overflow-hidden py-20 text-white" style="background: linear-gradient(180deg, #145f96 0%, #0b3a5e 100%);">
+    <section class="relative overflow-hidden py-14 sm:py-20 text-white" style="background: linear-gradient(180deg, #145f96 0%, #0b3a5e 100%);">
       <div class="blob h-80 w-80 -bottom-10 -left-10 bg-emerald/20"></div>
-      <div class="mx-auto max-w-4xl px-6 text-center relative z-10">
+      <div class="mx-auto max-w-4xl px-5 sm:px-6 text-center relative z-10">
         <h2 class="font-serif-jp text-3xl sm:text-4xl tracking-wider">世界にひとつだけの海を、あなたの手に。</h2>
         <p class="mt-6 text-sm sm:text-base text-white/80 leading-relaxed max-w-xl mx-auto">
-          沖縄の想い出づくりとしての体験レッスンのご予約、<br>
+          沖縄の想い出づくりとしての体験レッスンのご予約、<br class="hidden sm:block">
           お部屋に飾るオーダーメイドアートパネルに関するお問い合わせをお待ちしております。
         </p>
         <div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
@@ -285,8 +246,8 @@
 
   <!-- フッター -->
   <footer class="bg-ocean-deep text-white border-t border-white/10 relative overflow-hidden">
-    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12 py-14">
-      <div class="grid gap-10 md:grid-cols-3 relative z-10">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12 py-12 sm:py-14">
+      <div class="grid gap-8 md:gap-10 md:grid-cols-3 relative z-10">
         <div>
           <p class="font-serif-jp text-2xl tracking-widest text-white">うみないび</p>
           <p class="mt-3 text-sm leading-relaxed text-white/70">
@@ -306,7 +267,7 @@
 
         <div>
           <p class="text-sm font-semibold tracking-widest text-white/90">SITEMAP</p>
-          <ul class="mt-4 space-y-2 text-sm text-white/70 font-sansJp">
+          <ul class="mt-4 grid grid-cols-2 gap-x-6 gap-y-2 md:grid-cols-1 text-sm text-white/70 font-sansJp">
             <li><a href="index.html" class="hover:text-white transition-colors">トップページ</a></li>
             <li><a href="concept.html" class="hover:text-white transition-colors">コンセプト</a></li>
             <li><a href="workshop.html" class="hover:text-white transition-colors">体験教室</a></li>
@@ -329,14 +290,14 @@
         </div>
       </div>
 
-      <div class="mt-12 border-t border-white/15 pt-6 text-center text-xs leading-relaxed tracking-wider text-white/75 relative z-10 font-sansJp">
+      <div class="mt-10 sm:mt-12 border-t border-white/15 pt-6 text-center text-xs leading-relaxed tracking-wider text-white/75 relative z-10 font-sansJp">
         &copy; <span id="current-year"></span> うみないび / uminaibi-resin.jp All Rights Reserved.<br class="sm:hidden"><span class="hidden sm:inline">　|　</span><a href="privacy.html" class="underline hover:text-white">プライバシーポリシー</a><br class="sm:hidden"><span class="hidden sm:inline">　|　</span><a href="tokushoho.html" class="underline hover:text-white">特定商取引法に基づく表記</a>
       </div>
     </div>
   </footer>
 
   <!-- 共通JavaScriptのインポート -->
-  <script src="js/main.js?v=20261028-3"></script>
+  <script src="js/main.js?v=20261028-4"></script>
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
   </script>

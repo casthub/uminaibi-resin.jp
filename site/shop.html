@@ -7,50 +7,11 @@
   <title>オンラインショップ | うみないび | 沖縄県名護市のレジンアート専門店</title>
   <meta name="description" content="沖縄県名護市のレジンアート専門店「うみないび」のオンラインショップ。名護の海をイメージしたレジンアート作品を、クレジットカードでご購入いただけます。">
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ocean: {
-              deep: '#0b3a5e',
-              DEFAULT: '#0f64a0',
-              light: '#1fb0cc',
-            },
-            emerald: {
-              DEFAULT: '#0a6e62', // ★文字・ボタン用に濃くした（白との差 6.1:1）。元の明るい色は bright
-              bright: '#1fb7a3',
-              light: '#6fd8c7',
-            },
-            sand: {
-              DEFAULT: '#eef8fa',
-              dark: '#dcf0f4',
-            },
-            coral: '#b8431f', // ★白文字との差 5.4:1（元 #ff8a65 は 2.3:1）
-            ink: '#122f45',
-          },
-          fontFamily: {
-            serifJp: ['"Zen Old Mincho"', '"Noto Serif JP"', 'serif'],
-            sansJp: ['"Zen Kaku Gothic New"', '"Noto Sans JP"', 'sans-serif'],
-          },
-          // ★2026-10-27 読みやすさ：小さい文字を 12→13px、本文を 14→15px に。行間は日本語向けに広めに（WCAG 1.4.12 にも余裕）
-          fontSize: {
-            xs: ['0.8125rem', { lineHeight: '1.7' }],
-            sm: ['0.9375rem', { lineHeight: '1.9' }],
-            base: ['1rem', { lineHeight: '1.9' }],
-          },
-          boxShadow: {
-            soft: '0 10px 40px -10px rgba(10, 61, 82, 0.15)',
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Tailwind（CSS ファイル。作り直しは bin/build-css.sh） -->
+  <link rel="stylesheet" href="css/tailwind.css?v=20261028-4">
 
   <!-- 共通カスタムスタイルシート -->
-  <link rel="stylesheet" href="css/style.css?v=20261028-3">
+  <link rel="stylesheet" href="css/style.css?v=20261028-4">
 </head>
 <body class="bg-sand text-ink antialiased">
 
@@ -96,17 +57,17 @@
 
   <main id="main" tabindex="-1">
     <!-- ページヘッダー -->
-    <section class="page-paint relative pt-40 pb-28 sm:pb-32 overflow-hidden text-white">
-      <div class="relative z-10 mx-auto max-w-4xl px-6 text-center">
+    <section class="page-paint relative pt-28 pb-16 sm:pt-40 sm:pb-32 overflow-hidden text-white">
+      <div class="relative z-10 mx-auto max-w-4xl px-5 sm:px-6 text-center">
         <p class="text-xs tracking-[0.35em] text-white uppercase font-bold">Online Shop</p>
-        <h1 class="font-serif-jp mt-4 text-3xl sm:text-4xl md:text-5xl tracking-widest">オンラインショップ</h1>
+        <h1 class="font-serif-jp mt-3 sm:mt-4 text-[1.75rem] max-sm:leading-snug sm:text-4xl md:text-5xl tracking-wider sm:tracking-widest">オンラインショップ</h1>
         <p class="mt-4 text-sm sm:text-base text-white">名護の海を閉じ込めた作品を、ご自宅へお届けします</p>
       </div>
     </section>
 
     <!-- 商品一覧 -->
-    <section class="pt-20 pb-16">
-      <div class="mx-auto max-w-6xl px-6">
+    <section class="pt-14 pb-12 sm:pt-20 sm:pb-16">
+      <div class="mx-auto max-w-6xl px-5 sm:px-6">
         <div class="text-center reveal">
           <span class="text-xs tracking-widest font-bold text-emerald uppercase">Items</span>
           <h2 class="font-serif-jp text-2xl sm:text-3xl text-ocean-deep mt-2">販売中の作品</h2>
@@ -158,8 +119,8 @@
 
     <!-- ご購入の前に（2026-10-28 オーナー指示で作品の下へ） -->
     <section id="shop-notice" class="pb-20">
-      <div class="mx-auto max-w-4xl px-6">
-        <div class="reveal bg-white rounded-3xl p-8 sm:p-10 shadow-soft text-sm leading-relaxed text-ink/80">
+      <div class="mx-auto max-w-4xl px-5 sm:px-6">
+        <div class="reveal bg-white rounded-3xl p-6 sm:p-10 shadow-soft text-sm leading-relaxed text-ink/80">
           <h2 class="font-serif-jp text-xl font-bold text-ocean-deep">ご購入の前にお読みください</h2>
           <ul class="mt-5 list-disc pl-5 space-y-2">
             <li>価格はすべて消費税込みです。送料はゆうパック（沖縄県から発送）で、下の表のとおり、お届け先の地域と商品のサイズで決まります。お支払いの画面でお届け先の地域を選ぶと、合計が表示されます。お届け先と違う地域の送料が選ばれていたときは、発送の前に当店からご連絡します。</li>
@@ -193,8 +154,8 @@
 
   <!-- フッター -->
   <footer class="bg-ocean-deep text-white border-t border-white/10 relative overflow-hidden">
-    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12 py-14">
-      <div class="grid gap-10 md:grid-cols-3 relative z-10">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12 py-12 sm:py-14">
+      <div class="grid gap-8 md:gap-10 md:grid-cols-3 relative z-10">
         <div>
           <p class="font-serif-jp text-2xl tracking-widest text-white">うみないび</p>
           <p class="mt-3 text-sm leading-relaxed text-white/70">
@@ -213,7 +174,7 @@
 
         <div>
           <p class="text-sm font-semibold tracking-widest text-white/90">SITEMAP</p>
-          <ul class="mt-4 space-y-2 text-sm text-white/70 font-sansJp">
+          <ul class="mt-4 grid grid-cols-2 gap-x-6 gap-y-2 md:grid-cols-1 text-sm text-white/70 font-sansJp">
             <li><a href="index.html" class="hover:text-white transition-colors">トップページ</a></li>
             <li><a href="concept.html" class="hover:text-white transition-colors">コンセプト</a></li>
             <li><a href="workshop.html" class="hover:text-white transition-colors">体験教室</a></li>
@@ -236,14 +197,14 @@
         </div>
       </div>
 
-      <div class="mt-12 border-t border-white/15 pt-6 text-center text-xs leading-relaxed tracking-wider text-white/75 relative z-10 font-sansJp">
+      <div class="mt-10 sm:mt-12 border-t border-white/15 pt-6 text-center text-xs leading-relaxed tracking-wider text-white/75 relative z-10 font-sansJp">
         &copy; <span id="current-year"></span> うみないび / uminaibi-resin.jp All Rights Reserved.<br class="sm:hidden"><span class="hidden sm:inline">　|　</span><a href="privacy.html" class="underline hover:text-white">プライバシーポリシー</a><br class="sm:hidden"><span class="hidden sm:inline">　|　</span><a href="tokushoho.html" class="underline hover:text-white">特定商取引法に基づく表記</a>
       </div>
     </div>
   </footer>
 
   <!-- 共通JavaScriptのインポート -->
-  <script src="js/main.js?v=20261028-3"></script>
+  <script src="js/main.js?v=20261028-4"></script>
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
   </script>

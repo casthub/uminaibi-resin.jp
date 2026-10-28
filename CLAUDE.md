@@ -4,7 +4,7 @@
 ★R-ENTRY（/opt/r-entry, r-entry.xvps.jp）とは**まったく別のプロジェクト**。コード・設定・DB・メモを混ぜないこと（サイトの切り替え表は /root/CLAUDE.md）。
 
 ## 場所
-- サイトのファイル: `site/`（いまは静的 HTML 6ページ + css/js。Tailwind は CDN 読み込み）
+- サイトのファイル: `site/`（静的 HTML + css/js）。Tailwind は CSS ファイル（`site/css/tailwind.css`）。設定は `tools/tailwind/tailwind.config.js`、作り直しは `bin/build-css.sh`（Docker・Node は使わない）
 - 公開: `bin/deploy.sh --go` で、uminaibi-resin.jp の今のサーバー（157.7.189.64）へ FTP で送る。接続情報は `deploy.env`（git に入れない）
 - 手順書: `README.md` / 課題: `docs/課題.md` / 決めたこと: `docs/決定ログ.md` / Stripe の残り作業: `STRIPE_INTEGRATION_TODO.md`
 - Stripe：`site/checkout.php` が Checkout Session を作る。キー・商品は `site/stripe-config.php`（git に入れない）、作業用キーは `stripe.env`（git に入れない・送らない）。キーを会話・記録・画面に出さない
@@ -19,4 +19,4 @@
 - R-ENTRY のファイル（/opt/r-entry）は変更しない。
 - 文章を変えるときは、景品表示法（言い過ぎ・根拠のない最上級）と特定商取引法（予約・料金の表示）に気をつける。
 - 写真・画像は、店が権利を持つものだけを使う。
-- `css/style.css`・`js/main.js` を直したら、全 HTML の `?v=日付` を新しい日付に変える（古いファイルがブラウザに残って、見た目が崩れるのを防ぐ）。
+- HTML の Tailwind クラスを変えたら `bin/build-css.sh`。`css/tailwind.css`・`css/style.css`・`js/main.js` を変えたら、全 HTML の `?v=日付` を新しい日付に変える（古いファイルがブラウザに残って、見た目が崩れるのを防ぐ）。

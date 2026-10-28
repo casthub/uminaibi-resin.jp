@@ -13,7 +13,7 @@
 ## 直して公開する
 | 手順 | やり方 |
 |---|---|
-| 1. 直す | `site/` のファイルを直す（ビルド不要） |
+| 1. 直す | `site/` のファイルを直す。Tailwind のクラス（余白・文字の大きさ・色など）を変えたら `bin/build-css.sh` で CSS を作り直す |
 | 2. 確かめる | `bin/deploy.sh` … 送られるファイルの一覧が出る（まだ送らない） |
 | 3. 送る | `bin/deploy.sh --go` |
 | 4. 記録 | `git add -A && git commit -m "内容" && git push origin main` |
