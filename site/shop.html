@@ -111,45 +111,13 @@
       </div>
     </section>
 
-    <!-- ご購入の前に -->
-    <section class="pt-20">
-      <div class="mx-auto max-w-4xl px-6">
-        <div class="reveal bg-white rounded-3xl p-8 sm:p-10 shadow-soft text-sm leading-relaxed text-ink/80">
-          <h2 class="font-serif-jp text-xl font-bold text-ocean-deep">ご購入の前にお読みください</h2>
-          <ul class="mt-5 list-disc pl-5 space-y-2">
-            <li>価格はすべて消費税込みです。送料はゆうパック（沖縄県から発送）で、下の表のとおり、お届け先の地域と商品のサイズで決まります。お支払いの画面でお届け先の地域を選ぶと、合計が表示されます。お届け先と違う地域の送料が選ばれていたときは、発送の前に当店からご連絡します。</li>
-            <li>お支払いの確認後、作品ができあがり次第発送します。発送の目安は各商品に書いています。</li>
-            <li>手づくりの一点ものです。色・模様・気泡の入り方が、写真と少し異なることがあります。</li>
-            <li>お客様のご都合による返品・交換はお受けしておりません。不良品・お届け違いは、到着後1週間以内にご連絡ください。</li>
-            <li>お支払いはクレジットカードまたはコンビニ払いで、Stripe（ストライプ）の決済ページで行います。カード番号は当店には届きません。</li>
-          </ul>
-          <h3 class="mt-8 font-bold text-ocean-deep">送料（ゆうパック・沖縄県から発送）</h3>
-          <!-- ★送料の表（data/yupack-okinawa.json から作った。料金を変えたら shop.html と tokushoho.html の両方を直す） -->
-          <div class="mt-4 overflow-x-auto rounded-2xl border border-ink/10" role="region" aria-label="送料の表（横に動かせます）" tabindex="0">
-            <table class="w-full min-w-[40rem] text-sm">
-              <caption class="sr-only">ゆうパックの送料（沖縄県から発送・税込）</caption>
-              <thead class="bg-sand"><tr><th scope="col" class="px-3 py-2 text-left">お届け先</th><th scope="col" class="px-3 py-2 text-right whitespace-nowrap">60サイズ</th><th scope="col" class="px-3 py-2 text-right whitespace-nowrap">80サイズ</th><th scope="col" class="px-3 py-2 text-right whitespace-nowrap">100サイズ</th><th scope="col" class="px-3 py-2 text-right whitespace-nowrap">120サイズ</th><th scope="col" class="px-3 py-2 text-right whitespace-nowrap">140サイズ</th></tr></thead>
-              <tbody>
-                <tr class="border-t border-ink/10"><th scope="row" class="px-3 py-2 text-left font-bold text-ocean-deep"><span class="whitespace-nowrap">沖縄県内</span><br><span class="text-xs font-normal text-ink/70">沖縄</span></th><td class="px-3 py-2 text-right whitespace-nowrap">840円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,150円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,480円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,810円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,160円</td></tr>
-                <tr class="border-t border-ink/10"><th scope="row" class="px-3 py-2 text-left font-bold text-ocean-deep"><span class="whitespace-nowrap">九州</span><br><span class="text-xs font-normal text-ink/70">福岡・佐賀・長崎・熊本・大分・宮崎・鹿児島</span></th><td class="px-3 py-2 text-right whitespace-nowrap">1,210円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,600円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,080円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,450円</td><td class="px-3 py-2 text-right whitespace-nowrap">3,010円</td></tr>
-                <tr class="border-t border-ink/10"><th scope="row" class="px-3 py-2 text-left font-bold text-ocean-deep"><span class="whitespace-nowrap">中国</span><br><span class="text-xs font-normal text-ink/70">鳥取・島根・岡山・広島・山口</span></th><td class="px-3 py-2 text-right whitespace-nowrap">1,470円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,860円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,330円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,730円</td><td class="px-3 py-2 text-right whitespace-nowrap">3,280円</td></tr>
-                <tr class="border-t border-ink/10"><th scope="row" class="px-3 py-2 text-left font-bold text-ocean-deep"><span class="whitespace-nowrap">四国・近畿・東海・関東</span><br><span class="text-xs font-normal text-ink/70">香川・愛媛・徳島・高知・滋賀・京都・兵庫・大阪・奈良・和歌山・静岡・岐阜・愛知・三重・東京・茨城・神奈川・栃木・千葉・群馬・山梨・埼玉</span></th><td class="px-3 py-2 text-right whitespace-nowrap">1,600円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,990円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,480円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,860円</td><td class="px-3 py-2 text-right whitespace-nowrap">3,430円</td></tr>
-                <tr class="border-t border-ink/10"><th scope="row" class="px-3 py-2 text-left font-bold text-ocean-deep"><span class="whitespace-nowrap">北陸・信越・東北・北海道</span><br><span class="text-xs font-normal text-ink/70">富山・石川・福井・新潟・長野・青森・岩手・宮城・秋田・山形・福島・北海道</span></th><td class="px-3 py-2 text-right whitespace-nowrap">1,930円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,260円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,740円</td><td class="px-3 py-2 text-right whitespace-nowrap">3,080円</td><td class="px-3 py-2 text-right whitespace-nowrap">3,670円</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="mt-2 text-xs text-ink/75">ゆうパック（沖縄県から発送）の料金です（税込）。サイズは箱の縦・横・高さの合計（60サイズ＝60cm以内）で、商品ごとに書いています。料金は日本郵便の料金表（2026年10月27日時点）に合わせ、同じ地域の中で料金が違う所は高いほうにそろえています。</p>
-          <p class="mt-5">くわしくは<a href="tokushoho.html" class="text-ocean underline">特定商取引法に基づく表記</a>と<a href="privacy.html" class="text-ocean underline">プライバシーポリシー</a>をご覧ください。</p>
-        </div>
-      </div>
-    </section>
-
     <!-- 商品一覧 -->
-    <section class="py-20">
+    <section class="pt-20 pb-16">
       <div class="mx-auto max-w-6xl px-6">
         <div class="text-center reveal">
           <span class="text-xs tracking-widest font-bold text-emerald uppercase">Items</span>
           <h2 class="font-serif-jp text-2xl sm:text-3xl text-ocean-deep mt-2">販売中の作品</h2>
+          <p class="mt-4 text-sm text-ink/75">送料・お支払い・返品については、<a href="#shop-notice" class="text-ocean underline">このページの下</a>をご覧ください。</p>
         </div>
 
         <!--
@@ -191,6 +159,40 @@
         </div>
 
         <p class="reveal mt-12 text-center text-sm text-ink/75">オーダーメイドのご相談は、<a href="contact.html" class="text-ocean underline">お問い合わせ</a>からどうぞ。</p>
+      </div>
+    </section>
+
+
+    <!-- ご購入の前に（2026-10-28 オーナー指示で作品の下へ） -->
+    <section id="shop-notice" class="pb-20">
+      <div class="mx-auto max-w-4xl px-6">
+        <div class="reveal bg-white rounded-3xl p-8 sm:p-10 shadow-soft text-sm leading-relaxed text-ink/80">
+          <h2 class="font-serif-jp text-xl font-bold text-ocean-deep">ご購入の前にお読みください</h2>
+          <ul class="mt-5 list-disc pl-5 space-y-2">
+            <li>価格はすべて消費税込みです。送料はゆうパック（沖縄県から発送）で、下の表のとおり、お届け先の地域と商品のサイズで決まります。お支払いの画面でお届け先の地域を選ぶと、合計が表示されます。お届け先と違う地域の送料が選ばれていたときは、発送の前に当店からご連絡します。</li>
+            <li>お支払いの確認後、作品ができあがり次第発送します。発送の目安は各商品に書いています。</li>
+            <li>手づくりの一点ものです。色・模様・気泡の入り方が、写真と少し異なることがあります。</li>
+            <li>お客様のご都合による返品・交換はお受けしておりません。不良品・お届け違いは、到着後1週間以内にご連絡ください。</li>
+            <li>お支払いはクレジットカードまたはコンビニ払いで、Stripe（ストライプ）の決済ページで行います。カード番号は当店には届きません。</li>
+          </ul>
+          <h3 class="mt-8 font-bold text-ocean-deep">送料（ゆうパック・沖縄県から発送）</h3>
+          <!-- ★送料の表（data/yupack-okinawa.json から作った。料金を変えたら shop.html と tokushoho.html の両方を直す） -->
+          <div class="mt-4 overflow-x-auto rounded-2xl border border-ink/10" role="region" aria-label="送料の表（横に動かせます）" tabindex="0">
+            <table class="w-full min-w-[40rem] text-sm">
+              <caption class="sr-only">ゆうパックの送料（沖縄県から発送・税込）</caption>
+              <thead class="bg-sand"><tr><th scope="col" class="px-3 py-2 text-left">お届け先</th><th scope="col" class="px-3 py-2 text-right whitespace-nowrap">60サイズ</th><th scope="col" class="px-3 py-2 text-right whitespace-nowrap">80サイズ</th><th scope="col" class="px-3 py-2 text-right whitespace-nowrap">100サイズ</th><th scope="col" class="px-3 py-2 text-right whitespace-nowrap">120サイズ</th><th scope="col" class="px-3 py-2 text-right whitespace-nowrap">140サイズ</th></tr></thead>
+              <tbody>
+                <tr class="border-t border-ink/10"><th scope="row" class="px-3 py-2 text-left font-bold text-ocean-deep"><span class="whitespace-nowrap">沖縄県内</span><br><span class="text-xs font-normal text-ink/70">沖縄</span></th><td class="px-3 py-2 text-right whitespace-nowrap">840円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,150円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,480円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,810円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,160円</td></tr>
+                <tr class="border-t border-ink/10"><th scope="row" class="px-3 py-2 text-left font-bold text-ocean-deep"><span class="whitespace-nowrap">九州</span><br><span class="text-xs font-normal text-ink/70">福岡・佐賀・長崎・熊本・大分・宮崎・鹿児島</span></th><td class="px-3 py-2 text-right whitespace-nowrap">1,210円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,600円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,080円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,450円</td><td class="px-3 py-2 text-right whitespace-nowrap">3,010円</td></tr>
+                <tr class="border-t border-ink/10"><th scope="row" class="px-3 py-2 text-left font-bold text-ocean-deep"><span class="whitespace-nowrap">中国</span><br><span class="text-xs font-normal text-ink/70">鳥取・島根・岡山・広島・山口</span></th><td class="px-3 py-2 text-right whitespace-nowrap">1,470円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,860円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,330円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,730円</td><td class="px-3 py-2 text-right whitespace-nowrap">3,280円</td></tr>
+                <tr class="border-t border-ink/10"><th scope="row" class="px-3 py-2 text-left font-bold text-ocean-deep"><span class="whitespace-nowrap">四国・近畿・東海・関東</span><br><span class="text-xs font-normal text-ink/70">香川・愛媛・徳島・高知・滋賀・京都・兵庫・大阪・奈良・和歌山・静岡・岐阜・愛知・三重・東京・茨城・神奈川・栃木・千葉・群馬・山梨・埼玉</span></th><td class="px-3 py-2 text-right whitespace-nowrap">1,600円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,990円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,480円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,860円</td><td class="px-3 py-2 text-right whitespace-nowrap">3,430円</td></tr>
+                <tr class="border-t border-ink/10"><th scope="row" class="px-3 py-2 text-left font-bold text-ocean-deep"><span class="whitespace-nowrap">北陸・信越・東北・北海道</span><br><span class="text-xs font-normal text-ink/70">富山・石川・福井・新潟・長野・青森・岩手・宮城・秋田・山形・福島・北海道</span></th><td class="px-3 py-2 text-right whitespace-nowrap">1,930円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,260円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,740円</td><td class="px-3 py-2 text-right whitespace-nowrap">3,080円</td><td class="px-3 py-2 text-right whitespace-nowrap">3,670円</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-2 text-xs text-ink/75">ゆうパック（沖縄県から発送）の料金です（税込）。サイズは箱の縦・横・高さの合計（60サイズ＝60cm以内）で、商品ごとに書いています。料金は日本郵便の料金表（2026年10月27日時点）に合わせ、同じ地域の中で料金が違う所は高いほうにそろえています。</p>
+          <p class="mt-5">くわしくは<a href="tokushoho.html" class="text-ocean underline">特定商取引法に基づく表記</a>と<a href="privacy.html" class="text-ocean underline">プライバシーポリシー</a>をご覧ください。</p>
+        </div>
       </div>
     </section>
 
