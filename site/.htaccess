@@ -5,6 +5,10 @@ RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteCond %{HTTP:X-Forwarded-Proto} !=https
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+# 2026-10-28 リビルド：コンセプト・ギャラリー・アクセスはトップページにまとめた。古い URL はトップの同じ所へ（検索・ブックマークのため）
+RewriteRule ^concept\.html$ /index.html#about [R=301,NE,L]
+RewriteRule ^gallery\.html$ /index.html#works [R=301,NE,L]
+RewriteRule ^access\.html$ /index.html#visit [R=301,NE,L]
 </IfModule>
 
 # メール・Stripe のログイン情報・ひな形は外から開けない

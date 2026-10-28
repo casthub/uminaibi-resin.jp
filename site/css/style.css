@@ -1,51 +1,86 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap');
 
+/* ===== 2026-10-28 リビルド：写真と白い地と蒼い海の色だけの、シンプルなアートサイト =====
+   イラスト・飾りの絵・グラデーションの模様は使わない。写真は images/photos/（Unsplash・撮影者は各ページに記載） */
+
 html {
   scroll-behavior: smooth;
-  /* 上に固定したヘッダー（高さ 80px）の下に、移動先やフォーカスが隠れないように（WCAG 2.4.11） */
-  scroll-padding-top: 6rem;
+  /* 上に固定したヘッダー（高さ 64〜72px）の下に、移動先やフォーカスが隠れないように（WCAG 2.4.11） */
+  scroll-padding-top: 5.5rem;
 }
 
 body {
   font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
-  color: #122f45; /* ink */
-  background-color: #eef8fa; /* sand（2026-10-28 海の色ベースに：白っぽい水色） */
+  color: #15283a; /* ink */
+  background-color: #f6f9fa; /* sand */
+  line-height: 1.9;
+  letter-spacing: 0.03em;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 .font-serif-jp {
   font-family: "Zen Old Mincho", "Noto Serif JP", serif;
 }
 
-/* ふわっと浮かび上がるスクロールアニメーション */
-/* ★JS が動くときだけ隠す（JS が止まっていても文章が読めるように） */
+/* 小見出しの英字（WORKS など）。細い線を左に */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #0b636b; /* emerald */
+}
+.eyebrow::before {
+  content: "";
+  width: 2rem;
+  height: 1px;
+  background: currentColor;
+}
+
+/* ボタン：角のある四角・細い線。塗り（btn）と線だけ（btn-line）。白い帯の上は btn-white */
+.btn, .btn-line, .btn-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 3rem;
+  padding: 0.75rem 1.75rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-align: center; /* 狭い画面では折り返す（横にはみ出さない） */
+  border: 1px solid #0b5b91;
+  transition: background-color .2s, color .2s;
+}
+.btn { background: #0b5b91; color: #fff; }
+.btn:hover { background: #0a2a42; border-color: #0a2a42; }
+.btn-line { background: transparent; color: #0b5b91; }
+.btn-line:hover { background: #0b5b91; color: #fff; }
+.btn-white { background: #fff; color: #0a2a42; border-color: #fff; }
+.btn-white:hover { background: transparent; color: #fff; }
+.btn[aria-disabled="true"] { background: #e3eaee; color: #3d5263; border-color: #e3eaee; }
+
+/* 文中のリンク */
+.text-link { color: #0b5b91; text-decoration: underline; text-underline-offset: 0.2em; }
+.text-link:hover { color: #0a2a42; }
+
+/* 写真：角を丸めず、そのまま。下に小さな説明（撮影者） */
+.photo { display: block; width: 100%; height: 100%; object-fit: cover; }
+.photo-credit { font-size: 0.8125rem; color: #4a5d6c; }
+.photo-credit a { text-decoration: underline; text-underline-offset: 0.15em; }
+
+/* ふわっと表示（JS が動くときだけ隠す。JS が止まっていても文章が読めるように） */
 .js .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(16px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
-
-.js .reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* レジンの揺らぎを表現する波形の区切り線 */
-.wave-divider {
-  display: block;
-  width: 100%;
-  height: auto;
-  line-height: 0;
-}
-
-/* 揺らめく光のブロブ装飾 */
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.35;
-  pointer-events: none;
-}
+.js .reveal.is-visible { opacity: 1; transform: none; }
 
 /* ===== アクセシビリティ（WCAG 2.2 AA）2026-10-26 ===== */
 
@@ -53,34 +88,21 @@ body {
 :focus-visible {
   outline: 3px solid #ffffff;
   outline-offset: 2px;
-  box-shadow: 0 0 0 6px #0b3a5e;
-  border-radius: 4px;
+  box-shadow: 0 0 0 6px #0a2a42;
+  border-radius: 2px;
 }
 main:focus { outline: none; }
 
-/* 「動きを減らす」設定の人には、ふわっと表示・なめらかスクロール・拡大の動きを止める */
+/* 「動きを減らす」設定の人には、ふわっと表示・なめらかスクロールを止める */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .js .reveal { opacity: 1; transform: none; transition: none; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
 
-/* 点滅・波紋の飾りは、ずっと動かさない（3回で止める。WCAG 2.2.2） */
-.animate-ping, .animate-pulse { animation-iteration-count: 3; }
-
-/* ===== 読みやすさ（文字の大きさ・折り返し）2026-10-27 ===== */
-/* 本文の行間を日本語向けに広めに、字間を少しだけ空ける */
-body {
-  line-height: 1.9;
-  letter-spacing: 0.03em;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-/* 折り返し：
-   ・本文（左寄せ）… 行末までしっかり使う通常の折り返し。line-break: strict で小さい「ゃ」「ー」や「。」を行の頭に来させない。
-     text-wrap: pretty で、最後の行が1〜2文字だけになるのを防ぐ（対応していないブラウザは今までどおり）
-   ・見出し・中央寄せの短い文 … word-break: auto-phrase で「文節」の切れ目で折り返す（「閉じ込め｜て。」を防ぐ）。
-     見出しは text-wrap: balance で行の長さをそろえる
+/* ===== 読みやすさ（文字の大きさ・折り返し）2026-10-27 =====
+   ・本文 … line-break: strict（小さい「ゃ」「ー」や「。」を行の頭に来させない）、text-wrap: pretty（最後の行が1〜2文字にならない）
+   ・見出し・中央寄せの短い文・ボタン … word-break: auto-phrase（文節の切れ目で折る）。見出しは balance
    ・overflow-wrap: anywhere … 長い英数字（URL・メール）で画面からはみ出さない */
 p, li, dd, dt, label, td, th, blockquote, figcaption {
   line-break: strict;
@@ -97,14 +119,19 @@ h1, h2, h3, h4, h5, h6 {
   word-break: auto-phrase;
 }
 
+/* スマホの本文は 16px（2026-10-28）。PC の本文はもともと 16px（sm:text-base）。ボタン・リンクは幅が足りなくなるので今のまま */
+@media (max-width: 639px) {
+  :is(p, li, ul, ol, dl, dd, dt, td, th, address, label, div).text-sm { font-size: 1rem; line-height: 1.85; }
+}
+
 /* ===== 特定商取引法の表・ショップ 2026-10-27 ===== */
 /* 項目名と内容の表。スマホは縦に積み、PC は左に項目名 */
 .legal-table > div {
   padding: 1rem 0;
-  border-top: 1px solid rgba(22, 50, 63, 0.12);
+  border-top: 1px solid #d6e1e6;
 }
 .legal-table > div:first-child { border-top: none; padding-top: 0; }
-.legal-table dt { font-weight: 700; color: #0b3a5e; }
+.legal-table dt { font-weight: 700; color: #0a2a42; }
 .legal-table dd { margin-top: 0.25rem; min-width: 0; } /* 中の表が横にはみ出さないように */
 @media (min-width: 640px) {
   .legal-table > div { display: grid; grid-template-columns: 11rem 1fr; gap: 1.5rem; }
@@ -112,36 +139,3 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* 【要確認】の印（オーナーが決めるまでの仮の所）。残っていると bin/deploy.sh --go は送らない */
 .todo { background: #fff3c4; color: #7a2e12; font-weight: 700; padding: 0 0.2em; border-radius: 3px; }
-
-/* ===== 絵画調の絵（2026-10-28）古宇利大橋から古宇利島を望む海がモチーフ =====
-   絵は images/ の SVG（作り方は tools/ の .py）。写真は使っていない */
-/* トップの最初の画面：絵の上に、白い紙のような札で文字をのせる（絵の上でも文字が読めるように） */
-.hero-paint {
-  background: #1559c4 url("../images/paint-kouri-bridge.svg") 68% 100% / cover no-repeat;
-}
-@media (min-width: 768px) { .hero-paint { background-position: 50% 100%; } }
-.hero-card {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 2.2rem 1.6rem 2.4rem 1.4rem; /* 少しいびつにして、手で切った紙のように */
-  box-shadow: 0 18px 50px -18px rgba(11, 58, 94, 0.45);
-}
-@supports (backdrop-filter: blur(4px)) {
-  .hero-card { background: rgba(255, 255, 255, 0.84); backdrop-filter: blur(4px); }
-}
-/* 各ページの見出しの帯：絵画調の空と海。下の端はページの地の色。文字は白（空の濃い青の上） */
-.page-paint {
-  background: #0d4aac url("../images/paint-sea-band.svg") 50% 100% / cover no-repeat;
-}
-.page-paint h1, .page-paint p { text-shadow: 0 1px 12px rgba(8, 40, 100, 0.35); }
-
-/* ページの地に、キャンバスの布目のようなざらつきをうっすら */
-body {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.05 0 0 0 0 0.25 0 0 0 0 0.35 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* ===== スマホの文字の大きさ（2026-10-28）=====
-   スマホの本文は 16px（今の標準。ブラウザの基本の大きさ。15px は少し小さい）。
-   PC の本文はもともと 16px（sm:text-base）。ボタン・リンクは幅が足りなくなるので今のまま */
-@media (max-width: 639px) {
-  :is(p, li, ul, dl, dd, dt, td, th, address, label, div).text-sm { font-size: 1rem; line-height: 1.85; }
-}

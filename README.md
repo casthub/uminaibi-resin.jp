@@ -21,7 +21,11 @@
 ★サーバーにだけあるファイル（前の WordPress の名残など）は消さない作りにしてある。
 
 ## フォルダ
-- `site/` … 公開するファイル
+- `site/` … 公開するファイル（2026-10-28 リビルド後のページ）
+  - `index.html` … トップ（写真・コンセプト #about・作品のイメージ #works・体験教室の一覧・お店のご案内 #visit）
+  - `workshop.html` 体験教室 ／ `shop.html` ショップ ／ `contact.html` 予約・問い合わせ ／ `tokushoho.html` ／ `privacy.html` ／ `shop-thanks.html`
+  - `images/photos/` … 風景写真（Unsplash・撮影者はページに記載）、`images/gallery/` … 作品のイメージ写真（Unsplash・当店の作品ではない）
+  - 古い `concept.html`・`gallery.html`・`access.html` は無くした。`.htaccess` でトップの同じ所へ自動で移る（301）
 - `bin/deploy.sh` … FTP で送るスクリプト
 - `deploy.env.example` … 接続情報のひな形（本物の `deploy.env` は git に入れない）
 - `docs/` … 課題・決定ログ

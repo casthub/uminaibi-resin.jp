@@ -6,70 +6,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>プライバシーポリシー | うみないび | 沖縄県名護市のレジンアート専門店</title>
   <meta name="description" content="沖縄県名護市のレジンアート専門店「うみないび」の個人情報の取り扱い（プライバシーポリシー）です。">
-  <meta name="keywords" content="レジンアート,うみないび,アクセス,沖縄,名護市,店舗情報,駐車場">
-
-  <!-- Tailwind（CSS ファイル。作り直しは bin/build-css.sh） -->
-  <link rel="stylesheet" href="css/tailwind.css?v=20261028-4">
-
-  <!-- 共通カスタムスタイルシート -->
-  <link rel="stylesheet" href="css/style.css?v=20261028-4">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://uminaibi-resin.jp/privacy.html">
+  <meta property="og:title" content="プライバシーポリシー | うみないび | 沖縄県名護市のレジンアート専門店">
+  <meta property="og:description" content="沖縄県名護市のレジンアート専門店「うみないび」の個人情報の取り扱い（プライバシーポリシー）です。">
+  <meta property="og:image" content="https://uminaibi-resin.jp/ogp.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="うみないび">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f6f9fa">
+  <!-- Tailwind（CSS ファイル。作り直しは bin/build-css.sh）と共通の CSS -->
+  <link rel="stylesheet" href="css/tailwind.css?v=20261028-5">
+  <link rel="stylesheet" href="css/style.css?v=20261028-5">
 </head>
 <body class="bg-sand text-ink antialiased">
 
-  <!-- ヘッダー -->
-  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent text-white">
-    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-      <div class="flex items-center justify-between h-20">
-        <a href="index.html" class="flex items-center gap-2 group">
-          <span id="header-logo" class="font-serif-jp text-2xl sm:text-3xl tracking-widest text-white transition-colors duration-500 group-hover:opacity-80">うみないび</span>
-        </a>
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[60] focus:bg-white focus:px-4 focus:py-2 focus:text-ocean-deep">本文へ移動</a>
 
-        <!-- デスクトップナビゲーション -->
-        <nav class="hidden lg:flex items-center gap-5 xl:gap-8 font-sansJp">
-          <a href="concept.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">コンセプト</a>
-          <a href="workshop.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">体験教室</a>
-          <a href="gallery.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">ギャラリー</a>
-          <a href="shop.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">ショップ</a>
-          <a href="access.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">アクセス</a>
-          <a href="contact.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">お問い合わせ</a>
-          <a href="contact.html" class="ml-2 inline-flex items-center whitespace-nowrap rounded-full bg-emerald px-5 xl:px-6 py-2.5 text-sm font-medium tracking-wider text-white shadow-soft transition-transform duration-300 hover:scale-105 hover:bg-emerald/90">ご予約はこちら</a>
-        </nav>
-
-        <!-- モバイルメニューボタン -->
-        <button id="menu-btn" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 focus:outline-none">
-          <span id="bar1" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
-          <span id="bar2" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
-          <span id="bar3" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
-        </button>
-      </div>
+  <!-- ヘッダー（2026-10-28 リビルド：いつも白い地。メニューは5つ＋予約） -->
+  <header id="site-header" class="fixed inset-x-0 top-0 z-50 bg-sand/95 backdrop-blur transition-shadow">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:h-[4.5rem] sm:px-8 lg:px-12">
+      <a href="index.html" class="flex items-baseline gap-3">
+        <span class="font-serif-jp text-2xl tracking-[0.2em] text-ocean-deep">うみないび</span>
+        <span class="hidden text-xs tracking-[0.25em] text-ink/80 sm:inline">OKINAWA RESIN ART</span>
+      </a>
+      <nav aria-label="メインメニュー" class="hidden items-center gap-7 lg:flex xl:gap-9">
+          <a href="index.html#about" class="text-sm tracking-widest text-ink/80 hover:text-ocean">コンセプト</a>
+          <a href="index.html#works" class="text-sm tracking-widest text-ink/80 hover:text-ocean">作品</a>
+          <a href="workshop.html" class="text-sm tracking-widest text-ink/80 hover:text-ocean">体験教室</a>
+          <a href="shop.html" class="text-sm tracking-widest text-ink/80 hover:text-ocean">ショップ</a>
+          <a href="index.html#visit" class="text-sm tracking-widest text-ink/80 hover:text-ocean">アクセス</a>
+          <a href="contact.html" class="btn !min-h-0 !px-5 !py-2 text-sm">ご予約・お問い合わせ</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu" class="relative z-50 -mr-2 flex h-11 w-11 flex-col items-center justify-center gap-1.5 text-ocean-deep lg:hidden">
+        <span id="bar1" class="block h-px w-6 bg-current transition-all duration-300"></span>
+        <span id="bar2" class="block h-px w-6 bg-current transition-all duration-300"></span>
+        <span id="bar3" class="block h-px w-6 bg-current transition-all duration-300"></span>
+      </button>
     </div>
 
-    <!-- モバイルドロワーメニュー -->
-    <div id="mobile-menu" inert aria-label="メニュー" class="lg:hidden fixed inset-0 z-40 flex translate-x-full flex-col items-center justify-center gap-8 bg-ocean-deep/98 backdrop-blur-sm transition-transform duration-500 text-white">
-      <a href="concept.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">コンセプト</a>
-      <a href="workshop.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">体験教室</a>
-      <a href="gallery.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">ギャラリー</a>
-      <a href="shop.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">オンラインショップ</a>
-      <a href="access.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">アクセス</a>
-      <a href="contact.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">お問い合わせ</a>
-      <a href="contact.html" class="mt-4 inline-flex items-center rounded-full bg-emerald px-8 py-3 text-base font-medium tracking-wider text-white hover:bg-emerald/90 transition-transform duration-300 hover:scale-105">ご予約はこちら</a>
+    <!-- スマホのメニュー（画面いっぱい・白い地） -->
+    <div id="mobile-menu" inert aria-label="メニュー" class="fixed inset-0 z-40 flex translate-x-full flex-col bg-sand px-6 pb-10 pt-24 transition-transform duration-500 lg:hidden">
+      <nav aria-label="メニュー" class="flex flex-col border-t border-line">
+        <a href="index.html#about" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">コンセプト<span aria-hidden="true" class="text-ocean-light">→</span></a>
+        <a href="index.html#works" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">作品<span aria-hidden="true" class="text-ocean-light">→</span></a>
+        <a href="workshop.html" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">体験教室<span aria-hidden="true" class="text-ocean-light">→</span></a>
+        <a href="shop.html" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">ショップ<span aria-hidden="true" class="text-ocean-light">→</span></a>
+        <a href="index.html#visit" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">アクセス<span aria-hidden="true" class="text-ocean-light">→</span></a>
+      </nav>
+      <a href="contact.html" class="btn mt-8 w-full">ご予約・お問い合わせ</a>
+      <p class="mt-auto pt-8 text-sm text-ink/80">沖縄県名護市真喜屋763番地1 羽地の駅2階<br>10:00 - 18:00 ／ 050-7116-0133</p>
     </div>
   </header>
 
   <main id="main" tabindex="-1">
-    <!-- ページヘッダー -->
-    <section class="page-paint relative pt-28 pb-16 sm:pt-40 sm:pb-32 overflow-hidden text-white">
-      <div class="relative z-10 mx-auto max-w-4xl px-5 sm:px-6 text-center">
-        <p class="text-xs tracking-[0.35em] text-white uppercase font-bold">Privacy Policy</p>
-        <h1 class="font-serif-jp mt-3 sm:mt-4 text-[1.75rem] max-sm:leading-snug sm:text-4xl md:text-5xl tracking-wider sm:tracking-widest">プライバシーポリシー</h1>
-        <p class="mt-4 text-sm sm:text-base text-white">お客様の個人情報の取り扱いについて</p>
+    <!-- ページの見出し（2026-10-28 リビルド：文字だけ） -->
+    <section class="pb-10 pt-28 sm:pb-14 sm:pt-40">
+      <div class="mx-auto max-w-3xl px-5 sm:px-6">
+        <p class="eyebrow">Privacy Policy</p>
+        <h1 class="mt-4 font-serif-jp text-[2rem] leading-snug tracking-wider text-ocean-deep sm:text-5xl">プライバシーポリシー</h1>
+        <p class="mt-5 max-w-2xl text-sm text-ink/80 sm:text-base">お客様の個人情報の取り扱いについて</p>
       </div>
     </section>
 
     <!-- プライバシーポリシー本文 -->
-    <section class="py-14 sm:py-20">
+    <section class="pb-14 pt-2 sm:pb-20 sm:pt-4">
       <div class="mx-auto max-w-3xl px-5 sm:px-6">
-        <div class="reveal bg-white rounded-3xl p-6 sm:p-10 shadow-soft space-y-10 text-sm leading-relaxed text-ink/80">
+        <div class="reveal bg-white p-6 sm:p-10 space-y-10 text-sm leading-relaxed text-ink/80 border border-line">
           <p>うみないび（以下「当店」）は、お客様の個人情報を、個人情報の保護に関する法律その他の法令を守り、以下のとおり大切に取り扱います。</p>
           <div>
             <h2 class="font-serif-jp text-lg font-bold text-ocean-deep mb-3">1. 事業者</h2>
@@ -93,7 +96,7 @@
           <div>
             <h2 class="font-serif-jp text-lg font-bold text-ocean-deep mb-3">5. 業務の委託</h2>
             <p class="mb-2">作品の発送（運送会社）や、ホームページ・メールの運用（サーバー会社）など、利用目的の達成に必要な範囲で、個人情報の取り扱いを外部に委託することがあります。その場合は、委託先を適切に選び、必要な監督を行います。</p>
-            <p class="mb-2">オンラインショップのお支払いは、決済サービス Stripe（ストライプジャパン株式会社。親会社は米国の Stripe, Inc.）の決済ページで行います。クレジットカードの番号は Stripe が直接受け取り、当店には届きません。当店は Stripe から、お名前・メールアドレス・お届け先・ご注文の内容・お支払いの結果を受け取ります。Stripe での情報の取り扱いは <a href="https://stripe.com/jp/privacy" class="text-ocean underline" target="_blank" rel="noopener noreferrer">Stripe のプライバシーポリシー（新しいタブで開きます）</a> をご確認ください。</p>
+            <p class="mb-2">オンラインショップのお支払いは、決済サービス Stripe（ストライプジャパン株式会社。親会社は米国の Stripe, Inc.）の決済ページで行います。クレジットカードの番号は Stripe が直接受け取り、当店には届きません。当店は Stripe から、お名前・メールアドレス・お届け先・ご注文の内容・お支払いの結果を受け取ります。Stripe での情報の取り扱いは <a href="https://stripe.com/jp/privacy" class="text-link" target="_blank" rel="noopener noreferrer">Stripe のプライバシーポリシー（新しいタブで開きます）</a> をご確認ください。</p>
           </div>
           <div>
             <h2 class="font-serif-jp text-lg font-bold text-ocean-deep mb-3">6. 安全管理</h2>
@@ -110,11 +113,11 @@
           </div>
           <div>
             <h2 class="font-serif-jp text-lg font-bold text-ocean-deep mb-3">9. Cookie（クッキー）について</h2>
-            <p class="mb-2">当店のホームページでは、アクセス解析や広告のための Cookie は使用していません。ただし、アクセスページに埋め込んでいる Google マップ（Google LLC）を表示すると、Google に閲覧者の IP アドレスなどの情報が送られ、Google が Cookie を使用することがあります。詳しくは <a href="https://policies.google.com/privacy?hl=ja" class="text-ocean underline" target="_blank" rel="noopener noreferrer">Google のプライバシーポリシー（新しいタブで開きます）</a> をご確認ください。</p>
+            <p class="mb-2">当店のホームページでは、アクセス解析や広告のための Cookie は使用していません。ただし、アクセスページに埋め込んでいる Google マップ（Google LLC）を表示すると、Google に閲覧者の IP アドレスなどの情報が送られ、Google が Cookie を使用することがあります。詳しくは <a href="https://policies.google.com/privacy?hl=ja" class="text-link" target="_blank" rel="noopener noreferrer">Google のプライバシーポリシー（新しいタブで開きます）</a> をご確認ください。</p>
           </div>
           <div>
             <h2 class="font-serif-jp text-lg font-bold text-ocean-deep mb-3">10. お問い合わせ窓口</h2>
-            <p class="mb-2">うみないび<br>個人情報お問い合わせ窓口<br>電話：050-7116-0133（営業時間 10:00〜18:00）<br>メール：info@uminaibi-resin.jp<br>お問い合わせフォーム：<a href="contact.html" class="text-ocean underline">こちら</a></p>
+            <p class="mb-2">うみないび<br>個人情報お問い合わせ窓口<br>電話：050-7116-0133（営業時間 10:00〜18:00）<br>メール：info@uminaibi-resin.jp<br>お問い合わせフォーム：<a href="contact.html" class="text-link">こちら</a></p>
           </div>
           <div>
             <h2 class="font-serif-jp text-lg font-bold text-ocean-deep mb-3">11. 改定</h2>
@@ -127,59 +130,45 @@
 
   </main>
 
+
   <!-- フッター -->
-  <footer class="bg-ocean-deep text-white border-t border-white/10 relative overflow-hidden">
-    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12 py-12 sm:py-14">
-      <div class="grid gap-8 md:gap-10 md:grid-cols-3 relative z-10">
-        <div>
-          <p class="font-serif-jp text-2xl tracking-widest text-white">うみないび</p>
-          <p class="mt-3 text-sm leading-relaxed text-white/70">
-            沖縄県名護市、海のきらめきをレジンアートに閉じ込めて。<br>
-            あなただけの大切な海をお届けする専門店。
-          </p>
-          <div class="mt-5 flex gap-4">
-            <a href="https://www.instagram.com/uminaibi2026/" aria-label="うみないびの Instagram（@uminaibi2026・新しいタブで開きます）" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20">
-              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5a4.25 4.25 0 0 0 4.25 4.25h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5a4.25 4.25 0 0 0-4.25-4.25h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.1-2.6a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3z"/></svg>
-            </a>
-            <a href="https://line.me/R/ti/p/@726qtybt" aria-label="うみないびの LINE（@726qtybt・新しいタブで開きます）" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20">
-              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 2C6.48 2 2 5.69 2 10.24c0 4.09 3.61 7.51 8.48 8.14.33.07.78.22.89.5.1.26.07.66.03.92l-.15.9c-.04.26-.2 1.03.9.56 1.1-.47 5.94-3.5 8.1-6 1.51-1.65 2.24-3.34 2.24-5.02C22.5 5.69 17.52 2 12 2z"/></svg>
-            </a>
+  <footer class="bg-ocean-deep text-white">
+    <div class="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-12">
+      <div class="grid gap-10 md:grid-cols-12">
+        <div class="md:col-span-5">
+          <p class="font-serif-jp text-3xl tracking-[0.2em]">うみないび</p>
+          <p class="mt-2 text-xs tracking-[0.25em] text-white/80">OKINAWA NAGO RESIN ART</p>
+          <address class="mt-6 text-sm not-italic leading-relaxed text-white/85">
+            〒905-1143 沖縄県名護市真喜屋763番地1 羽地の駅 2階<br>
+            営業時間 10:00 - 18:00（体験は事前予約制）<br>
+            TEL <a href="tel:05071160133" class="underline underline-offset-4">050-7116-0133</a>
+          </address>
+          <div class="mt-6 flex gap-3">
+            <a href="https://www.instagram.com/uminaibi2026/" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center border border-white/40 px-4 text-sm hover:bg-white hover:text-ocean-deep">Instagram<span class="sr-only">（@uminaibi2026・新しいタブで開きます）</span></a>
+            <a href="https://line.me/R/ti/p/@726qtybt" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center border border-white/40 px-4 text-sm hover:bg-white hover:text-ocean-deep">LINE<span class="sr-only">（@726qtybt・新しいタブで開きます）</span></a>
           </div>
         </div>
-
-        <div>
-          <p class="text-sm font-semibold tracking-widest text-white/90">SITEMAP</p>
-          <ul class="mt-4 grid grid-cols-2 gap-x-6 gap-y-2 md:grid-cols-1 text-sm text-white/70 font-sansJp">
-            <li><a href="index.html" class="hover:text-white transition-colors">トップページ</a></li>
-            <li><a href="concept.html" class="hover:text-white transition-colors">コンセプト</a></li>
-            <li><a href="workshop.html" class="hover:text-white transition-colors">体験教室</a></li>
-            <li><a href="gallery.html" class="hover:text-white transition-colors">ギャラリー</a></li>
-            <li><a href="shop.html" class="hover:text-white transition-colors">オンラインショップ</a></li>
-            <li><a href="access.html" class="hover:text-white transition-colors">アクセス</a></li>
-            <li><a href="contact.html" class="hover:text-white transition-colors">お問い合わせ</a></li>
+        <nav aria-label="サイトマップ" class="md:col-span-7">
+          <ul class="grid grid-cols-2 gap-x-6 gap-y-3 text-sm text-white/85 sm:grid-cols-3">
+            <li><a href="index.html" class="hover:text-white hover:underline">トップ</a></li>
+            <li><a href="index.html#about" class="hover:text-white hover:underline">コンセプト</a></li>
+            <li><a href="index.html#works" class="hover:text-white hover:underline">作品</a></li>
+            <li><a href="workshop.html" class="hover:text-white hover:underline">体験教室</a></li>
+            <li><a href="shop.html" class="hover:text-white hover:underline">オンラインショップ</a></li>
+            <li><a href="index.html#visit" class="hover:text-white hover:underline">アクセス</a></li>
+            <li><a href="contact.html" class="hover:text-white hover:underline">ご予約・お問い合わせ</a></li>
+            <li><a href="privacy.html" class="hover:text-white hover:underline">プライバシーポリシー</a></li>
+            <li><a href="tokushoho.html" class="hover:text-white hover:underline">特定商取引法に基づく表記</a></li>
           </ul>
-        </div>
-
-        <div>
-          <p class="text-sm font-semibold tracking-widest text-white/90">SHOP INFO</p>
-          <address class="mt-4 space-y-1 text-sm not-italic leading-relaxed text-white/70 font-sansJp">
-            〒905-1143<br>
-            沖縄県名護市真喜屋763番地1<br>
-            羽地の駅 2階<br>
-            営業時間 10:00 - 18:00<br>（体験は事前予約が必要です）<br>
-            TEL: 050-7116-0133
-          </address>
-        </div>
+        </nav>
       </div>
-
-      <div class="mt-10 sm:mt-12 border-t border-white/15 pt-6 text-center text-xs leading-relaxed tracking-wider text-white/75 relative z-10 font-sansJp">
-        &copy; <span id="current-year"></span> うみないび / uminaibi-resin.jp All Rights Reserved.<br class="sm:hidden"><span class="hidden sm:inline">　|　</span><a href="privacy.html" class="underline hover:text-white">プライバシーポリシー</a><br class="sm:hidden"><span class="hidden sm:inline">　|　</span><a href="tokushoho.html" class="underline hover:text-white">特定商取引法に基づく表記</a>
-      </div>
+      <p class="mt-14 border-t border-white/20 pt-6 text-xs leading-relaxed text-white/80">
+        &copy; <span id="current-year">2026</span> うみないび / uminaibi-resin.jp　サイト内の風景写真・作品のイメージ写真は Unsplash の写真です（撮影者は各写真に記載）。
+      </p>
     </div>
   </footer>
 
-  <!-- 共通JavaScriptのインポート -->
-  <script src="js/main.js?v=20261028-4"></script>
+  <script src="js/main.js?v=20261028-5"></script>
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
   </script>

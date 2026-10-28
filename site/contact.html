@@ -6,72 +6,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ご予約・お問い合わせ | うみないび | 沖縄県名護市のレジンアート専門店</title>
   <meta name="description" content="沖縄県名護市のレジンアートショップ「うみないび」のお問い合わせ・ご予約ページです。体験ワークショップのご予約、オーダーメイドのご相談など、メールフォーム、Instagram DMから受け付けております。">
-  <meta name="keywords" content="レジンアート,うみないび,予約,問い合わせ,沖縄,名護市,メールフォーム">
-
-  <!-- Tailwind（CSS ファイル。作り直しは bin/build-css.sh） -->
-  <link rel="stylesheet" href="css/tailwind.css?v=20261028-4">
-
-  <!-- 共通カスタムスタイルシート -->
-  <link rel="stylesheet" href="css/style.css?v=20261028-4">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://uminaibi-resin.jp/contact.html">
+  <meta property="og:title" content="ご予約・お問い合わせ | うみないび | 沖縄県名護市のレジンアート専門店">
+  <meta property="og:description" content="沖縄県名護市のレジンアートショップ「うみないび」のお問い合わせ・ご予約ページです。体験ワークショップのご予約、オーダーメイドのご相談など、メールフォーム、Instagram DMから受け付けております。">
+  <meta property="og:image" content="https://uminaibi-resin.jp/ogp.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="うみないび">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f6f9fa">
+  <!-- Tailwind（CSS ファイル。作り直しは bin/build-css.sh）と共通の CSS -->
+  <link rel="stylesheet" href="css/tailwind.css?v=20261028-5">
+  <link rel="stylesheet" href="css/style.css?v=20261028-5">
 </head>
 <body class="bg-sand text-ink antialiased">
 
-  <!-- ヘッダー -->
-  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent text-white">
-    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-      <div class="flex items-center justify-between h-20">
-        <a href="index.html" class="flex items-center gap-2 group">
-          <span id="header-logo" class="font-serif-jp text-2xl sm:text-3xl tracking-widest text-white transition-colors duration-500 group-hover:opacity-80">うみないび</span>
-        </a>
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[60] focus:bg-white focus:px-4 focus:py-2 focus:text-ocean-deep">本文へ移動</a>
 
-        <!-- デスクトップナビゲーション -->
-        <nav class="hidden lg:flex items-center gap-5 xl:gap-8 font-sansJp">
-          <a href="concept.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">コンセプト</a>
-          <a href="workshop.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">体験教室</a>
-          <a href="gallery.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">ギャラリー</a>
-          <a href="shop.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">ショップ</a>
-          <a href="access.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">アクセス</a>
-          <a href="contact.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">お問い合わせ</a>
-          <a href="contact.html" class="ml-2 inline-flex items-center whitespace-nowrap rounded-full bg-emerald px-5 xl:px-6 py-2.5 text-sm font-medium tracking-wider text-white shadow-soft transition-transform duration-300 hover:scale-105 hover:bg-emerald/90">ご予約はこちら</a>
-        </nav>
-
-        <!-- モバイルメニューボタン -->
-        <button id="menu-btn" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 focus:outline-none">
-          <span id="bar1" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
-          <span id="bar2" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
-          <span id="bar3" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
-        </button>
-      </div>
+  <!-- ヘッダー（2026-10-28 リビルド：いつも白い地。メニューは5つ＋予約） -->
+  <header id="site-header" class="fixed inset-x-0 top-0 z-50 bg-sand/95 backdrop-blur transition-shadow">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:h-[4.5rem] sm:px-8 lg:px-12">
+      <a href="index.html" class="flex items-baseline gap-3">
+        <span class="font-serif-jp text-2xl tracking-[0.2em] text-ocean-deep">うみないび</span>
+        <span class="hidden text-xs tracking-[0.25em] text-ink/80 sm:inline">OKINAWA RESIN ART</span>
+      </a>
+      <nav aria-label="メインメニュー" class="hidden items-center gap-7 lg:flex xl:gap-9">
+          <a href="index.html#about" class="text-sm tracking-widest text-ink/80 hover:text-ocean">コンセプト</a>
+          <a href="index.html#works" class="text-sm tracking-widest text-ink/80 hover:text-ocean">作品</a>
+          <a href="workshop.html" class="text-sm tracking-widest text-ink/80 hover:text-ocean">体験教室</a>
+          <a href="shop.html" class="text-sm tracking-widest text-ink/80 hover:text-ocean">ショップ</a>
+          <a href="index.html#visit" class="text-sm tracking-widest text-ink/80 hover:text-ocean">アクセス</a>
+          <a href="contact.html" class="btn !min-h-0 !px-5 !py-2 text-sm" aria-current="page">ご予約・お問い合わせ</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu" class="relative z-50 -mr-2 flex h-11 w-11 flex-col items-center justify-center gap-1.5 text-ocean-deep lg:hidden">
+        <span id="bar1" class="block h-px w-6 bg-current transition-all duration-300"></span>
+        <span id="bar2" class="block h-px w-6 bg-current transition-all duration-300"></span>
+        <span id="bar3" class="block h-px w-6 bg-current transition-all duration-300"></span>
+      </button>
     </div>
 
-    <!-- モバイルドロワーメニュー -->
-    <div id="mobile-menu" inert aria-label="メニュー" class="lg:hidden fixed inset-0 z-40 flex translate-x-full flex-col items-center justify-center gap-8 bg-ocean-deep/98 backdrop-blur-sm transition-transform duration-500 text-white">
-      <a href="concept.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">コンセプト</a>
-      <a href="workshop.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">体験教室</a>
-      <a href="gallery.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">ギャラリー</a>
-      <a href="shop.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">オンラインショップ</a>
-      <a href="access.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">アクセス</a>
-      <a href="contact.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">お問い合わせ</a>
-      <a href="contact.html" class="mt-4 inline-flex items-center rounded-full bg-emerald px-8 py-3 text-base font-medium tracking-wider text-white hover:bg-emerald/90 transition-transform duration-300 hover:scale-105">ご予約はこちら</a>
+    <!-- スマホのメニュー（画面いっぱい・白い地） -->
+    <div id="mobile-menu" inert aria-label="メニュー" class="fixed inset-0 z-40 flex translate-x-full flex-col bg-sand px-6 pb-10 pt-24 transition-transform duration-500 lg:hidden">
+      <nav aria-label="メニュー" class="flex flex-col border-t border-line">
+        <a href="index.html#about" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">コンセプト<span aria-hidden="true" class="text-ocean-light">→</span></a>
+        <a href="index.html#works" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">作品<span aria-hidden="true" class="text-ocean-light">→</span></a>
+        <a href="workshop.html" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">体験教室<span aria-hidden="true" class="text-ocean-light">→</span></a>
+        <a href="shop.html" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">ショップ<span aria-hidden="true" class="text-ocean-light">→</span></a>
+        <a href="index.html#visit" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">アクセス<span aria-hidden="true" class="text-ocean-light">→</span></a>
+      </nav>
+      <a href="contact.html" class="btn mt-8 w-full">ご予約・お問い合わせ</a>
+      <p class="mt-auto pt-8 text-sm text-ink/80">沖縄県名護市真喜屋763番地1 羽地の駅2階<br>10:00 - 18:00 ／ 050-7116-0133</p>
     </div>
   </header>
 
   <main id="main" tabindex="-1">
-    <!-- ページヘッダー -->
-    <section class="page-paint relative pt-28 pb-16 sm:pt-40 sm:pb-32 overflow-hidden text-white">
-      <div class="relative z-10 mx-auto max-w-4xl px-5 sm:px-6 text-center">
-        <p class="text-xs tracking-[0.35em] text-white uppercase font-bold">Reservation & Contact</p>
-        <h1 class="font-serif-jp mt-3 sm:mt-4 text-[1.75rem] max-sm:leading-snug sm:text-4xl md:text-5xl tracking-wider sm:tracking-widest">ご予約・お問い合わせ</h1>
-        <p class="mt-4 text-sm sm:text-base text-white">メールフォーム、Instagram の DM、または LINE からご連絡いただけます</p>
+    <!-- ページの見出し（2026-10-28 リビルド：文字だけ） -->
+    <section class="pb-10 pt-28 sm:pb-14 sm:pt-40">
+      <div class="mx-auto max-w-4xl px-5 sm:px-6">
+        <p class="eyebrow">Reservation & Contact</p>
+        <h1 class="mt-4 font-serif-jp text-[2rem] leading-snug tracking-wider text-ocean-deep sm:text-5xl">ご予約・お問い合わせ</h1>
+        <p class="mt-5 max-w-2xl text-sm text-ink/80 sm:text-base">メールフォーム、Instagram の DM、または LINE からご連絡いただけます</p>
       </div>
     </section>
 
     <!-- コンタクト手段 -->
-    <section class="py-14 sm:py-20">
+    <section class="pb-14 pt-2 sm:pb-20 sm:pt-4">
       <div class="mx-auto max-w-4xl px-5 sm:px-6">
         
         <!-- SNS予約のご案内 -->
-        <div class="text-center reveal mb-12">
+        <div class="reveal mb-10">
           <h2 class="font-serif-jp text-xl sm:text-2xl text-ocean-deep font-bold">SNS・メッセージアプリから手軽に相談</h2>
           <p class="mt-3 text-sm text-ink/80">空き状況の確認や、作品画像のやり取りには Instagram の DM（ダイレクトメッセージ）・LINE が便利です。<br class="hidden sm:inline">Instagram：<a href="https://www.instagram.com/uminaibi2026/" target="_blank" rel="noopener noreferrer" class="underline hover:text-ocean">@uminaibi2026<span class="sr-only">（新しいタブで開きます）</span></a> ／ LINE：@726qtybt</p>
         </div>
@@ -79,35 +82,35 @@
         <!-- Instagram DM（左）と LINE（右）（2026-10-26）。パソコンは横2つ・スマホは縦に、中央にそろえる -->
         <div class="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
           <!-- Instagram DM（@uminaibi2026 へのメッセージ画面が開く） -->
-          <a href="https://ig.me/m/uminaibi2026" aria-label="Instagram の DM で問い合わせる（@uminaibi2026・新しいタブで開きます）" target="_blank" rel="noopener noreferrer" class="reveal flex items-center gap-5 rounded-3xl bg-gradient-to-tr from-[#c2255c] via-[#b5287a] to-[#6228d7] p-6 text-white shadow-soft transition-transform duration-300 hover:scale-[1.02]">
-            <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/10">
+          <a href="https://ig.me/m/uminaibi2026" aria-label="Instagram の DM で問い合わせる（@uminaibi2026・新しいタブで開きます）" target="_blank" rel="noopener noreferrer" class="reveal flex items-center gap-5 border border-line bg-white p-6 text-ink transition-colors hover:border-ocean">
+            <div class="flex h-14 w-14 shrink-0 items-center justify-center bg-[#b5287a] text-white">
               <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-8 w-8">
                 <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5a4.25 4.25 0 0 0 4.25 4.25h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5a4.25 4.25 0 0 0-4.25-4.25h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.1-2.6a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3z"/>
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-lg leading-snug">Instagram の DM で問い合わせる</h3>
-              <p class="text-sm text-white/90 mt-1 leading-relaxed">@uminaibi2026 へのメッセージ画面が開きます。ギャラリーのお気に入り作品の画像を添えてご相談いただけます。</p>
+              <h3 class="font-bold text-lg leading-snug text-ocean-deep">Instagram の DM で問い合わせる</h3>
+              <p class="text-sm text-ink/80 mt-1 leading-relaxed">@uminaibi2026 へのメッセージ画面が開きます。気になる作品の画像を添えてご相談いただけます。</p>
             </div>
           </a>
 
           <!-- LINE（@726qtybt。スマホは LINE アプリ、パソコンは QR コードが開く） -->
-          <a href="https://line.me/R/ti/p/@726qtybt" aria-label="LINE で問い合わせる（@726qtybt・新しいタブで開きます）" target="_blank" rel="noopener noreferrer" class="reveal flex items-center gap-5 rounded-3xl bg-[#05702f] p-6 text-white shadow-soft transition-transform duration-300 hover:scale-[1.02]">
-            <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/15">
+          <a href="https://line.me/R/ti/p/@726qtybt" aria-label="LINE で問い合わせる（@726qtybt・新しいタブで開きます）" target="_blank" rel="noopener noreferrer" class="reveal flex items-center gap-5 border border-line bg-white p-6 text-ink transition-colors hover:border-ocean">
+            <div class="flex h-14 w-14 shrink-0 items-center justify-center bg-[#05702f] text-white">
               <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-8 w-8"><path d="M12 2.5C6.48 2.5 2 6.13 2 10.6c0 4 3.55 7.36 8.35 8 .33.07.77.22.88.5.1.25.07.65.03.9l-.14.86c-.04.25-.2 1 .88.54 1.08-.45 5.82-3.43 7.94-5.87C21.4 13.92 22 12.33 22 10.6 22 6.13 17.52 2.5 12 2.5zM8.3 13.02H6.32a.53.53 0 0 1-.53-.53V8.53a.53.53 0 1 1 1.06 0v3.43H8.3a.53.53 0 1 1 0 1.06zm2.05-.53a.53.53 0 1 1-1.06 0V8.53a.53.53 0 1 1 1.06 0zm4.77 0a.53.53 0 0 1-.95.32l-2.03-2.76v2.44a.53.53 0 1 1-1.06 0V8.53a.53.53 0 0 1 .95-.32l2.03 2.76V8.53a.53.53 0 1 1 1.06 0zm3.2-2.51a.53.53 0 1 1 0 1.06h-1.45v.94h1.45a.53.53 0 1 1 0 1.06h-1.98a.53.53 0 0 1-.53-.53V8.53c0-.29.24-.53.53-.53h1.98a.53.53 0 1 1 0 1.06h-1.45v.92z"/></svg>
             </div>
             <div>
-              <h3 class="font-bold text-lg leading-snug">LINE で問い合わせる</h3>
-              <p class="text-sm text-white/90 mt-1 leading-relaxed">友だち追加（@726qtybt）のあと、トークでご予約・ご相談いただけます。パソコンでは QR コードをスマホで読み取ってください。</p>
+              <h3 class="font-bold text-lg leading-snug text-ocean-deep">LINE で問い合わせる</h3>
+              <p class="text-sm text-ink/80 mt-1 leading-relaxed">友だち追加（@726qtybt）のあと、トークでご予約・ご相談いただけます。パソコンでは QR コードをスマホで読み取ってください。</p>
             </div>
           </a>
         </div>
 
-        <div class="my-16 border-t border-ink/10"></div>
+        <div class="my-16 border-t border-line"></div>
 
         <!-- お問い合わせフォーム -->
-        <div class="reveal bg-white rounded-3xl p-6 sm:p-10 shadow-soft">
-          <h2 class="font-serif-jp text-lg text-center font-bold mb-8 text-ocean-deep">メールフォームからのお問い合わせ</h2>
+        <div class="reveal bg-white p-6 sm:p-10 border border-line">
+          <h2 class="font-serif-jp text-xl font-bold mb-6 text-ocean-deep sm:text-2xl">メールフォームからのお問い合わせ</h2>
           
           <!-- フォーム -->
           <p class="text-sm text-ink/75 mb-4"><span class="text-red-700" aria-hidden="true">*</span> の付いた項目は入力が必要です。</p>
@@ -120,22 +123,22 @@
             <div class="grid gap-6 sm:grid-cols-2">
               <div>
                 <label for="name" class="block text-sm font-bold text-ink/70 mb-2">お名前 <span class="text-red-700" aria-hidden="true">*</span><span class="sr-only">（必須）</span></label>
-                <input id="name" name="name" type="text" required maxlength="60" autocomplete="name" class="w-full rounded-xl border border-ink/10 bg-sand/10 px-4 py-3 text-base focus:border-ocean focus:outline-none focus:ring-1 focus:ring-ocean">
+                <input id="name" name="name" type="text" required maxlength="60" autocomplete="name" class="w-full border border-line px-4 py-3 text-base focus:border-ocean focus:outline-none focus:ring-1 focus:ring-ocean">
               </div>
               <div>
                 <label for="email" class="block text-sm font-bold text-ink/70 mb-2">メールアドレス <span class="text-red-700" aria-hidden="true">*</span><span class="sr-only">（必須）</span></label>
-                <input id="email" name="email" type="email" required maxlength="200" autocomplete="email" class="w-full rounded-xl border border-ink/10 bg-sand/10 px-4 py-3 text-base focus:border-ocean focus:outline-none focus:ring-1 focus:ring-ocean">
+                <input id="email" name="email" type="email" required maxlength="200" autocomplete="email" class="w-full border border-line px-4 py-3 text-base focus:border-ocean focus:outline-none focus:ring-1 focus:ring-ocean">
               </div>
             </div>
 
             <div class="grid gap-6 sm:grid-cols-2">
               <div>
                 <label for="tel" class="block text-sm font-bold text-ink/70 mb-2">電話番号</label>
-                <input id="tel" name="tel" type="tel" maxlength="30" autocomplete="tel" class="w-full rounded-xl border border-ink/10 bg-sand/10 px-4 py-3 text-base focus:border-ocean focus:outline-none focus:ring-1 focus:ring-ocean" placeholder="例: 090-0000-0000">
+                <input id="tel" name="tel" type="tel" maxlength="30" autocomplete="tel" class="w-full border border-line px-4 py-3 text-base focus:border-ocean focus:outline-none focus:ring-1 focus:ring-ocean" placeholder="例: 090-0000-0000">
               </div>
               <div>
                 <label id="subject-label" for="subject" class="block text-sm font-bold text-ink/70 mb-2">ご用件 <span class="text-red-700" aria-hidden="true">*</span><span class="sr-only">（必須）</span></label>
-                <select id="subject" name="subject" required class="w-full rounded-xl border border-ink/10 bg-sand/10 px-4 py-3 text-base focus:border-ocean focus:outline-none focus:ring-1 focus:ring-ocean">
+                <select id="subject" name="subject" required class="w-full border border-line px-4 py-3 text-base focus:border-ocean focus:outline-none focus:ring-1 focus:ring-ocean">
                   <option value="">選択してください</option>
                   <option value="workshop">体験教室のご予約について</option>
                   <option value="order">オーダーメイドのご相談</option>
@@ -145,33 +148,33 @@
             </div>
 
             <!-- 体験予約の場合の日時指定（初期は非表示、または任意） -->
-            <div id="reservation-details" class="hidden rounded-2xl bg-sand/10 p-5 border border-ink/5 space-y-4">
+            <div id="reservation-details" class="hidden p-5 border border-line space-y-4">
               <p class="text-sm font-bold text-ocean">【体験教室ご希望の方へ】</p>
               <div class="grid gap-4 sm:grid-cols-2">
                 <div>
                   <label for="reserve-date" class="block text-sm font-bold text-ink/75 mb-1">第一希望日時 <span class="text-red-700" aria-hidden="true">*</span><span class="sr-only">（必須）</span></label>
-                  <input id="reserve-date" name="reserve_date" type="text" maxlength="100" class="w-full rounded-lg border border-ink/10 bg-white px-3 py-2 text-base focus:outline-none focus:border-ocean" placeholder="例: 8月20日 13:00頃">
+                  <input id="reserve-date" name="reserve_date" type="text" maxlength="100" class="w-full border border-line bg-white px-3 py-2 text-base focus:outline-none focus:border-ocean" placeholder="例: 8月20日 13:00頃">
                 </div>
                 <div>
                   <label for="reserve-count" class="block text-sm font-bold text-ink/75 mb-1">参加人数 <span class="text-red-700" aria-hidden="true">*</span><span class="sr-only">（必須）</span></label>
-                  <input id="reserve-count" name="reserve_count" type="number" min="1" max="10" class="w-full rounded-lg border border-ink/10 bg-white px-3 py-2 text-base focus:outline-none focus:border-ocean" placeholder="人数を入力してください">
+                  <input id="reserve-count" name="reserve_count" type="number" min="1" max="10" class="w-full border border-line bg-white px-3 py-2 text-base focus:outline-none focus:border-ocean" placeholder="人数を入力してください">
                 </div>
               </div>
             </div>
 
             <div>
               <label for="message" class="block text-sm font-bold text-ink/70 mb-2">お問い合わせ内容 <span class="text-red-700" aria-hidden="true">*</span><span class="sr-only">（必須）</span></label>
-              <textarea id="message" name="message" required maxlength="4000" rows="6" class="w-full rounded-xl border border-ink/10 bg-sand/10 px-4 py-3 text-base focus:border-ocean focus:outline-none focus:ring-1 focus:ring-ocean" placeholder="ご質問や、希望するプラン・イメージなどをご記入ください。"></textarea>
+              <textarea id="message" name="message" required maxlength="4000" rows="6" class="w-full border border-line px-4 py-3 text-base focus:border-ocean focus:outline-none focus:ring-1 focus:ring-ocean" placeholder="ご質問や、希望するプラン・イメージなどをご記入ください。"></textarea>
             </div>
 
-            <p class="text-sm text-ink/75 text-center leading-relaxed">
+            <p class="text-sm text-ink/75 leading-relaxed">
               ※ 送信前に<a href="privacy.html" class="underline hover:text-ocean" target="_blank" rel="noopener">プライバシーポリシー</a>および入力内容に誤りがないかご確認ください。<br>
               通常、2営業日以内に担当者よりご返信いたします。
             </p>
 
-            <div class="text-center">
-              <p id="form-error" role="alert" class="hidden whitespace-pre-line rounded-xl bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700 text-left mb-4"></p>
-              <button id="contact-submit" type="submit" class="disabled:opacity-60 disabled:cursor-wait inline-flex rounded-full bg-ocean-deep hover:bg-ocean text-white px-10 py-4 text-sm font-bold tracking-widest shadow-soft transition-transform duration-300 hover:scale-105 cursor-pointer">送信する</button>
+            <div>
+              <p id="form-error" role="alert" class="hidden whitespace-pre-line bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700 text-left mb-4"></p>
+              <button id="contact-submit" type="submit" class="btn disabled:opacity-60 disabled:cursor-wait cursor-pointer">送信する</button>
             </div>
           </form>
         </div>
@@ -181,9 +184,9 @@
   </main>
 
   <!-- 送信完了のダイアログ -->
-  <div id="success-modal" role="dialog" aria-modal="true" aria-labelledby="success-title" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/75 p-6 backdrop-blur-sm transition-opacity duration-300">
-    <div class="w-full max-w-sm bg-white rounded-3xl p-6 sm:p-8 text-center space-y-4 shadow-2xl">
-      <div class="h-16 w-14 mx-auto text-emerald bg-emerald/10 flex items-center justify-center rounded-2xl">
+  <div id="success-modal" role="dialog" aria-modal="true" aria-labelledby="success-title" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/75 p-6 transition-opacity">
+    <div class="w-full max-w-sm bg-white p-6 sm:p-8 text-center space-y-4 border border-line">
+      <div class="h-16 w-14 mx-auto text-emerald bg-emerald/10 flex items-center justify-center">
         <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
         </svg>
@@ -192,63 +195,49 @@
       <p class="text-sm text-ink/80 leading-relaxed">
         お問い合わせありがとうございます。入力いただいたメールアドレス宛に自動返信メールを送信しました。内容を確認後、2営業日以内に折り返しご連絡いたします。
       </p>
-      <button id="success-modal-close" data-dialog-close type="button" class="inline-block w-full py-3 rounded-xl bg-ocean-deep text-white font-bold text-sm tracking-wider hover:bg-ocean transition-colors cursor-pointer">閉じる</button>
+      <button id="success-modal-close" data-dialog-close type="button" class="inline-block w-full py-3 bg-ocean-deep text-white font-bold text-sm tracking-wider hover:bg-ocean transition-colors cursor-pointer">閉じる</button>
     </div>
   </div>
 
+
   <!-- フッター -->
-  <footer class="bg-ocean-deep text-white border-t border-white/10 relative overflow-hidden">
-    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12 py-12 sm:py-14">
-      <div class="grid gap-8 md:gap-10 md:grid-cols-3 relative z-10">
-        <div>
-          <p class="font-serif-jp text-2xl tracking-widest text-white">うみないび</p>
-          <p class="mt-3 text-sm leading-relaxed text-white/70">
-            沖縄県名護市、海のきらめきをレジンアートに閉じ込めて。<br>
-            あなただけの大切な海をお届けする専門店。
-          </p>
-          <div class="mt-5 flex gap-4">
-            <a href="https://www.instagram.com/uminaibi2026/" aria-label="うみないびの Instagram（@uminaibi2026・新しいタブで開きます）" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20">
-              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5a4.25 4.25 0 0 0 4.25 4.25h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5a4.25 4.25 0 0 0-4.25-4.25h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.1-2.6a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3z"/></svg>
-            </a>
-            <a href="https://line.me/R/ti/p/@726qtybt" aria-label="うみないびの LINE（@726qtybt・新しいタブで開きます）" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20">
-              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 2C6.48 2 2 5.69 2 10.24c0 4.09 3.61 7.51 8.48 8.14.33.07.78.22.89.5.1.26.07.66.03.92l-.15.9c-.04.26-.2 1.03.9.56 1.1-.47 5.94-3.5 8.1-6 1.51-1.65 2.24-3.34 2.24-5.02C22.5 5.69 17.52 2 12 2z"/></svg>
-            </a>
+  <footer class="bg-ocean-deep text-white">
+    <div class="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-12">
+      <div class="grid gap-10 md:grid-cols-12">
+        <div class="md:col-span-5">
+          <p class="font-serif-jp text-3xl tracking-[0.2em]">うみないび</p>
+          <p class="mt-2 text-xs tracking-[0.25em] text-white/80">OKINAWA NAGO RESIN ART</p>
+          <address class="mt-6 text-sm not-italic leading-relaxed text-white/85">
+            〒905-1143 沖縄県名護市真喜屋763番地1 羽地の駅 2階<br>
+            営業時間 10:00 - 18:00（体験は事前予約制）<br>
+            TEL <a href="tel:05071160133" class="underline underline-offset-4">050-7116-0133</a>
+          </address>
+          <div class="mt-6 flex gap-3">
+            <a href="https://www.instagram.com/uminaibi2026/" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center border border-white/40 px-4 text-sm hover:bg-white hover:text-ocean-deep">Instagram<span class="sr-only">（@uminaibi2026・新しいタブで開きます）</span></a>
+            <a href="https://line.me/R/ti/p/@726qtybt" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center border border-white/40 px-4 text-sm hover:bg-white hover:text-ocean-deep">LINE<span class="sr-only">（@726qtybt・新しいタブで開きます）</span></a>
           </div>
         </div>
-
-        <div>
-          <p class="text-sm font-semibold tracking-widest text-white/90">SITEMAP</p>
-          <ul class="mt-4 grid grid-cols-2 gap-x-6 gap-y-2 md:grid-cols-1 text-sm text-white/70 font-sansJp">
-            <li><a href="index.html" class="hover:text-white transition-colors">トップページ</a></li>
-            <li><a href="concept.html" class="hover:text-white transition-colors">コンセプト</a></li>
-            <li><a href="workshop.html" class="hover:text-white transition-colors">体験教室</a></li>
-            <li><a href="gallery.html" class="hover:text-white transition-colors">ギャラリー</a></li>
-            <li><a href="shop.html" class="hover:text-white transition-colors">オンラインショップ</a></li>
-            <li><a href="access.html" class="hover:text-white transition-colors">アクセス</a></li>
-            <li><a href="contact.html" class="hover:text-white transition-colors">お問い合わせ</a></li>
+        <nav aria-label="サイトマップ" class="md:col-span-7">
+          <ul class="grid grid-cols-2 gap-x-6 gap-y-3 text-sm text-white/85 sm:grid-cols-3">
+            <li><a href="index.html" class="hover:text-white hover:underline">トップ</a></li>
+            <li><a href="index.html#about" class="hover:text-white hover:underline">コンセプト</a></li>
+            <li><a href="index.html#works" class="hover:text-white hover:underline">作品</a></li>
+            <li><a href="workshop.html" class="hover:text-white hover:underline">体験教室</a></li>
+            <li><a href="shop.html" class="hover:text-white hover:underline">オンラインショップ</a></li>
+            <li><a href="index.html#visit" class="hover:text-white hover:underline">アクセス</a></li>
+            <li><a href="contact.html" class="hover:text-white hover:underline">ご予約・お問い合わせ</a></li>
+            <li><a href="privacy.html" class="hover:text-white hover:underline">プライバシーポリシー</a></li>
+            <li><a href="tokushoho.html" class="hover:text-white hover:underline">特定商取引法に基づく表記</a></li>
           </ul>
-        </div>
-
-        <div>
-          <p class="text-sm font-semibold tracking-widest text-white/90">SHOP INFO</p>
-          <address class="mt-4 space-y-1 text-sm not-italic leading-relaxed text-white/70 font-sansJp">
-            〒905-1143<br>
-            沖縄県名護市真喜屋763番地1<br>
-            羽地の駅 2階<br>
-            営業時間 10:00 - 18:00<br>（体験は事前予約が必要です）<br>
-            TEL: 050-7116-0133
-          </address>
-        </div>
+        </nav>
       </div>
-
-      <div class="mt-10 sm:mt-12 border-t border-white/15 pt-6 text-center text-xs leading-relaxed tracking-wider text-white/75 relative z-10 font-sansJp">
-        &copy; <span id="current-year"></span> うみないび / uminaibi-resin.jp All Rights Reserved.<br class="sm:hidden"><span class="hidden sm:inline">　|　</span><a href="privacy.html" class="underline hover:text-white">プライバシーポリシー</a><br class="sm:hidden"><span class="hidden sm:inline">　|　</span><a href="tokushoho.html" class="underline hover:text-white">特定商取引法に基づく表記</a>
-      </div>
+      <p class="mt-14 border-t border-white/20 pt-6 text-xs leading-relaxed text-white/80">
+        &copy; <span id="current-year">2026</span> うみないび / uminaibi-resin.jp　サイト内の風景写真・作品のイメージ写真は Unsplash の写真です（撮影者は各写真に記載）。
+      </p>
     </div>
   </footer>
 
-  <!-- 共通JavaScriptのインポート -->
-  <script src="js/main.js?v=20261028-4"></script>
+  <script src="js/main.js?v=20261028-5"></script>
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 

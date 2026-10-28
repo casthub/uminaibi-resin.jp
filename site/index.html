@@ -4,300 +4,318 @@
   <script>document.documentElement.classList.add('js')</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Vanilla HTML">
-  <title>うみないび | 沖縄県名護市のレジンアート専門店</title>
-  <meta name="description" content="沖縄県名護市のレジンアートショップ「うみないび」。名護の海の透明感をそのまま閉じ込めたレジンアート作品の販売と、体験ワークショップを行っています。世界にひとつだけの'海'をあなたの手で。">
-  <meta name="keywords" content="レジンアート,うみないび,沖縄,名護市,レジン,ハンドメイド,体験教室,ワークショップ,アクセサリー">
-  
-  <!-- OGP / SNS Meta Tags -->
+  <title>うみないび | 沖縄・名護市のレジンアート専門店</title>
+  <meta name="description" content="沖縄県名護市・羽地の駅のレジンアート専門店「うみないび」。屋我地島・古宇利島の蒼い海をイメージしたレジンアートの作品と、体験教室（予約制）。">
+  <meta name="keywords" content="レジンアート,うみないび,沖縄,名護市,古宇利島,屋我地島,体験教室,ワークショップ">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://uminaibi-resin.jp/">
-  <meta property="og:title" content="うみないび | 沖縄県名護市のレジンアート専門店">
-  <meta property="og:description" content="沖縄県名護市のレジンアートショップ「うみないび」。名護の海の透明感をそのまま閉じ込めたレジンアート作品の販売と、体験ワークショップを行っています。">
+  <meta property="og:title" content="うみないび | 沖縄・名護市のレジンアート専門店">
+  <meta property="og:description" content="沖縄県名護市・羽地の駅のレジンアート専門店「うみないび」。屋我地島・古宇利島の蒼い海をイメージしたレジンアートの作品と、体験教室（予約制）。">
   <meta property="og:image" content="https://uminaibi-resin.jp/ogp.jpg">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="うみないび">
-
-  <!-- Tailwind（CSS ファイル。作り直しは bin/build-css.sh） -->
-  <link rel="stylesheet" href="css/tailwind.css?v=20261028-4">
-
-  <!-- 共通カスタムスタイルシート -->
-  <link rel="stylesheet" href="css/style.css?v=20261028-4">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f6f9fa">
+  <link rel="preload" as="image" href="images/photos/yagaji-1000.webp" imagesrcset="images/photos/yagaji-1000.webp 1000w, images/photos/yagaji-2000.webp 2000w" imagesizes="100vw">
+  <!-- Tailwind（CSS ファイル。作り直しは bin/build-css.sh）と共通の CSS -->
+  <link rel="stylesheet" href="css/tailwind.css?v=20261028-5">
+  <link rel="stylesheet" href="css/style.css?v=20261028-5">
 </head>
 <body class="bg-sand text-ink antialiased">
 
-  <!-- ヘッダー -->
-  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent text-white">
-    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-      <div class="flex items-center justify-between h-20">
-        <a href="index.html" class="flex items-center gap-2 group">
-          <span id="header-logo" class="font-serif-jp text-2xl sm:text-3xl tracking-widest text-white transition-colors duration-500 group-hover:opacity-80">うみないび</span>
-        </a>
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[60] focus:bg-white focus:px-4 focus:py-2 focus:text-ocean-deep">本文へ移動</a>
 
-        <!-- デスクトップナビゲーション -->
-        <nav class="hidden lg:flex items-center gap-5 xl:gap-8 font-sansJp">
-          <a href="concept.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">コンセプト</a>
-          <a href="workshop.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">体験教室</a>
-          <a href="gallery.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">ギャラリー</a>
-          <a href="shop.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">ショップ</a>
-          <a href="access.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">アクセス</a>
-          <a href="contact.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">お問い合わせ</a>
-          <a href="contact.html" class="ml-2 inline-flex items-center whitespace-nowrap rounded-full bg-emerald px-5 xl:px-6 py-2.5 text-sm font-medium tracking-wider text-white shadow-soft transition-transform duration-300 hover:scale-105 hover:bg-emerald/90">ご予約はこちら</a>
-        </nav>
-
-        <!-- モバイルメニューボタン -->
-        <button id="menu-btn" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 focus:outline-none">
-          <span id="bar1" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
-          <span id="bar2" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
-          <span id="bar3" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
-        </button>
-      </div>
+  <!-- ヘッダー（2026-10-28 リビルド：いつも白い地。メニューは5つ＋予約） -->
+  <header id="site-header" class="fixed inset-x-0 top-0 z-50 bg-sand/95 backdrop-blur transition-shadow">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:h-[4.5rem] sm:px-8 lg:px-12">
+      <a href="index.html" class="flex items-baseline gap-3">
+        <span class="font-serif-jp text-2xl tracking-[0.2em] text-ocean-deep">うみないび</span>
+        <span class="hidden text-xs tracking-[0.25em] text-ink/80 sm:inline">OKINAWA RESIN ART</span>
+      </a>
+      <nav aria-label="メインメニュー" class="hidden items-center gap-7 lg:flex xl:gap-9">
+          <a href="index.html#about" class="text-sm tracking-widest text-ink/80 hover:text-ocean">コンセプト</a>
+          <a href="index.html#works" class="text-sm tracking-widest text-ink/80 hover:text-ocean">作品</a>
+          <a href="workshop.html" class="text-sm tracking-widest text-ink/80 hover:text-ocean">体験教室</a>
+          <a href="shop.html" class="text-sm tracking-widest text-ink/80 hover:text-ocean">ショップ</a>
+          <a href="index.html#visit" class="text-sm tracking-widest text-ink/80 hover:text-ocean">アクセス</a>
+          <a href="contact.html" class="btn !min-h-0 !px-5 !py-2 text-sm">ご予約・お問い合わせ</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu" class="relative z-50 -mr-2 flex h-11 w-11 flex-col items-center justify-center gap-1.5 text-ocean-deep lg:hidden">
+        <span id="bar1" class="block h-px w-6 bg-current transition-all duration-300"></span>
+        <span id="bar2" class="block h-px w-6 bg-current transition-all duration-300"></span>
+        <span id="bar3" class="block h-px w-6 bg-current transition-all duration-300"></span>
+      </button>
     </div>
 
-    <!-- モバイルドロワーメニュー -->
-    <div id="mobile-menu" inert aria-label="メニュー" class="lg:hidden fixed inset-0 z-40 flex translate-x-full flex-col items-center justify-center gap-8 bg-ocean-deep/98 backdrop-blur-sm transition-transform duration-500 text-white">
-      <a href="concept.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">コンセプト</a>
-      <a href="workshop.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">体験教室</a>
-      <a href="gallery.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">ギャラリー</a>
-      <a href="shop.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">オンラインショップ</a>
-      <a href="access.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">アクセス</a>
-      <a href="contact.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">お問い合わせ</a>
-      <a href="contact.html" class="mt-4 inline-flex items-center rounded-full bg-emerald px-8 py-3 text-base font-medium tracking-wider text-white hover:bg-emerald/90 transition-transform duration-300 hover:scale-105">ご予約はこちら</a>
+    <!-- スマホのメニュー（画面いっぱい・白い地） -->
+    <div id="mobile-menu" inert aria-label="メニュー" class="fixed inset-0 z-40 flex translate-x-full flex-col bg-sand px-6 pb-10 pt-24 transition-transform duration-500 lg:hidden">
+      <nav aria-label="メニュー" class="flex flex-col border-t border-line">
+        <a href="index.html#about" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">コンセプト<span aria-hidden="true" class="text-ocean-light">→</span></a>
+        <a href="index.html#works" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">作品<span aria-hidden="true" class="text-ocean-light">→</span></a>
+        <a href="workshop.html" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">体験教室<span aria-hidden="true" class="text-ocean-light">→</span></a>
+        <a href="shop.html" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">ショップ<span aria-hidden="true" class="text-ocean-light">→</span></a>
+        <a href="index.html#visit" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">アクセス<span aria-hidden="true" class="text-ocean-light">→</span></a>
+      </nav>
+      <a href="contact.html" class="btn mt-8 w-full">ご予約・お問い合わせ</a>
+      <p class="mt-auto pt-8 text-sm text-ink/80">沖縄県名護市真喜屋763番地1 羽地の駅2階<br>10:00 - 18:00 ／ 050-7116-0133</p>
     </div>
   </header>
 
   <main id="main" tabindex="-1">
-    <!-- ヒーローセクション（2026-10-28 古宇利大橋から古宇利島を望む海を、絵画調の絵で。絵は images/paint-kouri-bridge.svg・作り方は tools/paint-kouri-bridge.py） -->
-    <section class="hero-paint relative overflow-hidden">
-      <div class="relative z-10 mx-auto max-w-6xl px-5 pt-24 pb-6 sm:px-8 sm:pt-36">
-        <div class="hero-card max-w-xl p-7 text-ocean-deep sm:p-10">
-          <p class="text-xs sm:text-sm tracking-[0.35em] text-ocean-deep uppercase font-bold">Okinawa Nago Resin Art</p>
-          <h1 class="font-serif-jp mt-4 text-3xl leading-relaxed sm:text-5xl tracking-wider">
-            名護の海の美しさを、<br>
-            そのまま閉じ込めて。
-          </h1>
-          <p class="mt-5 text-sm leading-loose text-ink sm:text-base">
-            沖縄県名護市のレジンアート専門店「うみないび」。屋我地島の白い砂浜と、古宇利大橋から見わたす透き通った海を、世界にひとつだけの作品としてお届けします。
-          </p>
-          <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:gap-4">
-            <a href="workshop.html" class="inline-flex items-center justify-center rounded-full bg-ocean px-8 py-4 text-sm font-medium tracking-widest text-white shadow-soft transition-transform duration-300 hover:scale-105 hover:bg-ocean-deep">体験教室を見る</a>
-            <a href="gallery.html" class="inline-flex items-center justify-center rounded-full border border-ocean/40 bg-white px-8 py-4 text-sm font-medium tracking-widest text-ocean-deep transition-colors duration-300 hover:bg-sand">ギャラリー</a>
+    <!-- 最初の画面：海の写真を大きく（2026-10-28 リビルド。イラストは使わない） -->
+    <section aria-label="うみないび">
+      <div class="h-[58svh] min-h-[20rem] w-full overflow-hidden pt-16 sm:h-[82svh] sm:max-h-[56rem] sm:pt-[4.5rem]">
+        <img src="images/photos/yagaji-1000.webp" srcset="images/photos/yagaji-1000.webp 1000w, images/photos/yagaji-2000.webp 2000w" sizes="100vw" width="2000" height="1333" alt="青く透き通った海にかかる長い橋と、緑におおわれた小さな岩の島" class="photo object-[30%_50%]" fetchpriority="high">
+      </div>
+      <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+        <div class="flex justify-end"><p class="photo-credit mt-2">屋我地島周辺の海（名護市）（写真：<a href="https://unsplash.com/photos/JNhMWmPNcEk" target="_blank" rel="noopener noreferrer">Leopold / Unsplash<span class="sr-only">（新しいタブで開きます）</span></a>）</p></div>
+        <div class="grid gap-8 pb-16 pt-8 sm:pb-24 sm:pt-12 lg:grid-cols-12 lg:gap-12">
+          <div class="lg:col-span-7">
+            <p class="eyebrow">Okinawa Nago Resin Art</p>
+            <h1 class="mt-5 font-serif-jp text-[1.8rem] leading-snug tracking-wide text-ocean-deep sm:text-6xl sm:tracking-wider sm:leading-tight">名護の蒼い海を、<br>そのまま閉じ込める。</h1>
+          </div>
+          <div class="lg:col-span-5 lg:pt-12">
+            <p class="text-sm text-ink/85 sm:text-base">沖縄県名護市・羽地の駅にあるレジンアートのお店「うみないび」。屋我地島や古宇利島をめぐる、透き通った蒼い海の色を、レジンの作品と体験教室でお届けします。</p>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href="workshop.html" class="btn">体験教室を見る</a>
+              <a href="#works" class="btn-line">作品のイメージ</a>
+            </div>
           </div>
         </div>
       </div>
-      <!-- 絵の海と橋が見える所（飾り） -->
-      <div class="h-60 sm:h-[28rem]" aria-hidden="true"></div>
-      <!-- 白い波（飾り） -->
-      <div class="wave-divider absolute bottom-0 left-0 right-0" aria-hidden="true">
-        <svg aria-hidden="true" focusable="false" viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="h-10 w-full sm:h-14">
-          <path fill="#ffffff" opacity="0.7" d="M0,58 C240,40 480,76 720,56 C960,38 1200,72 1440,52 L1440,120 L0,120 Z"></path>
-          <path fill="#eef8fa" d="M0,78 C240,62 480,96 720,78 C960,60 1200,92 1440,74 L1440,120 L0,120 Z"></path>
-        </svg>
+    </section>
+
+    <!-- コンセプト（旧 concept.html） -->
+    <section id="about" class="border-t border-line py-16 sm:py-28">
+      <div class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-12 lg:gap-16 lg:px-12">
+        <div class="reveal lg:col-span-5">
+          <p class="eyebrow">Concept</p>
+          <h2 class="mt-4 font-serif-jp text-3xl leading-snug tracking-wider text-ocean-deep sm:text-4xl">海の恵みと、<br>お守りを。</h2>
+          <figure class="mt-10 hidden lg:block">
+            <div class="aspect-[4/3] overflow-hidden"><img src="images/photos/kouri-1000.webp" srcset="images/photos/kouri-1000.webp 1000w, images/photos/kouri-2000.webp 2000w" sizes="(min-width: 1024px) 40vw, 100vw" width="2000" height="1333" alt="古宇利大橋と、エメラルドグリーンから深い青へ変わる海" class="photo " loading="lazy" decoding="async"></div>
+            <figcaption><p class="photo-credit mt-2">古宇利島から見た古宇利大橋（写真：<a href="https://unsplash.com/photos/1xzotTtPWsc" target="_blank" rel="noopener noreferrer">Leopold / Unsplash<span class="sr-only">（新しいタブで開きます）</span></a>）</p></figcaption>
+          </figure>
+        </div>
+        <div class="reveal space-y-10 lg:col-span-7">
+          <div>
+            <h3 class="font-serif-jp text-xl text-ocean-deep sm:text-2xl">店名「うみないび」</h3>
+            <p class="mt-4 text-sm text-ink/85 sm:text-base">沖縄の古い言葉をもとにした造語です。沖縄の海は、昔から人々に豊かな「恵み」を与え、旅の安全を願う「お守り」でもありました。その海の力をアートの形にして、毎日の暮らしに飾れる「海の恵みとお守り」としてお届けしたい。そんな想いで名づけました。</p>
+          </div>
+          <div>
+            <h3 class="font-serif-jp text-xl text-ocean-deep sm:text-2xl">その日、その時の海の色</h3>
+            <p class="mt-4 text-sm text-ink/85 sm:text-base">名護の海は、時間や天気、潮の満ち引きで表情を大きく変えます。浅瀬の砂にさす光、沖の深い藍色、日が沈む前の金色。実際に海を見て、その色の重なりをレジンで表しています。作品に使う砂や貝殻などの素材にもこだわっています。</p>
+          </div>
+          <div>
+            <h3 class="font-serif-jp text-xl text-ocean-deep sm:text-2xl">何層も重ねる手仕事</h3>
+            <p class="mt-4 text-sm text-ink/85 sm:text-base">透明なエポキシレジンを、日数をかけて何層にも重ねてつくります。青、白波、きらめき、そして深み。層を重ねることで、底まで透き通るような奥行きが生まれます。打ち寄せる白波は一つずつ手で描くので、同じ波はふたつとありません。</p>
+          </div>
+          <figure class="lg:hidden">
+            <div class="aspect-[4/3] overflow-hidden"><img src="images/photos/kouri-1000.webp" srcset="images/photos/kouri-1000.webp 1000w, images/photos/kouri-2000.webp 2000w" sizes="100vw" width="2000" height="1333" alt="古宇利大橋と、エメラルドグリーンから深い青へ変わる海" class="photo " loading="lazy" decoding="async"></div>
+            <figcaption><p class="photo-credit mt-2">古宇利島から見た古宇利大橋（写真：<a href="https://unsplash.com/photos/1xzotTtPWsc" target="_blank" rel="noopener noreferrer">Leopold / Unsplash<span class="sr-only">（新しいタブで開きます）</span></a>）</p></figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
-    <!-- コンセプトダイジェスト -->
-    <section class="relative overflow-hidden py-16 sm:py-32">
-      <div class="mx-auto max-w-6xl px-5 sm:px-6">
-        <div class="reveal grid gap-12 lg:grid-cols-2 items-center">
+    <!-- 作品のイメージ（旧 gallery.html） -->
+    <section id="works" class="bg-white py-16 sm:py-28">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+        <div class="reveal flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p class="text-xs tracking-[0.35em] text-emerald uppercase font-bold">Concept</p>
-            <h2 class="font-serif-jp mt-4 text-3xl sm:text-4xl text-ocean-deep leading-snug">海の記憶を、閉じ込める。</h2>
-            <p class="mt-6 text-sm sm:text-base leading-loose text-ink/80">
-              沖縄の穏やかな波、まばゆい砂浜、そしてエメラルドグリーンのグラデーション。<br class="hidden sm:block">
-              「うみないび」では、名護の大自然からインスピレーションを受け、レジンというキャンバスに沖縄の海の瞬間を封じ込めます。<br class="hidden sm:block">
-              毎日の暮らしに、ふっと海の風を感じられるような作品をお届けします。
-            </p>
-            <div class="mt-8">
-              <a href="concept.html" class="inline-flex items-center gap-2 text-sm font-bold tracking-widest text-ocean hover:text-ocean-deep transition-colors">
-                うみないびの想いをもっと知る
-                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4">
-                  <path fill-rule="evenodd" d="M12.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414-1.414L15.586 11H4a1 1 0 110-2h11.586l-3.293-3.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                </svg>
-              </a>
-            </div>
+            <p class="eyebrow">Works</p>
+            <h2 class="mt-4 font-serif-jp text-3xl tracking-wider text-ocean-deep sm:text-4xl">レジンアートのイメージ</h2>
           </div>
-          <!-- グラフィカルなビジュアル要素 -->
-          <div class="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-soft" style="background: linear-gradient(180deg, #145f96 0%, #1b84bf 30%, #1fb0cc 52%, #5fd9d1 72%, #c6f4ec 88%, #fbf6ea 100%);">
-            <div class="absolute inset-x-0 top-0 flex justify-center text-white p-6 sm:p-8 pt-10 text-center">
+          <p class="max-w-md text-sm text-ink/80">写真はフリー素材（Unsplash）のイメージで、<strong class="font-bold text-ink">当店の作品ではありません</strong>。お店の作品の写真は、準備ができしだい差し替えます。</p>
+        </div>
+        <div class="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 sm:mt-14 sm:gap-x-8 sm:gap-y-12 lg:grid-cols-3">
+          <figure class="reveal">
+            <div class="aspect-[4/5] overflow-hidden bg-sand-dark"><img src="images/gallery/ocean-wave-panel-600.webp" srcset="images/gallery/ocean-wave-panel-600.webp 600w, images/gallery/ocean-wave-panel-1200.webp 1200w" sizes="(min-width: 1024px) 30vw, 50vw" width="600" height="750" alt="青緑の海に白い波が何本も重なる、レジンアートのパネルの写真" class="photo" loading="lazy" decoding="async"></div>
+            <figcaption class="mt-3">
+              <span class="block font-serif-jp text-base text-ocean-deep sm:text-lg">海の波のアートパネル</span>
+              <span class="mt-1 hidden text-sm text-ink/80 sm:block">青と白を何層にも重ね、打ち寄せる波を描いたアートパネル。</span>
+            </figcaption>
+          </figure>
+          <figure class="reveal">
+            <div class="aspect-[4/5] overflow-hidden bg-sand-dark"><img src="images/gallery/wood-ocean-table-600.webp" srcset="images/gallery/wood-ocean-table-600.webp 600w, images/gallery/wood-ocean-table-1200.webp 1200w" sizes="(min-width: 1024px) 30vw, 50vw" width="600" height="750" alt="木目の板に青い海と白い波を流し込み、巻き貝を置いたレジンアートの写真" class="photo" loading="lazy" decoding="async"></div>
+            <figcaption class="mt-3">
+              <span class="block font-serif-jp text-base text-ocean-deep sm:text-lg">木と海のレジンテーブル</span>
+              <span class="mt-1 hidden text-sm text-ink/80 sm:block">木の板と組み合わせ、浜辺に寄せる波と貝を表したもの。</span>
+            </figcaption>
+          </figure>
+          <figure class="reveal">
+            <div class="aspect-[4/5] overflow-hidden bg-sand-dark"><img src="images/gallery/seashell-resin-600.webp" srcset="images/gallery/seashell-resin-600.webp 600w, images/gallery/seashell-resin-1200.webp 1200w" sizes="(min-width: 1024px) 30vw, 50vw" width="600" height="750" alt="青く透き通った貝殻やヒトデの形のレジン小物が並ぶ写真" class="photo" loading="lazy" decoding="async"></div>
+            <figcaption class="mt-3">
+              <span class="block font-serif-jp text-base text-ocean-deep sm:text-lg">貝とヒトデのレジン小物</span>
+              <span class="mt-1 hidden text-sm text-ink/80 sm:block">透明なレジンで、貝殻やヒトデの形をかたどった小物。</span>
+            </figcaption>
+          </figure>
+          <figure class="reveal">
+            <div class="aspect-[4/5] overflow-hidden bg-sand-dark"><img src="images/gallery/wood-resin-piece-600.webp" srcset="images/gallery/wood-resin-piece-600.webp 600w, images/gallery/wood-resin-piece-1200.webp 1200w" sizes="(min-width: 1024px) 30vw, 50vw" width="600" height="750" alt="木と青いレジンを組み合わせた小さな板の写真" class="photo" loading="lazy" decoding="async"></div>
+            <figcaption class="mt-3">
+              <span class="block font-serif-jp text-base text-ocean-deep sm:text-lg">木とレジンのプレート</span>
+              <span class="mt-1 hidden text-sm text-ink/80 sm:block">木の模様とレジンの青を組み合わせた小さなプレート。</span>
+            </figcaption>
+          </figure>
+          <figure class="reveal">
+            <div class="aspect-[4/5] overflow-hidden bg-sand-dark"><img src="images/gallery/koi-resin-cube-600.webp" srcset="images/gallery/koi-resin-cube-600.webp 600w, images/gallery/koi-resin-cube-1200.webp 1200w" sizes="(min-width: 1024px) 30vw, 50vw" width="600" height="750" alt="水色のレジンの中に小さな魚と泡を閉じ込めた、四角い作品の写真" class="photo" loading="lazy" decoding="async"></div>
+            <figcaption class="mt-3">
+              <span class="block font-serif-jp text-base text-ocean-deep sm:text-lg">小さな水の世界</span>
+              <span class="mt-1 hidden text-sm text-ink/80 sm:block">透明なレジンの中に、水と泳ぐ魚を閉じ込めた小品。</span>
+            </figcaption>
+          </figure>
+          <figure class="reveal">
+            <div class="aspect-[4/5] overflow-hidden bg-sand-dark"><img src="images/gallery/flower-pendants-600.webp" srcset="images/gallery/flower-pendants-600.webp 600w, images/gallery/flower-pendants-1200.webp 1200w" sizes="(min-width: 1024px) 30vw, 50vw" width="600" height="750" alt="押し花や絵をレジンで閉じ込めたペンダントがたくさん並ぶ写真" class="photo" loading="lazy" decoding="async"></div>
+            <figcaption class="mt-3">
+              <span class="block font-serif-jp text-base text-ocean-deep sm:text-lg">押し花のレジンペンダント</span>
+              <span class="mt-1 hidden text-sm text-ink/80 sm:block">押し花や絵をレジンで閉じ込めたペンダント。</span>
+            </figcaption>
+          </figure>
+        </div>
+        <p class="mt-10 text-xs leading-relaxed text-ink/80">写真：<a href="https://unsplash.com/photos/bT2XiJtcQ1M" target="_blank" rel="noopener noreferrer" class="underline">Maryna Yazbeck<span class="sr-only">（海の波のアートパネル・新しいタブで開きます）</span></a>、<a href="https://unsplash.com/photos/NY9_irZB7Nw" target="_blank" rel="noopener noreferrer" class="underline">gretta vosper<span class="sr-only">（木と海のレジンテーブル・新しいタブで開きます）</span></a>、<a href="https://unsplash.com/photos/RCQRGEB4esk" target="_blank" rel="noopener noreferrer" class="underline">sooji min<span class="sr-only">（貝とヒトデのレジン小物・新しいタブで開きます）</span></a>、<a href="https://unsplash.com/photos/Iuqa-9j8pSU" target="_blank" rel="noopener noreferrer" class="underline">Adrian Swancar<span class="sr-only">（木とレジンのプレート・新しいタブで開きます）</span></a>、<a href="https://unsplash.com/photos/IYflkEc_lkw" target="_blank" rel="noopener noreferrer" class="underline">Hiros Lee<span class="sr-only">（小さな水の世界・新しいタブで開きます）</span></a>、<a href="https://unsplash.com/photos/Cgp-CkpTJ_o" target="_blank" rel="noopener noreferrer" class="underline">Tolga deniz Aran<span class="sr-only">（押し花のレジンペンダント・新しいタブで開きます）</span></a>（Unsplash）</p>
+        <div class="reveal mt-12 flex flex-col gap-6 border-t border-line pt-10 sm:flex-row sm:items-center sm:justify-between">
+          <p class="text-sm text-ink/85 sm:text-base">新築のお祝いの大きなアートパネル、結婚式の小物など、<br class="hidden sm:inline">オーダーメイドのご相談も承ります。</p>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <a href="contact.html" class="btn">制作のご相談</a>
+            <a href="shop.html" class="btn-line">オンラインショップ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 体験教室（くわしくは workshop.html） -->
+    <section id="workshop" class="py-16 sm:py-28">
+      <div class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-12 lg:gap-16 lg:px-12">
+        <div class="reveal lg:col-span-4">
+          <p class="eyebrow">Workshop</p>
+          <h2 class="mt-4 font-serif-jp text-3xl leading-snug tracking-wider text-ocean-deep sm:text-4xl">自分の手で、<br>海をつくる。</h2>
+          <p class="mt-6 text-sm text-ink/85 sm:text-base">はじめての方も、お子さまも。少人数の予約制で、色の混ぜ方から白波の描き方まで、ていねいにお伝えします。</p>
+        </div>
+        <div class="reveal lg:col-span-8">
+          <ul class="border-b border-line">
+            <li class="grid gap-1 border-t border-line py-5 sm:grid-cols-12 sm:items-baseline sm:gap-6">
+              <span class="font-serif-jp text-lg text-ocean-deep sm:col-span-4 sm:text-xl">オーシャンコースター体験</span>
+              <span class="text-sm text-ink/80 sm:col-span-2">60分・6歳以上</span>
+              <span class="whitespace-nowrap text-sm text-ink/80 sm:col-span-2 sm:text-right">¥3,500<span class="text-xs">（税込）</span></span>
+              <span class="text-sm text-ink/80 sm:col-span-4 sm:text-right">翌日お引き取り（店頭）</span>
+            </li>
+            <li class="grid gap-1 border-t border-line py-5 sm:grid-cols-12 sm:items-baseline sm:gap-6">
+              <span class="font-serif-jp text-lg text-ocean-deep sm:col-span-4 sm:text-xl">サンセットプレート体験</span>
+              <span class="text-sm text-ink/80 sm:col-span-2">90分・10歳以上</span>
+              <span class="whitespace-nowrap text-sm text-ink/80 sm:col-span-2 sm:text-right">¥5,500<span class="text-xs">（税込）</span></span>
+              <span class="text-sm text-ink/80 sm:col-span-4 sm:text-right">後日お渡し（郵送・店頭）</span>
+            </li>
+            <li class="grid gap-1 border-t border-line py-5 sm:grid-cols-12 sm:items-baseline sm:gap-6">
+              <span class="font-serif-jp text-lg text-ocean-deep sm:col-span-4 sm:text-xl">マイジュエリー制作</span>
+              <span class="text-sm text-ink/80 sm:col-span-2">75分・12歳以上</span>
+              <span class="whitespace-nowrap text-sm text-ink/80 sm:col-span-2 sm:text-right">¥4,500<span class="text-xs">（税込）</span></span>
+              <span class="text-sm text-ink/80 sm:col-span-4 sm:text-right">当日お持ち帰り（UVレジン）</span>
+            </li>
+          </ul>
+          <p class="mt-4 text-sm text-ink/80">料金は材料費込み・税込です。サンセットプレートの郵送は送料が別にかかります。</p>
+          <a href="workshop.html" class="btn mt-8">体験教室のくわしい内容と予約の流れ</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 海の写真（区切り） -->
+    <figure class="relative">
+      <div class="h-[46svh] min-h-[16rem] overflow-hidden sm:h-[70svh]"><img src="images/photos/motobu-1000.webp" srcset="images/photos/motobu-1000.webp 1000w, images/photos/motobu-2000.webp 2000w" sizes="100vw" width="2000" height="1333" alt="波の立つ青い海と、手前のごつごつした岩場" class="photo " loading="lazy" decoding="async"></div>
+      <figcaption class="mx-auto flex max-w-7xl justify-end px-5 sm:px-8 lg:px-12"><p class="photo-credit mt-2">本部町の海（写真：<a href="https://unsplash.com/photos/AJCEOdljrV0" target="_blank" rel="noopener noreferrer">Leopold / Unsplash<span class="sr-only">（新しいタブで開きます）</span></a>）</p></figcaption>
+    </figure>
+
+    <!-- アクセス（旧 access.html） -->
+    <section id="visit" class="py-16 sm:py-28">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+        <div class="reveal">
+          <p class="eyebrow">Visit</p>
+          <h2 class="mt-4 font-serif-jp text-3xl tracking-wider text-ocean-deep sm:text-4xl">お店のご案内</h2>
+        </div>
+        <div class="mt-10 grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div class="reveal lg:col-span-5">
+            <dl class="legal-table text-sm sm:text-base">
+              <div><dt>店名</dt><dd>うみないび（Uminaibi）</dd></div>
+              <div><dt>所在地</dt><dd>〒905-1143<br>沖縄県名護市真喜屋763番地1<br>羽地の駅 2階</dd></div>
+              <div><dt>営業時間</dt><dd>10:00 - 18:00<br><span class="text-sm text-ink/80">体験教室は事前のご予約が必要です</span></dd></div>
+              <div><dt>定休日</dt><dd>不定休（ホームページ・SNSでお知らせ）</dd></div>
+              <div><dt>電話番号</dt><dd><a href="tel:05071160133" class="text-link">050-7116-0133</a></dd></div>
+              <div><dt>駐車場</dt><dd>羽地の駅の駐車場をご利用ください</dd></div>
+            </dl>
+          </div>
+          <div class="reveal space-y-8 lg:col-span-7">
+            <div class="aspect-[4/3] w-full overflow-hidden bg-sand-dark sm:aspect-[16/10]">
+              <iframe title="うみないび（羽地の駅 2階）の地図" src="https://www.google.com/maps?q=%E7%BE%BD%E5%9C%B0%E3%81%AE%E9%A7%85%20%E6%B2%96%E7%B8%84%E7%9C%8C%E5%90%8D%E8%AD%B7%E5%B8%82%E7%9C%9F%E5%96%9C%E5%B1%8B763-1&amp;z=16&amp;hl=ja&amp;output=embed" class="h-full w-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=%E7%BE%BD%E5%9C%B0%E3%81%AE%E9%A7%85%20%E6%B2%96%E7%B8%84%E7%9C%8C%E5%90%8D%E8%AD%B7%E5%B8%82%E7%9C%9F%E5%96%9C%E5%B1%8B763-1" target="_blank" rel="noopener noreferrer" class="btn-line">Google マップでルートを見る<span class="sr-only">（新しいタブで開きます）</span></a>
+            <div class="grid gap-8 sm:grid-cols-2">
               <div>
-                <p class="font-serif-jp text-2xl tracking-widest">OKINAWA BLUE</p>
-                <p class="text-sm mt-2 text-white">手仕事から生まれる、本物の海のグラデーション</p>
+                <h3 class="font-serif-jp text-lg text-ocean-deep">お車で</h3>
+                <p class="mt-2 text-sm text-ink/85">沖縄自動車道の終点「許田IC」を降り、国道58号線を名護市街へ。市街地を抜けて、そのまま国道58号線を北（大宜味・国頭方面）へ進むと「羽地の駅」です。許田ICから約30分が目安です（道路の混み具合で変わります）。</p>
+              </div>
+              <div>
+                <h3 class="font-serif-jp text-lg text-ocean-deep">バスで</h3>
+                <p class="mt-2 text-sm text-ink/85">那覇空港から高速バス（111番など）で「名護バスターミナル」へ。路線バス（67番 辺土名線など）に乗り換え、羽地の駅の近くのバス停（「真喜屋」など）で下車してください。時刻は各バス会社の案内でご確認ください。</p>
               </div>
             </div>
+            <p class="border-l-2 border-ocean-light pl-4 text-sm text-ink/85">羽地の駅は、名護市街から屋我地島・古宇利島や、やんばるへ向かう途中にあります。ドライブの前後に、レジンアートづくりはいかがですか。</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 体験教室ダイジェスト -->
-    <section class="relative overflow-hidden py-16 sm:py-32 bg-[#e8f6f7]">
-      <div class="mx-auto max-w-6xl px-5 sm:px-6">
-        <div class="reveal text-center">
-          <p class="text-xs tracking-[0.35em] text-emerald uppercase font-bold">Workshop</p>
-          <h2 class="font-serif-jp mt-4 text-3xl sm:text-4xl text-ocean-deep">世界にひとつだけの、海をつくる。</h2>
-          <p class="mx-auto mt-6 max-w-2xl text-sm leading-loose text-ink/80 sm:text-base">
-            名護の体験教室では、初心者から上級者まで楽しめる本格的なレジンアートワークショップを開催しています。<br class="hidden sm:block">
-            思い出作りに、お一人で、またはご家族やご友人と一緒に、世界にひとつの海を作りませんか？
-          </p>
+    <!-- お問い合わせ -->
+    <section class="bg-ocean-deep py-16 text-white sm:py-24">
+      <div class="mx-auto max-w-7xl md:flex md:items-end md:justify-between md:gap-12 px-5 sm:px-8 lg:px-12">
+        <div class="max-w-2xl">
+          <p class="eyebrow !text-white/85">Contact</p>
+          <h2 class="mt-4 font-serif-jp text-3xl leading-snug tracking-wider sm:text-4xl">世界にひとつの海を、<br>あなたの手に。</h2>
+          <p class="mt-5 text-sm text-white/85 sm:text-base">体験教室のご予約、オーダーメイドのご相談は、フォーム・LINE・Instagram からお気軽にどうぞ。</p>
         </div>
-
-        <div class="mt-10 sm:mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <!-- 簡易カード 1 -->
-          <div class="reveal rounded-3xl bg-white p-6 sm:p-8 shadow-soft flex flex-col justify-between">
-            <div>
-              <h3 class="font-serif-jp text-xl text-ocean-deep font-bold">オーシャンコースター体験</h3>
-              <p class="mt-3 text-sm text-ink/75">所要時間: 60分 / 対象年齢: 6歳〜</p>
-              <p class="mt-4 text-sm text-ink/75 leading-relaxed">まずは波づくりの基本テクニックを学び、お気に入りのコースターを制作します。</p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-ink/10 flex justify-between items-center">
-              <span class="font-serif-jp text-xl text-ocean-deep font-bold">¥3,500</span>
-              <span class="text-sm text-ocean font-bold">翌日お引き取り（店頭）</span>
-            </div>
-          </div>
-
-          <!-- 簡易カード 2 -->
-          <div class="reveal rounded-3xl bg-white p-6 sm:p-8 shadow-soft flex flex-col justify-between md:scale-105 ring-2 ring-coral ring-offset-2">
-            <div>
-              <span class="inline-block bg-coral text-white text-xs font-bold tracking-widest px-2.5 py-0.5 rounded-full mb-3">人気</span>
-              <h3 class="font-serif-jp text-xl text-ocean-deep font-bold">サンセットプレート体験</h3>
-              <p class="mt-3 text-sm text-ink/75">所要時間: 90分 / 対象年齢: 10歳〜</p>
-              <p class="mt-4 text-sm text-ink/75 leading-relaxed">名護の夕陽のような朱色から紺碧への美しい夕暮れの海のグラデーションを表現します。</p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-ink/10 flex justify-between items-center">
-              <span class="font-serif-jp text-xl text-ocean-deep font-bold">¥5,500</span>
-              <span class="text-sm text-ocean font-bold">後日お渡し（郵送または店頭受取）</span>
-            </div>
-          </div>
-
-          <!-- 簡易カード 3 -->
-          <div class="reveal rounded-3xl bg-white p-6 sm:p-8 shadow-soft flex flex-col justify-between">
-            <div>
-              <h3 class="font-serif-jp text-xl text-ocean-deep font-bold">マイジュエリー制作</h3>
-              <p class="mt-3 text-sm text-ink/75">所要時間: 75分 / 対象年齢: 12歳〜</p>
-              <p class="mt-4 text-sm text-ink/75 leading-relaxed">沖縄の貝殻や砂を閉じ込めたオリジナルのイヤリングやペンダントヘッドなどを手作りします。</p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-ink/10 flex justify-between items-center">
-              <span class="font-serif-jp text-xl text-ocean-deep font-bold">¥4,500</span>
-              <span class="text-sm text-ocean font-bold">当日お持ち帰り可（UVレジンの場合）</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-12 text-center">
-          <a href="workshop.html" class="inline-flex items-center justify-center rounded-full bg-ocean px-8 py-3.5 text-sm font-medium tracking-widest text-white shadow-soft transition-transform duration-300 hover:scale-105 hover:bg-ocean/90">
-            体験教室の詳細と予約の流れ
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ギャラリーダイジェスト -->
-    <section class="relative overflow-hidden py-16 sm:py-32">
-      <div class="mx-auto max-w-6xl px-5 sm:px-6">
-        <div class="reveal text-center">
-          <p class="text-xs tracking-[0.35em] text-emerald uppercase font-bold">Gallery</p>
-          <h2 class="font-serif-jp mt-4 text-3xl sm:text-4xl text-ocean-deep">海の煌めき、それぞれの表情。</h2>
-          <p class="mx-auto mt-6 max-w-2xl text-sm leading-loose text-ink/80 sm:text-base">
-            手作業だからこそ生まれる、世界でたった一つの波と泡。<br class="hidden sm:block">
-            作品たちが見せる、沖縄の海の表情の一部をご覧ください。
-          </p>
-        </div>
-
-        <div class="mt-10 sm:mt-16 grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4">
-          <!-- 代表的な作品のダミービジュアル（屋我地・古宇利の海の色） -->
-          <div class="reveal aspect-square rounded-2xl overflow-hidden shadow-soft" style="background: linear-gradient(160deg, #145f96, #1fb0cc);"></div>
-          <div class="reveal aspect-square rounded-2xl overflow-hidden shadow-soft" style="background: linear-gradient(160deg, #1b84bf, #5fd9d1);"></div>
-          <div class="reveal aspect-square rounded-2xl overflow-hidden shadow-soft" style="background: linear-gradient(160deg, #1fb0cc, #c6f4ec);"></div>
-          <div class="reveal aspect-square rounded-2xl overflow-hidden shadow-soft" style="background: linear-gradient(160deg, #5fd9d1, #fbf6ea);"></div>
-        </div>
-
-        <div class="mt-12 text-center">
-          <a href="gallery.html" class="inline-flex items-center gap-2 text-sm font-bold tracking-widest text-ocean hover:text-ocean-deep transition-colors">
-            ギャラリーを見る
-            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4">
-              <path fill-rule="evenodd" d="M12.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414-1.414L15.586 11H4a1 1 0 110-2h11.586l-3.293-3.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- お問い合わせへの導線（CTA） -->
-    <section class="relative overflow-hidden py-14 sm:py-20 text-white" style="background: linear-gradient(180deg, #145f96 0%, #0b3a5e 100%);">
-      <div class="blob h-80 w-80 -bottom-10 -left-10 bg-emerald/20"></div>
-      <div class="mx-auto max-w-4xl px-5 sm:px-6 text-center relative z-10">
-        <h2 class="font-serif-jp text-3xl sm:text-4xl tracking-wider">世界にひとつだけの海を、あなたの手に。</h2>
-        <p class="mt-6 text-sm sm:text-base text-white/80 leading-relaxed max-w-xl mx-auto">
-          沖縄の想い出づくりとしての体験レッスンのご予約、<br class="hidden sm:block">
-          お部屋に飾るオーダーメイドアートパネルに関するお問い合わせをお待ちしております。
-        </p>
-        <div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-          <a href="contact.html" class="inline-flex items-center justify-center rounded-full bg-emerald px-8 py-4 text-sm font-bold tracking-widest text-white shadow-soft hover:bg-emerald/90 transition-transform duration-300 hover:scale-105">
-            ご予約・お問い合わせ
-          </a>
-          <a href="access.html" class="inline-flex items-center justify-center rounded-full border border-white/55 px-8 py-4 text-sm font-bold tracking-widest text-white hover:bg-white/10 transition-colors">
-            店舗へのアクセス
-          </a>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row md:mt-0">
+          <a href="contact.html" class="btn-white">ご予約・お問い合わせ</a>
+          <a href="https://line.me/R/ti/p/@726qtybt" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-12 items-center justify-center border border-white/50 px-7 text-sm font-bold tracking-widest hover:bg-white hover:text-ocean-deep">LINE で相談<span class="sr-only">（新しいタブで開きます）</span></a>
         </div>
       </div>
     </section>
   </main>
 
   <!-- フッター -->
-  <footer class="bg-ocean-deep text-white border-t border-white/10 relative overflow-hidden">
-    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12 py-12 sm:py-14">
-      <div class="grid gap-8 md:gap-10 md:grid-cols-3 relative z-10">
-        <div>
-          <p class="font-serif-jp text-2xl tracking-widest text-white">うみないび</p>
-          <p class="mt-3 text-sm leading-relaxed text-white/70">
-            沖縄県名護市、海のきらめきをレジンアートに閉じ込めて。<br>
-            あなただけの大切な海をお届けする専門店。
-          </p>
-          <div class="mt-5 flex gap-4">
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/uminaibi2026/" aria-label="うみないびの Instagram（@uminaibi2026・新しいタブで開きます）" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20">
-              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5a4.25 4.25 0 0 0 4.25 4.25h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5a4.25 4.25 0 0 0-4.25-4.25h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.1-2.6a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3z"/></svg>
-            </a>
-            <a href="https://line.me/R/ti/p/@726qtybt" aria-label="うみないびの LINE（@726qtybt・新しいタブで開きます）" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20">
-              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 2C6.48 2 2 5.69 2 10.24c0 4.09 3.61 7.51 8.48 8.14.33.07.78.22.89.5.1.26.07.66.03.92l-.15.9c-.04.26-.2 1.03.9.56 1.1-.47 5.94-3.5 8.1-6 1.51-1.65 2.24-3.34 2.24-5.02C22.5 5.69 17.52 2 12 2z"/></svg>
-            </a>
+  <footer class="bg-ocean-deep text-white">
+    <div class="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-12">
+      <div class="grid gap-10 md:grid-cols-12">
+        <div class="md:col-span-5">
+          <p class="font-serif-jp text-3xl tracking-[0.2em]">うみないび</p>
+          <p class="mt-2 text-xs tracking-[0.25em] text-white/80">OKINAWA NAGO RESIN ART</p>
+          <address class="mt-6 text-sm not-italic leading-relaxed text-white/85">
+            〒905-1143 沖縄県名護市真喜屋763番地1 羽地の駅 2階<br>
+            営業時間 10:00 - 18:00（体験は事前予約制）<br>
+            TEL <a href="tel:05071160133" class="underline underline-offset-4">050-7116-0133</a>
+          </address>
+          <div class="mt-6 flex gap-3">
+            <a href="https://www.instagram.com/uminaibi2026/" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center border border-white/40 px-4 text-sm hover:bg-white hover:text-ocean-deep">Instagram<span class="sr-only">（@uminaibi2026・新しいタブで開きます）</span></a>
+            <a href="https://line.me/R/ti/p/@726qtybt" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center border border-white/40 px-4 text-sm hover:bg-white hover:text-ocean-deep">LINE<span class="sr-only">（@726qtybt・新しいタブで開きます）</span></a>
           </div>
         </div>
-
-        <div>
-          <p class="text-sm font-semibold tracking-widest text-white/90">SITEMAP</p>
-          <ul class="mt-4 grid grid-cols-2 gap-x-6 gap-y-2 md:grid-cols-1 text-sm text-white/70 font-sansJp">
-            <li><a href="index.html" class="hover:text-white transition-colors">トップページ</a></li>
-            <li><a href="concept.html" class="hover:text-white transition-colors">コンセプト</a></li>
-            <li><a href="workshop.html" class="hover:text-white transition-colors">体験教室</a></li>
-            <li><a href="gallery.html" class="hover:text-white transition-colors">ギャラリー</a></li>
-            <li><a href="shop.html" class="hover:text-white transition-colors">オンラインショップ</a></li>
-            <li><a href="access.html" class="hover:text-white transition-colors">アクセス</a></li>
-            <li><a href="contact.html" class="hover:text-white transition-colors">お問い合わせ</a></li>
+        <nav aria-label="サイトマップ" class="md:col-span-7">
+          <ul class="grid grid-cols-2 gap-x-6 gap-y-3 text-sm text-white/85 sm:grid-cols-3">
+            <li><a href="index.html" class="hover:text-white hover:underline">トップ</a></li>
+            <li><a href="index.html#about" class="hover:text-white hover:underline">コンセプト</a></li>
+            <li><a href="index.html#works" class="hover:text-white hover:underline">作品</a></li>
+            <li><a href="workshop.html" class="hover:text-white hover:underline">体験教室</a></li>
+            <li><a href="shop.html" class="hover:text-white hover:underline">オンラインショップ</a></li>
+            <li><a href="index.html#visit" class="hover:text-white hover:underline">アクセス</a></li>
+            <li><a href="contact.html" class="hover:text-white hover:underline">ご予約・お問い合わせ</a></li>
+            <li><a href="privacy.html" class="hover:text-white hover:underline">プライバシーポリシー</a></li>
+            <li><a href="tokushoho.html" class="hover:text-white hover:underline">特定商取引法に基づく表記</a></li>
           </ul>
-        </div>
-
-        <div>
-          <p class="text-sm font-semibold tracking-widest text-white/90">SHOP INFO</p>
-          <address class="mt-4 space-y-1 text-sm not-italic leading-relaxed text-white/70 font-sansJp">
-            〒905-1143<br>
-            沖縄県名護市真喜屋763番地1<br>
-            羽地の駅 2階<br>
-            営業時間 10:00 - 18:00<br>（体験は事前予約が必要です）<br>
-            TEL: 050-7116-0133
-          </address>
-        </div>
+        </nav>
       </div>
-
-      <div class="mt-10 sm:mt-12 border-t border-white/15 pt-6 text-center text-xs leading-relaxed tracking-wider text-white/75 relative z-10 font-sansJp">
-        &copy; <span id="current-year"></span> うみないび / uminaibi-resin.jp All Rights Reserved.<br class="sm:hidden"><span class="hidden sm:inline">　|　</span><a href="privacy.html" class="underline hover:text-white">プライバシーポリシー</a><br class="sm:hidden"><span class="hidden sm:inline">　|　</span><a href="tokushoho.html" class="underline hover:text-white">特定商取引法に基づく表記</a>
-      </div>
+      <p class="mt-14 border-t border-white/20 pt-6 text-xs leading-relaxed text-white/80">
+        &copy; <span id="current-year">2026</span> うみないび / uminaibi-resin.jp　サイト内の風景写真・作品のイメージ写真は Unsplash の写真です（撮影者は各写真に記載）。
+      </p>
     </div>
   </footer>
 
-  <!-- 共通JavaScriptのインポート -->
-  <script src="js/main.js?v=20261028-4"></script>
+  <script src="js/main.js?v=20261028-5"></script>
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
   </script>

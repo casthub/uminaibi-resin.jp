@@ -6,97 +6,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>特定商取引法に基づく表記 | うみないび | 沖縄県名護市のレジンアート専門店</title>
   <meta name="description" content="沖縄県名護市のレジンアート専門店「うみないび」の特定商取引法に基づく表記（販売事業者・送料・お支払い・返品など）です。">
-
-  <!-- Tailwind（CSS ファイル。作り直しは bin/build-css.sh） -->
-  <link rel="stylesheet" href="css/tailwind.css?v=20261028-4">
-
-  <!-- 共通カスタムスタイルシート -->
-  <link rel="stylesheet" href="css/style.css?v=20261028-4">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://uminaibi-resin.jp/tokushoho.html">
+  <meta property="og:title" content="特定商取引法に基づく表記 | うみないび | 沖縄県名護市のレジンアート専門店">
+  <meta property="og:description" content="沖縄県名護市のレジンアート専門店「うみないび」の特定商取引法に基づく表記（販売事業者・送料・お支払い・返品など）です。">
+  <meta property="og:image" content="https://uminaibi-resin.jp/ogp.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="うみないび">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f6f9fa">
+  <!-- Tailwind（CSS ファイル。作り直しは bin/build-css.sh）と共通の CSS -->
+  <link rel="stylesheet" href="css/tailwind.css?v=20261028-5">
+  <link rel="stylesheet" href="css/style.css?v=20261028-5">
 </head>
 <body class="bg-sand text-ink antialiased">
 
-  <!-- ヘッダー -->
-  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent text-white">
-    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-      <div class="flex items-center justify-between h-20">
-        <a href="index.html" class="flex items-center gap-2 group">
-          <span id="header-logo" class="font-serif-jp text-2xl sm:text-3xl tracking-widest text-white transition-colors duration-500 group-hover:opacity-80">うみないび</span>
-        </a>
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[60] focus:bg-white focus:px-4 focus:py-2 focus:text-ocean-deep">本文へ移動</a>
 
-        <!-- デスクトップナビゲーション -->
-        <nav class="hidden lg:flex items-center gap-5 xl:gap-8 font-sansJp">
-          <a href="concept.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">コンセプト</a>
-          <a href="workshop.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">体験教室</a>
-          <a href="gallery.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">ギャラリー</a>
-          <a href="shop.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">ショップ</a>
-          <a href="access.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">アクセス</a>
-          <a href="contact.html" class="nav-link relative text-sm tracking-widest text-white/90 transition-all duration-500 hover:text-white">お問い合わせ</a>
-          <a href="contact.html" class="ml-2 inline-flex items-center whitespace-nowrap rounded-full bg-emerald px-5 xl:px-6 py-2.5 text-sm font-medium tracking-wider text-white shadow-soft transition-transform duration-300 hover:scale-105 hover:bg-emerald/90">ご予約はこちら</a>
-        </nav>
-
-        <!-- モバイルメニューボタン -->
-        <button id="menu-btn" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 focus:outline-none">
-          <span id="bar1" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
-          <span id="bar2" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
-          <span id="bar3" class="block h-[2px] w-6 bg-current transition-all duration-300"></span>
-        </button>
-      </div>
+  <!-- ヘッダー（2026-10-28 リビルド：いつも白い地。メニューは5つ＋予約） -->
+  <header id="site-header" class="fixed inset-x-0 top-0 z-50 bg-sand/95 backdrop-blur transition-shadow">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:h-[4.5rem] sm:px-8 lg:px-12">
+      <a href="index.html" class="flex items-baseline gap-3">
+        <span class="font-serif-jp text-2xl tracking-[0.2em] text-ocean-deep">うみないび</span>
+        <span class="hidden text-xs tracking-[0.25em] text-ink/80 sm:inline">OKINAWA RESIN ART</span>
+      </a>
+      <nav aria-label="メインメニュー" class="hidden items-center gap-7 lg:flex xl:gap-9">
+          <a href="index.html#about" class="text-sm tracking-widest text-ink/80 hover:text-ocean">コンセプト</a>
+          <a href="index.html#works" class="text-sm tracking-widest text-ink/80 hover:text-ocean">作品</a>
+          <a href="workshop.html" class="text-sm tracking-widest text-ink/80 hover:text-ocean">体験教室</a>
+          <a href="shop.html" class="text-sm tracking-widest text-ink/80 hover:text-ocean">ショップ</a>
+          <a href="index.html#visit" class="text-sm tracking-widest text-ink/80 hover:text-ocean">アクセス</a>
+          <a href="contact.html" class="btn !min-h-0 !px-5 !py-2 text-sm">ご予約・お問い合わせ</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu" class="relative z-50 -mr-2 flex h-11 w-11 flex-col items-center justify-center gap-1.5 text-ocean-deep lg:hidden">
+        <span id="bar1" class="block h-px w-6 bg-current transition-all duration-300"></span>
+        <span id="bar2" class="block h-px w-6 bg-current transition-all duration-300"></span>
+        <span id="bar3" class="block h-px w-6 bg-current transition-all duration-300"></span>
+      </button>
     </div>
 
-    <!-- モバイルドロワーメニュー -->
-    <div id="mobile-menu" inert aria-label="メニュー" class="lg:hidden fixed inset-0 z-40 flex translate-x-full flex-col items-center justify-center gap-8 bg-ocean-deep/98 backdrop-blur-sm transition-transform duration-500 text-white">
-      <a href="concept.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">コンセプト</a>
-      <a href="workshop.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">体験教室</a>
-      <a href="gallery.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">ギャラリー</a>
-      <a href="shop.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">オンラインショップ</a>
-      <a href="access.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">アクセス</a>
-      <a href="contact.html" class="font-serif-jp text-2xl tracking-widest hover:text-emerald-light transition-colors">お問い合わせ</a>
-      <a href="contact.html" class="mt-4 inline-flex items-center rounded-full bg-emerald px-8 py-3 text-base font-medium tracking-wider text-white hover:bg-emerald/90 transition-transform duration-300 hover:scale-105">ご予約はこちら</a>
+    <!-- スマホのメニュー（画面いっぱい・白い地） -->
+    <div id="mobile-menu" inert aria-label="メニュー" class="fixed inset-0 z-40 flex translate-x-full flex-col bg-sand px-6 pb-10 pt-24 transition-transform duration-500 lg:hidden">
+      <nav aria-label="メニュー" class="flex flex-col border-t border-line">
+        <a href="index.html#about" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">コンセプト<span aria-hidden="true" class="text-ocean-light">→</span></a>
+        <a href="index.html#works" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">作品<span aria-hidden="true" class="text-ocean-light">→</span></a>
+        <a href="workshop.html" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">体験教室<span aria-hidden="true" class="text-ocean-light">→</span></a>
+        <a href="shop.html" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">ショップ<span aria-hidden="true" class="text-ocean-light">→</span></a>
+        <a href="index.html#visit" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">アクセス<span aria-hidden="true" class="text-ocean-light">→</span></a>
+      </nav>
+      <a href="contact.html" class="btn mt-8 w-full">ご予約・お問い合わせ</a>
+      <p class="mt-auto pt-8 text-sm text-ink/80">沖縄県名護市真喜屋763番地1 羽地の駅2階<br>10:00 - 18:00 ／ 050-7116-0133</p>
     </div>
   </header>
 
   <main id="main" tabindex="-1">
-    <!-- ページヘッダー -->
-    <section class="page-paint relative pt-28 pb-16 sm:pt-40 sm:pb-32 overflow-hidden text-white">
-      <div class="relative z-10 mx-auto max-w-4xl px-5 sm:px-6 text-center">
-        <p class="text-xs tracking-[0.35em] text-white uppercase font-bold">Legal Notice</p>
-        <h1 class="font-serif-jp mt-3 sm:mt-4 text-[1.75rem] max-sm:leading-snug sm:text-4xl md:text-5xl tracking-wider sm:tracking-widest">特定商取引法に基づく表記</h1>
-        <p class="mt-4 text-sm sm:text-base text-white">オンラインショップと体験教室のお取引について</p>
+    <!-- ページの見出し（2026-10-28 リビルド：文字だけ） -->
+    <section class="pb-10 pt-28 sm:pb-14 sm:pt-40">
+      <div class="mx-auto max-w-3xl px-5 sm:px-6">
+        <p class="eyebrow">Legal Notice</p>
+        <h1 class="mt-4 font-serif-jp text-[2rem] leading-snug tracking-wider text-ocean-deep sm:text-5xl">特定商取引法に基づく表記</h1>
+        <p class="mt-5 max-w-2xl text-sm text-ink/80 sm:text-base">オンラインショップと体験教室のお取引について</p>
       </div>
     </section>
 
     <!-- 本文 -->
     <!-- ★仮の所には class="todo" の印と「要確認」の文字を付ける。残っていると bin/deploy.sh --go は送らない -->
-    <section class="py-14 sm:py-20">
+    <section class="pb-14 pt-2 sm:pb-20 sm:pt-4">
       <div class="mx-auto max-w-3xl px-5 sm:px-6 space-y-12">
-        <div class="reveal bg-white rounded-3xl p-6 sm:p-10 shadow-soft text-sm leading-relaxed text-ink/80">
+        <div class="reveal bg-white p-6 sm:p-10 text-sm leading-relaxed text-ink/80 border border-line">
           <h2 class="font-serif-jp text-xl font-bold text-ocean-deep mb-6">事業者の情報</h2>
           <dl class="legal-table">
             <div><dt>販売事業者</dt><dd>うみないび<br>（運営：合同会社LinkTOHOKU／法人番号 3380003003364）</dd></div>
             <div><dt>運営責任者</dt><dd>鵜沼 京子</dd></div>
             <div><dt>所在地</dt><dd>〒905-1143 沖縄県名護市真喜屋763番地1 羽地の駅 2階</dd></div>
-            <div><dt>電話番号</dt><dd>050-7116-0133<br>（受付時間 10:00〜18:00。お問い合わせは、なるべくメールまたは<a href="contact.html" class="text-ocean underline">お問い合わせフォーム</a>でお願いします）</dd></div>
+            <div><dt>電話番号</dt><dd>050-7116-0133<br>（受付時間 10:00〜18:00。お問い合わせは、なるべくメールまたは<a href="contact.html" class="text-link">お問い合わせフォーム</a>でお願いします）</dd></div>
             <div><dt>メールアドレス</dt><dd>info@uminaibi-resin.jp</dd></div>
             <div><dt>ホームページ</dt><dd>https://uminaibi-resin.jp/</dd></div>
           </dl>
         </div>
 
-        <div class="reveal bg-white rounded-3xl p-6 sm:p-10 shadow-soft text-sm leading-relaxed text-ink/80">
+        <div class="reveal bg-white p-6 sm:p-10 text-sm leading-relaxed text-ink/80 border border-line">
           <h2 class="font-serif-jp text-xl font-bold text-ocean-deep mb-6">オンラインショップ（作品の販売）</h2>
           <dl class="legal-table">
-            <div><dt>販売価格</dt><dd><a href="shop.html" class="text-ocean underline">オンラインショップ</a>の各商品に、消費税込みの価格で表示しています。</dd></div>
+            <div><dt>販売価格</dt><dd><a href="shop.html" class="text-link">オンラインショップ</a>の各商品に、消費税込みの価格で表示しています。</dd></div>
             <div><dt>商品代金以外に必要な料金</dt><dd>送料：ゆうパック（沖縄県から発送）。お届け先の地域と商品のサイズで、次の表のとおりです。お支払いの画面でお届け先の地域を選ぶと、合計が表示されます。お届け先と違う地域の送料が選ばれていたときは、発送の前に当店からご連絡します。
           <!-- ★送料の表（data/yupack-okinawa.json から作った。料金を変えたら shop.html と tokushoho.html の両方を直す） -->
-          <div class="mt-4 overflow-x-auto rounded-2xl border border-ink/10" role="region" aria-label="送料の表（横に動かせます）" tabindex="0">
+          <div class="mt-4 overflow-x-auto border border-line" role="region" aria-label="送料の表（横に動かせます）" tabindex="0">
             <table class="w-full min-w-[40rem] text-sm">
               <caption class="sr-only">ゆうパックの送料（沖縄県から発送・税込）</caption>
               <thead class="bg-sand"><tr><th scope="col" class="px-3 py-2 text-left">お届け先</th><th scope="col" class="px-3 py-2 text-right whitespace-nowrap">60サイズ</th><th scope="col" class="px-3 py-2 text-right whitespace-nowrap">80サイズ</th><th scope="col" class="px-3 py-2 text-right whitespace-nowrap">100サイズ</th><th scope="col" class="px-3 py-2 text-right whitespace-nowrap">120サイズ</th><th scope="col" class="px-3 py-2 text-right whitespace-nowrap">140サイズ</th></tr></thead>
               <tbody>
-                <tr class="border-t border-ink/10"><th scope="row" class="px-3 py-2 text-left font-bold text-ocean-deep"><span class="whitespace-nowrap">沖縄県内</span><br><span class="text-xs font-normal text-ink/70">沖縄</span></th><td class="px-3 py-2 text-right whitespace-nowrap">840円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,150円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,480円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,810円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,160円</td></tr>
-                <tr class="border-t border-ink/10"><th scope="row" class="px-3 py-2 text-left font-bold text-ocean-deep"><span class="whitespace-nowrap">九州</span><br><span class="text-xs font-normal text-ink/70">福岡・佐賀・長崎・熊本・大分・宮崎・鹿児島</span></th><td class="px-3 py-2 text-right whitespace-nowrap">1,210円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,600円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,080円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,450円</td><td class="px-3 py-2 text-right whitespace-nowrap">3,010円</td></tr>
-                <tr class="border-t border-ink/10"><th scope="row" class="px-3 py-2 text-left font-bold text-ocean-deep"><span class="whitespace-nowrap">中国</span><br><span class="text-xs font-normal text-ink/70">鳥取・島根・岡山・広島・山口</span></th><td class="px-3 py-2 text-right whitespace-nowrap">1,470円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,860円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,330円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,730円</td><td class="px-3 py-2 text-right whitespace-nowrap">3,280円</td></tr>
-                <tr class="border-t border-ink/10"><th scope="row" class="px-3 py-2 text-left font-bold text-ocean-deep"><span class="whitespace-nowrap">四国・近畿・東海・関東</span><br><span class="text-xs font-normal text-ink/70">香川・愛媛・徳島・高知・滋賀・京都・兵庫・大阪・奈良・和歌山・静岡・岐阜・愛知・三重・東京・茨城・神奈川・栃木・千葉・群馬・山梨・埼玉</span></th><td class="px-3 py-2 text-right whitespace-nowrap">1,600円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,990円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,480円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,860円</td><td class="px-3 py-2 text-right whitespace-nowrap">3,430円</td></tr>
-                <tr class="border-t border-ink/10"><th scope="row" class="px-3 py-2 text-left font-bold text-ocean-deep"><span class="whitespace-nowrap">北陸・信越・東北・北海道</span><br><span class="text-xs font-normal text-ink/70">富山・石川・福井・新潟・長野・青森・岩手・宮城・秋田・山形・福島・北海道</span></th><td class="px-3 py-2 text-right whitespace-nowrap">1,930円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,260円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,740円</td><td class="px-3 py-2 text-right whitespace-nowrap">3,080円</td><td class="px-3 py-2 text-right whitespace-nowrap">3,670円</td></tr>
+                <tr class="border-t border-line"><th scope="row" class="px-3 py-2 text-left font-bold text-ocean-deep"><span class="whitespace-nowrap">沖縄県内</span><br><span class="text-xs font-normal text-ink/70">沖縄</span></th><td class="px-3 py-2 text-right whitespace-nowrap">840円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,150円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,480円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,810円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,160円</td></tr>
+                <tr class="border-t border-line"><th scope="row" class="px-3 py-2 text-left font-bold text-ocean-deep"><span class="whitespace-nowrap">九州</span><br><span class="text-xs font-normal text-ink/70">福岡・佐賀・長崎・熊本・大分・宮崎・鹿児島</span></th><td class="px-3 py-2 text-right whitespace-nowrap">1,210円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,600円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,080円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,450円</td><td class="px-3 py-2 text-right whitespace-nowrap">3,010円</td></tr>
+                <tr class="border-t border-line"><th scope="row" class="px-3 py-2 text-left font-bold text-ocean-deep"><span class="whitespace-nowrap">中国</span><br><span class="text-xs font-normal text-ink/70">鳥取・島根・岡山・広島・山口</span></th><td class="px-3 py-2 text-right whitespace-nowrap">1,470円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,860円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,330円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,730円</td><td class="px-3 py-2 text-right whitespace-nowrap">3,280円</td></tr>
+                <tr class="border-t border-line"><th scope="row" class="px-3 py-2 text-left font-bold text-ocean-deep"><span class="whitespace-nowrap">四国・近畿・東海・関東</span><br><span class="text-xs font-normal text-ink/70">香川・愛媛・徳島・高知・滋賀・京都・兵庫・大阪・奈良・和歌山・静岡・岐阜・愛知・三重・東京・茨城・神奈川・栃木・千葉・群馬・山梨・埼玉</span></th><td class="px-3 py-2 text-right whitespace-nowrap">1,600円</td><td class="px-3 py-2 text-right whitespace-nowrap">1,990円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,480円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,860円</td><td class="px-3 py-2 text-right whitespace-nowrap">3,430円</td></tr>
+                <tr class="border-t border-line"><th scope="row" class="px-3 py-2 text-left font-bold text-ocean-deep"><span class="whitespace-nowrap">北陸・信越・東北・北海道</span><br><span class="text-xs font-normal text-ink/70">富山・石川・福井・新潟・長野・青森・岩手・宮城・秋田・山形・福島・北海道</span></th><td class="px-3 py-2 text-right whitespace-nowrap">1,930円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,260円</td><td class="px-3 py-2 text-right whitespace-nowrap">2,740円</td><td class="px-3 py-2 text-right whitespace-nowrap">3,080円</td><td class="px-3 py-2 text-right whitespace-nowrap">3,670円</td></tr>
               </tbody>
             </table>
           </div>
@@ -112,10 +116,10 @@
           </dl>
         </div>
 
-        <div class="reveal bg-white rounded-3xl p-6 sm:p-10 shadow-soft text-sm leading-relaxed text-ink/80">
+        <div class="reveal bg-white p-6 sm:p-10 text-sm leading-relaxed text-ink/80 border border-line">
           <h2 class="font-serif-jp text-xl font-bold text-ocean-deep mb-6">体験教室</h2>
           <dl class="legal-table">
-            <div><dt>料金</dt><dd><a href="workshop.html" class="text-ocean underline">体験教室のページ</a>に、消費税込みの価格で表示しています。</dd></div>
+            <div><dt>料金</dt><dd><a href="workshop.html" class="text-link">体験教室のページ</a>に、消費税込みの価格で表示しています。</dd></div>
             <div><dt>料金以外に必要な料金</dt><dd>作品を後日お送りする場合は、送料（ゆうパック・沖縄県から発送。オンラインショップの送料の表と同じ料金）がかかります。</dd></div>
             <div><dt>お支払い方法・時期</dt><dd>事前のお支払いです。ご予約の受付後に当店からお送りするお支払いのご案内（Stripe の請求書）で、体験日より前に、クレジットカードまたはコンビニ払いでお支払いください。お支払いの期限は、ご案内に書きます。お支払いの確認をもって、ご予約が確定します。</dd></div>
             <div><dt>サービスの提供時期</dt><dd>ご予約いただいた日時に、店舗で行います。</dd></div>
@@ -129,59 +133,45 @@
 
   </main>
 
+
   <!-- フッター -->
-  <footer class="bg-ocean-deep text-white border-t border-white/10 relative overflow-hidden">
-    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12 py-12 sm:py-14">
-      <div class="grid gap-8 md:gap-10 md:grid-cols-3 relative z-10">
-        <div>
-          <p class="font-serif-jp text-2xl tracking-widest text-white">うみないび</p>
-          <p class="mt-3 text-sm leading-relaxed text-white/70">
-            沖縄県名護市、海のきらめきをレジンアートに閉じ込めて。<br>
-            あなただけの大切な海をお届けする専門店。
-          </p>
-          <div class="mt-5 flex gap-4">
-            <a href="https://www.instagram.com/uminaibi2026/" aria-label="うみないびの Instagram（@uminaibi2026・新しいタブで開きます）" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20">
-              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5a4.25 4.25 0 0 0 4.25 4.25h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5a4.25 4.25 0 0 0-4.25-4.25h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.1-2.6a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3z"/></svg>
-            </a>
-            <a href="https://line.me/R/ti/p/@726qtybt" aria-label="うみないびの LINE（@726qtybt・新しいタブで開きます）" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20">
-              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 2C6.48 2 2 5.69 2 10.24c0 4.09 3.61 7.51 8.48 8.14.33.07.78.22.89.5.1.26.07.66.03.92l-.15.9c-.04.26-.2 1.03.9.56 1.1-.47 5.94-3.5 8.1-6 1.51-1.65 2.24-3.34 2.24-5.02C22.5 5.69 17.52 2 12 2z"/></svg>
-            </a>
+  <footer class="bg-ocean-deep text-white">
+    <div class="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-12">
+      <div class="grid gap-10 md:grid-cols-12">
+        <div class="md:col-span-5">
+          <p class="font-serif-jp text-3xl tracking-[0.2em]">うみないび</p>
+          <p class="mt-2 text-xs tracking-[0.25em] text-white/80">OKINAWA NAGO RESIN ART</p>
+          <address class="mt-6 text-sm not-italic leading-relaxed text-white/85">
+            〒905-1143 沖縄県名護市真喜屋763番地1 羽地の駅 2階<br>
+            営業時間 10:00 - 18:00（体験は事前予約制）<br>
+            TEL <a href="tel:05071160133" class="underline underline-offset-4">050-7116-0133</a>
+          </address>
+          <div class="mt-6 flex gap-3">
+            <a href="https://www.instagram.com/uminaibi2026/" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center border border-white/40 px-4 text-sm hover:bg-white hover:text-ocean-deep">Instagram<span class="sr-only">（@uminaibi2026・新しいタブで開きます）</span></a>
+            <a href="https://line.me/R/ti/p/@726qtybt" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center border border-white/40 px-4 text-sm hover:bg-white hover:text-ocean-deep">LINE<span class="sr-only">（@726qtybt・新しいタブで開きます）</span></a>
           </div>
         </div>
-
-        <div>
-          <p class="text-sm font-semibold tracking-widest text-white/90">SITEMAP</p>
-          <ul class="mt-4 grid grid-cols-2 gap-x-6 gap-y-2 md:grid-cols-1 text-sm text-white/70 font-sansJp">
-            <li><a href="index.html" class="hover:text-white transition-colors">トップページ</a></li>
-            <li><a href="concept.html" class="hover:text-white transition-colors">コンセプト</a></li>
-            <li><a href="workshop.html" class="hover:text-white transition-colors">体験教室</a></li>
-            <li><a href="gallery.html" class="hover:text-white transition-colors">ギャラリー</a></li>
-            <li><a href="shop.html" class="hover:text-white transition-colors">オンラインショップ</a></li>
-            <li><a href="access.html" class="hover:text-white transition-colors">アクセス</a></li>
-            <li><a href="contact.html" class="hover:text-white transition-colors">お問い合わせ</a></li>
+        <nav aria-label="サイトマップ" class="md:col-span-7">
+          <ul class="grid grid-cols-2 gap-x-6 gap-y-3 text-sm text-white/85 sm:grid-cols-3">
+            <li><a href="index.html" class="hover:text-white hover:underline">トップ</a></li>
+            <li><a href="index.html#about" class="hover:text-white hover:underline">コンセプト</a></li>
+            <li><a href="index.html#works" class="hover:text-white hover:underline">作品</a></li>
+            <li><a href="workshop.html" class="hover:text-white hover:underline">体験教室</a></li>
+            <li><a href="shop.html" class="hover:text-white hover:underline">オンラインショップ</a></li>
+            <li><a href="index.html#visit" class="hover:text-white hover:underline">アクセス</a></li>
+            <li><a href="contact.html" class="hover:text-white hover:underline">ご予約・お問い合わせ</a></li>
+            <li><a href="privacy.html" class="hover:text-white hover:underline">プライバシーポリシー</a></li>
+            <li><a href="tokushoho.html" class="hover:text-white hover:underline">特定商取引法に基づく表記</a></li>
           </ul>
-        </div>
-
-        <div>
-          <p class="text-sm font-semibold tracking-widest text-white/90">SHOP INFO</p>
-          <address class="mt-4 space-y-1 text-sm not-italic leading-relaxed text-white/70 font-sansJp">
-            〒905-1143<br>
-            沖縄県名護市真喜屋763番地1<br>
-            羽地の駅 2階<br>
-            営業時間 10:00 - 18:00<br>（体験は事前予約が必要です）<br>
-            TEL: 050-7116-0133
-          </address>
-        </div>
+        </nav>
       </div>
-
-      <div class="mt-10 sm:mt-12 border-t border-white/15 pt-6 text-center text-xs leading-relaxed tracking-wider text-white/75 relative z-10 font-sansJp">
-        &copy; <span id="current-year"></span> うみないび / uminaibi-resin.jp All Rights Reserved.<br class="sm:hidden"><span class="hidden sm:inline">　|　</span><a href="privacy.html" class="underline hover:text-white">プライバシーポリシー</a><br class="sm:hidden"><span class="hidden sm:inline">　|　</span><a href="tokushoho.html" class="underline hover:text-white">特定商取引法に基づく表記</a>
-      </div>
+      <p class="mt-14 border-t border-white/20 pt-6 text-xs leading-relaxed text-white/80">
+        &copy; <span id="current-year">2026</span> うみないび / uminaibi-resin.jp　サイト内の風景写真・作品のイメージ写真は Unsplash の写真です（撮影者は各写真に記載）。
+      </p>
     </div>
   </footer>
 
-  <!-- 共通JavaScriptのインポート -->
-  <script src="js/main.js?v=20261028-4"></script>
+  <script src="js/main.js?v=20261028-5"></script>
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
   </script>

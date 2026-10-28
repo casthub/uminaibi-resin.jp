@@ -1,50 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. スクロールに応じたヘッダーの背景色切り替え
+  // 1. ヘッダー：少しスクロールしたら下に細い影（2026-10-28 リビルド。ヘッダーはいつも白い地）
   const header = document.getElementById('site-header');
-  const logo = document.getElementById('header-logo');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  // ★明るい背景で始まるページ（body に data-hero="light"）は、いちばん上でも濃い色の文字にする（白い文字だと読めないため）
-  const lightHero = document.body.dataset.hero === 'light';
-  if (lightHero && header && logo) {
-    header.classList.remove('text-white');
-    header.classList.add('text-[#0b3a5e]');
-    logo.classList.remove('text-white');
-    logo.classList.add('text-[#0b3a5e]');
-    navLinks.forEach((link) => {
-      link.classList.remove('text-white/90', 'hover:text-white');
-      link.classList.add('text-[#122f45]/90', 'hover:text-[#0f64a0]');
-    });
-  }
-
-  const onScroll = () => {
-    if (!header || !logo) return;
-    if (window.scrollY > 40) {
-      header.classList.remove('bg-transparent', 'text-white');
-      header.classList.add('bg-[#eef8fa]/90', 'backdrop-blur-md', 'shadow-md', 'text-[#122f45]');
-      logo.classList.remove('text-white');
-      logo.classList.add('text-[#0b3a5e]');
-      navLinks.forEach((link) => {
-        link.classList.remove('text-white/90', 'hover:text-white');
-        link.classList.add('text-[#122f45]/90', 'hover:text-[#0f64a0]');
-      });
-    } else if (lightHero) {
-      header.classList.add('bg-transparent', 'text-[#0b3a5e]');
-      header.classList.remove('bg-[#eef8fa]/90', 'backdrop-blur-md', 'shadow-md', 'text-[#122f45]');
-    } else {
-      header.classList.add('bg-transparent', 'text-white');
-      header.classList.remove('bg-[#eef8fa]/90', 'backdrop-blur-md', 'shadow-md', 'text-[#122f45]');
-      logo.classList.add('text-white');
-      logo.classList.remove('text-[#0b3a5e]');
-      navLinks.forEach((link) => {
-        link.classList.add('text-white/90', 'hover:text-white');
-        link.classList.remove('text-[#122f45]/90', 'hover:text-[#0f64a0]');
-      });
-    }
-  };
-
-  window.addEventListener('scroll', onScroll);
-  onScroll(); // 初期読み込み時にも適用
+  const onScroll = () => header?.classList.toggle('shadow-[0_1px_0_#d6e1e6]', window.scrollY > 8);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
   // 2. モバイルメニューのトグル
   //   ★閉じているときは inert（キーボードでも読み上げでも入れない）。Esc で閉じ、閉じたらボタンへ戻る（WCAG 2.1.2 / 2.4.3）
@@ -104,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// ダイアログ（送信完了・ギャラリーの拡大表示）を開く／閉じる共通処理
+// ダイアログ（送信完了など）を開く／閉じる共通処理
 //   開いたら中の最初のボタンへ、閉じたら元の場所へフォーカスを戻す。Tab は中で回り、Esc で閉じる（WCAG 2.1.2 / 2.4.3）
 window.uminaibiDialog = (() => {
   let current = null;
