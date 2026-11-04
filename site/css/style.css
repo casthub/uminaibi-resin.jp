@@ -139,3 +139,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* 【要確認】の印（オーナーが決めるまでの仮の所）。残っていると bin/deploy.sh --go は送らない */
 .todo { background: #fff3c4; color: #7a2e12; font-weight: 700; padding: 0 0.2em; border-radius: 3px; }
+
+/* 2026-11-04 スマホ・タブレットのメニュー
+   ・ヘッダーの backdrop-blur（すりガラス）があると、メニュー（position: fixed）の高さがヘッダーの高さ（64px）になり、
+     白い地がそこまでしか塗られず、下の写真・文字・ボタンが透けて重なっていた → 高さを画面いっぱいに固定
+   ・幅 1024〜1279px（タブレットを横にした幅）は横のメニューが詰まり、文字が2行に折り返してボタンがはみ出していた
+     → 小さな英字（OKINAWA RESIN ART）を隠し、メニューの文字を折り返さない */
+#mobile-menu { height: 100vh; height: 100dvh; overflow-y: auto; }
+#site-header nav a { white-space: nowrap; }
+@media (min-width: 1024px) and (max-width: 1279px) {
+  #site-header a > span + span { display: none; }
+  #site-header nav { gap: 1.25rem; }
+}
