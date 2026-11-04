@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>うみないび サンプル</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Old+Mincho:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --deep:#0a2a42; --ocean:#0b5b91; --light:#3aa6cf; --emerald:#0b636b; --emerald-bright:#1fb7a3;
+  --sand:#f6f9fa; --sand-dark:#ebf2f4; --coral:#a9412a; --ink:#15283a; --muted:#3d5466; --line:#d6e1e6; --card:#ffffff;
+  --serif:"Zen Old Mincho","Noto Serif JP",serif; --sans:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --deep:#d9ecf7; --ocean:#7cc4ec; --emerald:#6fd8c7; --sand:#0c1a26; --sand-dark:#112434; --coral:#f19a7f;
+    --ink:#e6eef3; --muted:#a9bccb; --line:#24394b; --card:#13283a;
+  }
+}
+:root[data-theme="dark"]{
+  --deep:#d9ecf7; --ocean:#7cc4ec; --emerald:#6fd8c7; --sand:#0c1a26; --sand-dark:#112434; --coral:#f19a7f;
+  --ink:#e6eef3; --muted:#a9bccb; --line:#24394b; --card:#13283a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--sand);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.9;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--ocean)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+@media(min-width:768px){.wrap{padding:0 32px}}
+.serif{font-family:var(--serif)}
+.eyebrow{font-size:.8125rem;letter-spacing:.3em;color:var(--emerald);text-transform:uppercase;margin:0 0 .5rem}
+h2{font-family:var(--serif);font-weight:500;color:var(--deep);font-size:clamp(1.6rem,4.5vw,2.4rem);line-height:1.5;margin:0 0 1.25rem;letter-spacing:.06em}
+h3{font-family:var(--serif);font-weight:500;color:var(--deep);font-size:1.25rem;margin:0 0 .5rem;letter-spacing:.04em}
+p{margin:0 0 1rem}
+.lead{color:var(--muted);max-width:40em}
+section{padding:72px 0}
+@media(min-width:768px){section{padding:104px 0}}
+.band{background:var(--sand-dark)}
+
+/* sample note */
+.sample-note{background:var(--coral);color:#fff;font-size:.8125rem;text-align:center;padding:6px 16px;line-height:1.6}
+:root[data-theme="dark"] .sample-note{color:#1a0d08}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .sample-note{color:#1a0d08}}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--sand) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{text-decoration:none;color:var(--deep);display:flex;align-items:baseline;gap:10px}
+.logo b{font-family:var(--serif);font-weight:500;font-size:1.5rem;letter-spacing:.2em}
+.logo small{font-size:.7rem;letter-spacing:.25em;color:var(--muted)}
+nav ul{display:none;list-style:none;margin:0;padding:0;gap:24px}
+nav a{color:var(--ink);text-decoration:none;font-size:.9rem;letter-spacing:.08em}
+nav a:hover{color:var(--ocean)}
+@media(min-width:1000px){nav ul{display:flex}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 28px;border-radius:999px;background:var(--ocean);color:#fff;text-decoration:none;font-weight:500;letter-spacing:.08em;font-size:.95rem;border:1px solid var(--ocean);transition:transform .15s,background .15s}
+:root[data-theme="dark"] .btn{color:#06202f}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn{color:#06202f}}
+.btn:hover{transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ocean)}
+.btn.sm{min-height:40px;padding:8px 18px;font-size:.85rem}
+.hd .btn{display:none}
+@media(min-width:600px){.hd .btn{display:inline-flex}}
+.hd-right{display:flex;align-items:center;gap:14px}
+.sns{display:none;gap:12px;font-size:.8rem;letter-spacing:.1em}
+.sns a{color:var(--muted);text-decoration:none}
+.sns a:hover{color:var(--ocean)}
+@media(min-width:1180px){.sns{display:flex}}
+.scroll{position:absolute;right:20px;bottom:24px;z-index:1;color:#fff;font-size:.7rem;letter-spacing:.3em;writing-mode:vertical-rl;display:flex;align-items:center;gap:10px;opacity:.9}
+.scroll::after{content:"";width:1px;height:56px;background:linear-gradient(#fff,transparent);animation:sc 2s ease-in-out infinite}
+@keyframes sc{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media(max-width:599px){.scroll{display:none}}
+.works{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:36px}
+@media(min-width:800px){.works{grid-template-columns:repeat(3,1fr);gap:12px}}
+.works figure{margin:0;position:relative;overflow:hidden;border-radius:4px}
+.works img{aspect-ratio:1;object-fit:cover;width:100%;transition:transform .5s}
+.works figure:hover img{transform:scale(1.04)}
+.works figcaption{position:absolute;left:0;right:0;bottom:0;padding:24px 12px 10px;color:#fff;font-size:.8rem;line-height:1.5;background:linear-gradient(transparent,rgba(6,24,40,.75))}
+
+/* hero */
+.hero{position:relative;min-height:min(88svh,760px);display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,24,40,.15) 0%,rgba(6,24,40,.25) 45%,rgba(6,24,40,.78) 100%)}
+.hero .wrap{position:relative;z-index:1;padding-bottom:56px;width:100%}
+.hero .place{font-size:.85rem;letter-spacing:.25em;margin:0 0 .75rem;opacity:.95}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,7vw,3.6rem);line-height:1.45;letter-spacing:.08em;margin:0 0 1rem;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.hero p.sub{max-width:34em;font-size:1rem;margin-bottom:1.5rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 1.75rem;padding:0;list-style:none}
+.chips li{border:1px solid rgba(255,255,255,.7);border-radius:999px;padding:4px 14px;font-size:.85rem;background:rgba(255,255,255,.08)}
+.hero .btn{background:#fff;color:#0a2a42;border-color:#fff}
+.hero .btn.ghost{background:transparent;color:#fff;border-color:#fff}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px}
+.credit{font-size:.75rem;opacity:.85;margin-top:1.5rem}
+.credit a{color:inherit}
+
+/* services */
+.svc{display:grid;gap:20px;margin-top:40px}
+@media(min-width:800px){.svc{grid-template-columns:repeat(3,1fr)}}
+.svc a.card{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.svc a.card:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(10,42,66,.45)}
+.svc .ph{aspect-ratio:4/3;overflow:hidden}
+.svc .ph img{width:100%;height:100%;object-fit:cover}
+.svc .bd{padding:22px 22px 26px}
+.svc .num{font-size:.75rem;letter-spacing:.3em;color:var(--emerald)}
+.svc .more{margin-top:auto;padding:0 22px 22px;color:var(--ocean);font-size:.9rem}
+
+/* order */
+.split{display:grid;gap:40px;align-items:start}
+@media(min-width:900px){.split{grid-template-columns:1fr 1fr;gap:64px}}
+.examples{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.examples figure{margin:0}
+.examples img{aspect-ratio:1;object-fit:cover;width:100%;border-radius:4px}
+.examples figcaption{font-size:.8125rem;color:var(--muted);margin-top:6px;line-height:1.6}
+ol.flow{list-style:none;padding:0;margin:24px 0 0;counter-reset:f}
+ol.flow li{counter-increment:f;position:relative;padding:0 0 22px 56px;border-left:1px solid var(--line);margin-left:18px}
+ol.flow li:last-child{border-left-color:transparent;padding-bottom:0}
+ol.flow li::before{content:counter(f);position:absolute;left:-18px;top:0;width:36px;height:36px;border-radius:50%;background:var(--card);border:1px solid var(--emerald);color:var(--emerald);display:grid;place-items:center;font-family:var(--serif)}
+ol.flow b{display:block;color:var(--deep);font-weight:500}
+ol.flow span{color:var(--muted);font-size:.95rem}
+.uses{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0 0 1.5rem}
+.uses li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 14px;font-size:.875rem}
+
+/* courses */
+.courses{display:grid;gap:16px;margin-top:36px}
+@media(min-width:800px){.courses{grid-template-columns:repeat(3,1fr)}}
+.course{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--emerald);border-radius:4px;padding:24px}
+.course .price{font-family:var(--serif);font-size:1.75rem;color:var(--deep);margin:.25rem 0 .75rem}
+.course .price small{font-family:var(--sans);font-size:.8rem;color:var(--muted);margin-left:4px}
+.course dl{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;margin:0;font-size:.9rem}
+.course dt{color:var(--muted)}
+.course dd{margin:0}
+.kid{display:inline-block;background:var(--emerald);color:#fff;font-size:.75rem;padding:1px 10px;border-radius:999px;margin-left:6px;vertical-align:middle;letter-spacing:.05em}
+:root[data-theme="dark"] .kid{color:#05201d}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .kid{color:#05201d}}
+.note{font-size:.875rem;color:var(--muted);margin-top:16px}
+
+/* shop */
+.shop{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:36px}
+@media(min-width:800px){.shop{grid-template-columns:repeat(4,1fr)}}
+.item{background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.item img{aspect-ratio:1;object-fit:cover;width:100%}
+.item .bd{padding:12px 14px 16px}
+.item .t{font-size:.9rem;line-height:1.6;margin:0 0 6px}
+.item .s{font-size:.75rem;color:var(--coral);letter-spacing:.08em}
+
+/* kids */
+.kids{display:grid;gap:16px;margin-top:36px}
+@media(min-width:700px){.kids{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.kids{grid-template-columns:repeat(4,1fr)}}
+.kids div{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:24px}
+.kids .k{font-family:var(--serif);font-size:2rem;color:var(--emerald);line-height:1.2;margin-bottom:8px}
+.kids p{font-size:.95rem;color:var(--muted);margin:0}
+
+/* view */
+.view{position:relative;color:#fff;min-height:560px;display:flex;align-items:center;overflow:hidden}
+.view img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.view::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,24,40,.78) 0%,rgba(6,24,40,.35) 70%,rgba(6,24,40,.1) 100%)}
+.view .wrap{position:relative;z-index:1;width:100%}
+.view h2{color:#fff}
+.view .eyebrow{color:#9ff0e2}
+.view p{max-width:30em}
+
+/* access */
+.access{display:grid;gap:32px}
+@media(min-width:900px){.access{grid-template-columns:1fr 1fr}}
+.access dl{display:grid;grid-template-columns:6.5em 1fr;gap:12px 16px;margin:0}
+.access dt{color:var(--muted);font-size:.9rem}
+.access dd{margin:0}
+.mapbox{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:28px;display:flex;flex-direction:column;gap:12px;justify-content:center}
+
+/* contact */
+.cta{text-align:center}
+.cta .row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:24px}
+
+footer{border-top:1px solid var(--line);padding:40px 0 56px;font-size:.8125rem;color:var(--muted)}
+footer a{color:var(--muted)}
+.mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;gap:8px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--sand) 95%,transparent);border-top:1px solid var(--line)}
+.mobile-cta .btn{flex:1;min-height:44px;padding:8px 10px;font-size:.85rem}
+@media(min-width:800px){.mobile-cta{display:none}}
+@media(max-width:799px){footer{padding-bottom:110px}}
+:focus-visible{outline:3px solid var(--light);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="sample-note">これは確認用のサンプルです（公開していません）。写真はフリー素材（Unsplash）のイメージで、当店の作品ではありません。</div>
+
+<header>
+  <div class="wrap hd">
+    <a class="logo" href="#top"><b>うみないび</b><small>OKINAWA RESIN ART</small></a>
+    <nav aria-label="メニュー"><ul>
+      <li><a href="#works">作品</a></li>
+      <li><a href="#order">制作のご依頼</a></li>
+      <li><a href="#workshop">体験教室</a></li>
+      <li><a href="#shop">ショップ</a></li>
+      <li><a href="#kids">お子さま連れの方へ</a></li>
+      <li><a href="#access">アクセス</a></li>
+    </ul></nav>
+    <div class="hd-right">
+      <div class="sns"><a href="https://www.instagram.com/uminaibi2026/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://line.me/R/ti/p/@726qtybt" target="_blank" rel="noopener noreferrer">LINE</a></div>
+      <a class="btn sm" href="#contact">ご予約・ご相談</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Hero -->
+  <div class="hero">
+    <img src="../site/images/photos/yagaji-2000.webp" alt="青く透き通った海にかかる長い橋と、緑におおわれた小さな岩の島" width="2000" height="1333">
+    <div class="wrap">
+      <p class="place">沖縄県名護市 ・ 羽地の駅 2階</p>
+      <h1>名護の海を、<br>レジンにとじこめて。</h1>
+      <p class="sub">レジンアートのお店「うみないび」。作品の制作のご依頼、体験教室、オンラインショップ。お子さま連れでも、ゆっくり楽しんでいただけます。</p>
+      <ul class="chips" aria-label="できること">
+        <li>制作のご依頼</li><li>体験教室</li><li>オンラインショップ</li><li>お子さま連れOK</li>
+      </ul>
+      <div class="row">
+        <a class="btn" href="#workshop">体験教室を見る</a>
+        <a class="btn ghost" href="#order">制作を相談する</a>
+      </div>
+      <p class="credit">屋我地島周辺の海（名護市）／写真：<a href="https://unsplash.com/photos/JNhMWmPNcEk" target="_blank" rel="noopener noreferrer">Leopold / Unsplash</a></p>
+    </div>
+    <span class="scroll" aria-hidden="true">SCROLL</span>
+  </div>
+
+  <!-- 3 services -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">What we do</p>
+      <h2>うみないびで、できること</h2>
+      <p class="lead">つくってもらう、自分でつくる、おうちで選ぶ。3つの方法で、名護の海の色をお届けします。</p>
+      <div class="svc">
+        <a class="card" href="#order">
+          <div class="ph"><img src="../site/images/gallery/ocean-wave-panel-600.webp" alt="青緑の海に白い波が何本も重なる、レジンアートのパネルの写真" loading="lazy" width="600" height="450"></div>
+          <div class="bd"><div class="num">01 ORDER</div><h3>制作のご依頼</h3><p>新築のお祝いのアートパネル、結婚式の小物、記念の品など。ご希望をうかがって、世界にひとつの作品をおつくりします。</p></div>
+          <span class="more">くわしく →</span>
+        </a>
+        <a class="card" href="#workshop">
+          <div class="ph"><img src="../site/images/gallery/seashell-resin-600.webp" alt="青く透き通った貝殻やヒトデの形のレジン小物が並ぶ写真" loading="lazy" width="600" height="450"></div>
+          <div class="bd"><div class="num">02 WORKSHOP</div><h3>体験教室</h3><p>コースター、プレート、アクセサリー。6歳から参加できるコースもあります。少人数・予約制、手ぶらでどうぞ。</p></div>
+          <span class="more">くわしく →</span>
+        </a>
+        <a class="card" href="#shop">
+          <div class="ph"><img src="../site/images/gallery/flower-pendants-600.webp" alt="押し花や絵をレジンで閉じ込めたペンダントがたくさん並ぶ写真" loading="lazy" width="600" height="450"></div>
+          <div class="bd"><div class="num">03 SHOP</div><h3>オンラインショップ</h3><p>お店の作品を、全国へお届けします。カード・コンビニ払いに対応。沖縄の旅の思い出やお土産にも。</p></div>
+          <span class="more">くわしく →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Works -->
+  <section id="works" class="band">
+    <div class="wrap">
+      <p class="eyebrow">Works</p>
+      <h2>名護の海の色を、ひとつずつ。</h2>
+      <p class="lead">透明なレジンを何層にも重ね、白波はひとつずつ手で描きます。同じ波は、ふたつとありません。</p>
+      <div class="works">
+        <figure><img src="../site/images/gallery/ocean-wave-panel-600.webp" alt="青緑の海に白い波が何本も重なる、レジンアートのパネルの写真" loading="lazy" width="600" height="600"><figcaption>波のアートパネル</figcaption></figure>
+        <figure><img src="../site/images/gallery/wood-ocean-table-600.webp" alt="木目の板に青い海と白い波を流し込み、巻き貝を置いたレジンアートの写真" loading="lazy" width="600" height="600"><figcaption>木と海のテーブル</figcaption></figure>
+        <figure><img src="../site/images/gallery/seashell-resin-600.webp" alt="青く透き通った貝殻やヒトデの形のレジン小物が並ぶ写真" loading="lazy" width="600" height="600"><figcaption>貝とヒトデの小物</figcaption></figure>
+        <figure><img src="../site/images/gallery/wood-resin-piece-600.webp" alt="木と青いレジンを組み合わせた小さな板の写真" loading="lazy" width="600" height="600"><figcaption>木とレジンのプレート</figcaption></figure>
+        <figure><img src="../site/images/gallery/koi-resin-cube-600.webp" alt="水色のレジンの中に小さな魚と泡を閉じ込めた、四角い作品の写真" loading="lazy" width="600" height="600"><figcaption>小さな水の世界</figcaption></figure>
+        <figure><img src="../site/images/gallery/flower-pendants-600.webp" alt="押し花や絵をレジンで閉じ込めたペンダントがたくさん並ぶ写真" loading="lazy" width="600" height="600"><figcaption>押し花のペンダント</figcaption></figure>
+      </div>
+      <p class="note">※ 写真はフリー素材（Unsplash）のイメージで、当店の作品ではありません。本物の作品写真に差し替えます。</p>
+    </div>
+  </section>
+
+  <!-- Order -->
+  <section id="order">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Order made</p>
+        <h2>あなただけの海を、<br>おつくりします。</h2>
+        <p>思い出の浜の色、記念日の夕焼け、お部屋に合う大きさ。お話をうかがいながら、デザインから一緒に考えます。</p>
+        <ul class="uses" aria-label="ご依頼の例">
+          <li>アートパネル</li><li>テーブル・トレイ</li><li>結婚式・お祝いの小物</li><li>アクセサリー</li><li>お店のディスプレイ</li>
+        </ul>
+        <ol class="flow">
+          <li><b>ご相談</b><span>フォーム・LINE・Instagram、またはお店で。作りたいもの・大きさ・ご予算・ご希望の時期をお聞かせください。</span></li>
+          <li><b>デザインとお見積り</b><span>色の見本やイメージをお見せして、お見積りをお出しします。</span></li>
+          <li><b>制作</b><span>レジンを何層にも重ねて、ひとつずつ手でつくります。大きさによって日数がかかります。</span></li>
+          <li><b>お渡し</b><span>お店でのお受け取り、または発送でお届けします。</span></li>
+        </ol>
+        <p style="margin-top:28px"><a class="btn" href="#contact">制作を相談する</a></p>
+      </div>
+      <div class="examples">
+        <figure><img src="../site/images/gallery/wood-ocean-table-600.webp" alt="木目の板に青い海と白い波を流し込み、巻き貝を置いたレジンアートの写真" loading="lazy" width="600" height="600"><figcaption>木と海のテーブル（イメージ）</figcaption></figure>
+        <figure><img src="../site/images/gallery/wood-resin-piece-600.webp" alt="木と青いレジンを組み合わせた小さな板の写真" loading="lazy" width="600" height="600"><figcaption>木とレジンのプレート（イメージ）</figcaption></figure>
+        <figure><img src="../site/images/gallery/koi-resin-cube-600.webp" alt="水色のレジンの中に小さな魚と泡を閉じ込めた、四角い作品の写真" loading="lazy" width="600" height="600"><figcaption>小さな水の世界（イメージ）</figcaption></figure>
+        <figure><img src="../site/images/gallery/ocean-wave-panel-600.webp" alt="青緑の海に白い波が重なるアートパネルの写真" loading="lazy" width="600" height="600"><figcaption>波のアートパネル（イメージ）</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workshop -->
+  <section id="workshop" class="band">
+    <div class="wrap">
+      <p class="eyebrow">Workshop</p>
+      <h2>自分の手で、海をつくる。</h2>
+      <p class="lead">色の混ぜ方から白波の描き方まで、ていねいにお伝えします。すべて予約制・1回4名までの少人数です。</p>
+      <div class="courses">
+        <div class="course">
+          <h3>オーシャンコースター体験<span class="kid">6歳から</span></h3>
+          <div class="price">¥3,500<small>税込・材料費込み</small></div>
+          <dl><dt>時間</dt><dd>60分</dd><dt>対象</dt><dd>6歳以上</dd><dt>受け取り</dt><dd>翌日・店頭</dd></dl>
+        </div>
+        <div class="course">
+          <h3>サンセットプレート体験</h3>
+          <div class="price">¥5,500<small>税込・材料費込み・送料別</small></div>
+          <dl><dt>時間</dt><dd>90分</dd><dt>対象</dt><dd>10歳以上</dd><dt>受け取り</dt><dd>後日・郵送または店頭</dd></dl>
+        </div>
+        <div class="course">
+          <h3>マイジュエリー制作</h3>
+          <div class="price">¥4,500<small>税込・パーツ代・材料費込み</small></div>
+          <dl><dt>時間</dt><dd>75分</dd><dt>対象</dt><dd>12歳以上</dd><dt>受け取り</dt><dd>当日お持ち帰り</dd></dl>
+        </div>
+      </div>
+      <p class="note">お支払いは事前（ご予約後に Stripe の請求書をメールでお送りします）。お客様のご都合によるキャンセルは返金いたしかねます。くわしくは体験教室のページをご覧ください。</p>
+    </div>
+  </section>
+
+  <!-- Kids -->
+  <section id="kids">
+    <div class="wrap">
+      <p class="eyebrow">With kids</p>
+      <h2>お子さま連れでも、安心して。</h2>
+      <p class="lead">家族で旅の思い出をつくりたい方へ。小さなお子さまとご一緒でも楽しめるよう、こんなふうにしています。</p>
+      <div class="kids">
+        <div><div class="k">6歳〜</div><h3>参加できるコース</h3><p>オーシャンコースター体験は6歳から。いちばん気軽な入門コースです。</p></div>
+        <div><div class="k">4名</div><h3>までの少人数</h3><p>1回4名までなので、スタッフがお子さまの手元までしっかり見られます。</p></div>
+        <div><div class="k">手ぶら</div><h3>でOK</h3><p>材料・道具はお店でご用意。料金は材料費込みです。</p></div>
+        <div><div class="k">予約制</div><h3>で待たずに</h3><p>時間を決めてご予約いただくので、着いてすぐに始められます。</p></div>
+      </div>
+      <p class="note">レジンが服につくと落ちにくいため、汚れてもよい服装でお越しください。</p>
+    </div>
+  </section>
+
+  <!-- View -->
+  <section class="view" aria-labelledby="view-h">
+    <img src="../site/images/photos/kouri-2000.webp" alt="古宇利大橋と、エメラルドグリーンから深い青へ変わる海" loading="lazy" width="2000" height="1333">
+    <div class="wrap">
+      <p class="eyebrow">The view</p>
+      <h2 id="view-h">羽地の駅の2階で、<br>とっておきの眺めが<br>待っています。</h2>
+      <p>名護の北、羽地の駅の2階。やんばるの海のそばで、ゆっくり作品と向き合う時間をどうぞ。古宇利島・屋我地島へのドライブの途中にも。</p>
+      <p class="credit">写真は古宇利島から見た古宇利大橋（イメージ）／<a href="https://unsplash.com/photos/1xzotTtPWsc" target="_blank" rel="noopener noreferrer">Leopold / Unsplash</a></p>
+    </div>
+  </section>
+
+  <!-- Shop -->
+  <section id="shop">
+    <div class="wrap">
+      <p class="eyebrow">Online shop</p>
+      <h2>おうちから、海のかけらを。</h2>
+      <p class="lead">お店の作品をオンラインでお求めいただけます。沖縄県から、ゆうパックでお届けします。お支払いはクレジットカード・コンビニ払い。</p>
+      <div class="shop">
+        <div class="item"><img src="../site/images/gallery/seashell-resin-600.webp" alt="貝とヒトデのレジン小物" loading="lazy" width="600" height="600"><div class="bd"><p class="t">貝とヒトデのレジン小物</p><span class="s">準備中</span></div></div>
+        <div class="item"><img src="../site/images/gallery/flower-pendants-600.webp" alt="押し花のレジンペンダント" loading="lazy" width="600" height="600"><div class="bd"><p class="t">押し花のペンダント</p><span class="s">準備中</span></div></div>
+        <div class="item"><img src="../site/images/gallery/koi-resin-cube-600.webp" alt="小さな魚を閉じ込めたレジンキューブ" loading="lazy" width="600" height="600"><div class="bd"><p class="t">小さな水の世界</p><span class="s">準備中</span></div></div>
+        <div class="item"><img src="../site/images/gallery/wood-resin-piece-600.webp" alt="木とレジンのプレート" loading="lazy" width="600" height="600"><div class="bd"><p class="t">木とレジンのプレート</p><span class="s">準備中</span></div></div>
+      </div>
+      <p class="note">※ 写真はイメージで、販売中の商品ではありません。</p>
+      <p style="margin-top:20px"><a class="btn ghost" href="#shop">ショップを見る</a></p>
+    </div>
+  </section>
+
+  <!-- Access -->
+  <section id="access" class="band">
+    <div class="wrap">
+      <p class="eyebrow">Access</p>
+      <h2>アクセス</h2>
+      <div class="access">
+        <dl>
+          <dt>店名</dt><dd>レジンアート うみないび</dd>
+          <dt>住所</dt><dd>〒905-1143<br>沖縄県名護市真喜屋763番地1<br>羽地の駅 2階</dd>
+          <dt>営業時間</dt><dd>10:00 - 18:00</dd>
+          <dt>電話</dt><dd><a href="tel:050-7116-0133">050-7116-0133</a></dd>
+          <dt>体験教室</dt><dd>予約制</dd>
+        </dl>
+        <div class="mapbox">
+          <h3>羽地の駅の2階です</h3>
+          <p style="margin:0;color:var(--muted)">名護市の北部、古宇利島・屋我地島方面へ向かう途中にあります。</p>
+          <p style="margin:0"><a class="btn sm" href="https://www.google.com/maps/search/?api=1&query=%E7%BE%BD%E5%9C%B0%E3%81%AE%E9%A7%85+%E6%B2%96%E7%B8%84%E7%9C%8C%E5%90%8D%E8%AD%B7%E5%B8%82%E7%9C%9F%E5%96%9C%E5%B1%8B763-1" target="_blank" rel="noopener noreferrer">Google マップで開く</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="cta">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h2>ご予約・ご相談</h2>
+      <p class="lead" style="margin:0 auto">体験教室のご予約、制作のご依頼、ショップのことなど、お気軽にどうぞ。</p>
+      <div class="row">
+        <a class="btn" href="https://line.me/R/ti/p/@726qtybt" target="_blank" rel="noopener noreferrer">LINE で予約・相談</a>
+        <a class="btn ghost" href="#contact">メールでお問い合わせ</a>
+        <a class="btn ghost" href="https://www.instagram.com/uminaibi2026/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>うみないび ／ 沖縄県名護市真喜屋763番地1 羽地の駅2階 ／ 050-7116-0133</p>
+    <p>写真（Unsplash・イメージ／当店の作品ではありません）：
+      <a href="https://unsplash.com/photos/JNhMWmPNcEk" target="_blank" rel="noopener noreferrer">Leopold</a>、
+      <a href="https://unsplash.com/photos/1xzotTtPWsc" target="_blank" rel="noopener noreferrer">Leopold</a>、
+      <a href="https://unsplash.com/photos/bT2XiJtcQ1M" target="_blank" rel="noopener noreferrer">Maryna Yazbeck</a>、
+      <a href="https://unsplash.com/photos/NY9_irZB7Nw" target="_blank" rel="noopener noreferrer">gretta vosper</a>、
+      <a href="https://unsplash.com/photos/RCQRGEB4esk" target="_blank" rel="noopener noreferrer">sooji min</a>、
+      <a href="https://unsplash.com/photos/Iuqa-9j8pSU" target="_blank" rel="noopener noreferrer">Adrian Swancar</a>、
+      <a href="https://unsplash.com/photos/IYflkEc_lkw" target="_blank" rel="noopener noreferrer">Hiros Lee</a>、
+      <a href="https://unsplash.com/photos/Cgp-CkpTJ_o" target="_blank" rel="noopener noreferrer">Tolga deniz Aran</a></p>
+    <p>© うみないび（サンプル）</p>
+  </div>
+</footer>
+
+<div class="mobile-cta">
+  <a class="btn" href="#contact">予約・相談</a>
+  <a class="btn ghost" href="tel:050-7116-0133">電話する</a>
+</div>
+</body>
+</html>
