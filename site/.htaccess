@@ -6,7 +6,7 @@ RewriteCond %{HTTPS} !=on
 RewriteCond %{HTTP:X-Forwarded-Proto} !=https
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 # 2026-10-28 リビルド：コンセプト・ギャラリー・アクセスはトップページにまとめた。古い URL はトップの同じ所へ（検索・ブックマークのため）
-RewriteRule ^concept\.html$ /index.html#about [R=301,NE,L]
+RewriteRule ^concept\.html$ /index.html [R=301,NE,L]
 RewriteRule ^gallery\.html$ /index.html#works [R=301,NE,L]
 RewriteRule ^access\.html$ /index.html#visit [R=301,NE,L]
 # 2026-11-04 ショップは /shop で開く（中身は shop.html）。古い /shop.html と /shop/ は /shop へ転送（? 以降は残す）

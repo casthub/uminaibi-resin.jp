@@ -21,9 +21,9 @@
 .shop-page .count { margin-top: .9rem; font-size: .875rem; color: var(--muted); }
 
 /* 作品のカード */
-.shop-page .grid9 { display: grid; gap: 2.25rem 1rem; grid-template-columns: repeat(2, 1fr); margin-top: 1.25rem; }
-@media (min-width: 1024px) { .shop-page .grid9 { grid-template-columns: repeat(3, 1fr); gap: 3rem 2rem; } }
-.shop-page .work { display: flex; flex-direction: column; }
+.shop-page .grid9 { display: grid; gap: 2.25rem 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1.25rem; }
+@media (min-width: 1024px) { .shop-page .grid9 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3rem 2rem; } }
+.shop-page .work { display: flex; flex-direction: column; min-width: 0; overflow-wrap: anywhere; }
 .shop-page .work[hidden] { display: none; }
 .shop-page .work .open { display: block; width: 100%; padding: 0; border: 0; background: none; text-align: left; cursor: pointer; color: inherit; font: inherit; }
 .shop-page .work .ph, .shop-page .work .cat { display: block; }

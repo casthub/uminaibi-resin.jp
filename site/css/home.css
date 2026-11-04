@@ -124,3 +124,6 @@
 .m-cta-space { height: 4.5rem; background: #0a2a42; }
 @media (min-width: 800px) { .m-cta, .m-cta-space { display: none; } }
 @media (prefers-reduced-motion: reduce) { .home .scroll::after { animation: none; } }
+
+/* 2026-11-05 WCAG 2.4.11：スマホ下の固定ボタンで、キーボードで選んだ所が隠れないように */
+@media (max-width: 799px) { html:has(.m-cta) { scroll-padding-bottom: 5.5rem; } }
