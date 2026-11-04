@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>うみないび | 沖縄・名護市のレジンアート専門店</title>
-  <meta name="description" content="沖縄県名護市・羽地の駅のレジンアート専門店「うみないび」。屋我地島・古宇利島の蒼い海をイメージしたレジンアートの作品と、体験教室（予約制）。">
+  <meta name="description" content="沖縄県名護市・羽地の駅2階のレジンアート専門店「うみないび」。羽地内海・屋我地島・古宇利島を望むお店で、作品の制作のご依頼、体験教室（予約制・6歳から）、オンラインショップ。お子さまスペースあり。">
   <meta name="keywords" content="レジンアート,うみないび,沖縄,名護市,古宇利島,屋我地島,体験教室,ワークショップ">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://uminaibi-resin.jp/">
   <meta property="og:title" content="うみないび | 沖縄・名護市のレジンアート専門店">
-  <meta property="og:description" content="沖縄県名護市・羽地の駅のレジンアート専門店「うみないび」。屋我地島・古宇利島の蒼い海をイメージしたレジンアートの作品と、体験教室（予約制）。">
+  <meta property="og:description" content="沖縄県名護市・羽地の駅2階のレジンアート専門店「うみないび」。羽地内海・屋我地島・古宇利島を望むお店で、作品の制作のご依頼、体験教室（予約制・6歳から）、オンラインショップ。お子さまスペースあり。">
   <meta property="og:image" content="https://uminaibi-resin.jp/ogp.jpg">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="うみないび">
@@ -20,6 +20,7 @@
   <!-- Tailwind（CSS ファイル。作り直しは bin/build-css.sh）と共通の CSS -->
   <link rel="stylesheet" href="css/tailwind.css?v=20261028-5">
   <link rel="stylesheet" href="css/style.css?v=20261028-5">
+  <link rel="stylesheet" href="css/home.css?v=20261104-1">
 </head>
 <body class="bg-sand text-ink antialiased">
 
@@ -33,7 +34,7 @@
         <span class="hidden text-xs tracking-[0.25em] text-ink/80 sm:inline">OKINAWA RESIN ART</span>
       </a>
       <nav aria-label="メインメニュー" class="hidden items-center gap-7 lg:flex xl:gap-9">
-          <a href="index.html#about" class="text-sm tracking-widest text-ink/80 hover:text-ocean">コンセプト</a>
+          <a href="index.html#order" class="text-sm tracking-widest text-ink/80 hover:text-ocean">制作のご依頼</a>
           <a href="index.html#works" class="text-sm tracking-widest text-ink/80 hover:text-ocean">作品</a>
           <a href="workshop.html" class="text-sm tracking-widest text-ink/80 hover:text-ocean">体験教室</a>
           <a href="/shop" class="text-sm tracking-widest text-ink/80 hover:text-ocean">ショップ</a>
@@ -50,7 +51,7 @@
     <!-- スマホのメニュー（画面いっぱい・白い地） -->
     <div id="mobile-menu" inert aria-label="メニュー" class="fixed inset-0 z-40 flex translate-x-full flex-col bg-sand px-6 pb-10 pt-24 transition-transform duration-500 lg:hidden">
       <nav aria-label="メニュー" class="flex flex-col border-t border-line">
-        <a href="index.html#about" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">コンセプト<span aria-hidden="true" class="text-ocean-light">→</span></a>
+        <a href="index.html#order" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">制作のご依頼<span aria-hidden="true" class="text-ocean-light">→</span></a>
         <a href="index.html#works" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">作品<span aria-hidden="true" class="text-ocean-light">→</span></a>
         <a href="workshop.html" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">体験教室<span aria-hidden="true" class="text-ocean-light">→</span></a>
         <a href="/shop" class="flex items-center justify-between border-b border-line py-4 font-serif-jp text-xl tracking-widest text-ocean-deep">ショップ<span aria-hidden="true" class="text-ocean-light">→</span></a>
@@ -61,169 +62,173 @@
     </div>
   </header>
 
-  <main id="main" tabindex="-1">
-    <!-- 最初の画面：海の写真を大きく（2026-10-28 リビルド。イラストは使わない） -->
-    <section aria-label="うみないび">
-      <div class="h-[58svh] min-h-[20rem] w-full overflow-hidden pt-16 sm:h-[82svh] sm:max-h-[56rem] sm:pt-[4.5rem]">
-        <img src="images/photos/yagaji-1000.webp" srcset="images/photos/yagaji-1000.webp 1000w, images/photos/yagaji-2000.webp 2000w" sizes="100vw" width="2000" height="1333" alt="青く透き通った海にかかる長い橋と、緑におおわれた小さな岩の島" class="photo object-[30%_50%]" fetchpriority="high">
-      </div>
-      <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-        <div class="flex justify-end"><p class="photo-credit mt-2">屋我地島周辺の海（名護市）（写真：<a href="https://unsplash.com/photos/JNhMWmPNcEk" target="_blank" rel="noopener noreferrer">Leopold / Unsplash<span class="sr-only">（新しいタブで開きます）</span></a>）</p></div>
-        <div class="grid gap-8 pb-16 pt-8 sm:pb-24 sm:pt-12 lg:grid-cols-12 lg:gap-12">
-          <div class="lg:col-span-7">
-            <p class="eyebrow">Okinawa Nago Resin Art</p>
-            <h1 class="mt-5 font-serif-jp text-[1.8rem] leading-snug tracking-wide text-ocean-deep sm:text-6xl sm:tracking-wider sm:leading-tight">名護の蒼い海を、<br>そのまま閉じ込める。</h1>
-          </div>
-          <div class="lg:col-span-5 lg:pt-12">
-            <p class="text-sm text-ink/85 sm:text-base">沖縄県名護市・羽地の駅にあるレジンアートのお店「うみないび」。屋我地島や古宇利島をめぐる、透き通った蒼い海の色を、レジンの作品と体験教室でお届けします。</p>
-            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="workshop.html" class="btn">体験教室を見る</a>
-              <a href="#works" class="btn-line">作品のイメージ</a>
-            </div>
-          </div>
+  <main id="main" tabindex="-1" class="home">
+    <!-- 最初の画面（2026-11-04 新しい構成：写真の上に文字） -->
+    <section class="hero" aria-label="うみないび">
+      <img src="images/photos/yagaji-1000.webp" srcset="images/photos/yagaji-1000.webp 1000w, images/photos/yagaji-2000.webp 2000w" sizes="100vw" width="2000" height="1333" alt="青く透き通った海にかかる長い橋と、緑におおわれた小さな岩の島" fetchpriority="high">
+      <div class="wrap">
+        <p class="place">沖縄県名護市 ・ 羽地の駅 2階</p>
+        <h1>名護の海を、<br>レジンにとじこめて。</h1>
+        <p class="sub">羽地内海・屋我地島・古宇利島を望む、レジンアートのお店「うみないび」。作品の制作のご依頼、体験教室、オンラインショップ。お子さまスペースもあるので、お子さま連れでもゆっくり楽しんでいただけます。</p>
+        <ul class="chips" aria-label="できること">
+          <li>制作のご依頼</li><li>体験教室</li><li>オンラインショップ</li><li>お子さま連れOK</li>
+        </ul>
+        <div class="row">
+          <a class="btn-white" href="workshop.html">体験教室を見る</a>
+          <a class="btn-white" href="#order">制作を相談する</a>
         </div>
+        <p class="credit">屋我地島周辺の海（名護市）（写真：<a href="https://unsplash.com/photos/JNhMWmPNcEk" target="_blank" rel="noopener noreferrer">Leopold / Unsplash<span class="sr-only">（新しいタブで開きます）</span></a>）</p>
+      </div>
+      <span class="scroll" aria-hidden="true">SCROLL</span>
+    </section>
+
+    <!-- できること（3つ） -->
+    <section class="np">
+      <div class="wrap">
+        <p class="eyebrow">What we do</p>
+        <h2 class="h2">うみないびで、できること</h2>
+        <p class="lead">つくってもらう、自分でつくる、おうちで選ぶ。3つの方法で、名護の海の色をお届けします。</p>
+        <div class="svc">
+          <a href="#order">
+            <div class="ph"><img src="images/gallery/ocean-wave-panel-600.webp" alt="" loading="lazy" width="600" height="450"></div>
+            <div class="bd"><div class="num">01 ORDER</div><h3 class="h3">制作のご依頼</h3><p>新築のお祝いのアートパネル、結婚式の小物、記念の品など。ご希望をうかがって、世界にひとつの作品をおつくりします。</p></div>
+            <span class="more" aria-hidden="true">くわしく →</span>
+          </a>
+          <a href="#workshop">
+            <div class="ph"><img src="images/gallery/seashell-resin-600.webp" alt="" loading="lazy" width="600" height="450"></div>
+            <div class="bd"><div class="num">02 WORKSHOP</div><h3 class="h3">体験教室</h3><p>コースター、プレート、アクセサリー。6歳から参加できるコースもあります。少人数・予約制、手ぶらでどうぞ。</p></div>
+            <span class="more" aria-hidden="true">くわしく →</span>
+          </a>
+          <a href="#shop">
+            <div class="ph"><img src="images/gallery/flower-pendants-600.webp" alt="" loading="lazy" width="600" height="450"></div>
+            <div class="bd"><div class="num">03 SHOP</div><h3 class="h3">オンラインショップ</h3><p>お店の作品を、全国へお届けします。カード・コンビニ払いに対応。沖縄の旅の思い出やお土産にも。</p></div>
+            <span class="more" aria-hidden="true">くわしく →</span>
+          </a>
+        </div>
+        <p class="note">このページの作品の写真はフリー素材（Unsplash）のイメージで、<strong>当店の作品ではありません</strong>。お店の作品の写真は、準備ができしだい差し替えます。</p>
       </div>
     </section>
 
-    <!-- コンセプト（旧 concept.html） -->
-    <section id="about" class="border-t border-line py-16 sm:py-28">
-      <div class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-12 lg:gap-16 lg:px-12">
-        <div class="reveal lg:col-span-5">
-          <p class="eyebrow">Concept</p>
-          <h2 class="mt-4 font-serif-jp text-3xl leading-snug tracking-wider text-ocean-deep sm:text-4xl">海の恵みと、<br>お守りを。</h2>
-          <figure class="mt-10 hidden lg:block">
-            <div class="aspect-[4/3] overflow-hidden"><img src="images/photos/kouri-1000.webp" srcset="images/photos/kouri-1000.webp 1000w, images/photos/kouri-2000.webp 2000w" sizes="(min-width: 1024px) 40vw, 100vw" width="2000" height="1333" alt="古宇利大橋と、エメラルドグリーンから深い青へ変わる海" class="photo " loading="lazy" decoding="async"></div>
-            <figcaption><p class="photo-credit mt-2">古宇利島から見た古宇利大橋（写真：<a href="https://unsplash.com/photos/1xzotTtPWsc" target="_blank" rel="noopener noreferrer">Leopold / Unsplash<span class="sr-only">（新しいタブで開きます）</span></a>）</p></figcaption>
-          </figure>
+    <!-- 作品 -->
+    <section id="works" class="np band">
+      <div class="wrap">
+        <p class="eyebrow">Works</p>
+        <h2 class="h2">名護の海の色を、ひとつずつ。</h2>
+        <p class="lead">透明なレジンを何層にも重ね、白波はひとつずつ手で描きます。同じ波は、ふたつとありません。</p>
+        <div class="works">
+          <figure><img src="images/gallery/ocean-wave-panel-600.webp" alt="青緑の海に白い波が何本も重なる、レジンアートのパネルの写真" loading="lazy" width="600" height="600"><figcaption>波のアートパネル（イメージ）</figcaption></figure>
+          <figure><img src="images/gallery/wood-ocean-table-600.webp" alt="木目の板に青い海と白い波を流し込み、巻き貝を置いたレジンアートの写真" loading="lazy" width="600" height="600"><figcaption>木と海のテーブル（イメージ）</figcaption></figure>
+          <figure><img src="images/gallery/seashell-resin-600.webp" alt="青く透き通った貝殻やヒトデの形のレジン小物が並ぶ写真" loading="lazy" width="600" height="600"><figcaption>貝とヒトデの小物（イメージ）</figcaption></figure>
+          <figure><img src="images/gallery/wood-resin-piece-600.webp" alt="木と青いレジンを組み合わせた小さな板の写真" loading="lazy" width="600" height="600"><figcaption>木とレジンのプレート（イメージ）</figcaption></figure>
+          <figure><img src="images/gallery/koi-resin-cube-600.webp" alt="水色のレジンの中に小さな魚と泡を閉じ込めた、四角い作品の写真" loading="lazy" width="600" height="600"><figcaption>小さな水の世界（イメージ）</figcaption></figure>
+          <figure><img src="images/gallery/flower-pendants-600.webp" alt="押し花や絵をレジンで閉じ込めたペンダントがたくさん並ぶ写真" loading="lazy" width="600" height="600"><figcaption>押し花のペンダント（イメージ）</figcaption></figure>
         </div>
-        <div class="reveal space-y-10 lg:col-span-7">
-          <div>
-            <h3 class="font-serif-jp text-xl text-ocean-deep sm:text-2xl">店名「うみないび」</h3>
-            <p class="mt-4 text-sm text-ink/85 sm:text-base">沖縄の古い言葉をもとにした造語です。沖縄の海は、昔から人々に豊かな「恵み」を与え、旅の安全を願う「お守り」でもありました。その海の力をアートの形にして、毎日の暮らしに飾れる「海の恵みとお守り」としてお届けしたい。そんな想いで名づけました。</p>
-          </div>
-          <div>
-            <h3 class="font-serif-jp text-xl text-ocean-deep sm:text-2xl">その日、その時の海の色</h3>
-            <p class="mt-4 text-sm text-ink/85 sm:text-base">名護の海は、時間や天気、潮の満ち引きで表情を大きく変えます。浅瀬の砂にさす光、沖の深い藍色、日が沈む前の金色。実際に海を見て、その色の重なりをレジンで表しています。作品に使う砂や貝殻などの素材にもこだわっています。</p>
-          </div>
-          <div>
-            <h3 class="font-serif-jp text-xl text-ocean-deep sm:text-2xl">何層も重ねる手仕事</h3>
-            <p class="mt-4 text-sm text-ink/85 sm:text-base">透明なエポキシレジンを、日数をかけて何層にも重ねてつくります。青、白波、きらめき、そして深み。層を重ねることで、底まで透き通るような奥行きが生まれます。打ち寄せる白波は一つずつ手で描くので、同じ波はふたつとありません。</p>
-          </div>
-          <figure class="lg:hidden">
-            <div class="aspect-[4/3] overflow-hidden"><img src="images/photos/kouri-1000.webp" srcset="images/photos/kouri-1000.webp 1000w, images/photos/kouri-2000.webp 2000w" sizes="100vw" width="2000" height="1333" alt="古宇利大橋と、エメラルドグリーンから深い青へ変わる海" class="photo " loading="lazy" decoding="async"></div>
-            <figcaption><p class="photo-credit mt-2">古宇利島から見た古宇利大橋（写真：<a href="https://unsplash.com/photos/1xzotTtPWsc" target="_blank" rel="noopener noreferrer">Leopold / Unsplash<span class="sr-only">（新しいタブで開きます）</span></a>）</p></figcaption>
-          </figure>
-        </div>
+        <p class="note">写真：<a class="text-link" href="https://unsplash.com/photos/bT2XiJtcQ1M" target="_blank" rel="noopener noreferrer">Maryna Yazbeck<span class="sr-only">（新しいタブで開きます）</span></a>、<a class="text-link" href="https://unsplash.com/photos/NY9_irZB7Nw" target="_blank" rel="noopener noreferrer">gretta vosper<span class="sr-only">（新しいタブで開きます）</span></a>、<a class="text-link" href="https://unsplash.com/photos/RCQRGEB4esk" target="_blank" rel="noopener noreferrer">sooji min<span class="sr-only">（新しいタブで開きます）</span></a>、<a class="text-link" href="https://unsplash.com/photos/Iuqa-9j8pSU" target="_blank" rel="noopener noreferrer">Adrian Swancar<span class="sr-only">（新しいタブで開きます）</span></a>、<a class="text-link" href="https://unsplash.com/photos/IYflkEc_lkw" target="_blank" rel="noopener noreferrer">Hiros Lee<span class="sr-only">（新しいタブで開きます）</span></a>、<a class="text-link" href="https://unsplash.com/photos/Cgp-CkpTJ_o" target="_blank" rel="noopener noreferrer">Tolga deniz Aran<span class="sr-only">（新しいタブで開きます）</span></a>（Unsplash・当店の作品ではありません）</p>
       </div>
     </section>
 
-    <!-- 作品のイメージ（旧 gallery.html） -->
-    <section id="works" class="bg-white py-16 sm:py-28">
-      <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-        <div class="reveal flex flex-wrap items-end justify-between gap-6">
-          <div>
-            <p class="eyebrow">Works</p>
-            <h2 class="mt-4 font-serif-jp text-3xl tracking-wider text-ocean-deep sm:text-4xl">レジンアートのイメージ</h2>
-          </div>
-          <p class="max-w-md text-sm text-ink/80">写真はフリー素材（Unsplash）のイメージで、<strong class="font-bold text-ink">当店の作品ではありません</strong>。お店の作品の写真は、準備ができしだい差し替えます。</p>
-        </div>
-        <div class="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 sm:mt-14 sm:gap-x-8 sm:gap-y-12 lg:grid-cols-3">
-          <figure class="reveal">
-            <div class="aspect-[4/5] overflow-hidden bg-sand-dark"><img src="images/gallery/ocean-wave-panel-600.webp" srcset="images/gallery/ocean-wave-panel-600.webp 600w, images/gallery/ocean-wave-panel-1200.webp 1200w" sizes="(min-width: 1024px) 30vw, 50vw" width="600" height="750" alt="青緑の海に白い波が何本も重なる、レジンアートのパネルの写真" class="photo" loading="lazy" decoding="async"></div>
-            <figcaption class="mt-3">
-              <span class="block font-serif-jp text-base text-ocean-deep sm:text-lg">海の波のアートパネル</span>
-              <span class="mt-1 hidden text-sm text-ink/80 sm:block">青と白を何層にも重ね、打ち寄せる波を描いたアートパネル。</span>
-            </figcaption>
-          </figure>
-          <figure class="reveal">
-            <div class="aspect-[4/5] overflow-hidden bg-sand-dark"><img src="images/gallery/wood-ocean-table-600.webp" srcset="images/gallery/wood-ocean-table-600.webp 600w, images/gallery/wood-ocean-table-1200.webp 1200w" sizes="(min-width: 1024px) 30vw, 50vw" width="600" height="750" alt="木目の板に青い海と白い波を流し込み、巻き貝を置いたレジンアートの写真" class="photo" loading="lazy" decoding="async"></div>
-            <figcaption class="mt-3">
-              <span class="block font-serif-jp text-base text-ocean-deep sm:text-lg">木と海のレジンテーブル</span>
-              <span class="mt-1 hidden text-sm text-ink/80 sm:block">木の板と組み合わせ、浜辺に寄せる波と貝を表したもの。</span>
-            </figcaption>
-          </figure>
-          <figure class="reveal">
-            <div class="aspect-[4/5] overflow-hidden bg-sand-dark"><img src="images/gallery/seashell-resin-600.webp" srcset="images/gallery/seashell-resin-600.webp 600w, images/gallery/seashell-resin-1200.webp 1200w" sizes="(min-width: 1024px) 30vw, 50vw" width="600" height="750" alt="青く透き通った貝殻やヒトデの形のレジン小物が並ぶ写真" class="photo" loading="lazy" decoding="async"></div>
-            <figcaption class="mt-3">
-              <span class="block font-serif-jp text-base text-ocean-deep sm:text-lg">貝とヒトデのレジン小物</span>
-              <span class="mt-1 hidden text-sm text-ink/80 sm:block">透明なレジンで、貝殻やヒトデの形をかたどった小物。</span>
-            </figcaption>
-          </figure>
-          <figure class="reveal">
-            <div class="aspect-[4/5] overflow-hidden bg-sand-dark"><img src="images/gallery/wood-resin-piece-600.webp" srcset="images/gallery/wood-resin-piece-600.webp 600w, images/gallery/wood-resin-piece-1200.webp 1200w" sizes="(min-width: 1024px) 30vw, 50vw" width="600" height="750" alt="木と青いレジンを組み合わせた小さな板の写真" class="photo" loading="lazy" decoding="async"></div>
-            <figcaption class="mt-3">
-              <span class="block font-serif-jp text-base text-ocean-deep sm:text-lg">木とレジンのプレート</span>
-              <span class="mt-1 hidden text-sm text-ink/80 sm:block">木の模様とレジンの青を組み合わせた小さなプレート。</span>
-            </figcaption>
-          </figure>
-          <figure class="reveal">
-            <div class="aspect-[4/5] overflow-hidden bg-sand-dark"><img src="images/gallery/koi-resin-cube-600.webp" srcset="images/gallery/koi-resin-cube-600.webp 600w, images/gallery/koi-resin-cube-1200.webp 1200w" sizes="(min-width: 1024px) 30vw, 50vw" width="600" height="750" alt="水色のレジンの中に小さな魚と泡を閉じ込めた、四角い作品の写真" class="photo" loading="lazy" decoding="async"></div>
-            <figcaption class="mt-3">
-              <span class="block font-serif-jp text-base text-ocean-deep sm:text-lg">小さな水の世界</span>
-              <span class="mt-1 hidden text-sm text-ink/80 sm:block">透明なレジンの中に、水と泳ぐ魚を閉じ込めた小品。</span>
-            </figcaption>
-          </figure>
-          <figure class="reveal">
-            <div class="aspect-[4/5] overflow-hidden bg-sand-dark"><img src="images/gallery/flower-pendants-600.webp" srcset="images/gallery/flower-pendants-600.webp 600w, images/gallery/flower-pendants-1200.webp 1200w" sizes="(min-width: 1024px) 30vw, 50vw" width="600" height="750" alt="押し花や絵をレジンで閉じ込めたペンダントがたくさん並ぶ写真" class="photo" loading="lazy" decoding="async"></div>
-            <figcaption class="mt-3">
-              <span class="block font-serif-jp text-base text-ocean-deep sm:text-lg">押し花のレジンペンダント</span>
-              <span class="mt-1 hidden text-sm text-ink/80 sm:block">押し花や絵をレジンで閉じ込めたペンダント。</span>
-            </figcaption>
-          </figure>
-        </div>
-        <p class="mt-10 text-xs leading-relaxed text-ink/80">写真：<a href="https://unsplash.com/photos/bT2XiJtcQ1M" target="_blank" rel="noopener noreferrer" class="underline">Maryna Yazbeck<span class="sr-only">（海の波のアートパネル・新しいタブで開きます）</span></a>、<a href="https://unsplash.com/photos/NY9_irZB7Nw" target="_blank" rel="noopener noreferrer" class="underline">gretta vosper<span class="sr-only">（木と海のレジンテーブル・新しいタブで開きます）</span></a>、<a href="https://unsplash.com/photos/RCQRGEB4esk" target="_blank" rel="noopener noreferrer" class="underline">sooji min<span class="sr-only">（貝とヒトデのレジン小物・新しいタブで開きます）</span></a>、<a href="https://unsplash.com/photos/Iuqa-9j8pSU" target="_blank" rel="noopener noreferrer" class="underline">Adrian Swancar<span class="sr-only">（木とレジンのプレート・新しいタブで開きます）</span></a>、<a href="https://unsplash.com/photos/IYflkEc_lkw" target="_blank" rel="noopener noreferrer" class="underline">Hiros Lee<span class="sr-only">（小さな水の世界・新しいタブで開きます）</span></a>、<a href="https://unsplash.com/photos/Cgp-CkpTJ_o" target="_blank" rel="noopener noreferrer" class="underline">Tolga deniz Aran<span class="sr-only">（押し花のレジンペンダント・新しいタブで開きます）</span></a>（Unsplash）</p>
-        <div class="reveal mt-12 flex flex-col gap-6 border-t border-line pt-10 sm:flex-row sm:items-center sm:justify-between">
-          <p class="text-sm text-ink/85 sm:text-base">新築のお祝いの大きなアートパネル、結婚式の小物など、<br class="hidden sm:inline">オーダーメイドのご相談も承ります。</p>
-          <div class="flex flex-col gap-3 sm:flex-row">
-            <a href="contact.html" class="btn">制作のご相談</a>
-            <a href="/shop" class="btn-line">オンラインショップ</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 体験教室（くわしくは workshop.html） -->
-    <section id="workshop" class="py-16 sm:py-28">
-      <div class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-12 lg:gap-16 lg:px-12">
-        <div class="reveal lg:col-span-4">
-          <p class="eyebrow">Workshop</p>
-          <h2 class="mt-4 font-serif-jp text-3xl leading-snug tracking-wider text-ocean-deep sm:text-4xl">自分の手で、<br>海をつくる。</h2>
-          <p class="mt-6 text-sm text-ink/85 sm:text-base">はじめての方も、お子さまも。少人数の予約制で、色の混ぜ方から白波の描き方まで、ていねいにお伝えします。</p>
-        </div>
-        <div class="reveal lg:col-span-8">
-          <ul class="border-b border-line">
-            <li class="grid gap-1 border-t border-line py-5 sm:grid-cols-12 sm:items-baseline sm:gap-6">
-              <span class="font-serif-jp text-lg text-ocean-deep sm:col-span-4 sm:text-xl">オーシャンコースター体験</span>
-              <span class="text-sm text-ink/80 sm:col-span-2">60分・6歳以上</span>
-              <span class="whitespace-nowrap text-sm text-ink/80 sm:col-span-2 sm:text-right">¥3,500<span class="text-xs">（税込）</span></span>
-              <span class="text-sm text-ink/80 sm:col-span-4 sm:text-right">翌日お引き取り（店頭）</span>
-            </li>
-            <li class="grid gap-1 border-t border-line py-5 sm:grid-cols-12 sm:items-baseline sm:gap-6">
-              <span class="font-serif-jp text-lg text-ocean-deep sm:col-span-4 sm:text-xl">サンセットプレート体験</span>
-              <span class="text-sm text-ink/80 sm:col-span-2">90分・10歳以上</span>
-              <span class="whitespace-nowrap text-sm text-ink/80 sm:col-span-2 sm:text-right">¥5,500<span class="text-xs">（税込）</span></span>
-              <span class="text-sm text-ink/80 sm:col-span-4 sm:text-right">後日お渡し（郵送・店頭）</span>
-            </li>
-            <li class="grid gap-1 border-t border-line py-5 sm:grid-cols-12 sm:items-baseline sm:gap-6">
-              <span class="font-serif-jp text-lg text-ocean-deep sm:col-span-4 sm:text-xl">マイジュエリー制作</span>
-              <span class="text-sm text-ink/80 sm:col-span-2">75分・12歳以上</span>
-              <span class="whitespace-nowrap text-sm text-ink/80 sm:col-span-2 sm:text-right">¥4,500<span class="text-xs">（税込）</span></span>
-              <span class="text-sm text-ink/80 sm:col-span-4 sm:text-right">当日お持ち帰り（UVレジン）</span>
-            </li>
+    <!-- 制作のご依頼 -->
+    <section id="order" class="np">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow">Order made</p>
+          <h2 class="h2">あなただけの海を、<br>おつくりします。</h2>
+          <p>思い出の浜の色、記念日の夕焼け、お部屋に合う大きさ。お話をうかがいながら、デザインから一緒に考えます。</p>
+          <ul class="uses" aria-label="ご依頼の例">
+            <li>アートパネル</li><li>テーブル・トレイ</li><li>結婚式・お祝いの小物</li><li>アクセサリー</li><li>お店のディスプレイ</li>
           </ul>
-          <p class="mt-4 text-sm text-ink/80">料金は材料費込み・税込です。サンセットプレートの郵送は送料が別にかかります。</p>
-          <a href="workshop.html" class="btn mt-8">体験教室のくわしい内容と予約の流れ</a>
+          <ol class="flow">
+            <li><b>ご相談</b><span>フォーム・LINE・Instagram、またはお店で。作りたいもの・大きさ・ご予算・ご希望の時期をお聞かせください。</span></li>
+            <li><b>デザインとお見積り</b><span>色の見本やイメージをお見せして、お見積りをお出しします。</span></li>
+            <li><b>制作</b><span>レジンを何層にも重ねて、ひとつずつ手でつくります。大きさによって日数がかかります。</span></li>
+            <li><b>お渡し</b><span>お店でのお受け取り、または発送でお届けします。</span></li>
+          </ol>
+          <p style="margin-top:1.75rem"><a class="btn" href="contact.html">制作を相談する</a></p>
+        </div>
+        <div class="examples">
+          <figure><img src="images/gallery/wood-ocean-table-600.webp" alt="木目の板に青い海と白い波を流し込んだテーブルの写真" loading="lazy" width="600" height="600"><figcaption>木と海のテーブル（イメージ）</figcaption></figure>
+          <figure><img src="images/gallery/wood-resin-piece-600.webp" alt="木と青いレジンを組み合わせたプレートの写真" loading="lazy" width="600" height="600"><figcaption>木とレジンのプレート（イメージ）</figcaption></figure>
+          <figure><img src="images/gallery/koi-resin-cube-600.webp" alt="小さな魚を閉じ込めたレジンの写真" loading="lazy" width="600" height="600"><figcaption>小さな水の世界（イメージ）</figcaption></figure>
+          <figure><img src="images/gallery/ocean-wave-panel-600.webp" alt="白い波が重なるアートパネルの写真" loading="lazy" width="600" height="600"><figcaption>波のアートパネル（イメージ）</figcaption></figure>
         </div>
       </div>
     </section>
 
-    <!-- 海の写真（区切り） -->
-    <figure class="relative">
-      <div class="h-[46svh] min-h-[16rem] overflow-hidden sm:h-[70svh]"><img src="images/photos/motobu-1000.webp" srcset="images/photos/motobu-1000.webp 1000w, images/photos/motobu-2000.webp 2000w" sizes="100vw" width="2000" height="1333" alt="波の立つ青い海と、手前のごつごつした岩場" class="photo " loading="lazy" decoding="async"></div>
-      <figcaption class="mx-auto flex max-w-7xl justify-end px-5 sm:px-8 lg:px-12"><p class="photo-credit mt-2">本部町の海（写真：<a href="https://unsplash.com/photos/AJCEOdljrV0" target="_blank" rel="noopener noreferrer">Leopold / Unsplash<span class="sr-only">（新しいタブで開きます）</span></a>）</p></figcaption>
-    </figure>
+    <!-- 体験教室 -->
+    <section id="workshop" class="np band">
+      <div class="wrap">
+        <p class="eyebrow">Workshop</p>
+        <h2 class="h2">自分の手で、海をつくる。</h2>
+        <p class="lead">色の混ぜ方から白波の描き方まで、ていねいにお伝えします。すべて予約制・1回4名までの少人数です。</p>
+        <div class="courses">
+          <div class="course">
+            <h3 class="h3">オーシャンコースター体験<span class="kid">6歳から</span></h3>
+            <p class="price">¥3,500<small>（税込・材料費込み）</small></p>
+            <dl><dt>時間</dt><dd>60分</dd><dt>対象</dt><dd>6歳以上</dd><dt>受け取り</dt><dd>翌日・店頭</dd></dl>
+          </div>
+          <div class="course">
+            <h3 class="h3">サンセットプレート体験</h3>
+            <p class="price">¥5,500<small>（税込・材料費込み・送料別）</small></p>
+            <dl><dt>時間</dt><dd>90分</dd><dt>対象</dt><dd>10歳以上</dd><dt>受け取り</dt><dd>後日・郵送または店頭</dd></dl>
+          </div>
+          <div class="course">
+            <h3 class="h3">マイジュエリー制作</h3>
+            <p class="price">¥4,500<small>（税込・パーツ代・材料費込み）</small></p>
+            <dl><dt>時間</dt><dd>75分</dd><dt>対象</dt><dd>12歳以上</dd><dt>受け取り</dt><dd>当日お持ち帰り（UVレジン）</dd></dl>
+          </div>
+        </div>
+        <p class="note">お支払いは事前です（ご予約を受け付けたあと、Stripe の請求書をメールでお送りします）。お客様のご都合によるキャンセルは、返金いたしかねます。</p>
+        <p><a class="btn-line" href="workshop.html">体験教室のくわしい内容と予約の流れ</a></p>
+      </div>
+    </section>
 
-    <!-- アクセス（旧 access.html） -->
+    <!-- お子さま連れ -->
+    <section id="kids" class="np">
+      <div class="wrap">
+        <p class="eyebrow">With kids</p>
+        <h2 class="h2">お子さま連れでも、安心して。</h2>
+        <p class="lead">家族で旅の思い出をつくりたい方へ。お子さまスペースがあるので、小さなお子さまとご一緒でも、レジンアートにじっくり集中していただけます。</p>
+        <div class="kids">
+          <div><p class="k">キッズ</p><h3 class="h3">スペースあり</h3><p>店内にお子さまのスペースを用意しています。保護者の方は、作品づくりに集中していただけます。</p></div>
+          <div><p class="k">見学</p><h3 class="h3">できます</h3><p>保護者の方は、お子さまの体験をそばで見学できます。</p></div>
+          <div><p class="k">6歳〜</p><h3 class="h3">参加できるコース</h3><p>オーシャンコースター体験は6歳から。いちばん気軽な入門コースです。</p></div>
+          <div><p class="k">4名</p><h3 class="h3">までの少人数</h3><p>1回4名までなので、スタッフがお子さまの手元までしっかり見られます。</p></div>
+          <div><p class="k">手ぶら</p><h3 class="h3">でOK</h3><p>材料・道具はお店でご用意します。料金は材料費込みです。</p></div>
+          <div><p class="k">予約制</p><h3 class="h3">で待たずに</h3><p>時間を決めてご予約いただくので、着いてすぐに始められます。</p></div>
+        </div>
+        <p class="note">レジンが服につくと落ちにくいため、汚れてもよい服装でお越しください。</p>
+      </div>
+    </section>
+
+    <!-- 2階の眺め -->
+    <section class="np view" aria-labelledby="view-h">
+      <img src="images/photos/kouri-1000.webp" srcset="images/photos/kouri-1000.webp 1000w, images/photos/kouri-2000.webp 2000w" sizes="100vw" alt="古宇利大橋と、エメラルドグリーンから深い青へ変わる海" loading="lazy" width="2000" height="1333">
+      <div class="wrap">
+        <p class="eyebrow">The view</p>
+        <h2 class="h2" id="view-h">羽地の駅の2階で、<br>とっておきの眺めが<br>待っています。</h2>
+        <p>2階のお店からは、おだやかな羽地内海と、屋我地島、その先の古宇利島まで見わたせます。目の前の海の色を見ながら、ゆっくり作品と向き合う時間をどうぞ。</p>
+        <ul class="chips" aria-label="お店から見える景色"><li>羽地内海</li><li>屋我地島</li><li>古宇利島</li></ul>
+        <p class="credit">写真は古宇利島から見た古宇利大橋のイメージです（写真：<a href="https://unsplash.com/photos/1xzotTtPWsc" target="_blank" rel="noopener noreferrer">Leopold / Unsplash<span class="sr-only">（新しいタブで開きます）</span></a>）</p>
+      </div>
+    </section>
+
+    <!-- オンラインショップ -->
+    <section id="shop" class="np">
+      <div class="wrap">
+        <p class="eyebrow">Online shop</p>
+        <h2 class="h2">おうちから、海のかけらを。</h2>
+        <p class="lead">お店の作品をオンラインでお求めいただけます。沖縄県から、ゆうパックでお届けします。お支払いはクレジットカード・コンビニ払いです。</p>
+        <div class="shop">
+          <div class="item"><img src="images/gallery/seashell-resin-600.webp" alt="貝とヒトデの形のレジン小物の写真" loading="lazy" width="600" height="600"><div class="bd"><p class="t">貝とヒトデのレジン小物</p><span class="s">準備中</span></div></div>
+          <div class="item"><img src="images/gallery/flower-pendants-600.webp" alt="押し花のレジンペンダントの写真" loading="lazy" width="600" height="600"><div class="bd"><p class="t">押し花のペンダント</p><span class="s">準備中</span></div></div>
+          <div class="item"><img src="images/gallery/koi-resin-cube-600.webp" alt="小さな魚を閉じ込めたレジンの写真" loading="lazy" width="600" height="600"><div class="bd"><p class="t">小さな水の世界</p><span class="s">準備中</span></div></div>
+          <div class="item"><img src="images/gallery/wood-resin-piece-600.webp" alt="木とレジンのプレートの写真" loading="lazy" width="600" height="600"><div class="bd"><p class="t">木とレジンのプレート</p><span class="s">準備中</span></div></div>
+        </div>
+        <p class="note">※ 写真はイメージ（Unsplash）で、販売中の商品・当店の作品ではありません。</p>
+        <p><a class="btn-line" href="/shop">オンラインショップを見る</a></p>
+      </div>
+    </section>
+
     <section id="visit" class="py-16 sm:py-28">
       <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         <div class="reveal">
@@ -268,11 +273,11 @@
         <div class="max-w-2xl">
           <p class="eyebrow !text-white/85">Contact</p>
           <h2 class="mt-4 font-serif-jp text-3xl leading-snug tracking-wider sm:text-4xl">世界にひとつの海を、<br>あなたの手に。</h2>
-          <p class="mt-5 text-sm text-white/85 sm:text-base">体験教室のご予約、オーダーメイドのご相談は、フォーム・LINE・Instagram からお気軽にどうぞ。</p>
+          <p class="mt-5 text-sm text-white/85 sm:text-base">体験教室のご予約、制作のご依頼、ショップのことなど、フォーム・LINE・Instagram からお気軽にどうぞ。</p>
         </div>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row md:mt-0">
           <a href="contact.html" class="btn-white">ご予約・お問い合わせ</a>
-          <a href="https://line.me/R/ti/p/@726qtybt" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-12 items-center justify-center border border-white/50 px-7 text-sm font-bold tracking-widest hover:bg-white hover:text-ocean-deep">LINE で相談<span class="sr-only">（新しいタブで開きます）</span></a>
+          <a href="https://line.me/R/ti/p/@726qtybt" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-12 items-center justify-center border border-white/50 px-7 text-sm font-bold tracking-widest hover:bg-white hover:text-ocean-deep">LINE で予約・相談<span class="sr-only">（新しいタブで開きます）</span></a>
         </div>
       </div>
     </section>
@@ -298,7 +303,7 @@
         <nav aria-label="サイトマップ" class="md:col-span-7">
           <ul class="grid grid-cols-2 gap-x-6 gap-y-3 text-sm text-white/85 sm:grid-cols-3">
             <li><a href="index.html" class="hover:text-white hover:underline">トップ</a></li>
-            <li><a href="index.html#about" class="hover:text-white hover:underline">コンセプト</a></li>
+            <li><a href="index.html#order" class="hover:text-white hover:underline">制作のご依頼</a></li>
             <li><a href="index.html#works" class="hover:text-white hover:underline">作品</a></li>
             <li><a href="workshop.html" class="hover:text-white hover:underline">体験教室</a></li>
             <li><a href="/shop" class="hover:text-white hover:underline">オンラインショップ</a></li>
@@ -314,6 +319,9 @@
       </p>
     </div>
   </footer>
+
+  <div class="m-cta-space" aria-hidden="true"></div>
+  <div class="m-cta"><a class="btn" href="contact.html">予約・相談</a><a class="btn-line" href="tel:05071160133">電話する</a></div>
 
   <script src="js/main.js?v=20261028-5"></script>
   <script>

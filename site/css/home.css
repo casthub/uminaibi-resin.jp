@@ -1,0 +1,126 @@
+/* ===== トップページ（2026-11-04 新しい構成：制作のご依頼・体験教室・ショップ・お子さま連れ・2階の眺め） =====
+   index.html の <main class="home"> の中だけに効く。色は tailwind.config.js と同じ。写真は Unsplash（撮影者は各写真に記載） */
+.home { --deep:#0a2a42; --ocean:#0b5b91; --emerald:#0b636b; --sand-dark:#ebf2f4; --coral:#a9412a; --ink:#15283a; --muted:#3d5466; --line:#d6e1e6; }
+.home img { max-width: 100%; display: block; }
+.home .wrap { max-width: 80rem; margin: 0 auto; padding: 0 1.25rem; }
+@media (min-width: 640px) { .home .wrap { padding: 0 2rem; } }
+@media (min-width: 1024px) { .home .wrap { padding: 0 3rem; } }
+.home section.np { padding: 4.5rem 0; }
+@media (min-width: 768px) { .home section.np { padding: 6.5rem 0; } }
+.home .band { background: var(--sand-dark); }
+.home .h2 { font-family: "Zen Old Mincho", "Noto Serif JP", serif; font-weight: 500; color: var(--deep); font-size: clamp(1.6rem, 4.5vw, 2.4rem); line-height: 1.5; margin: 1rem 0 1.25rem; letter-spacing: .06em; }
+.home .h3 { font-family: "Zen Old Mincho", "Noto Serif JP", serif; font-weight: 500; color: var(--deep); font-size: 1.25rem; margin: 0 0 .5rem; letter-spacing: .04em; line-height: 1.6; }
+.home .np p { margin: 0 0 1rem; }
+.home .np p.lead:last-child, .home .np p.note:last-child { margin-bottom: 0; }
+.home .lead { color: var(--muted); max-width: 40em; }
+.home .note { font-size: .875rem; color: var(--muted); margin-top: 1rem; }
+
+/* 最初の画面：写真の上に文字 */
+.home .hero { position: relative; min-height: min(92svh, 52rem); display: flex; align-items: flex-end; color: #fff; overflow: hidden; padding: 4rem 0 0; }
+@media (min-width: 640px) { .home .hero { padding-top: 4.5rem; } }
+.home .hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 30% 50%; }
+.home .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,24,40,.15) 0%, rgba(6,24,40,.3) 45%, rgba(6,24,40,.8) 100%); }
+.home .hero .wrap { position: relative; z-index: 1; padding-bottom: 3.5rem; width: 100%; }
+.home .hero .place { font-size: .875rem; letter-spacing: .25em; margin: 0 0 .75rem; }
+.home .hero h1 { font-family: "Zen Old Mincho", "Noto Serif JP", serif; font-weight: 500; font-size: clamp(2rem, 7vw, 3.6rem); line-height: 1.45; letter-spacing: .08em; margin: 0 0 1rem; text-shadow: 0 2px 18px rgba(0,0,0,.35); }
+.home .hero .sub { max-width: 34em; }
+.home .chips { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.75rem; padding: 0; list-style: none; }
+.home .chips li { border: 1px solid rgba(255,255,255,.75); padding: .2rem .9rem; font-size: .875rem; background: rgba(255,255,255,.1); }
+.home .row { display: flex; flex-wrap: wrap; gap: .75rem; }
+.home .credit { font-size: .8125rem; margin: 1.5rem 0 0; }
+.home .credit a { color: inherit; text-decoration: underline; text-underline-offset: .15em; }
+.home .scroll { position: absolute; right: 1.25rem; bottom: 1.5rem; z-index: 1; color: #fff; font-size: .75rem; letter-spacing: .3em; writing-mode: vertical-rl; display: flex; align-items: center; gap: .6rem; }
+.home .scroll::after { content: ""; width: 1px; height: 3.5rem; background: linear-gradient(#fff, transparent); animation: home-sc 2s ease-in-out infinite; }
+@keyframes home-sc { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+@media (max-width: 639px) { .home .scroll { display: none; } }
+
+/* できること（3つ） */
+.home .svc { display: grid; gap: 1.25rem; margin-top: 2.5rem; }
+@media (min-width: 800px) { .home .svc { grid-template-columns: repeat(3, 1fr); } }
+.home .svc a { display: flex; flex-direction: column; color: inherit; background: #fff; border: 1px solid var(--line); transition: box-shadow .2s; }
+.home .svc a:hover { box-shadow: 0 14px 30px -18px rgba(10,42,66,.45); }
+.home .svc .ph { aspect-ratio: 4/3; overflow: hidden; }
+.home .svc .ph img { width: 100%; height: 100%; object-fit: cover; }
+.home .svc .bd { padding: 1.4rem 1.4rem 1rem; }
+.home .svc .num { font-size: .8125rem; letter-spacing: .3em; color: var(--emerald); font-weight: 700; }
+.home .svc .more { margin-top: auto; padding: 0 1.4rem 1.4rem; color: var(--ocean); font-size: .9375rem; }
+
+/* 作品 */
+.home .works { display: grid; grid-template-columns: repeat(2, 1fr); gap: .5rem; margin-top: 2.25rem; }
+@media (min-width: 800px) { .home .works { grid-template-columns: repeat(3, 1fr); gap: .75rem; } }
+.home .works figure { margin: 0; position: relative; overflow: hidden; }
+.home .works img { aspect-ratio: 1; object-fit: cover; width: 100%; }
+.home .works figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.5rem .75rem .6rem; color: #fff; font-size: .8125rem; line-height: 1.5; background: linear-gradient(transparent, rgba(6,24,40,.8)); }
+
+/* 制作のご依頼 */
+.home .split { display: grid; gap: 2.5rem; align-items: start; }
+@media (min-width: 900px) { .home .split { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+.home .examples { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+.home .examples figure { margin: 0; }
+.home .examples img { aspect-ratio: 1; object-fit: cover; width: 100%; }
+.home .examples figcaption { font-size: .8125rem; color: var(--muted); margin-top: .4rem; line-height: 1.6; }
+.home .uses { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; margin: 0 0 1.5rem; }
+.home .uses li { background: #fff; border: 1px solid var(--line); padding: .2rem .9rem; font-size: .875rem; }
+.home ol.flow { list-style: none; padding: 0; margin: 1.5rem 0 0; counter-reset: f; }
+.home ol.flow li { counter-increment: f; position: relative; padding: 0 0 1.4rem 3.5rem; border-left: 1px solid var(--line); margin-left: 1.1rem; }
+.home ol.flow li:last-child { border-left-color: transparent; padding-bottom: 0; }
+.home ol.flow li::before { content: counter(f); position: absolute; left: -1.1rem; top: 0; width: 2.25rem; height: 2.25rem; border-radius: 50%; background: #fff; border: 1px solid var(--emerald); color: var(--emerald); display: grid; place-items: center; font-family: "Zen Old Mincho", serif; }
+.home ol.flow b { display: block; color: var(--deep); font-weight: 700; }
+.home ol.flow span { color: var(--muted); font-size: .9375rem; }
+
+/* 体験教室 */
+.home .courses { display: grid; gap: 1rem; margin-top: 2.25rem; }
+@media (min-width: 800px) { .home .courses { grid-template-columns: repeat(3, 1fr); } }
+.home .course { background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--emerald); padding: 1.5rem; }
+.home .course .price { font-family: "Zen Old Mincho", serif; font-size: 1.75rem; color: var(--deep); margin: .25rem 0 .75rem; }
+.home .course .price small { font-family: "Zen Kaku Gothic New", sans-serif; font-size: .8125rem; color: var(--muted); margin-left: .25rem; }
+.home .course dl { display: grid; grid-template-columns: auto 1fr; gap: .25rem 1rem; margin: 0; font-size: .9375rem; }
+.home .course dt { color: var(--muted); }
+.home .course dd { margin: 0; }
+.home .kid { display: inline-block; background: var(--emerald); color: #fff; font-family: "Zen Kaku Gothic New", sans-serif; font-size: .8125rem; padding: 0 .6rem; margin-left: .4rem; vertical-align: middle; letter-spacing: .05em; }
+
+/* お子さま連れ */
+.home .kids { display: grid; gap: 1rem; margin-top: 2.25rem; }
+@media (min-width: 700px) { .home .kids { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .home .kids { grid-template-columns: repeat(3, 1fr); } }
+.home .kids > div { background: #fff; border: 1px solid var(--line); padding: 1.5rem; }
+.home .kids .k { font-family: "Zen Old Mincho", serif; font-size: 2rem; color: var(--emerald); line-height: 1.2; margin-bottom: .5rem; }
+.home .kids p { font-size: .9375rem; color: var(--muted); margin: 0; }
+
+/* 2階の眺め */
+.home .view { position: relative; color: #fff; min-height: 35rem; display: flex; align-items: center; overflow: hidden; }
+.home .view > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.home .view::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(6,24,40,.8) 0%, rgba(6,24,40,.45) 70%, rgba(6,24,40,.2) 100%); }
+.home .view .wrap { position: relative; z-index: 1; width: 100%; }
+.home .view .h2 { color: #fff; }
+.home .view .eyebrow { color: #9ff0e2; }
+.home .view p { max-width: 30em; }
+
+/* ショップ */
+.home .shop { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 2.25rem; }
+@media (min-width: 800px) { .home .shop { grid-template-columns: repeat(4, 1fr); } }
+.home .item { background: #fff; border: 1px solid var(--line); }
+.home .item img { aspect-ratio: 1; object-fit: cover; width: 100%; }
+.home .item .bd { padding: .75rem .9rem 1rem; }
+.home .item .t { font-size: .9375rem; line-height: 1.6; margin: 0 0 .3rem; }
+.home .item .s { font-size: .8125rem; color: var(--coral); letter-spacing: .08em; }
+
+/* アクセス */
+.home .access { display: grid; gap: 2rem; }
+@media (min-width: 900px) { .home .access { grid-template-columns: 1fr 1fr; } }
+.home .access dl { display: grid; grid-template-columns: 6.5em 1fr; gap: .75rem 1rem; margin: 0; }
+.home .access dt { color: var(--muted); font-size: .9375rem; }
+.home .access dd { margin: 0; }
+.home .access iframe { width: 100%; height: 100%; min-height: 18rem; border: 0; }
+
+/* ご予約 */
+.home .cta { text-align: center; }
+.home .cta .lead { margin: 0 auto; }
+.home .cta .row { justify-content: center; margin-top: 1.5rem; }
+
+/* スマホ：画面の下に「予約・相談」「電話」 */
+.m-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; display: flex; gap: .5rem; padding: .6rem 1rem calc(.6rem + env(safe-area-inset-bottom)); background: rgba(246,249,250,.96); border-top: 1px solid #d6e1e6; }
+.m-cta a { flex: 1; min-height: 2.75rem; padding: .5rem; font-size: .875rem; }
+.m-cta-space { height: 4.5rem; background: #0a2a42; }
+@media (min-width: 800px) { .m-cta, .m-cta-space { display: none; } }
+@media (prefers-reduced-motion: reduce) { .home .scroll::after { animation: none; } }
