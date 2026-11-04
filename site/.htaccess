@@ -9,6 +9,11 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 RewriteRule ^concept\.html$ /index.html#about [R=301,NE,L]
 RewriteRule ^gallery\.html$ /index.html#works [R=301,NE,L]
 RewriteRule ^access\.html$ /index.html#visit [R=301,NE,L]
+# 2026-11-04 ショップは /shop で開く（中身は shop.html）。古い /shop.html と /shop/ は /shop へ転送（? 以降は残す）
+RewriteCond %{THE_REQUEST} \s/shop\.html[\s?]
+RewriteRule ^shop\.html$ /shop [R=301,L]
+RewriteRule ^shop/$ /shop [R=301,L]
+RewriteRule ^shop$ /shop.html [L]
 </IfModule>
 
 # メール・Stripe のログイン情報・ひな形は外から開けない

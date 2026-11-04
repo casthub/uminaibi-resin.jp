@@ -1,5 +1,5 @@
 <?php
-// オンラインショップの「購入手続きへ」ボタンの送り先（shop.html から呼ばれる）。2026-10-27
+// オンラインショップの「購入手続きへ」ボタンの送り先（/shop＝shop.html から呼ばれる）。2026-10-27
 //   ・ボタンで選ばれた商品（item）を stripe-config.php の一覧で探し、Stripe Checkout（Stripe の決済ページ）を作って、そこへ移動させる
 //   ・価格は Stripe の Price ID で決まる（ブラウザから送られた金額は使わない＝書き換えられても安全）
 //   ・カード番号は Stripe の決済ページで入力され、このサーバーには届かない
@@ -22,13 +22,13 @@ function fail(int $status, string $message): void {
 <html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex">
 <title>お手続きができませんでした | うみないび</title>
 <style>body{font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;background:#f7efdd;color:#16323f;line-height:1.9;margin:0;padding:4rem 1.5rem}main{max-width:36rem;margin:0 auto;background:#fff;border-radius:1.5rem;padding:2rem}h1{font-size:1.25rem;color:#0a3d52}a{color:#0f6c8a}</style>
-</head><body><main><h1>お手続きができませんでした</h1><p>{$m}</p><p><a href="shop.html">ショップに戻る</a>　<a href="contact.html">お問い合わせ</a></p></main></body></html>
+</head><body><main><h1>お手続きができませんでした</h1><p>{$m}</p><p><a href="/shop">ショップに戻る</a>　<a href="contact.html">お問い合わせ</a></p></main></body></html>
 HTML;
     exit;
 }
 
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
-    header('Location: ' . SITE_URL . '/shop.html', true, 303);
+    header('Location: ' . SITE_URL . '/shop', true, 303);
     exit;
 }
 
@@ -75,7 +75,7 @@ $params = [
     'integration_identifier' => 'hosted_web_0001',
     'origin_context' => 'web',
     'success_url' => SITE_URL . '/shop-thanks.html?session_id={CHECKOUT_SESSION_ID}',
-    'cancel_url' => SITE_URL . '/shop.html',
+    'cancel_url' => SITE_URL . '/shop',
     'line_items' => [['price' => $price, 'quantity' => 1]],
     // 作品を送るので、お届け先（日本国内）を入れてもらう。送料（ゆうパック・沖縄県から・5地域）はお客様がお届け先の地域を選ぶ
     'shipping_address_collection' => ['allowed_countries' => ['JP']],
