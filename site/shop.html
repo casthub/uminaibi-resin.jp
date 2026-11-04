@@ -18,6 +18,7 @@
   <!-- Tailwind（CSS ファイル。作り直しは bin/build-css.sh）と共通の CSS -->
   <link rel="stylesheet" href="css/tailwind.css?v=20261104-1">
   <link rel="stylesheet" href="css/style.css?v=20261104-1">
+  <link rel="stylesheet" href="css/shop.css?v=20261105-1">
 </head>
 <body class="bg-sand text-ink antialiased">
 
@@ -59,7 +60,7 @@
     </div>
   </header>
 
-  <main id="main" tabindex="-1">
+  <main id="main" tabindex="-1" class="shop-page">
     <!-- ページの見出し（2026-10-28 リビルド：文字だけ） -->
     <section class="pb-10 pt-28 sm:pb-14 sm:pt-40">
       <div class="mx-auto max-w-6xl px-5 sm:px-6">
@@ -69,57 +70,143 @@
       </div>
     </section>
 
-    <!-- 商品一覧 -->
+    <!-- 商品一覧（2026-11-05 作品販売の形：絞り込み・縦長の写真のカード・くわしい画面。今はダミー1〜9） -->
     <section class="pt-2 pb-12 sm:pt-4 sm:pb-16">
       <div class="mx-auto max-w-6xl px-5 sm:px-6">
-        <div class="reveal">
-          <span class="eyebrow">Items</span>
-          <h2 class="font-serif-jp text-2xl sm:text-3xl text-ocean-deep mt-2">販売中の作品</h2>
-          <p class="mt-4 text-sm text-ink/75">送料・お支払い・返品については、<a href="#shop-notice" class="text-link">このページの下</a>をご覧ください。</p>
+        <p class="dummy-note"><b>ただいま準備中です。</b>下の「ダミー1〜9」は、商品がどのように並ぶかを見ていただくための見本で、販売中の商品ではありません（ご購入はできません）。写真はフリー素材（Unsplash）のイメージで、当店の作品ではありません。</p>
+
+        <div class="trust" aria-label="ショップについて">
+          <div><b>手づくりの一点もの</b>色・模様・気泡の入り方は、作品ごとに少しずつ違います。</div>
+          <div><b>ゆうパックでお届け</b>沖縄県から発送。送料は地域と大きさで決まります（<a href="#shop-notice" class="text-link">送料の表</a>）。</div>
+          <div><b>カード・コンビニ払い</b>Stripe の決済ページでお支払い。カード番号は当店に届きません。</div>
+          <div><b>到着後1週間以内</b>不良品・お届け違いは、到着後1週間以内にご連絡ください。</div>
         </div>
+
+        <div class="filters" role="group" aria-label="作品の種類で絞り込む">
+            <button type="button" data-filter="all" aria-pressed="true">すべて（9）</button>
+            <button type="button" data-filter="panel" aria-pressed="false">アートパネル（3）</button>
+            <button type="button" data-filter="table" aria-pressed="false">テーブル・トレイ（2）</button>
+            <button type="button" data-filter="object" aria-pressed="false">小物・オブジェ（2）</button>
+            <button type="button" data-filter="acc" aria-pressed="false">アクセサリー（2）</button>
+        </div>
+        <p class="count" aria-live="polite"><span id="shop-count">9</span>点の作品</p>
 
         <!--
-          ★商品の足し方（1つの商品 = <article> から </article> まで）
+          ★商品の足し方（1つの商品 = <article class="work"> から </article> まで）
             1. Stripe の管理画面で「商品」と「価格」を作り、Price ID（price_...）を site/stripe-config.php の items に足す（手順は README.md の「オンラインショップ」）
-            2. 下の <article> を1つ丸ごとコピーして、名前・説明・大きさ・価格・写真を書き換える
-            3. 「購入手続きへ」のボタン（<form action="checkout.php">）の value に、items に書いた名前を入れる
-            4. 売り切れたら、ボタンを「売り切れ」の形（<span ... aria-disabled="true">売り切れ</span>）に替え、items からも消す
-          ★写真は、店が権利を持つ「実物の写真」だけを使う（フリー素材の写真で売らない）。site/images/shop/ に置く
+            2. 下の <article> を1つ丸ごとコピーして、data-cat（panel・table・object・acc）・名前・大きさ・素材・価格・写真を書き換える。
+               ページの下の SHOP_ITEMS（くわしい画面の中身）にも同じ番号で書き足す。絞り込みの（数）も直す
+            3. 「準備中」を次の形に替える（value は stripe-config.php の items の名前と同じにする）：
+               <form action="checkout.php" method="post"><input type="hidden" name="item" value="ここに商品の名前"><button type="submit" class="btn">購入手続きへ<span class="sr-only">（Stripe の決済ページへ移動します）</span></button></form>
+            4. 売り切れたら、印を SOLD に、ボタンを <span class="btn" aria-disabled="true">SOLD OUT</span> に替え、items からも消す
+          ★写真は、店が権利を持つ「実物の写真」だけを使う（フリー素材の写真で売らない）。site/images/shop/ に置く。縦長（4:5）がきれいに並ぶ
+          ★ダミーをやめるときは、上の「ただいま準備中です」のお知らせも消す
         -->
-        <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-
-          <!-- 商品（サンプル）★販売する作品ができたら、この article を本物に書き換える（写真は実物だけ） -->
-          <article class="reveal bg-white overflow-hidden flex flex-col border border-line">
-            <div class="relative">
-              <img src="images/gallery/ocean-wave-panel-600.webp" srcset="images/gallery/ocean-wave-panel-600.webp 600w, images/gallery/ocean-wave-panel-1200.webp 1200w" sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw" alt="サンプル画像：青い海と白い波を表したレジンアート（フリー素材）" class="aspect-[4/3] w-full object-cover" loading="lazy" width="600" height="450">
-              <span class="absolute left-3 top-3 rounded-full bg-white/95 px-3 py-1 text-xs font-bold text-coral">サンプル</span>
-            </div>
-            <div class="p-6 sm:p-8 flex flex-1 flex-col">
-              <h3 class="font-serif-jp text-xl text-ocean-deep font-bold">サンプル：海のアートパネル</h3>
-              <p class="mt-3 text-sm text-ink/75">商品はこのように表示されます。<strong class="font-bold">これは表示の見本で、販売中の商品ではありません。</strong>写真はフリー素材のイメージで、当店の作品ではありません。</p>
-              <ul class="mt-4 space-y-1 text-sm text-ink/70">
-                <li>大きさ：（作品ごとに記載します）</li>
-                <li>素材：（作品ごとに記載します）</li>
-                <li>発送の目安：（作品ごとに記載します）</li>
-                <li>送料のサイズ：（作品ごとに記載します。例：60サイズ）</li>
-              </ul>
-              <div class="mt-auto pt-6 border-t border-line flex flex-wrap items-center justify-between gap-4">
-                <p class="text-sm text-ink/75">価格は販売開始時にお知らせします</p>
-                <span class="btn" aria-disabled="true">準備中</span>
-                <!-- 販売を始めたら、価格を <p class="font-serif-jp text-2xl text-ocean-deep font-bold whitespace-nowrap">¥0,000 <span class="text-sm font-sans text-ink/70 whitespace-nowrap">（税込・送料別）</span></p> の形にし、
-                     上の「準備中」をこの形に替える（value="..." は stripe-config.php の items の名前と同じにする）：
-                <form action="checkout.php" method="post"><input type="hidden" name="item" value="ここに商品の名前"><button type="submit" class="btn">購入手続きへ<span class="sr-only">（Stripe の決済ページへ移動します）</span></button></form>
-                -->
-              </div>
-            </div>
+        <div class="grid9" id="shop-grid">
+          <article class="work" data-cat="panel">
+            <button type="button" class="open" data-item="1" aria-haspopup="dialog">
+              <span class="ph"><img src="images/gallery/ocean-wave-panel-600.webp" alt="" style="object-position:50% 50%" loading="lazy" width="600" height="750"><span class="badges"><span class="badge dummy">ダミー1</span><span class="badge">一点もの</span></span></span>
+              <span class="cat">アートパネル</span>
+              <span class="ttl" style="display:block">ダミー1：浅瀬の光（アートパネル）</span>
+              <span class="spec" style="display:block">W30 × H30 × D2 cm<br>エポキシレジン・木製パネル</span>
+              <span class="sr-only">（くわしく見る）</span>
+            </button>
+            <p class="price">¥00,000<small>（税込・送料別）</small></p>
+            <div class="act"><span class="btn" aria-disabled="true">準備中</span></div>
           </article>
-
+          <article class="work" data-cat="panel">
+            <button type="button" class="open" data-item="2" aria-haspopup="dialog">
+              <span class="ph"><img src="images/gallery/ocean-wave-panel-600.webp" alt="" style="object-position:20% 50%" loading="lazy" width="600" height="750"><span class="badges"><span class="badge dummy">ダミー2</span><span class="badge">一点もの</span></span></span>
+              <span class="cat">アートパネル</span>
+              <span class="ttl" style="display:block">ダミー2：白波（アートパネル・横長）</span>
+              <span class="spec" style="display:block">W45 × H30 × D2 cm<br>エポキシレジン・木製パネル</span>
+              <span class="sr-only">（くわしく見る）</span>
+            </button>
+            <p class="price">¥00,000<small>（税込・送料別）</small></p>
+            <div class="act"><span class="btn" aria-disabled="true">準備中</span></div>
+          </article>
+          <article class="work" data-cat="panel">
+            <button type="button" class="open" data-item="3" aria-haspopup="dialog">
+              <span class="ph"><img src="images/gallery/wood-ocean-table-600.webp" alt="" style="object-position:50% 50%" loading="lazy" width="600" height="750"><span class="badges"><span class="badge dummy">ダミー3</span><span class="badge">受注制作</span></span></span>
+              <span class="cat">アートパネル</span>
+              <span class="ttl" style="display:block">ダミー3：羽地内海（大型パネル）</span>
+              <span class="spec" style="display:block">W90 × H30 × D3 cm（サイズは相談できます）<br>エポキシレジン・木製パネル</span>
+              <span class="sr-only">（くわしく見る）</span>
+            </button>
+            <p class="price">¥00,000〜<small>（税込・お見積り）</small></p>
+            <div class="act"><a class="btn-line" href="contact.html">制作を相談する</a></div>
+          </article>
+          <article class="work" data-cat="table">
+            <button type="button" class="open" data-item="4" aria-haspopup="dialog">
+              <span class="ph"><img src="images/gallery/wood-ocean-table-600.webp" alt="" style="object-position:70% 50%" loading="lazy" width="600" height="750"><span class="badges"><span class="badge dummy">ダミー4</span><span class="badge">一点もの</span></span></span>
+              <span class="cat">テーブル・トレイ</span>
+              <span class="ttl" style="display:block">ダミー4：木と海のトレイ</span>
+              <span class="spec" style="display:block">W35 × D25 × H2 cm<br>エポキシレジン・天然木</span>
+              <span class="sr-only">（くわしく見る）</span>
+            </button>
+            <p class="price">¥00,000<small>（税込・送料別）</small></p>
+            <div class="act"><span class="btn" aria-disabled="true">準備中</span></div>
+          </article>
+          <article class="work" data-cat="table">
+            <button type="button" class="open" data-item="5" aria-haspopup="dialog">
+              <span class="ph"><img src="images/gallery/wood-resin-piece-600.webp" alt="" style="object-position:50% 50%" loading="lazy" width="600" height="750"><span class="badges"><span class="badge dummy">ダミー5</span><span class="badge">一点もの</span></span></span>
+              <span class="cat">テーブル・トレイ</span>
+              <span class="ttl" style="display:block">ダミー5：オーシャンコースター（2枚組）</span>
+              <span class="spec" style="display:block">直径 約10 cm × 2枚<br>エポキシレジン・木</span>
+              <span class="sr-only">（くわしく見る）</span>
+            </button>
+            <p class="price">¥00,000<small>（税込・送料別）</small></p>
+            <div class="act"><span class="btn" aria-disabled="true">準備中</span></div>
+          </article>
+          <article class="work" data-cat="object">
+            <button type="button" class="open" data-item="6" aria-haspopup="dialog">
+              <span class="ph"><img src="images/gallery/koi-resin-cube-600.webp" alt="" style="object-position:50% 50%" loading="lazy" width="600" height="750"><span class="badges"><span class="badge dummy">ダミー6</span><span class="badge">一点もの</span></span></span>
+              <span class="cat">小物・オブジェ</span>
+              <span class="ttl" style="display:block">ダミー6：小さな水の世界（キューブ）</span>
+              <span class="spec" style="display:block">W6 × H6 × D6 cm<br>エポキシレジン</span>
+              <span class="sr-only">（くわしく見る）</span>
+            </button>
+            <p class="price">¥00,000<small>（税込・送料別）</small></p>
+            <div class="act"><span class="btn" aria-disabled="true">準備中</span></div>
+          </article>
+          <article class="work" data-cat="object">
+            <button type="button" class="open" data-item="7" aria-haspopup="dialog">
+              <span class="ph"><img src="images/gallery/seashell-resin-600.webp" alt="" style="object-position:50% 50%" loading="lazy" width="600" height="750"><span class="sold-cover"></span><span class="badges"><span class="badge dummy">ダミー7</span><span class="badge sold">SOLD</span></span></span>
+              <span class="cat">小物・オブジェ</span>
+              <span class="ttl" style="display:block">ダミー7：貝とヒトデのオブジェ</span>
+              <span class="spec" style="display:block">約 W8 × H5 cm<br>エポキシレジン</span>
+              <span class="sr-only">（くわしく見る）</span>
+            </button>
+            <p class="price">¥00,000<small>（税込・送料別）</small></p>
+            <div class="act"><span class="btn" aria-disabled="true">SOLD OUT</span></div>
+          </article>
+          <article class="work" data-cat="acc">
+            <button type="button" class="open" data-item="8" aria-haspopup="dialog">
+              <span class="ph"><img src="images/gallery/flower-pendants-600.webp" alt="" style="object-position:50% 50%" loading="lazy" width="600" height="750"><span class="badges"><span class="badge dummy">ダミー8</span><span class="badge">一点もの</span></span></span>
+              <span class="cat">アクセサリー</span>
+              <span class="ttl" style="display:block">ダミー8：押し花のペンダント</span>
+              <span class="spec" style="display:block">約 2.5 × 3.5 cm（チェーン 45 cm）<br>UVレジン・押し花・金属パーツ</span>
+              <span class="sr-only">（くわしく見る）</span>
+            </button>
+            <p class="price">¥00,000<small>（税込・送料別）</small></p>
+            <div class="act"><span class="btn" aria-disabled="true">準備中</span></div>
+          </article>
+          <article class="work" data-cat="acc">
+            <button type="button" class="open" data-item="9" aria-haspopup="dialog">
+              <span class="ph"><img src="images/gallery/seashell-resin-600.webp" alt="" style="object-position:30% 60%" loading="lazy" width="600" height="750"><span class="badges"><span class="badge dummy">ダミー9</span><span class="badge">一点もの</span></span></span>
+              <span class="cat">アクセサリー</span>
+              <span class="ttl" style="display:block">ダミー9：シーグラスのピアス</span>
+              <span class="spec" style="display:block">約 1.5 cm（1組）<br>UVレジン・シーグラス・金属パーツ</span>
+              <span class="sr-only">（くわしく見る）</span>
+            </button>
+            <p class="price">¥00,000<small>（税込・送料別）</small></p>
+            <div class="act"><span class="btn" aria-disabled="true">準備中</span></div>
+          </article>
         </div>
 
-        <p class="reveal mt-12 text-center text-sm text-ink/75">オーダーメイドのご相談は、<a href="contact.html" class="text-link">お問い合わせ</a>からどうぞ。</p>
+        <p class="mt-12 text-center text-sm text-ink/75">オーダーメイドのご相談は、<a href="contact.html" class="text-link">お問い合わせ</a>からどうぞ。</p>
       </div>
     </section>
-
 
     <!-- ご購入の前に（2026-10-28 オーナー指示で作品の下へ） -->
     <section id="shop-notice" class="pb-20">
@@ -193,6 +280,169 @@
       </p>
     </div>
   </footer>
+
+  <!-- 作品のくわしい画面 -->
+  <dialog class="shop-dialog" id="shop-dialog" aria-labelledby="sd-title">
+    <div class="in">
+      <div class="ph"><img id="sd-img" src="" alt="" width="1200" height="1500"><span class="badges" id="sd-badges"></span></div>
+      <div class="bd">
+        <button type="button" class="x" id="sd-close" aria-label="閉じる">×</button>
+        <p class="cat" id="sd-cat"></p>
+        <h2 id="sd-title"></h2>
+        <p class="desc" id="sd-desc"></p>
+        <table>
+          <tr><th scope="row">大きさ</th><td id="sd-size"></td></tr>
+          <tr><th scope="row">素材</th><td id="sd-mat"></td></tr>
+          <tr><th scope="row">発送の目安</th><td id="sd-ship"></td></tr>
+          <tr><th scope="row">送料</th><td>ゆうパック <span id="sd-sc"></span>（<a href="#shop-notice" class="text-link" data-close>送料の表</a>）</td></tr>
+        </table>
+        <p class="price" id="sd-price"></p>
+        <div class="act" id="sd-act"></div>
+        <p class="fine">これはダミー（表示の見本）で、販売中の商品ではありません。写真はフリー素材（Unsplash）のイメージで、当店の作品ではありません。</p>
+      </div>
+    </div>
+  </dialog>
+  <script>
+    // くわしい画面の中身（番号はカードの data-item と同じ）
+    const SHOP_ITEMS = {
+"1": {
+"cat": "アートパネル",
+"title": "ダミー1：浅瀬の光（アートパネル）",
+"img": "images/gallery/ocean-wave-panel-1200.webp",
+"pos": "50% 50%",
+"size": "W30 × H30 × D2 cm",
+"mat": "エポキシレジン・木製パネル",
+"ship": "ご注文から約2週間",
+"sc": "80サイズ",
+"st": "sale",
+"desc": "屋我地島の浅瀬にさす光をイメージした、正方形のアートパネル。壁に掛けられる金具付き。"
+},
+"2": {
+"cat": "アートパネル",
+"title": "ダミー2：白波（アートパネル・横長）",
+"img": "images/gallery/ocean-wave-panel-1200.webp",
+"pos": "20% 50%",
+"size": "W45 × H30 × D2 cm",
+"mat": "エポキシレジン・木製パネル",
+"ship": "ご注文から約2週間",
+"sc": "100サイズ",
+"st": "sale",
+"desc": "打ち寄せる白波を何層も重ねて描いた、横長のアートパネル。"
+},
+"3": {
+"cat": "アートパネル",
+"title": "ダミー3：羽地内海（大型パネル）",
+"img": "images/gallery/wood-ocean-table-1200.webp",
+"pos": "50% 50%",
+"size": "W90 × H30 × D3 cm（サイズは相談できます）",
+"mat": "エポキシレジン・木製パネル",
+"ship": "ご相談のうえで決めます",
+"sc": "140サイズ",
+"st": "order",
+"desc": "お部屋に合わせてつくる大型のパネル。色・大きさはご相談ください。"
+},
+"4": {
+"cat": "テーブル・トレイ",
+"title": "ダミー4：木と海のトレイ",
+"img": "images/gallery/wood-ocean-table-1200.webp",
+"pos": "70% 50%",
+"size": "W35 × D25 × H2 cm",
+"mat": "エポキシレジン・天然木",
+"ship": "ご注文から約3週間",
+"sc": "100サイズ",
+"st": "sale",
+"desc": "木目と海の青を組み合わせたトレイ。小物置きや飾り台に。"
+},
+"5": {
+"cat": "テーブル・トレイ",
+"title": "ダミー5：オーシャンコースター（2枚組）",
+"img": "images/gallery/wood-resin-piece-1200.webp",
+"pos": "50% 50%",
+"size": "直径 約10 cm × 2枚",
+"mat": "エポキシレジン・木",
+"ship": "ご注文から約1週間",
+"sc": "60サイズ",
+"st": "sale",
+"desc": "波打ち際の色を閉じ込めたコースター。2枚1組。"
+},
+"6": {
+"cat": "小物・オブジェ",
+"title": "ダミー6：小さな水の世界（キューブ）",
+"img": "images/gallery/koi-resin-cube-1200.webp",
+"pos": "50% 50%",
+"size": "W6 × H6 × D6 cm",
+"mat": "エポキシレジン",
+"ship": "ご注文から約1週間",
+"sc": "60サイズ",
+"st": "sale",
+"desc": "透明なレジンの中に、水と小さな魚を閉じ込めたオブジェ。"
+},
+"7": {
+"cat": "小物・オブジェ",
+"title": "ダミー7：貝とヒトデのオブジェ",
+"img": "images/gallery/seashell-resin-1200.webp",
+"pos": "50% 50%",
+"size": "約 W8 × H5 cm",
+"mat": "エポキシレジン",
+"ship": "—",
+"sc": "60サイズ",
+"st": "sold",
+"desc": "貝殻とヒトデの形をかたどった透明な小物。"
+},
+"8": {
+"cat": "アクセサリー",
+"title": "ダミー8：押し花のペンダント",
+"img": "images/gallery/flower-pendants-1200.webp",
+"pos": "50% 50%",
+"size": "約 2.5 × 3.5 cm（チェーン 45 cm）",
+"mat": "UVレジン・押し花・金属パーツ",
+"ship": "ご注文から約1週間",
+"sc": "60サイズ",
+"st": "sale",
+"desc": "押し花をレジンで閉じ込めたペンダント。"
+},
+"9": {
+"cat": "アクセサリー",
+"title": "ダミー9：シーグラスのピアス",
+"img": "images/gallery/seashell-resin-1200.webp",
+"pos": "30% 60%",
+"size": "約 1.5 cm（1組）",
+"mat": "UVレジン・シーグラス・金属パーツ",
+"ship": "ご注文から約1週間",
+"sc": "60サイズ",
+"st": "sale",
+"desc": "シーグラスの色を生かした、小ぶりなピアス。イヤリングにも替えられます。"
+}
+};
+    (() => {
+      // 絞り込み
+      const btns = document.querySelectorAll('.filters [data-filter]');
+      const works = document.querySelectorAll('#shop-grid .work');
+      btns.forEach(b => b.addEventListener('click', () => {
+        const f = b.dataset.filter; let n = 0;
+        btns.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+        works.forEach(w => { const show = f === 'all' || w.dataset.cat === f; w.hidden = !show; if (show) n++; });
+        document.getElementById('shop-count').textContent = n;
+      }));
+      // くわしい画面
+      const dlg = document.getElementById('shop-dialog');
+      if (!dlg || !dlg.showModal) return;
+      const $ = id => document.getElementById(id);
+      document.querySelectorAll('#shop-grid .open').forEach(b => b.addEventListener('click', () => {
+        const d = SHOP_ITEMS[b.dataset.item]; if (!d) return;
+        $('sd-img').src = d.img; $('sd-img').style.objectPosition = d.pos;
+        $('sd-cat').textContent = d.cat; $('sd-title').textContent = d.title; $('sd-desc').textContent = d.desc;
+        $('sd-size').textContent = d.size; $('sd-mat').textContent = d.mat; $('sd-ship').textContent = d.ship; $('sd-sc').textContent = d.sc;
+        $('sd-badges').innerHTML = b.querySelector('.badges').innerHTML;
+        $('sd-price').innerHTML = d.st === 'order' ? '¥00,000〜<small>（税込・お見積り）</small>' : '¥00,000<small>（税込・送料別）</small>';
+        $('sd-act').innerHTML = d.st === 'order' ? '<a class="btn-line" href="contact.html">制作を相談する</a>'
+          : d.st === 'sold' ? '<span class="btn" aria-disabled="true">SOLD OUT</span>' : '<span class="btn" aria-disabled="true">準備中</span>';
+        dlg.showModal(); $('sd-close').focus();
+      }));
+      $('sd-close').addEventListener('click', () => dlg.close());
+      dlg.addEventListener('click', e => { if (e.target === dlg || e.target.closest('[data-close]')) dlg.close(); });
+    })();
+  </script>
 
   <script src="js/main.js?v=20261104-1"></script>
   <script>

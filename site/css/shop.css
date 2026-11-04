@@ -1,0 +1,68 @@
+/* ===== オンラインショップ（2026-11-05 作品販売の形：絞り込み・縦長の写真のカード・くわしい画面） =====
+   shop.html の .shop-page の中だけに効く。色は tailwind.config.js と同じ */
+.shop-page, .shop-dialog { --deep:#0a2a42; --ocean:#0b5b91; --emerald:#0b636b; --coral:#a9412a; --ink:#15283a; --muted:#3d5466; --line:#d6e1e6; }
+
+/* ダミーのお知らせ */
+.shop-page .dummy-note { border: 1px solid var(--coral); background: #fff; color: var(--ink); padding: .9rem 1.1rem; font-size: .875rem; line-height: 1.8; }
+.shop-page .dummy-note b { color: var(--coral); }
+
+/* 安心材料の帯 */
+.shop-page .trust { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 2rem; }
+@media (min-width: 640px) { .shop-page .trust { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .shop-page .trust { grid-template-columns: repeat(4, 1fr); } }
+.shop-page .trust div { background: #fff; padding: 1rem 1.1rem; font-size: .875rem; color: var(--muted); line-height: 1.7; }
+.shop-page .trust b { display: block; color: var(--deep); font-size: .9375rem; margin-bottom: .15rem; }
+
+/* 絞り込み */
+.shop-page .filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 2rem; }
+.shop-page .filters button { min-height: 2.75rem; padding: .4rem 1rem; border: 1px solid var(--line); background: #fff; color: var(--ink); font-size: .875rem; letter-spacing: .06em; cursor: pointer; }
+.shop-page .filters button[aria-pressed="true"] { background: var(--deep); border-color: var(--deep); color: #fff; }
+.shop-page .filters button:hover { border-color: var(--ocean); }
+.shop-page .count { margin-top: .9rem; font-size: .875rem; color: var(--muted); }
+
+/* 作品のカード */
+.shop-page .grid9 { display: grid; gap: 2.25rem 1rem; grid-template-columns: repeat(2, 1fr); margin-top: 1.25rem; }
+@media (min-width: 1024px) { .shop-page .grid9 { grid-template-columns: repeat(3, 1fr); gap: 3rem 2rem; } }
+.shop-page .work { display: flex; flex-direction: column; }
+.shop-page .work[hidden] { display: none; }
+.shop-page .work .open { display: block; width: 100%; padding: 0; border: 0; background: none; text-align: left; cursor: pointer; color: inherit; font: inherit; }
+.shop-page .work .ph, .shop-page .work .cat { display: block; }
+.shop-page .work .ph { position: relative; aspect-ratio: 4/5; overflow: hidden; background: #ebf2f4; }
+.shop-page .work .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+.shop-page .work .open:hover img { transform: scale(1.03); }
+.shop-page .work .open:focus-visible { outline: 3px solid #3aa6cf; outline-offset: 3px; }
+.shop-page .badges, .shop-dialog .badges { position: absolute; left: .6rem; top: .6rem; display: flex; flex-wrap: wrap; gap: .3rem; }
+.shop-page .badge, .shop-dialog .badge { background: rgba(255,255,255,.95); color: var(--deep); font-size: .75rem; font-weight: 700; padding: .15rem .55rem; letter-spacing: .05em; }
+.shop-page .badge.dummy, .shop-dialog .badge.dummy { color: var(--coral); }
+.shop-page .badge.sold, .shop-dialog .badge.sold { background: var(--deep); color: #fff; }
+.shop-page .sold-cover { position: absolute; inset: 0; background: rgba(255,255,255,.45); }
+.shop-page .work .cat { margin: .8rem 0 .1rem; font-size: .75rem; letter-spacing: .15em; color: var(--emerald); font-weight: 700; }
+.shop-page .work .ttl { font-family: "Zen Old Mincho", "Noto Serif JP", serif; font-size: 1.0625rem; color: var(--deep); line-height: 1.6; margin: 0; }
+@media (min-width: 640px) { .shop-page .work .ttl { font-size: 1.1875rem; } }
+.shop-page .work .spec { font-size: .8125rem; color: var(--muted); line-height: 1.7; margin: .25rem 0 0; }
+.shop-page .work .price { font-family: "Zen Old Mincho", serif; font-size: 1.125rem; color: var(--deep); margin: .4rem 0 0; }
+.shop-page .work .price small { font-family: "Zen Kaku Gothic New", sans-serif; font-size: .75rem; color: var(--muted); margin-left: .2rem; }
+.shop-page .work .act { margin-top: .75rem; }
+.shop-page .work .act .btn, .shop-page .work .act .btn-line { width: 100%; min-height: 2.75rem; padding: .5rem .75rem; font-size: .875rem; }
+
+/* くわしい画面（<dialog>） */
+.shop-dialog { width: min(60rem, calc(100% - 2rem)); max-height: calc(100dvh - 2rem); padding: 0; border: 0; color: #15283a; background: #fff; overflow: auto; }
+.shop-dialog::backdrop { background: rgba(10,42,66,.7); }
+.shop-dialog .in { display: grid; }
+@media (min-width: 768px) { .shop-dialog .in { grid-template-columns: 1fr 1fr; } }
+.shop-dialog .ph { position: relative; background: #ebf2f4; }
+.shop-dialog .ph img { width: 100%; height: 100%; max-height: 70dvh; object-fit: cover; aspect-ratio: 4/5; }
+.shop-dialog .bd { padding: 1.5rem 1.25rem 1.75rem; }
+@media (min-width: 768px) { .shop-dialog .bd { padding: 2.5rem 2rem; } }
+.shop-dialog .x { position: absolute; right: .5rem; top: .5rem; z-index: 2; width: 2.75rem; height: 2.75rem; border: 0; background: rgba(255,255,255,.95); color: #0a2a42; font-size: 1.5rem; line-height: 1; cursor: pointer; }
+.shop-dialog h2 { font-family: "Zen Old Mincho", "Noto Serif JP", serif; font-weight: 500; font-size: 1.5rem; color: #0a2a42; margin: .25rem 0 .75rem; line-height: 1.5; }
+.shop-dialog .cat { font-size: .75rem; letter-spacing: .15em; color: #0b636b; font-weight: 700; margin: 0; }
+.shop-dialog .desc { font-size: .9375rem; color: #3d5466; margin: 0 0 1.25rem; }
+.shop-dialog table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+.shop-dialog th, .shop-dialog td { border-top: 1px solid #d6e1e6; padding: .55rem 0; text-align: left; vertical-align: top; }
+.shop-dialog th { width: 7.5em; color: #3d5466; font-weight: 400; }
+.shop-dialog .price { font-family: "Zen Old Mincho", serif; font-size: 1.6rem; color: #0a2a42; margin: 1.25rem 0 .75rem; }
+.shop-dialog .price small { font-family: "Zen Kaku Gothic New", sans-serif; font-size: .8125rem; color: #3d5466; margin-left: .3rem; }
+.shop-dialog .act .btn, .shop-dialog .act .btn-line { width: 100%; }
+.shop-dialog .fine { font-size: .8125rem; color: #3d5466; margin-top: 1rem; line-height: 1.7; }
+@media (prefers-reduced-motion: reduce) { .shop-page .work .ph img { transition: none; } }
