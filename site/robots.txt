@@ -1,0 +1,9 @@
+# うみないび（uminaibi-resin.jp）
+# 検索エンジン・AI 検索のクローラーに、公開ページを読んでもらう（2026-11-12）
+User-agent: *
+Allow: /
+Disallow: /shop-thanks.html
+Disallow: /checkout.php
+Disallow: /contact.php
+
+Sitemap: https://uminaibi-resin.jp/sitemap.xml

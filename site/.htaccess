@@ -5,6 +5,9 @@ RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteCond %{HTTP:X-Forwarded-Proto} !=https
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+# 2026-11-12 www 付きは www なしへ（検索で同じページが2つに分かれないように）
+RewriteCond %{HTTP_HOST} ^www\.uminaibi-resin\.jp$ [NC]
+RewriteRule ^ https://uminaibi-resin.jp%{REQUEST_URI} [R=301,L]
 # 2026-10-28 リビルド：コンセプト・ギャラリー・アクセスはトップページにまとめた。古い URL はトップの同じ所へ（検索・ブックマークのため）
 RewriteRule ^concept\.html$ /index.html [R=301,NE,L]
 RewriteRule ^gallery\.html$ /index.html#works [R=301,NE,L]
